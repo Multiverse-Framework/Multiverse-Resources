@@ -1,0 +1,75 @@
+resources: 
+  - ../robots
+  - ../worlds
+  - ../objects
+
+worlds:
+  bowling_simulation:
+    real_time_factor: 1
+  table_simulation:
+    real_time_factor: 1
+  table_with_bowling_simulation:
+    real_time_factor: 1
+
+simulations:
+  table_with_bowling_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: world
+      path: table_with_bowling/table_with_bowling.xml
+
+  bowling_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: world
+      path: table_with_bowling/bowling.xml
+
+  table_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: world
+      path: table_with_bowling/table.xml
+
+  cube_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: world
+      path: table_with_bowling/cube.xml
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  table_with_bowling_simulation:
+    port: 7501
+    send:
+      bowling: ["force", "torque"]
+      table: ["force", "torque"]
+    receive:
+      bowling: ["relative_velocity", "position", "quaternion"]
+      table: ["relative_velocity", "position", "quaternion"]
+      cube: ["relative_velocity", "position", "quaternion"]
+
+  bowling_simulation:
+    port: 7502
+    send:
+      bowling: ["relative_velocity", "position", "quaternion"]
+    receive:
+      bowling: ["force", "torque"]
+
+  table_simulation:
+    port: 7503
+    send:
+      table: ["relative_velocity", "position", "quaternion"]
+    receive:
+      table: ["force", "torque"]
+
+  cube_simulation:
+    port: 7504
+    send:
+      cube: ["relative_velocity", "position", "quaternion"]
