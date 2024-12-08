@@ -1,0 +1,43 @@
+resources: 
+  - ../../../robots
+  - ../../../worlds
+  - ../../../objects
+  - ../../../demos
+
+worlds:
+  world:
+    rtf_desired: 1
+
+simulations:
+  rollin_justin_simulation:
+    simulator: pymujoco
+    world:
+      name: world
+      path: dlr_kitchen/dlr_kitchen.xml
+    robots:
+      rollin_justin:
+        path: mjcf/rollin-justin.xml
+        apply:
+          body:
+            rollin_justin:
+              pos: [1.8, 0.0, 0.1]
+              quat: [0.0, 0.0, 0.0, 1.0]
+    config:
+      step_size: 0.005
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  rollin_justin_simulation:
+    port: 7500
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+
+  # ros:
+  #   ros_nodes:
+  #     services:
+  #       socket:
+  #         - port: 7400
