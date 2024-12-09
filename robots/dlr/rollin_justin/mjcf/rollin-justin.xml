@@ -59,6 +59,9 @@
 	</asset>
 	<worldbody>
 		<body name="rollin_justin" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+			<joint name="odom_vel_lin_x_joint" type="slide" axis="1.0 0.0 0.0"/>
+			<joint name="odom_vel_lin_y_joint" type="slide" axis="0.0 1.0 0.0"/>
+			<joint name="odom_vel_ang_z_joint" type="hinge" axis="0.0 0.0 1.0"/>
 			<body name="base_link" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
 				<inertial mass="224.73480224609375" pos="-0.0001827288797358051 1.61276911967434e-05 0.23259884119033813" quat="0.5002469420433044 0.500389039516449 0.49960505962371826 -0.4997585117816925" diaginertia="14.472882270812988 23.625009536743164 27.9912052154541"/>
 				<geom name="SM_base_link_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="base" material="M_base_link_collision_0" class="rollin-justin_collision"/>

@@ -36,7 +36,7 @@ multiverse_clients:
       body: ["position", "quaternion"]
       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
 
-  ros:
+  ros2:
     ros_nodes:
       services:
         socket:
@@ -83,9 +83,9 @@ multiverse_clients:
             topic: /cmd_vel
             body: rollin_justin
 
-    ros_run:
-      rviz:
-        config: rollin_justin_in_dlr_kitchen/config/rviz.rviz
+    ros2_run:
+      rviz2:
+        config: rollin_justin_in_dlr_kitchen/config/rviz2.rviz
         robot_descriptions:
           rollin_justin_description: rollin_justin/urdf/rollin-justin.urdf
           dlr_kitchen_description: dlr_kitchen/dlr_kitchen.urdf
