@@ -3,11 +3,9 @@ Panels:
     Help Height: 138
     Name: Displays
     Property Tree Widget:
-      Expanded:
-        - /Global Options1
-        - /Status1
+      Expanded: ~
       Splitter Ratio: 0.5
-    Tree Height: 336
+    Tree Height: 774
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -51,6 +49,810 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        head1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        head2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_1thumb1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_1thumb2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_1thumb3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_1thumb4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_1thumb_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_2tip1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_2tip2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_2tip3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_2tip4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_2tip_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_3middle1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_3middle2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_3middle3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_3middle4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_3middle_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_4ring1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_4ring2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_4ring3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_4ring4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_4ring_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_palm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_1thumb1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_1thumb2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_1thumb3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_1thumb4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_1thumb_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_2tip1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_2tip2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_2tip3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_2tip4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_2tip_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_3middle1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_3middle2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_3middle3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_3middle4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_3middle_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_4ring1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_4ring2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_4ring3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_4ring4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_4ring_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_palm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torso1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        torso2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        torso3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        torso4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RollinJustin
+      Robot Description: rollin_justin_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        dlr_kitchen:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        drawer_01:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_01_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_02:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_02_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_03:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_03_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_04:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_04_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_05:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_05_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_06:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        drawer_06_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fridge:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fridge_door:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fridge_door_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        kitchenette:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_door:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_door_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_drawer:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        oven_drawer_handle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: DlrKitchen
+      Robot Description: dlr_kitchen_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_link:
+          Value: true
+        dlr_kitchen:
+          Value: true
+        drawer_01:
+          Value: true
+        drawer_01_handle:
+          Value: true
+        drawer_02:
+          Value: true
+        drawer_02_handle:
+          Value: true
+        drawer_03:
+          Value: true
+        drawer_03_handle:
+          Value: true
+        drawer_04:
+          Value: true
+        drawer_04_handle:
+          Value: true
+        drawer_05:
+          Value: true
+        drawer_05_handle:
+          Value: true
+        drawer_06:
+          Value: true
+        drawer_06_handle:
+          Value: true
+        fridge:
+          Value: true
+        fridge_door:
+          Value: true
+        fridge_door_handle:
+          Value: true
+        head1:
+          Value: true
+        head2:
+          Value: true
+        kitchenette:
+          Value: true
+        left_1thumb1:
+          Value: true
+        left_1thumb2:
+          Value: true
+        left_1thumb3:
+          Value: true
+        left_1thumb4:
+          Value: true
+        left_1thumb_base:
+          Value: true
+        left_2tip1:
+          Value: true
+        left_2tip2:
+          Value: true
+        left_2tip3:
+          Value: true
+        left_2tip4:
+          Value: true
+        left_2tip_base:
+          Value: true
+        left_3middle1:
+          Value: true
+        left_3middle2:
+          Value: true
+        left_3middle3:
+          Value: true
+        left_3middle4:
+          Value: true
+        left_3middle_base:
+          Value: true
+        left_4ring1:
+          Value: true
+        left_4ring2:
+          Value: true
+        left_4ring3:
+          Value: true
+        left_4ring4:
+          Value: true
+        left_4ring_base:
+          Value: true
+        left_arm1:
+          Value: true
+        left_arm2:
+          Value: true
+        left_arm3:
+          Value: true
+        left_arm4:
+          Value: true
+        left_arm5:
+          Value: true
+        left_arm6:
+          Value: true
+        left_arm7:
+          Value: true
+        left_palm:
+          Value: true
+        map:
+          Value: true
+        oven_door:
+          Value: true
+        oven_door_handle:
+          Value: true
+        oven_drawer:
+          Value: true
+        oven_drawer_handle:
+          Value: true
+        right_1thumb1:
+          Value: true
+        right_1thumb2:
+          Value: true
+        right_1thumb3:
+          Value: true
+        right_1thumb4:
+          Value: true
+        right_1thumb_base:
+          Value: true
+        right_2tip1:
+          Value: true
+        right_2tip2:
+          Value: true
+        right_2tip3:
+          Value: true
+        right_2tip4:
+          Value: true
+        right_2tip_base:
+          Value: true
+        right_3middle1:
+          Value: true
+        right_3middle2:
+          Value: true
+        right_3middle3:
+          Value: true
+        right_3middle4:
+          Value: true
+        right_3middle_base:
+          Value: true
+        right_4ring1:
+          Value: true
+        right_4ring2:
+          Value: true
+        right_4ring3:
+          Value: true
+        right_4ring4:
+          Value: true
+        right_4ring_base:
+          Value: true
+        right_arm1:
+          Value: true
+        right_arm2:
+          Value: true
+        right_arm3:
+          Value: true
+        right_arm4:
+          Value: true
+        right_arm5:
+          Value: true
+        right_arm6:
+          Value: true
+        right_arm7:
+          Value: true
+        right_palm:
+          Value: true
+        rollin_justin:
+          Value: true
+        torso1:
+          Value: true
+        torso2:
+          Value: true
+        torso3:
+          Value: true
+        torso4:
+          Value: true
+        world:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: true
+      Tree:
+        map:
+          base_link:
+            {}
+          dlr_kitchen:
+            {}
+          drawer_01:
+            {}
+          drawer_01_handle:
+            {}
+          drawer_02:
+            {}
+          drawer_02_handle:
+            {}
+          drawer_03:
+            {}
+          drawer_03_handle:
+            {}
+          drawer_04:
+            {}
+          drawer_04_handle:
+            {}
+          drawer_05:
+            {}
+          drawer_05_handle:
+            {}
+          drawer_06:
+            {}
+          drawer_06_handle:
+            {}
+          fridge:
+            {}
+          fridge_door:
+            {}
+          fridge_door_handle:
+            {}
+          head1:
+            {}
+          head2:
+            {}
+          kitchenette:
+            {}
+          left_1thumb1:
+            {}
+          left_1thumb2:
+            {}
+          left_1thumb3:
+            {}
+          left_1thumb4:
+            {}
+          left_1thumb_base:
+            {}
+          left_2tip1:
+            {}
+          left_2tip2:
+            {}
+          left_2tip3:
+            {}
+          left_2tip4:
+            {}
+          left_2tip_base:
+            {}
+          left_3middle1:
+            {}
+          left_3middle2:
+            {}
+          left_3middle3:
+            {}
+          left_3middle4:
+            {}
+          left_3middle_base:
+            {}
+          left_4ring1:
+            {}
+          left_4ring2:
+            {}
+          left_4ring3:
+            {}
+          left_4ring4:
+            {}
+          left_4ring_base:
+            {}
+          left_arm1:
+            {}
+          left_arm2:
+            {}
+          left_arm3:
+            {}
+          left_arm4:
+            {}
+          left_arm5:
+            {}
+          left_arm6:
+            {}
+          left_arm7:
+            {}
+          left_palm:
+            {}
+          oven_door:
+            {}
+          oven_door_handle:
+            {}
+          oven_drawer:
+            {}
+          oven_drawer_handle:
+            {}
+          right_1thumb1:
+            {}
+          right_1thumb2:
+            {}
+          right_1thumb3:
+            {}
+          right_1thumb4:
+            {}
+          right_1thumb_base:
+            {}
+          right_2tip1:
+            {}
+          right_2tip2:
+            {}
+          right_2tip3:
+            {}
+          right_2tip4:
+            {}
+          right_2tip_base:
+            {}
+          right_3middle1:
+            {}
+          right_3middle2:
+            {}
+          right_3middle3:
+            {}
+          right_3middle4:
+            {}
+          right_3middle_base:
+            {}
+          right_4ring1:
+            {}
+          right_4ring2:
+            {}
+          right_4ring3:
+            {}
+          right_4ring4:
+            {}
+          right_4ring_base:
+            {}
+          right_arm1:
+            {}
+          right_arm2:
+            {}
+          right_arm3:
+            {}
+          right_arm4:
+            {}
+          right_arm5:
+            {}
+          right_arm6:
+            {}
+          right_arm7:
+            {}
+          right_palm:
+            {}
+          rollin_justin:
+            {}
+          torso1:
+            {}
+          torso2:
+            {}
+          torso3:
+            {}
+          torso4:
+            {}
+          world:
+            {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -79,7 +881,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 10
+      Distance: 6.824660778045654
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -87,25 +889,25 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 1.423474669456482
+        Y: 1.305801510810852
+        Z: 0.6803585886955261
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.785398006439209
+      Pitch: 0.4153984785079956
       Target Frame: <Fixed Frame>
-      Yaw: 0.785398006439209
+      Yaw: 3.8785762786865234
     Saved: ~
 Window Geometry:
   Displays:
-    collapsed: false
-  Height: 846
-  Hide Left Dock: false
+    collapsed: true
+  Height: 1163
+  Hide Left Dock: true
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000001f700000248fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000006e000002480000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f00000248fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000006e000002480000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000077d0000005efc0100000002fb0000000800540069006d006501000000000000077d000006dc00fffffffb0000000800540069006d006501000000000000045000000000000000000000040f0000024800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001f7000003cdfc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003d000003cd000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000015f000003cdfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000003cd000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007800000005efc0100000002fb0000000800540069006d0065010000000000000780000003bc00fffffffb0000000800540069006d006501000000000000045000000000000000000000061b000003cd00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -114,6 +916,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1917
-  X: 60
+  Width: 1920
+  X: 0
   Y: 0
