@@ -9,14 +9,14 @@ worlds:
 
 simulations:
   h1_and_g1_on_the_floor_simulation:
-    simulator: pymujoco
+    simulator: isaac_sim
     headless: False
     world:
       name: h1_and_g1_world
-      path: floor/floor.xml
+      path: floor/floor.usda
     robots:
       h1:
-        path: h1/h1.xml
+        path: h1/h1.usd
         apply:
           body:
             pelvis:
@@ -26,7 +26,7 @@ simulations:
           body: h1_
           joint: h1_
       g1:
-        path: g1/g1_29dof_with_hand.xml
+        path: g1/g1_29dof_with_hand.usd
         apply:
           body:
             pelvis:

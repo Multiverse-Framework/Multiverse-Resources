@@ -14,13 +14,13 @@ simulations:
     world:
       name: h1_world
       path: floor/floor.usda
-    # robots:
-    #   h1:
-    #     path: h1/h1.xml
-    #     apply:
-    #       body:
-    #         pelvis:
-    #           pos: [0.0, 0.0, 1.0]
-    #           quat: [1.0, 0.0, 0.0, 0.0]
+    robots:
+      h1:
+        path: h1/h1.usd
+        apply:
+          body:
+            pelvis:
+              pos: [0.0, 0.0, 1.0]
+              quat: [1.0, 0.0, 0.0, 0.0]
     config:
       step_size: 0.005

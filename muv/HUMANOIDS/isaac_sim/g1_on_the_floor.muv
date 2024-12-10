@@ -9,14 +9,14 @@ worlds:
 
 simulations:
   g1_on_the_floor_simulation:
-    simulator: pymujoco
+    simulator: isaac_sim
     headless: False
     world:
       name: g1_world
-      path: floor/floor.xml
+      path: floor/floor.usda
     robots:
       g1:
-        path: g1/g1_29dof_with_hand.xml
+        path: g1/g1_29dof_with_hand.usd
         apply:
           body:
             pelvis:
