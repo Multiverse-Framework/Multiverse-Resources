@@ -1,0 +1,39 @@
+resources: 
+  - ../../../robots
+  - ../../../worlds
+  - ../../../objects
+
+worlds:
+  h1_and_g1_world:
+    real_time_factor: 1
+
+simulations:
+  h1_and_g1_on_the_floor_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: h1_and_g1_world
+      path: floor/floor.xml
+    robots:
+      h1:
+        path: h1/h1.xml
+        apply:
+          body:
+            pelvis:
+              pos: [-0.5, 0.0, 1.0]
+              quat: [1.0, 0.0, 0.0, 0.0]
+        prefix:
+          body: h1_
+          joint: h1_
+      g1:
+        path: g1/g1_29dof_with_hand.xml
+        apply:
+          body:
+            pelvis:
+              pos: [0.5, 0.0, 1.0]
+              quat: [0.0, 0.0, 0.0, 1.0]
+        prefix:
+          body: g1_
+          joint: g1_
+    config:
+      step_size: 0.005

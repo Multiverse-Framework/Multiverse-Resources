@@ -1,0 +1,26 @@
+resources: 
+  - ../../../robots
+  - ../../../worlds
+  - ../../../objects
+
+worlds:
+  h1_world:
+    real_time_factor: 1
+
+simulations:
+  h1_on_the_floor_simulation:
+    simulator: isaac_sim
+    headless: False
+    world:
+      name: h1_world
+      path: floor/floor.usda
+    # robots:
+    #   h1:
+    #     path: h1/h1.xml
+    #     apply:
+    #       body:
+    #         pelvis:
+    #           pos: [0.0, 0.0, 1.0]
+    #           quat: [1.0, 0.0, 0.0, 0.0]
+    config:
+      step_size: 0.005
