@@ -139,11 +139,6 @@
         </body>
       </body>
     </body>
-    <body name="not_use_body" pos="0 0 20">
-      <inertial pos="0.0 0.0 0.0" mass="1e-01"
-      diaginertia="1e-01 1e-01 1e-01"/>
-      <joint name="not_use_joint"/>
-    </body>
   </worldbody>
 
 <actuator>
@@ -158,10 +153,6 @@
     <motor class="h1" name="torso_joint" joint="torso_joint" ctrlrange="-200 200"/>
     <motor class="h1" name="left_hip_yaw_joint" joint="left_hip_yaw_joint" ctrlrange="-200 200"/>
     <motor class="h1" name="right_hip_yaw_joint" joint="right_hip_yaw_joint" ctrlrange="-200 200"/>
-
-
-    <motor class="h1" name="not_use_joint" joint="not_use_joint" />
-
 
     <motor class="h1" name="left_ankle_joint" joint="left_ankle_joint" ctrlrange="-40 40"/>
     <motor class="h1" name="right_ankle_joint" joint="right_ankle_joint" ctrlrange="-40 40"/>
@@ -187,7 +178,6 @@
     <jointpos name="torso_pos" joint="torso_joint"/>
     <jointpos name="left_hip_yaw_pos" joint="left_hip_yaw_joint"/>
     <jointpos name="right_hip_yaw_pos" joint="right_hip_yaw_joint"/>
-    <jointpos name="not_use_pos" joint="not_use_joint"/>
     <jointpos name="left_ankle_pos" joint="left_ankle_joint"/>
     <jointpos name="right_ankle_pos" joint="right_ankle_joint"/>
     <jointpos name="right_shoulder_pitch_pos" joint="right_shoulder_pitch_joint"/>
@@ -208,7 +198,6 @@
     <jointvel name="torso_vel" joint="torso_joint"/>
     <jointvel name="left_hip_yaw_vel" joint="left_hip_yaw_joint"/>
     <jointvel name="right_hip_yaw_vel" joint="right_hip_yaw_joint"/>
-    <jointvel name="not_use_vel" joint="not_use_joint"/>
     <jointvel name="left_ankle_vel" joint="left_ankle_joint"/>
     <jointvel name="right_ankle_vel" joint="right_ankle_joint"/>
     <jointvel name="right_shoulder_pitch_vel" joint="right_shoulder_pitch_joint"/>
@@ -229,7 +218,6 @@
     <jointactuatorfrc name="torso_torque" joint="torso_joint"/>
     <jointactuatorfrc name="left_hip_yaw_torque" joint="left_hip_yaw_joint"/>
     <jointactuatorfrc name="right_hip_yaw_torque" joint="right_hip_yaw_joint"/>
-    <jointactuatorfrc name="not_use_torque" joint="not_use_joint"/>
     <jointactuatorfrc name="left_ankle_torque" joint="left_ankle_joint"/>
     <jointactuatorfrc name="right_ankle_torque" joint="right_ankle_joint"/>
     <jointactuatorfrc name="right_shoulder_pitch_torque" joint="right_shoulder_pitch_joint"/>
