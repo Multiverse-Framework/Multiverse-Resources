@@ -16,7 +16,7 @@ simulations:
       path: floor/floor.usda
     robots:
       h1:
-        path: h1/h1.usda
+        path: h1/h1_only_primitives.usda
         apply:
           body:
             pelvis:

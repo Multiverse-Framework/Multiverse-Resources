@@ -1,0 +1,1091 @@
+#usda 1.0
+(
+    defaultPrim = "h1"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def PhysicsScene "physicsScene" (
+    apiSchemas = ["PhysxSceneAPI"]
+)
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+    uniform token physxScene:broadphaseType = "MBP"
+    bool physxScene:enableCCD = 1
+    bool physxScene:enableGPUDynamics = 0
+    bool physxScene:enableStabilization = 1
+    uniform token physxScene:solverType = "TGS"
+}
+
+def Xform "h1"
+{
+    quatd xformOp:orient = (1, 0, 0, 0)
+    double3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def Scope "Looks"
+    {
+    }
+
+    def Xform "h1" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsArticulationRootAPI", "PhysxArticulationAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (-0.00019999998, 0.000039999995, -0.04522)
+        float3 physics:diagonalInertia = (0.0445821, 0.008246192, 0.049021106)
+        float physics:mass = 5.39
+        quatf physics:principalAxes = (0.9999968, -0.00004695264, -0.0022399006, 0.001198011)
+        bool physxArticulation:enabledSelfCollisions = 1
+        int physxArticulation:solverPositionIterationCount = 32
+        int physxArticulation:solverVelocityIterationCount = 1
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Xform "pelvis"
+        {
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.07, -0.15, -0.04), (0.07, 0.15, 0.04)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.14000000059604645, 0.30000001192092896, 0.07999999821186066)
+            double3 xformOp:translate = (0, 0, -0.03999999910593033)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_hip_yaw_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </h1/h1>
+            rel physics:body1 = </h1/left_hip_yaw_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0.0875, -0.1742)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -24.637184
+            float physics:upperLimit = 24.637184
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+
+        def PhysicsRevoluteJoint "right_hip_yaw_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </h1/h1>
+            rel physics:body1 = </h1/right_hip_yaw_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, -0.0875, -0.1742)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -24.637184
+            float physics:upperLimit = 24.637184
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+
+        def PhysicsRevoluteJoint "torso_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </h1/h1>
+            rel physics:body1 = </h1/torso_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -134.64507
+            float physics:upperLimit = 134.64507
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_hip_yaw_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (-0.04923, 0.0001, 0.0072)
+        float3 physics:diagonalInertia = (0.00304494, 0.00296885, 0.00189201)
+        float physics:mass = 2.244
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0.08749999850988388, -0.17419999837875366)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.035, -0.06, -0.06), (0.035, 0.06, 0.06)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.07000000029802322, 0.11999999731779099, 0.11999999731779099)
+            double3 xformOp:translate = (-0.06700000166893005, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_hip_roll_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </h1/left_hip_yaw_link>
+            rel physics:body1 = </h1/left_hip_roll_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.039468, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -24.637184
+            float physics:upperLimit = 24.637184
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_hip_roll_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (-0.0058, -0.00319, -0.00009)
+        float3 physics:diagonalInertia = (0.00243264, 0.00225325, 0.00205492)
+        float physics:mass = 2.232
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.03946800157427788, 0.08749999850988388, -0.17419999837875366)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.06, -0.06, -0.06), (0.06, 0.06, 0.06)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.11999999731779099, 0.11999999731779099, 0.11999999731779099)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_hip_pitch_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/left_hip_roll_link>
+            rel physics:body1 = </h1/left_hip_pitch_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0.11536, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -179.90874
+            float physics:upperLimit = 144.95833
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_hip_pitch_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.00746, -0.02346, -0.08193)
+        float3 physics:diagonalInertia = (0.0829503, 0.0821457, 0.00510909)
+        float physics:mass = 4.152
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.03946800157427788, 0.2028599977493286, -0.17419999837875366)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.06, -0.04, -0.22), (0.06, 0.04, 0.22)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.11999999731779099, 0.07999999821186066, 0.4399999976158142)
+            double3 xformOp:translate = (0, -0.009999999776482582, -0.1899999976158142)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_knee_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/left_hip_pitch_link>
+            rel physics:body1 = </h1/left_knee_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.4)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -14.896903
+            float physics:upperLimit = 117.45634
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_knee_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (-0.00136, -0.00512, -0.1384)
+        float3 physics:diagonalInertia = (0.0125237, 0.0123104, 0.0019428)
+        float physics:mass = 1.721
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.03946800157427788, 0.2028599977493286, -0.5742000341415405)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.05, -0.04, -0.17), (0.05, 0.04, 0.17)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.10000000149011612, 0.07999999821186066, 0.3400000035762787)
+            double3 xformOp:translate = (0, -0.009999999776482582, -0.23000000417232513)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_ankle_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/left_knee_link>
+            rel physics:body1 = </h1/left_ankle_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.4)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -49.847324
+            float physics:upperLimit = 29.793806
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_ankle_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.048568, 0, -0.045609)
+        float3 physics:diagonalInertia = (0.00362, 0.00355701, 0.000149987)
+        float physics:mass = 0.552448
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.03946800157427788, 0.2028599977493286, -0.9742000102996826)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def "collisions"
+        {
+            def Cube "left_ankle_link_collision_1" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.055, -0.0148, -0.015), (0.055, 0.0148, 0.015)]
+                uniform token purpose = "guide"
+                double size = 1
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (0.10999999940395355, 0.029600000008940697, 0.029999999329447746)
+                double3 xformOp:translate = (0.14499999582767487, 0, -0.05380000174045563)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Cube "left_ankle_link_collision_2" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.06985, -0.0148, -0.02), (0.06985, 0.0148, 0.02)]
+                uniform token purpose = "guide"
+                double size = 1
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (0.1396999955177307, 0.029600000008940697, 0.03999999910593033)
+                double3 xformOp:translate = (0.020150000229477882, 0, -0.03999999910593033)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Cube "left_ankle_link_collision_3" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.025, -0.0148, -0.015), (0.025, 0.0148, 0.015)]
+                uniform token purpose = "guide"
+                double size = 1
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (0.05000000074505806, 0.029600000008940697, 0.029999999329447746)
+                double3 xformOp:translate = (-0.0746999979019165, 0, -0.05380000174045563)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Xform "right_hip_yaw_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (-0.04923, -0.0001, 0.0072)
+        float3 physics:diagonalInertia = (0.00304494, 0.00296885, 0.00189201)
+        float physics:mass = 2.244
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, -0.08749999850988388, -0.17419999837875366)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.035, -0.06, -0.06), (0.035, 0.06, 0.06)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.07000000029802322, 0.11999999731779099, 0.11999999731779099)
+            double3 xformOp:translate = (-0.06700000166893005, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "right_hip_roll_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </h1/right_hip_yaw_link>
+            rel physics:body1 = </h1/right_hip_roll_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.039468, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -24.637184
+            float physics:upperLimit = 24.637184
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "right_hip_roll_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (-0.0058, 0.00319, -0.00009)
+        float3 physics:diagonalInertia = (0.00243264, 0.00225325, 0.00205492)
+        float physics:mass = 2.232
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.03946800157427788, -0.08749999850988388, -0.17419999837875366)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.06, -0.06, -0.06), (0.06, 0.06, 0.06)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.11999999731779099, 0.11999999731779099, 0.11999999731779099)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "right_hip_pitch_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/right_hip_roll_link>
+            rel physics:body1 = </h1/right_hip_pitch_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, -0.11536, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -179.90874
+            float physics:upperLimit = 144.95833
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "right_hip_pitch_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.00746, 0.02346, -0.08193)
+        float3 physics:diagonalInertia = (0.0829503, 0.0821457, 0.00510909)
+        float physics:mass = 4.152
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.03946800157427788, -0.2028599977493286, -0.17419999837875366)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.06, -0.04, -0.22), (0.06, 0.04, 0.22)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.11999999731779099, 0.07999999821186066, 0.4399999976158142)
+            double3 xformOp:translate = (0, -0.009999999776482582, -0.1899999976158142)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "right_knee_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/right_hip_pitch_link>
+            rel physics:body1 = </h1/right_knee_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.4)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -14.896903
+            float physics:upperLimit = 117.45634
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "right_knee_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (-0.00136, 0.00512, -0.1384)
+        float3 physics:diagonalInertia = (0.0125237, 0.0123104, 0.0019428)
+        float physics:mass = 1.721
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.03946800157427788, -0.2028599977493286, -0.5742000341415405)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.05, -0.04, -0.17), (0.05, 0.04, 0.17)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.10000000149011612, 0.07999999821186066, 0.3400000035762787)
+            double3 xformOp:translate = (0, -0.009999999776482582, -0.23000000417232513)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "right_ankle_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/right_knee_link>
+            rel physics:body1 = </h1/right_ankle_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.4)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -49.847324
+            float physics:upperLimit = 29.793806
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "right_ankle_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.048568, 0, -0.045609)
+        float3 physics:diagonalInertia = (0.00362, 0.00355701, 0.000149987)
+        float physics:mass = 0.552448
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.03946800157427788, -0.2028599977493286, -0.9742000102996826)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def "collisions"
+        {
+            def Cube "right_ankle_link_collision_1" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.055, -0.0148, -0.015), (0.055, 0.0148, 0.015)]
+                uniform token purpose = "guide"
+                double size = 1
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (0.10999999940395355, 0.029600000008940697, 0.029999999329447746)
+                double3 xformOp:translate = (0.14499999582767487, 0, -0.05380000174045563)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Cube "right_ankle_link_collision_2" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.06985, -0.0148, -0.02), (0.06985, 0.0148, 0.02)]
+                uniform token purpose = "guide"
+                double size = 1
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (0.1396999955177307, 0.029600000008940697, 0.03999999910593033)
+                double3 xformOp:translate = (0.020150000229477882, 0, -0.03999999910593033)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Cube "right_ankle_link_collision_3" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.025, -0.0148, -0.015), (0.025, 0.0148, 0.015)]
+                uniform token purpose = "guide"
+                double size = 1
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (0.05000000074505806, 0.029600000008940697, 0.029999999329447746)
+                double3 xformOp:translate = (-0.0746999979019165, 0, -0.05380000174045563)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Xform "torso_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.000489, 0.002797, 0.20484)
+        float3 physics:diagonalInertia = (0.487315, 0.409628, 0.127837)
+        float physics:mass = 17.789
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.07, -0.105, -0.37), (0.07, 0.105, 0.37)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.14000000059604645, 0.20999999344348907, 0.7400000095367432)
+            double3 xformOp:translate = (0, 0, 0.3799999952316284)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_shoulder_pitch_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/torso_link>
+            rel physics:body1 = </h1/left_shoulder_pitch_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0055, 0.15535, 0.42999)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.97629637, 0.2164381, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -164.43889
+            float physics:upperLimit = 164.43889
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+
+        def PhysicsRevoluteJoint "right_shoulder_pitch_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/torso_link>
+            rel physics:body1 = </h1/right_shoulder_pitch_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0055, -0.15535, 0.42999)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.97629637, -0.2164381, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -164.43889
+            float physics:upperLimit = 164.43889
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_shoulder_pitch_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.005045, 0.053657, -0.015715)
+        float3 physics:diagonalInertia = (0.00129936, 0.000987113, 0.000858198)
+        float physics:mass = 1.033
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (0.9762963652610779, 0.21643809974193573, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.005499999970197678, 0.155349999666214, 0.4299899935722351)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.035, -0.05, -0.045), (0.035, 0.05, 0.045)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.07000000029802322, 0.10000000149011612, 0.09000000357627869)
+            double3 xformOp:translate = (0, 0.05000000074505806, -0.014999999664723873)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_shoulder_roll_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </h1/left_shoulder_pitch_link>
+            rel physics:body1 = </h1/left_shoulder_roll_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (-0.0055, 0.0565, -0.0165)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.97629637, -0.21643807, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -19.480562
+            float physics:upperLimit = 178.18987
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_shoulder_roll_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.000679, 0.00115, -0.094076)
+        float3 physics:diagonalInertia = (0.00170388, 0.00158256, 0.00100336)
+        float physics:mass = 0.793
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 2.9802322387695312e-8, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0.21352961659431458, 0.4389136731624603)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.05, -0.05, -0.018), (0.05, 0.05, 0.018)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.10000000149011612, 0.10000000149011612, 0.035999998450279236)
+            double3 xformOp:translate = (0, 0, -0.10999999940395355)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_shoulder_yaw_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </h1/left_shoulder_roll_link>
+            rel physics:body1 = </h1/left_shoulder_yaw_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.1343)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -74.484505
+            float physics:upperLimit = 254.96619
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_shoulder_yaw_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.01365, 0.002767, -0.16266)
+        float3 physics:diagonalInertia = (0.00408038, 0.00370367, 0.000622687)
+        float physics:mass = 0.839
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 2.9802322387695312e-8, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0.21352963149547577, 0.3046136796474457)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.03, -0.03, -0.12), (0.03, 0.03, 0.12)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.05999999865889549, 0.05999999865889549, 0.23999999463558197)
+            double3 xformOp:translate = (0, 0, -0.11999999731779099)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "left_elbow_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/left_shoulder_yaw_link>
+            rel physics:body1 = </h1/left_elbow_link_ball_hand>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0185, 0, -0.198)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -71.61973
+            float physics:upperLimit = 149.54198
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "left_elbow_link_ball_hand" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.15908, -0.000144, -0.015776)
+        float3 physics:diagonalInertia = (0.00601829, 0.00600579, 0.000408305)
+        float physics:mass = 0.669
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, 2.9802322387695312e-8, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.01850000023841858, 0.21352964639663696, 0.10661368072032928)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def "collisions"
+        {
+            def Cube "left_elbow_link_ball_hand_collision_1" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.12, -0.025, -0.025), (0.12, 0.025, 0.025)]
+                uniform token purpose = "guide"
+                double size = 1
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (0.23999999463558197, 0.05000000074505806, 0.05000000074505806)
+                double3 xformOp:translate = (0.15000000596046448, 0, -0.017999999225139618)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Sphere "left_elbow_link_ball_hand_collision_2" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.0365, -0.0365, -0.0365), (0.0365, 0.0365, 0.0365)]
+                uniform token purpose = "guide"
+                double radius = 0.0364999994635582
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.2800000011920929, 0, -0.017999999225139618)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Xform "right_shoulder_pitch_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.005045, -0.053657, -0.015715)
+        float3 physics:diagonalInertia = (0.00129936, 0.000987113, 0.000858198)
+        float physics:mass = 1.033
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (0.9762963652610779, -0.21643809974193573, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.005499999970197678, -0.155349999666214, 0.4299899935722351)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.035, -0.05, -0.045), (0.035, 0.05, 0.045)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.07000000029802322, 0.10000000149011612, 0.09000000357627869)
+            double3 xformOp:translate = (0, -0.05000000074505806, -0.014999999664723873)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "right_shoulder_roll_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </h1/right_shoulder_pitch_link>
+            rel physics:body1 = </h1/right_shoulder_roll_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (-0.0055, -0.0565, -0.0165)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.97629637, 0.21643807, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -178.18987
+            float physics:upperLimit = 19.480562
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "right_shoulder_roll_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.000679, -0.00115, -0.094076)
+        float3 physics:diagonalInertia = (0.00170388, 0.00158256, 0.00100336)
+        float physics:mass = 0.793
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, -2.9802322387695312e-8, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, -0.21352961659431458, 0.4389136731624603)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.05, -0.05, -0.018), (0.05, 0.05, 0.018)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.10000000149011612, 0.10000000149011612, 0.035999998450279236)
+            double3 xformOp:translate = (0, 0, -0.10999999940395355)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "right_shoulder_yaw_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </h1/right_shoulder_roll_link>
+            rel physics:body1 = </h1/right_shoulder_yaw_link>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.1343)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -254.96619
+            float physics:upperLimit = 74.484505
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "right_shoulder_yaw_link" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.01365, -0.002767, -0.16266)
+        float3 physics:diagonalInertia = (0.00408038, 0.00370367, 0.000622687)
+        float physics:mass = 0.839
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, -2.9802322387695312e-8, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, -0.21352963149547577, 0.3046136796474457)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cube "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.03, -0.03, -0.12), (0.03, 0.03, 0.12)]
+            uniform token purpose = "guide"
+            double size = 1
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (0.05999999865889549, 0.05999999865889549, 0.23999999463558197)
+            double3 xformOp:translate = (0, 0, -0.11999999731779099)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "right_elbow_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 1000
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </h1/right_shoulder_yaw_link>
+            rel physics:body1 = </h1/right_elbow_link_ball_hand>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0185, 0, -0.198)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -71.61973
+            float physics:upperLimit = 149.54198
+            float physxJoint:maxJointVelocity = 57295.78
+        }
+    }
+
+    def Xform "right_elbow_link_ball_hand" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0.15908, 0.000144, -0.015776)
+        float3 physics:diagonalInertia = (0.00601829, 0.00600579, 0.000408305)
+        float physics:mass = 0.669
+        quatf physics:principalAxes = (1, 0, 0, 0)
+        quatd xformOp:orient = (1, -2.9802322387695312e-8, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0.01850000023841858, -0.21352964639663696, 0.10661368072032928)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def "collisions"
+        {
+            def Cube "right_elbow_link_ball_hand_collision_1" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.12, -0.025, -0.025), (0.12, 0.025, 0.025)]
+                uniform token purpose = "guide"
+                double size = 1
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (0.23999999463558197, 0.05000000074505806, 0.05000000074505806)
+                double3 xformOp:translate = (0.15000000596046448, 0, -0.017999999225139618)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Sphere "right_elbow_link_ball_hand_collision_2" (
+                apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                float3[] extent = [(-0.0365, -0.0365, -0.0365), (0.0365, 0.0365, 0.0365)]
+                uniform token purpose = "guide"
+                double radius = 0.0364999994635582
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.2800000011920929, 0, -0.017999999225139618)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+}
+
