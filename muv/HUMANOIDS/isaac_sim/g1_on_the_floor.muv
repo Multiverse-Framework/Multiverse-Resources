@@ -24,3 +24,5 @@ simulations:
               quat: [1.0, 0.0, 0.0, 0.0]
     config:
       step_size: 0.005
+      real_time_factor: -1.0
+      number_of_envs: 10
