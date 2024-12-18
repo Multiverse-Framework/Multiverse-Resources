@@ -1,0 +1,32 @@
+<mujoco model="task_board_probe">
+    <compiler angle="radian" meshdir="task_board/meshes" autolimits="true" inertiafromgeom="false"/>
+    <asset>
+        <mesh name="TaskBoardProbe" file="stl/TaskBoardProbe.stl" />
+        <mesh name="UCX_TaskBoardProbe_001" file="stl/UCX_TaskBoardProbe_001.stl" />
+        <mesh name="UCX_TaskBoardProbe_002" file="stl/UCX_TaskBoardProbe_002.stl" />
+        <mesh name="UCX_TaskBoardProbe_003" file="stl/UCX_TaskBoardProbe_003.stl" />
+        <mesh name="UCX_TaskBoardProbe_004" file="stl/UCX_TaskBoardProbe_004.stl" />
+    </asset>
+
+    <default>
+		<default class="task_board_probe_visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="task_board_probe_collision">
+			<geom rgba="0.9 0.9 0.9 1.0" group="3"/>
+		</default>
+	</default>
+
+    <worldbody>
+        <body name="task_board_probe">
+            <!-- <freejoint/> -->
+            <inertial mass="0.006231526378542185" pos="-2.27348695425178e-11 0.0001277880510315299 -3.0341962276025924e-09" quat="-0.4846147894859314 -0.5149257183074951 0.5149257183074951 0.4846147894859314" diaginertia="6.648315320489928e-08 5.043107648816658e-06 5.043107648816658e-06"/>
+            <geom name="task_board_probe_visual" type="mesh" mesh="TaskBoardProbe" class="task_board_probe_visual"/>
+            <geom name="task_board_probe_collision_001" type="mesh" mesh="UCX_TaskBoardProbe_001" friction="0.5" solimp="0.95 0.95 0.005" solref="0.03 1" condim="6" class="task_board_probe_collision"/>
+            <geom name="task_board_probe_collision_002" type="mesh" mesh="UCX_TaskBoardProbe_002" friction="0.5" solimp="0.95 0.95 0.005" solref="0.03 1" condim="6" class="task_board_probe_collision"/>
+            <geom name="task_board_probe_collision_003" type="mesh" mesh="UCX_TaskBoardProbe_003" friction="0.5" solimp="0.95 0.95 0.005" solref="0.03 1" condim="6" class="task_board_probe_collision"/>
+            <geom name="task_board_probe_collision_004" type="mesh" mesh="UCX_TaskBoardProbe_004" friction="0.5" solimp="0.95 0.95 0.005" solref="0.03 1" condim="6" class="task_board_probe_collision"/>
+            <geom type="sphere" pos="0 -0.056582 0" size="0.00099" friction="0.5" solimp="0.95 0.95 0.005" solref="0.03 1" condim="6" class="task_board_probe_collision"/>
+        </body>
+    </worldbody>
+</mujoco>
