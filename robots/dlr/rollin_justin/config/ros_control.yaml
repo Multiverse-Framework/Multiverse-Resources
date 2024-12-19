@@ -1,0 +1,27 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 60
+
+joint_trajectory_controller: 
+  type: position_controllers/JointTrajectoryController  
+  joints:
+    - head1_joint
+    - head2_joint
+    - torso1_joint
+    - torso2_joint
+    - torso3_joint
+    - torso4_joint
+    - left_arm1_joint
+    - left_arm2_joint
+    - left_arm3_joint
+    - left_arm4_joint
+    - left_arm5_joint
+    - left_arm6_joint
+    - left_arm7_joint
+    - right_arm1_joint
+    - right_arm2_joint
+    - right_arm3_joint
+    - right_arm4_joint
+    - right_arm5_joint
+    - right_arm6_joint
+    - right_arm7_joint
