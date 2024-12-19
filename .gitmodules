@@ -1,3 +1,0 @@
-[submodule "robots/mujoco_menagerie"]
-	path = robots/mujoco_menagerie
-	url = git@github.com:google-deepmind/mujoco_menagerie.git

@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-<<<<<<< HEAD
 <mujoco model="task_board_new">
 	<compiler meshdir="task_board/meshes" texturedir="task_board/textures" angle="radian" autolimits="true" balanceinertia="true" boundmass="0.000001" boundinertia="0.000001"/>
 	<option timestep="0.001" integrator="RK4" gravity="0 0 -9.81" noslip_iterations="5" noslip_tolerance="1e-6">
@@ -357,10 +356,4 @@
         </body>
     </worldbody>
 	<equality/>
-=======
-<mujoco model="task_board">
-	<include file="task_board_main.xml"/>
-    <include file="task_board_probe.xml"/>
-    <include file="task_board_cable_plug.xml"/>
->>>>>>> fde3dfc64658f4052acaa6084cc9b4b512c540a9
 </mujoco>
