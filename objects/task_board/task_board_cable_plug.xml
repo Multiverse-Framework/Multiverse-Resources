@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<mujoco model="task_board_cable_plug">
+	<compiler meshdir="task_board/meshes" texturedir="task_board/textures" angle="radian" autolimits="true" balanceinertia="true" />
+	<default>
+		<default class="task_board_cable_plug_visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="task_board_cable_plug_collision">
+			<geom rgba="0.9 0.9 0.9 1.0" group="3"/>
+		</default>
+	</default>
+	<asset>
+		<mesh name="TaskBoardCablePlug" file="stl/TaskBoardCablePlug.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="UCX_TaskBoardCablePlug_001" file="stl/UCX_TaskBoardCablePlug_001.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="UCX_TaskBoardCablePlug_002" file="stl/UCX_TaskBoardCablePlug_002.stl" scale="1.0 1.0 1.0"/>
+	</asset>
+	<worldbody>
+		<body name="task_board_cable_plug" pos="0.03844299912452698 0.01890699937939644 0.019" quat="-0.7071068 0 0 0.7071068">
+			<freejoint/>
+			<inertial mass="0.009143883362412453" pos="-0.00967562384903431 -4.372870676672136e-10 -4.746794729726389e-05" quat="0.42671170830726624 0.5638414025306702 0.5638414025306702 0.42671170830726624" diaginertia="1.8079294932249468e-06 1.5876109955570428e-06 3.367600811543525e-07"/>
+			<geom name="task_board_cable_plug_visual" type="mesh" pos="-0.008676216006278992 -3.99139027384976e-10 -0.0008309241384267807" quat="0.4194165766239166 0.5692887902259827 0.5692887902259827 0.4194165766239166" mesh="TaskBoardCablePlug" rgba="1.0 0.0 0.0 1.0" class="task_board_cable_plug_visual"/>
+			<geom name="task_board_cable_plug_collision_001" type="mesh" pos="-0.0078870989382267 -2.2360559237544209e-10 0.00400000112131238" quat="0.0 0.7071067690849304 0.0 0.7071067690849304" mesh="UCX_TaskBoardCablePlug_001" class="task_board_cable_plug_collision"/>
+			<geom name="task_board_cable_plug_collision_002" type="mesh" pos="-0.032687146216630936 -1.8100263510234527e-09 0.004000004380941391" quat="0.5 0.5 0.5 0.5" mesh="UCX_TaskBoardCablePlug_002" class="task_board_cable_plug_collision"/>
+			<geom name="task_board_cable_plug_collision_003" type="cylinder" pos="0.0 0.0 -0.008999999612569809" quat="1.0 0.0 0.0 0.0" size="0.004000000189989805 0.008999999612569809 0.0" class="task_board_cable_plug_collision"/>
+		</body>
+	</worldbody>
+	<equality/>
+</mujoco>
