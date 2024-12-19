@@ -1,0 +1,133 @@
+resources: 
+  - ../../../../robots
+  - ../../../../worlds
+  - ../../../../objects
+  - ../../../../demos
+
+worlds:
+  world:
+    rtf_desired: 1
+
+simulations:
+  panda_with_task_board_simulation:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      panda:
+        path: franka_emika_panda/panda.xml
+    objects:
+      task_board_main:
+        path: task_board/task_board_main.xml
+        apply:
+          body:
+            task_board_main:
+              pos: [0.6, 0, 0.08]
+              quat: [0.707, 0, 0, 0.707]
+      task_board_probe:
+        path: task_board/task_board_probe.xml
+        apply:
+          body:
+            task_board_probe:
+              pos: [0.612, -0.102, 0.099]
+              quat: [0.707, 0, 0, 0.707]
+      task_board_cable_plug:
+        path: task_board/task_board_cable_plug.xml
+        apply:
+          body:
+            task_board_cable_plug:
+              pos: [0.581, 0.0385, 0.099]
+              quat: [1.0, 0.0, 0.0, 0.0]
+    config:
+      step_size: 0.001
+      real_time_factor: 1
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  panda_with_task_board_simulation:
+    port: 7500
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+    receive:
+      actuator1: ["cmd_joint_rvalue"]
+      actuator2: ["cmd_joint_rvalue"]
+      actuator3: ["cmd_joint_rvalue"]
+      actuator4: ["cmd_joint_rvalue"]
+      actuator5: ["cmd_joint_rvalue"]
+      actuator6: ["cmd_joint_rvalue"]
+      actuator7: ["cmd_joint_rvalue"]
+      actuator8: ["cmd_joint_tvalue"]
+
+  ros2:
+    ros_nodes:
+      services:
+        socket:
+          - port: 7400
+    
+      publishers:
+        tf:
+          - meta_data:
+              world_name: world
+              length_unit: m
+              angle_unit: rad
+              mass_unit: kg
+              time_unit: s
+              handedness: rhs
+            port: 7301
+            topic: /tf
+            rate: 60
+            root_frame_id: world
+
+      subscribers:
+        data:
+          - meta_data:
+              world_name: world
+              length_unit: m
+              angle_unit: rad
+              mass_unit: kg
+              time_unit: s
+              handedness: rhs
+            port: 7700
+            msg_type: std_msgs/Float64
+            send:
+              actuator8: ["cmd_joint_tvalue"]
+            topic: /gripper_command
+
+    ros2_control:
+      - meta_data:
+          world_name: world
+          length_unit: m
+          angle_unit: rad
+          mass_unit: kg
+          time_unit: s
+          handedness: rhs
+        port: 7601
+        controller_manager:
+          robot: panda
+          robot_description: /robot_description
+          urdf: franka_emika_panda/urdf/panda.urdf
+          config: franka_emika_panda/config/ros2_control.yaml
+          actuators:
+            actuator1: joint1
+            actuator2: joint2
+            actuator3: joint3
+            actuator4: joint4
+            actuator5: joint5
+            actuator6: joint6
+            actuator7: joint7
+          controllers:
+            spawner:
+              - joint_state_controller
+                joint_trajectory_controller
+
+    # ros2_run:
+    #   rviz2:
+    #     config: panda_with_task_board/config/rviz2.rviz
+    #     robot_descriptions:
+    #       panda_description: franka_emika_panda/urdf/panda.urdf
+    #       task_board_description: task_board/task_board.urdf
