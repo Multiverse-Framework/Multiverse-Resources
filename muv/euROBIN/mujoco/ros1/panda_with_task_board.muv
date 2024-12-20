@@ -27,12 +27,12 @@ simulations:
           body:
             task_board_main:
               pos: [0.6, 0, 0.08]
-      # task_board_probe:
-      #   path: task_board/task_board_probe.xml
-      #   apply:
-      #     body:
-      #       task_board_probe:
-      #         pos: [0.6385, 0.019, 0.099]
+      task_board_probe:
+        path: task_board/task_board_probe.xml
+        apply:
+          body:
+            task_board_probe:
+              pos: [0.6385, 0.019, 0.099]
       task_board_cable_plug:
         path: task_board/task_board_cable_plug.xml
         apply:
@@ -43,6 +43,9 @@ simulations:
     config:
       step_size: 0.001
       real_time_factor: 1
+      integrator: IMPLICITFAST
+      impratio: 10
+      multiccd: true
 
 multiverse_server:
   host: "tcp://127.0.0.1"
@@ -130,8 +133,6 @@ multiverse_clients:
             actuator5: joint5
             actuator6: joint6
             actuator7: joint7
-            finger_actuator1: finger_joint1
-            finger_actuator2: finger_joint2
           controllers:
             spawn:
               - joint_state_controller
