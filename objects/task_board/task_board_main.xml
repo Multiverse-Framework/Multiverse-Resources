@@ -1,9 +1,6 @@
 <?xml version="1.0" ?>
 <mujoco model="task_board_main">
 	<compiler meshdir="task_board/meshes" texturedir="task_board/textures" angle="radian" autolimits="true" balanceinertia="true" />
-	<option timestep="0.001" integrator="RK4" gravity="0 0 -9.81" >
-        <flag energy="enable" contact="enable"/>
-    </option>
 	<default>
 		<default class="task_board_visual">
 			<geom contype="0" conaffinity="0"/>
@@ -288,8 +285,8 @@
 				<body name="task_board_lid_knob" pos="-0.0 0.06539800018072128 0.012198000214993954" quat="1.0 0.0 0.0 0.0">
 					<inertial mass="0.0028435129206627607" pos="-3.4078295811923454e-06 -6.770335403416539e-06 0.0006270412122830749" quat="0.9999810457229614 0.006148172076791525 -0.00022422129404731095 -1.378577167088224e-06" diaginertia="8.164399645238518e-08 8.163605258459938e-08 4.3162213358982626e-08"/>
 					<geom name="task_board_lid_knob_visual" type="mesh" pos="-6.169943389977561e-06 -1.225782762048766e-05 0.0009884086903184652" quat="0.9998778700828552 0.015623330138623714 -0.0004608464951161295 -7.200836535048438e-06" mesh="TaskBoardLidKnob" rgba="0.5 0.5 0.5 1.0" class="task_board_visual"/>
-					<geom name="task_board_lid_knob_collision_001" type="cylinder" pos="0.0 0.0 -0.0025500000920146704" quat="1.0 0.0 0.0 0.0" size="0.004000000189989805 0.007934000343084335 0.0" class="task_board_collision"/>
-					<geom name="task_board_lid_knob_collision_002" type="cylinder" pos="0.0 0.0 0.004763999953866005" quat="1.0 0.0 0.0 0.0" size="0.007486000191420317 0.0013500000350177288 0.0" class="task_board_collision"/>
+					<geom name="task_board_lid_knob_collision_001" type="cylinder" pos="0.0 0.0 -0.0025500000920146704" quat="1.0 0.0 0.0 0.0" size="0.004000000189989805 0.007934000343084335 0.0" class="task_board_collision" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+					<geom name="task_board_lid_knob_collision_002" type="cylinder" pos="0.0 0.0 0.004763999953866005" quat="1.0 0.0 0.0 0.0" size="0.007486000191420317 0.0013500000350177288 0.0" class="task_board_collision" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1"/>
 				</body>
 			</body>
 			<body name="task_board_button_red" pos="0.0962430015206337 0.030906999483704567 0.0020230000372976065" quat="1.0 0.0 0.0 0.0" gravcomp="1">

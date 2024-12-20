@@ -16,7 +16,10 @@ simulations:
       path: floor/floor.xml
     robots:
       panda:
-        path: franka_emika_panda/panda.xml
+        path: franka_emika_panda/mjcf/panda_with_vel_control.xml
+        apply:
+          body:
+            gravcomp: 1
     objects:
       task_board_main:
         path: task_board/task_board_main.xml
@@ -24,21 +27,19 @@ simulations:
           body:
             task_board_main:
               pos: [0.6, 0, 0.08]
-              quat: [0.707, 0, 0, 0.707]
-      task_board_probe:
-        path: task_board/task_board_probe.xml
-        apply:
-          body:
-            task_board_probe:
-              pos: [0.612, -0.102, 0.099]
-              quat: [0.707, 0, 0, 0.707]
+      # task_board_probe:
+      #   path: task_board/task_board_probe.xml
+      #   apply:
+      #     body:
+      #       task_board_probe:
+      #         pos: [0.6385, 0.019, 0.099]
       task_board_cable_plug:
         path: task_board/task_board_cable_plug.xml
         apply:
           body:
             task_board_cable_plug:
-              pos: [0.581, 0.0385, 0.099]
-              quat: [1.0, 0.0, 0.0, 0.0]
+              pos: [0.6385, 0.019, 0.099]
+              quat: [-0.707, 0, 0, 0.707]
     config:
       step_size: 0.001
       real_time_factor: 1
@@ -54,13 +55,22 @@ multiverse_clients:
       body: ["position", "quaternion"]
       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
     receive:
-      actuator1: ["cmd_joint_rvalue"]
-      actuator2: ["cmd_joint_rvalue"]
-      actuator3: ["cmd_joint_rvalue"]
-      actuator4: ["cmd_joint_rvalue"]
-      actuator5: ["cmd_joint_rvalue"]
-      actuator6: ["cmd_joint_rvalue"]
-      actuator7: ["cmd_joint_rvalue"]
+      actuator1: ["cmd_joint_angular_velocity"]
+      actuator2: ["cmd_joint_angular_velocity"]
+      actuator3: ["cmd_joint_angular_velocity"]
+      actuator4: ["cmd_joint_angular_velocity"]
+      actuator5: ["cmd_joint_angular_velocity"]
+      actuator6: ["cmd_joint_angular_velocity"]
+      actuator7: ["cmd_joint_angular_velocity"]
+
+      # actuator1: ["cmd_joint_rvalue"]
+      # actuator2: ["cmd_joint_rvalue"]
+      # actuator3: ["cmd_joint_rvalue"]
+      # actuator4: ["cmd_joint_rvalue"]
+      # actuator5: ["cmd_joint_rvalue"]
+      # actuator6: ["cmd_joint_rvalue"]
+      # actuator7: ["cmd_joint_rvalue"]
+
       actuator8: ["cmd_joint_tvalue"]
 
   ros:
@@ -109,7 +119,7 @@ multiverse_clients:
         port: 7601
         controller_manager:
           robot: panda
-          robot_description: /panda_description
+          robot_description: /robot_description
           urdf: franka_emika_panda/urdf/panda.urdf
           config: franka_emika_panda/config/ros_control.yaml
           actuators:
@@ -120,10 +130,12 @@ multiverse_clients:
             actuator5: joint5
             actuator6: joint6
             actuator7: joint7
+            finger_actuator1: finger_joint1
+            finger_actuator2: finger_joint2
           controllers:
             spawn:
               - joint_state_controller
-                joint_trajectory_controller
+                joint_group_velocity_controller
 
     ros_run:
       rviz:

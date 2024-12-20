@@ -1,9 +1,6 @@
 <?xml version="1.0" ?>
 <mujoco model="task_board_probe">
 	<compiler meshdir="task_board/meshes" texturedir="task_board/textures" angle="radian" autolimits="true" balanceinertia="true" />
-	<option timestep="0.001" integrator="RK4" gravity="0 0 -9.81" >
-        <flag energy="enable" contact="enable"/>
-    </option>
 	<asset>
         <mesh name="TaskBoardProbe" file="stl/TaskBoardProbe.stl" />
         <mesh name="UCX_TaskBoardProbe_001" file="stl/UCX_TaskBoardProbe_001.stl" />
