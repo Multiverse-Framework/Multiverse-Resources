@@ -16,7 +16,10 @@ simulations:
       path: floor/floor.xml
     robots:
       panda:
-        path: franka_emika_panda/panda.xml
+        path: franka_emika_panda/mjcf/panda_with_vel_control.xml
+        apply:
+          body:
+            gravcomp: 1
     objects:
       task_board_main:
         path: task_board/task_board_main.xml
@@ -24,24 +27,25 @@ simulations:
           body:
             task_board_main:
               pos: [0.6, 0, 0.08]
-              quat: [0.707, 0, 0, 0.707]
-      task_board_probe:
-        path: task_board/task_board_probe.xml
-        apply:
-          body:
-            task_board_probe:
-              pos: [0.612, -0.102, 0.099]
-              quat: [0.707, 0, 0, 0.707]
+      # task_board_probe:
+      #   path: task_board/task_board_probe.xml
+      #   apply:
+      #     body:
+      #       task_board_probe:
+      #         pos: [0.6385, 0.019, 0.099]
       task_board_cable_plug:
         path: task_board/task_board_cable_plug.xml
         apply:
           body:
             task_board_cable_plug:
-              pos: [0.581, 0.0385, 0.099]
-              quat: [1.0, 0.0, 0.0, 0.0]
+              pos: [0.6385, 0.019, 0.099]
+              quat: [-0.707, 0, 0, 0.707]
     config:
       step_size: 0.001
       real_time_factor: 1
+      integrator: IMPLICITFAST
+      impratio: 10
+      multiccd: true
 
 multiverse_server:
   host: "tcp://127.0.0.1"
@@ -54,13 +58,22 @@ multiverse_clients:
       body: ["position", "quaternion"]
       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
     receive:
-      actuator1: ["cmd_joint_rvalue"]
-      actuator2: ["cmd_joint_rvalue"]
-      actuator3: ["cmd_joint_rvalue"]
-      actuator4: ["cmd_joint_rvalue"]
-      actuator5: ["cmd_joint_rvalue"]
-      actuator6: ["cmd_joint_rvalue"]
-      actuator7: ["cmd_joint_rvalue"]
+      actuator1: ["cmd_joint_angular_velocity"]
+      actuator2: ["cmd_joint_angular_velocity"]
+      actuator3: ["cmd_joint_angular_velocity"]
+      actuator4: ["cmd_joint_angular_velocity"]
+      actuator5: ["cmd_joint_angular_velocity"]
+      actuator6: ["cmd_joint_angular_velocity"]
+      actuator7: ["cmd_joint_angular_velocity"]
+
+      # actuator1: ["cmd_joint_rvalue"]
+      # actuator2: ["cmd_joint_rvalue"]
+      # actuator3: ["cmd_joint_rvalue"]
+      # actuator4: ["cmd_joint_rvalue"]
+      # actuator5: ["cmd_joint_rvalue"]
+      # actuator6: ["cmd_joint_rvalue"]
+      # actuator7: ["cmd_joint_rvalue"]
+
       actuator8: ["cmd_joint_tvalue"]
 
   ros2:
@@ -81,7 +94,7 @@ multiverse_clients:
             port: 7301
             topic: /tf
             rate: 60
-            root_frame_id: world
+            root_frame_id: map
 
       subscribers:
         data:
@@ -122,12 +135,12 @@ multiverse_clients:
             actuator7: joint7
           controllers:
             spawner:
-              - joint_state_controller
+              - joint_state_broadcaster
                 joint_trajectory_controller
 
-    # ros2_run:
-    #   rviz2:
-    #     config: panda_with_task_board/config/rviz2.rviz
-    #     robot_descriptions:
-    #       panda_description: franka_emika_panda/urdf/panda.urdf
-    #       task_board_description: task_board/task_board.urdf
+    ros2_run:
+      rviz2:
+        config: panda_with_task_board/config/rviz2.rviz
+        robot_descriptions:
+          panda_description: franka_emika_panda/urdf/panda.urdf
+          task_board_description: task_board/task_board.urdf
