@@ -32,7 +32,7 @@ simulations:
         apply:
           body:
             task_board_probe:
-              pos: [0.6385, 0.019, 0.099]
+              pos: [0.498, -0.01, 0.099]
       task_board_cable_plug:
         path: task_board/task_board_cable_plug.xml
         apply:
@@ -41,11 +41,13 @@ simulations:
               pos: [0.6385, 0.019, 0.099]
               quat: [-0.707, 0, 0, 0.707]
     config:
-      step_size: 0.001
+      step_size: 0.002
       real_time_factor: 1
       integrator: IMPLICITFAST
+      cone: ELLIPTIC
       impratio: 10
       multiccd: true
+      nativeccd: true
 
 multiverse_server:
   host: "tcp://127.0.0.1"
