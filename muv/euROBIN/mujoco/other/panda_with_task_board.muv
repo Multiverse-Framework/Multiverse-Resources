@@ -20,6 +20,15 @@ simulations:
         apply:
           body:
             gravcomp: 1
+          joint:
+            joint1: &damping
+              damping: 10.0
+            joint2: *damping
+            joint3: *damping
+            joint4: *damping
+            joint5: *damping
+            joint6: *damping
+            joint7: *damping
           geom:
             "68": &friction
               friction: [10, 0.005, 0.0001]
