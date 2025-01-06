@@ -4,11 +4,7 @@ resources:
   - ../objects
 
 worlds:
-  bowling_simulation:
-    real_time_factor: 1
-  table_simulation:
-    real_time_factor: 1
-  table_with_bowling_simulation:
+  world:
     real_time_factor: 1
 
 simulations:

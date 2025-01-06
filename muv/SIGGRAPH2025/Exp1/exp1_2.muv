@@ -1,0 +1,56 @@
+resources: 
+  - .
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  table_and_ball_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: world
+      path: table_and_ball.xml
+
+  ball_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: world
+      path: ball.xml
+
+  table_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: world
+      path: table.xml
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  table_and_ball_simulation:
+    port: 7501
+    send:
+      ball: ["force", "torque"]
+      table: ["force", "torque"]
+    receive:
+      ball: ["relative_velocity", "position", "quaternion"]
+      table: ["relative_velocity", "position", "quaternion"]
+
+  ball_simulation:
+    port: 7502
+    send:
+      ball: ["relative_velocity", "position", "quaternion"]
+    receive:
+      ball: ["force", "torque"]
+
+  table_simulation:
+    port: 7503
+    send:
+      table: ["relative_velocity", "position", "quaternion"]
+    receive:
+      table: ["force", "torque"]

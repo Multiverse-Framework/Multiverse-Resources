@@ -1,0 +1,14 @@
+resources: 
+  - .
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  table_and_ball_simulation:
+    simulator: pymujoco
+    headless: False
+    world:
+      name: world
+      path: table_and_ball.xml
