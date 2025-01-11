@@ -12,3 +12,9 @@ simulations:
     world:
       name: world
       path: table_and_ball.xml
+    viewer:
+      read:
+        world:
+          energy: [0.0, 0.0]
+      logging_interval: 0.01
+      save_log_path: data.csv
