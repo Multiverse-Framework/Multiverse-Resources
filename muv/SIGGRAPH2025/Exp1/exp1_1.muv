@@ -3,7 +3,9 @@ resources:
 
 worlds:
   world:
-    real_time_factor: 1
+    real_time_factor: 10
+    max_number_of_steps: 50000
+    step_size: 0.0001
 
 simulations:
   table_and_ball_simulation:
@@ -16,5 +18,5 @@ simulations:
       read:
         world:
           energy: [0.0, 0.0]
-      logging_interval: 0.01
-      save_log_path: data.csv
+      logging_interval: 0.001
+      save_log_path: exp1_1_table_and_ball.csv

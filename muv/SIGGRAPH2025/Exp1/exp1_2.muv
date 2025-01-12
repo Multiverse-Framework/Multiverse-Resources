@@ -3,7 +3,9 @@ resources:
 
 worlds:
   world:
-    real_time_factor: 1
+    real_time_factor: 10
+    max_number_of_steps: 50000
+    step_size: 0.0001
 
 simulations:
   table_and_ball_simulation:
@@ -12,6 +14,12 @@ simulations:
     world:
       name: world
       path: table_and_ball.xml
+    viewer:
+      read:
+        world:
+          energy: [0.0, 0.0]
+      logging_interval: 0.001
+      save_log_path: exp1_2_table_and_ball.csv
 
   ball_simulation:
     simulator: pymujoco
@@ -19,6 +27,12 @@ simulations:
     world:
       name: world
       path: ball.xml
+    viewer:
+      read:
+        world:
+          energy: [0.0, 0.0]
+      logging_interval: 0.001
+      save_log_path: exp1_2_ball.csv
 
   table_simulation:
     simulator: pymujoco
@@ -26,6 +40,12 @@ simulations:
     world:
       name: world
       path: table.xml
+    viewer:
+      read:
+        world:
+          energy: [0.0, 0.0]
+      logging_interval: 0.001
+      save_log_path: exp1_2_table.csv
 
 multiverse_server:
   host: "tcp://127.0.0.1"
