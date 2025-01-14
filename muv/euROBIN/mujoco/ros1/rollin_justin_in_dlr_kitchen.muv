@@ -6,7 +6,7 @@ resources:
 
 worlds:
   world:
-    rtf_desired: 1
+    real_time_factor: -1
 
 simulations:
   rollin_justin_in_dlr_kitchen_simulation:
@@ -37,6 +37,7 @@ multiverse_clients:
       body: ["position", "quaternion"]
       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
     receive:
+      rollin_justin: ["odometric_velocity"]
       head1_actuator: ["cmd_joint_rvalue"]
       head2_actuator: ["cmd_joint_rvalue"]
       torso1_actuator: ["cmd_joint_rvalue"]
@@ -57,6 +58,7 @@ multiverse_clients:
       right_arm5_actuator: ["cmd_joint_rvalue"]
       right_arm6_actuator: ["cmd_joint_rvalue"]
       right_arm7_actuator: ["cmd_joint_rvalue"]
+
   ros:
     ros_nodes:
       services:
