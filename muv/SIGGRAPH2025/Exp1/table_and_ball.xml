@@ -5,6 +5,10 @@
     <compiler angle="radian" />
 
     <asset>
+        <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2=".6 .8 1" width="256" height="256"/>
+    </asset>
+
+    <asset>
         <mesh name="bowl_bottom" file="huge_bowl/stl/bowl_bottom.stl" scale="10 10 10" />
         <mesh name="bowl_side_1" file="huge_bowl/stl/bowl_side_1.stl" scale="10 10 10" />
         <mesh name="bowl_side_2" file="huge_bowl/stl/bowl_side_2.stl" scale="10 10 10" />

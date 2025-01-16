@@ -4,6 +4,10 @@
     </option>
     <compiler angle="radian" />
 
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2=".6 .8 1" width="256" height="256"/>
+    </asset>
+
     <worldbody>
         <body name="ball" pos="0.5 0 16">
             <freejoint />

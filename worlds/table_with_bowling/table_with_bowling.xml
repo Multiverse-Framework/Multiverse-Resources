@@ -6,6 +6,10 @@
     <size memory="1G" />
 
     <asset>
+        <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2=".6 .8 1" width="256" height="256"/>
+    </asset>
+
+    <asset>
         <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3"
             rgb2=".2 .3 .4" />
         <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2" />
