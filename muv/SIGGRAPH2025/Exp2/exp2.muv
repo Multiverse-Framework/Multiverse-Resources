@@ -1,0 +1,84 @@
+resources: 
+  - .
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  panda_with_task_board_simulation:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      panda:
+        path: franka_emika_panda/panda.xml
+        apply:
+          body:
+            link0:
+              pos: [0, 0, 1.05]
+            gravcomp: 1
+          geom:
+            "68": &friction
+              friction: [10, 0.005, 0.0001]
+              solimp: [0.95, 0.99, 0.001, 0.5, 2]
+              solref: [0.004, 1]
+            "69": *friction
+            "70": *friction
+            "71": *friction
+            "72": *friction
+            "76": *friction
+            "77": *friction
+            "78": *friction
+            "79": *friction
+            "80": *friction
+    objects:
+      table:
+        path: table/table.xml
+      task_board_main:
+        path: task_board/task_board_main.xml
+        apply:
+          body:
+            task_board_main:
+              pos: [0.39, 0.07410, 1.15]
+      task_board_probe:
+        path: task_board/task_board_probe.xml
+        apply:
+          body:
+            task_board_probe:
+              pos: [0.288, 0.06410, 1.160]
+      task_board_cable_plug:
+        path: task_board/task_board_cable_plug.xml
+        apply:
+          body:
+            task_board_cable_plug:
+              pos: [0.4285, 0.09310, 1.160]
+              quat: [-0.707, 0, 0, 0.707]
+    config:
+      step_size: 0.002
+      real_time_factor: 1
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      impratio: 10
+      multiccd: true
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  panda_with_task_board_simulation:
+    port: 7501
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+    receive:
+      actuator1: ["cmd_joint_rvalue"]
+      actuator2: ["cmd_joint_rvalue"]
+      actuator3: ["cmd_joint_rvalue"]
+      actuator4: ["cmd_joint_rvalue"]
+      actuator5: ["cmd_joint_rvalue"]
+      actuator6: ["cmd_joint_rvalue"]
+      actuator7: ["cmd_joint_rvalue"]
+      actuator8: ["cmd_joint_tvalue"]

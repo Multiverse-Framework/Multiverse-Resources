@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<mujoco model="task_board">
+    <option timestep="0.001" integrator="implicitfast" gravity="0 0 -9.81" >
+        <flag energy="enable" contact="enable"/>
+    </option>
+	<include file="task_board_main.xml"/>
+    <include file="task_board_probe.xml"/>
+    <include file="task_board_cable_plug.xml"/>
+</mujoco>
