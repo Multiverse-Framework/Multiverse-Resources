@@ -281,12 +281,12 @@
 				<inertial mass="0.1086004376411438" pos="2.5788585844566114e-06 0.037636153399944305 0.007401283830404282" quat="0.4782772362232208 0.5208163857460022 -0.5208590030670166 0.47823333740234375" diaginertia="0.00012705853441730142 6.734210182912648e-05 6.124936044216156e-05"/>
 				<geom name="task_board_lid_visual" type="mesh" pos="4.396793428895762e-06 0.03290199860930443 0.006514579523354769" quat="0.4733390510082245 0.5253060460090637 -0.5255159735679626 0.4731137454509735" mesh="TaskBoardLid" rgba="0.973 0.529 0.04 1.0" class="task_board_visual"/>
 				<geom name="task_board_lid_collision_001" type="mesh" pos="-4.421470691795548e-07 0.045503273606300354 0.008874790742993355" quat="-0.010651832446455956 0.7070265412330627 -0.010651832446455956 0.7070265412330627" mesh="UCX_TaskBoardLid_001" class="task_board_collision"/>
-				<joint name="task_board_lid_joint" type="hinge" pos="0.0 0.0 0.0" range="0.0 2.072930097579956" axis="1.0 0.0 0.0" damping="0.005"/>
-				<body name="task_board_lid_knob" pos="-0.0 0.06539800018072128 0.012198000214993954" quat="1.0 0.0 0.0 0.0">
+				<joint name="task_board_lid_joint" type="hinge" pos="0.0 0.0 0.0" range="-0.05 2.072930097579956" axis="1.0 0.0 0.0" damping="0.005"/>
+				<body name="task_board_lid_knob" pos="-0.0 0.06539800018072128 0.027198000214993954" quat="1.0 0.0 0.0 0.0">
 					<inertial mass="0.0028435129206627607" pos="-3.4078295811923454e-06 -6.770335403416539e-06 0.0006270412122830749" quat="0.9999810457229614 0.006148172076791525 -0.00022422129404731095 -1.378577167088224e-06" diaginertia="8.164399645238518e-08 8.163605258459938e-08 4.3162213358982626e-08"/>
 					<geom name="task_board_lid_knob_visual" type="mesh" pos="-6.169943389977561e-06 -1.225782762048766e-05 0.0009884086903184652" quat="0.9998778700828552 0.015623330138623714 -0.0004608464951161295 -7.200836535048438e-06" mesh="TaskBoardLidKnob" rgba="0.5 0.5 0.5 1.0" class="task_board_visual"/>
-					<geom name="task_board_lid_knob_collision_001" type="cylinder" pos="0.0 0.0 -0.0025500000920146704" quat="1.0 0.0 0.0 0.0" size="0.004000000189989805 0.007934000343084335 0.0" class="task_board_collision" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1"/>
-					<geom name="task_board_lid_knob_collision_002" type="cylinder" pos="0.0 0.0 0.004763999953866005" quat="1.0 0.0 0.0 0.0" size="0.007486000191420317 0.0013500000350177288 0.0" class="task_board_collision" friction="0.7" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+					<geom name="task_board_lid_knob_collision_001" type="cylinder" pos="0.0 0.0 -0.0025500000920146704" quat="1.0 0.0 0.0 0.0" size="0.004000000189989805 0.007934000343084335 0.0" class="task_board_collision" friction="10.0" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+					<geom name="task_board_lid_knob_collision_002" type="cylinder" pos="0.0 0.0 0.004763999953866005" quat="1.0 0.0 0.0 0.0" size="0.007486000191420317 0.0013500000350177288 0.0" class="task_board_collision" friction="10.0" solimp="0.95 0.99 0.001" solref="0.004 1"/>
 				</body>
 			</body>
 			<body name="task_board_button_red" pos="0.0962430015206337 0.030906999483704567 0.0020230000372976065" quat="1.0 0.0 0.0 0.0" gravcomp="1">
@@ -299,6 +299,7 @@
 	</worldbody>
 	<equality/>
 	<contact>
+	<exclude name="task_board_body_task_board_lid" body1="task_board_body" body2="task_board_lid" />
 		<exclude name="task_board_body_task_board_button_red" body1="task_board_body" body2="task_board_button_red" />
     	<exclude name="task_board_body_task_board_button_blue" body1="task_board_body" body2="task_board_button_blue" />
 	</contact>

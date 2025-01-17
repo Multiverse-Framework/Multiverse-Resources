@@ -9,39 +9,39 @@ worlds:
     rtf_desired: 1
 
 simulations:
-  panda_simulation:
-    simulator: pymujoco
-    world:
-      name: world
-      path: floor/floor.xml
-    robots:
-      panda:
-        path: franka_emika_panda/mjcf/panda_with_ref.xml
-        apply:
-          body:
-            link0:
-              pos: [0, 0, 1.05]
-            gravcomp: 1
-          joint:
-            joint1: &damping
-              damping: 10.0
-            joint2: *damping
-            joint3: *damping
-            joint4: *damping
-            joint5: *damping
-            joint6: *damping
-            joint7: *damping
-        prefix:
-          joint: panda_
-    references:
-      hand_controller:
-        body1: hand_ref
-        body2: hand
-        torquescale: 1
-    config:
-      step_size: 0.002
-      real_time_factor: 1
-      integrator: IMPLICITFAST
+  # panda_simulation:
+  #   simulator: pymujoco
+  #   world:
+  #     name: world
+  #     path: floor/floor.xml
+  #   robots:
+  #     panda:
+  #       path: franka_emika_panda/mjcf/panda_with_ref.xml
+  #       apply:
+  #         body:
+  #           link0:
+  #             pos: [0, 0, 1.05]
+  #           gravcomp: 1
+  #         joint:
+  #           joint1: &damping
+  #             damping: 10.0
+  #           joint2: *damping
+  #           joint3: *damping
+  #           joint4: *damping
+  #           joint5: *damping
+  #           joint6: *damping
+  #           joint7: *damping
+  #       prefix:
+  #         joint: panda_
+  #   references:
+  #     hand_controller:
+  #       body1: hand_ref
+  #       body2: hand
+  #       torquescale: 1.0
+  #   config:
+  #     step_size: 0.002
+  #     real_time_factor: 1
+  #     integrator: IMPLICITFAST
 
   panda_with_task_board_simulation:
     simulator: pymujoco
@@ -78,22 +78,24 @@ simulations:
         apply:
           body:
             task_board_main:
-              pos: [0.6, 0, 1.13]
+              # pos: [0.6, 0, 1.13]
+              # pos: [0.387384, 0.07410, 1.1554]
+              pos: [0.39, 0.07410, 1.15]
       task_board_probe:
         path: task_board/task_board_probe.xml
         apply:
           body:
             task_board_probe:
-              pos: [0.498, -0.01, 1.149]
+              pos: [0.288, 0.06410, 1.160]
       task_board_cable_plug:
         path: task_board/task_board_cable_plug.xml
         apply:
           body:
             task_board_cable_plug:
-              pos: [0.6385, 0.019, 1.149]
+              pos: [0.4285, 0.09310, 1.160]
               quat: [-0.707, 0, 0, 0.707]
     config:
-      step_size: 0.002
+      step_size: 0.001
       real_time_factor: 1
       integrator: IMPLICITFAST
       cone: ELLIPTIC
@@ -105,12 +107,12 @@ multiverse_server:
   port: 7000
 
 multiverse_clients:
-  panda_simulation:
-    port: 7500
-    send:
-      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity"]
-    receive:
-      hand_ref: ["position", "quaternion"]
+#   panda_simulation:
+#     port: 7500
+#     send:
+#       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity"]
+    # receive:
+    #   hand_ref: ["position", "quaternion"]
 
   panda_with_task_board_simulation:
     port: 7501
