@@ -6,7 +6,7 @@ resources:
 
 worlds:
   world:
-    real_time_factor: -1
+    real_time_factor: 1
 
 simulations:
   iCub_with_montessori_box:
@@ -16,7 +16,7 @@ simulations:
       path: floor/floor.xml
     robots:
       iCub:
-        path: iCub/iCub.xml
+        path: iCub/iCub_only_primitives.xml
         apply:
           body:
             iCub:
@@ -24,6 +24,11 @@ simulations:
               quat: [1.0, 0.0, 0.0, 0.0]
     config:
       step_size: 0.002
+      real_time_factor: 1
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      impratio: 10
+      multiccd: true
 
 multiverse_server:
   host: "tcp://127.0.0.1"
