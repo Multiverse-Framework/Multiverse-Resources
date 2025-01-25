@@ -1146,7 +1146,7 @@
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="r_hand"/>
     <child link="r_hand_middle_0"/>
-    <limit effort="50000.0" lower="0.0" upper="0.0" velocity="50000.0"/>
+    <limit effort="50000.0" lower="0.0" upper="0.3490658503988659" velocity="50000.0"/>
   </joint>
   <link name="r_hand_middle_0">
     <inertial>

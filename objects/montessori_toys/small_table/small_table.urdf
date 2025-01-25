@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<robot name="small_table" version="1.0">
+  <link name="small_table">
+    <inertial>
+      <origin xyz="0.0 0.0 0.23000000417232513" rpy="1.5707963705062866 -1.5707963705062866 0.0"/>
+      <mass value="10.0"/>
+      <inertia ixx="1.7316666841506958" ixy="0.0" ixz="0.0" iyy="1.502666711807251" iyz="0.0" izz="0.42766666412353516"/>
+    </inertial>
+    <visual name="small_table_geom_1">
+      <origin xyz="0.0 0.0 0.30000001192092896" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.5 1.0 0.10000000149011612"/>
+      </geometry>
+    </visual>
+    <visual name="small_table_geom_2">
+      <origin xyz="0.22499999403953552 0.4749999940395355 0.125" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.05000000074505806 0.05000000074505806 0.25"/>
+      </geometry>
+    </visual>
+    <visual name="small_table_geom_3">
+      <origin xyz="0.22499999403953552 -0.4749999940395355 0.125" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.05000000074505806 0.05000000074505806 0.25"/>
+      </geometry>
+    </visual>
+    <visual name="small_table_geom_4">
+      <origin xyz="-0.22499999403953552 0.4749999940395355 0.125" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.05000000074505806 0.05000000074505806 0.25"/>
+      </geometry>
+    </visual>
+    <visual name="small_table_geom_5">
+      <origin xyz="-0.22499999403953552 -0.4749999940395355 0.125" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.05000000074505806 0.05000000074505806 0.25"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>

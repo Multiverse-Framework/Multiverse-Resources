@@ -1,0 +1,214 @@
+resources: 
+  - ../../../robots
+  - ../../../worlds
+  - ../../../objects
+  - ../../../demos
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  iCub_with_montessori_toys:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      iCub:
+        path: iCub/iCub_only_primitives.xml
+        apply:
+          body:
+            iCub:
+              pos: [-0.8, 0.0, 0.55]
+              quat: [1.0, 0.0, 0.0, 0.0]
+    objects:
+      table:
+        path: table/table.xml
+      small_table:
+        path: montessori_toys/small_table/small_table.xml
+        apply:
+          body:
+            small_table:
+              pos: [-0.3, 0.0, 1.0]
+      jeroen_cup_1:
+        path: iai_objects/jeroen_cup/jeroen_cup.xml
+        apply:
+          body:
+            jeroen_cup:
+              pos: [-0.45, -0.2, 1.43]
+        suffix:
+          body: _1
+          geom: _1
+      jeroen_cup_2:
+        path: iai_objects/jeroen_cup/jeroen_cup.xml
+        apply:
+          body:
+            jeroen_cup:
+              pos: [-0.45, 0.2, 1.43]
+        suffix:
+          body: _2
+          geom: _2
+      liquid:
+        path: iai_objects/jeroen_cup/liquid.xml
+        apply:
+          body:
+            liquid:
+              pos: [-0.45, 0.2, 1.43]
+    config:
+      step_size: 0.004
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  iCub_with_montessori_toys:
+    port: 7500
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+    receive:
+      torso_roll_actuator: ["cmd_joint_rvalue"]
+      torso_pitch_actuator: ["cmd_joint_rvalue"]
+      torso_yaw_actuator: ["cmd_joint_rvalue"]
+      neck_roll_actuator: ["cmd_joint_rvalue"]
+      neck_pitch_actuator: ["cmd_joint_rvalue"]
+      neck_yaw_actuator: ["cmd_joint_rvalue"]
+      r_shoulder_pitch_actuator: ["cmd_joint_rvalue"]
+      r_shoulder_roll_actuator: ["cmd_joint_rvalue"]
+      r_shoulder_yaw_actuator: ["cmd_joint_rvalue"]
+      r_elbow_actuator: ["cmd_joint_rvalue"]
+      r_wrist_prosup_actuator: ["cmd_joint_rvalue"]
+      r_wrist_pitch_actuator: ["cmd_joint_rvalue"]
+      r_wrist_yaw_actuator: ["cmd_joint_rvalue"]
+      l_shoulder_pitch_actuator: ["cmd_joint_rvalue"]
+      l_shoulder_roll_actuator: ["cmd_joint_rvalue"]
+      l_shoulder_yaw_actuator: ["cmd_joint_rvalue"]
+      l_elbow_actuator: ["cmd_joint_rvalue"]
+      l_wrist_prosup_actuator: ["cmd_joint_rvalue"]
+      l_wrist_pitch_actuator: ["cmd_joint_rvalue"]
+      l_wrist_yaw_actuator: ["cmd_joint_rvalue"]
+
+      # r_hand_thumb_0_actuator: ["cmd_joint_rvalue"]
+      # r_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
+      # r_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
+      # r_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
+      # r_hand_index_0_actuator: ["cmd_joint_rvalue"]
+      # r_hand_index_1_actuator: ["cmd_joint_rvalue"]
+      # r_hand_index_2_actuator: ["cmd_joint_rvalue"]
+      # r_hand_index_3_actuator: ["cmd_joint_rvalue"]
+      # r_hand_middle_0_actuator: ["cmd_joint_rvalue"]
+      # r_hand_middle_1_actuator: ["cmd_joint_rvalue"]
+      # r_hand_middle_2_actuator: ["cmd_joint_rvalue"]
+      # r_hand_middle_3_actuator: ["cmd_joint_rvalue"]
+      # r_hand_ring_0_actuator: ["cmd_joint_rvalue"]
+      # r_hand_ring_1_actuator: ["cmd_joint_rvalue"]
+      # r_hand_ring_2_actuator: ["cmd_joint_rvalue"]
+      # r_hand_ring_3_actuator: ["cmd_joint_rvalue"]
+      # r_hand_little_0_actuator: ["cmd_joint_rvalue"]
+      # r_hand_little_1_actuator: ["cmd_joint_rvalue"]
+      # r_hand_little_2_actuator: ["cmd_joint_rvalue"]
+      # r_hand_little_3_actuator: ["cmd_joint_rvalue"]
+
+      # l_hand_thumb_0_actuator: ["cmd_joint_rvalue"]
+      # l_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
+      # l_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
+      # l_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
+      # l_hand_index_0_actuator: ["cmd_joint_rvalue"]
+      # l_hand_index_1_actuator: ["cmd_joint_rvalue"]
+      # l_hand_index_2_actuator: ["cmd_joint_rvalue"]
+      # l_hand_index_3_actuator: ["cmd_joint_rvalue"]
+      # l_hand_middle_0_actuator: ["cmd_joint_rvalue"]
+      # l_hand_middle_1_actuator: ["cmd_joint_rvalue"]
+      # l_hand_middle_2_actuator: ["cmd_joint_rvalue"]
+      # l_hand_middle_3_actuator: ["cmd_joint_rvalue"]
+      # l_hand_ring_0_actuator: ["cmd_joint_rvalue"]
+      # l_hand_ring_1_actuator: ["cmd_joint_rvalue"]
+      # l_hand_ring_2_actuator: ["cmd_joint_rvalue"]
+      # l_hand_ring_3_actuator: ["cmd_joint_rvalue"]
+      # l_hand_little_0_actuator: ["cmd_joint_rvalue"]
+      # l_hand_little_1_actuator: ["cmd_joint_rvalue"]
+      # l_hand_little_2_actuator: ["cmd_joint_rvalue"]
+      # l_hand_little_3_actuator: ["cmd_joint_rvalue"]
+
+  ros:
+    ros_nodes:
+      services:
+        socket:
+          - port: 7400
+    
+      publishers:
+        tf:
+          - meta_data:
+              world_name: world
+              length_unit: m
+              angle_unit: rad
+              mass_unit: kg
+              time_unit: s
+              handedness: rhs
+            port: 7301
+            topic: /tf
+            rate: 60
+            root_frame_id: map
+    
+    ros_control:
+      - meta_data:
+          world_name: world
+          length_unit: m
+          angle_unit: rad
+          mass_unit: kg
+          time_unit: s
+          handedness: rhs
+        port: 7601
+        controller_manager:
+          robot: iCub
+          robot_description: /robot_description
+          urdf: iCub/iCub.urdf
+          config: iCub/config/ros_control.yaml
+          actuators:
+            torso_roll_actuator: torso_roll
+            torso_pitch_actuator: torso_pitch
+            torso_yaw_actuator: torso_yaw
+            neck_roll_actuator: neck_roll
+            neck_pitch_actuator: neck_pitch
+            neck_yaw_actuator: neck_yaw
+            r_shoulder_pitch_actuator: r_shoulder_pitch
+            r_shoulder_roll_actuator: r_shoulder_roll
+            r_shoulder_yaw_actuator: r_shoulder_yaw
+            r_elbow_actuator: r_elbow
+            r_wrist_prosup_actuator: r_wrist_prosup
+            r_wrist_pitch_actuator: r_wrist_pitch
+            r_wrist_yaw_actuator: r_wrist_yaw
+            l_shoulder_pitch_actuator: l_shoulder_pitch
+            l_shoulder_roll_actuator: l_shoulder_roll
+            l_shoulder_yaw_actuator: l_shoulder_yaw
+            l_elbow_actuator: l_elbow
+            l_wrist_prosup_actuator: l_wrist_prosup
+            l_wrist_pitch_actuator: l_wrist_pitch
+            l_wrist_yaw_actuator: l_wrist_yaw
+
+          controllers:
+            spawn:
+              - joint_state_controller
+                torso_trajectory_controller
+                neck_trajectory_controller
+                right_arm_trajectory_controller
+                left_arm_trajectory_controller
+
+    ros_run:
+      rviz:
+        config: iCub_with_montessori_toys/config/rviz.rviz
+        robot_descriptions:
+          iCub_description: iCub/iCub.urdf
+          table_description: table/table.urdf
+          small_table_description: small_table/small_table.urdf
+          jeroen_cup_1_description: 
+            path: jeroen_cup/jeroen_cup.urdf
+            suffix: _1
+          jeroen_cup_2_description:
+            path: jeroen_cup/jeroen_cup.urdf
+            suffix: _2

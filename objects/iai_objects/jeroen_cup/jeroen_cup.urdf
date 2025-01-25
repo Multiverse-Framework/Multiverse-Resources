@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<robot name="jeroen_cup" version="1.0">
+  <link name="jeroen_cup">
+    <inertial>
+      <origin xyz="0.0001304635952692479 -4.1261446313001215e-05 -0.030087176710367203" rpy="-5.0693102821242064e-05 0.0003735969658009708 -0.009715541265904903"/>
+      <mass value="0.23061992228031158"/>
+      <inertia ixx="0.00019904441433027387" ixy="0.0" ixz="0.0" iyy="0.00019903291831724346" iyz="0.0" izz="5.704769864678383e-05"/>
+    </inertial>
+    <visual name="JeroenCup">
+      <origin xyz="0.00012827526370529085 -4.347025605966337e-05 -0.03085431456565857" rpy="3.7859115309402114e-06 -4.654587883123895e-06 0.09147144109010696"/>
+      <geometry>
+        <mesh filename="file://./stl/JeroenCup.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="JeroenCup_material">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+</robot>

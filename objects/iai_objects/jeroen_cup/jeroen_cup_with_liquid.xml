@@ -1,0 +1,4 @@
+<mujoco model="jeroen_cup_with_liquid">
+    <include file="jeroen_cup.xml"/>
+    <include file="liquid.xml"/>
+</mujoco>
