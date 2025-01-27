@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<robot name="montessori_object_1" version="1.0">
+  <link name="montessori_object_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.004115183837711811"/>
+      <inertia ixx="2.389725182183611e-07" ixy="0.0" ixz="0.0" iyy="2.389725182183611e-07" iyz="0.0" izz="4.5374528667707636e-07"/>
+    </inertial>
+    <visual name="MontessoriObject1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01484999991953373" length="0.005940000060945749"/>
+      </geometry>
+      <material name="MontessoriObject1_material">
+        <color rgba="1.0 0.83 0.67 1.0"/>
+      </material>
+    </visual>
+  </link>
+</robot>

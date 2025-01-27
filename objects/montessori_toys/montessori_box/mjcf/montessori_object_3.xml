@@ -1,0 +1,15 @@
+<mujoco model="montessori_object_3">
+    <compiler angle="radian" meshdir="." autolimits="true" inertiafromgeom="true"/>
+    <default>
+        <default class="montessori_object_3_collision">
+            <geom rgba="0.87 0.94 0.98 1.0"/>
+        </default>
+    </default>
+    <worldbody>
+        <body name="montessori_object_3" pos="0.032522 -0.089298 0.043053" quat="1 0 0 0"> 
+            <freejoint/>
+            <inertial mass="0.007762392051517963" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="5.071946702628338e-07 5.071946702628338e-07 5.071946702628338e-07"/>
+			<geom name="MontessoriObject3" type="box" size="0.0099 0.0099 0.0099" class="montessori_object_3_collision"/>
+        </body>
+    </worldbody>
+</mujoco>

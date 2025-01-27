@@ -1,0 +1,18 @@
+<mujoco model="montessori_object_2">
+    <compiler angle="radian" meshdir="." autolimits="true" inertiafromgeom="true"/>
+    <asset>
+        <mesh name="MontessoriObject_002" file="stl/MontessoriObject_002.stl" />
+    </asset>
+    <default>
+        <default class="montessori_object_2_collision">
+            <geom rgba="0.99 0.73 0.55 1.0"/>
+        </default>
+    </default>
+    <worldbody>
+        <body name="montessori_object_2" pos="0.028131 0 0.043053" quat="1 0 0 0"> 
+            <freejoint/>
+            <inertial mass="0.01134409662336111" pos="-5.131312597050908e-10 3.8158357029693946e-10 5.1740139950240405e-11" quat="1.0 0.0 0.0 0.0" diaginertia="1.2508141935541062e-06 1.2508141935541062e-06 8.338761290360708e-07"/>
+			<geom name="MontessoriObject2" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="MontessoriObject_002" class="montessori_object_2_collision"/>
+        </body>
+    </worldbody>
+</mujoco>

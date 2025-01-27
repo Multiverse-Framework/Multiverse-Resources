@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<robot name="montessori_object_5" version="1.0">
+  <link name="montessori_object_5">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.008732691407203674"/>
+      <inertia ixx="1.2838365819334285e-06" ixy="0.0" ixz="0.0" iyy="7.132425139388943e-07" iyz="0.0" izz="7.132425139388943e-07"/>
+    </inertial>
+    <visual name="MontessoriObject5">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.00989999994635582 0.02969999983906746 0.02969999983906746"/>
+      </geometry>
+      <material name="MontessoriObject5_material">
+        <color rgba="0.99 0.73 0.55 1.0"/>
+      </material>
+    </visual>
+  </link>
+</robot>

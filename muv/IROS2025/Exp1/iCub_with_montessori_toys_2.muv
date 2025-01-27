@@ -9,7 +9,7 @@ worlds:
     real_time_factor: 1
 
 simulations:
-  iCub_with_montessori_toys:
+  iCub_with_montessori_toys_1:
     simulator: pymujoco
     world:
       name: world
@@ -31,42 +31,61 @@ simulations:
           body:
             small_table:
               pos: [-0.3, 0.0, 1.0]
-      jeroen_cup_1:
-        path: iai_objects/jeroen_cup/jeroen_cup.xml
+      montessori_box:
+        path: montessori_toys/montessori_box/mjcf/montessori_box.xml
         apply:
           body:
-            jeroen_cup:
-              pos: [-0.45, -0.2, 1.43]
-        suffix:
-          body: _1
-          geom: _1
-      jeroen_cup_2:
-        path: iai_objects/jeroen_cup/jeroen_cup.xml
+            montessori_box:
+              pos: [-0.35, 0.0, 1.392]
+      montessori_object_1:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_1.xml
         apply:
           body:
-            jeroen_cup:
-              pos: [-0.45, 0.2, 1.43]
-        suffix:
-          body: _2
-          geom: _2
-      liquid:
-        path: iai_objects/jeroen_cup/liquid.xml
+            montessori_object_1:
+              pos: [-0.317539, 0.089298, 1.5]
+      montessori_object_2:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_2.xml
         apply:
           body:
-            liquid:
-              pos: [-0.45, 0.2, 1.43]
+            montessori_object_2:
+              pos: [-0.321869, 0, 1.5]
+      montessori_object_3:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_3.xml
+        apply:
+          body:
+            montessori_object_3:
+              pos: [-0.317478, -0.089298, 1.5]
+      montessori_object_4:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_4.xml
+        apply:
+          body:
+            montessori_object_4:
+              pos: [-0.382461, 0.089298, 1.5]
+      montessori_object_5:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_5.xml
+        apply:
+          body:
+            montessori_object_5:
+              pos: [-0.382522, 0, 1.5]
+      montessori_object_6:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_6.xml
+        apply:
+          body:
+            montessori_object_6:
+              pos: [-0.382461, -0.089298, 1.5]
     config:
       step_size: 0.004
       integrator: IMPLICITFAST
       cone: ELLIPTIC
       multiccd: true
+      nativeccd: true
 
 multiverse_server:
   host: "tcp://127.0.0.1"
   port: 7000
 
 multiverse_clients:
-  iCub_with_montessori_toys:
+  iCub_with_montessori_toys_1:
     port: 7500
     send:
       body: ["position", "quaternion"]
@@ -206,9 +225,10 @@ multiverse_clients:
           iCub_description: iCub/iCub.urdf
           table_description: table/table.urdf
           small_table_description: small_table/small_table.urdf
-          jeroen_cup_1_description: 
-            path: jeroen_cup/jeroen_cup.urdf
-            suffix: _1
-          jeroen_cup_2_description:
-            path: jeroen_cup/jeroen_cup.urdf
-            suffix: _2
+          montessori_box_description: montessori_box/urdf/montessori_box.urdf
+          montessori_object_1_description: montessori_box/urdf/montessori_object_1.urdf
+          montessori_object_2_description: montessori_box/urdf/montessori_object_2.urdf
+          montessori_object_3_description: montessori_box/urdf/montessori_object_3.urdf
+          montessori_object_4_description: montessori_box/urdf/montessori_object_4.urdf
+          montessori_object_5_description: montessori_box/urdf/montessori_object_5.urdf
+          montessori_object_6_description: montessori_box/urdf/montessori_object_6.urdf
