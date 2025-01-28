@@ -11,30 +11,45 @@
       <geometry>
         <box size="0.5 1.0 0.10000000149011612"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     <visual name="small_table_geom_2">
       <origin xyz="0.22499999403953552 0.4749999940395355 0.125" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.05000000074505806 0.05000000074505806 0.25"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     <visual name="small_table_geom_3">
       <origin xyz="0.22499999403953552 -0.4749999940395355 0.125" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.05000000074505806 0.05000000074505806 0.25"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     <visual name="small_table_geom_4">
       <origin xyz="-0.22499999403953552 0.4749999940395355 0.125" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.05000000074505806 0.05000000074505806 0.25"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     <visual name="small_table_geom_5">
       <origin xyz="-0.22499999403953552 -0.4749999940395355 0.125" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.05000000074505806 0.05000000074505806 0.25"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
   </link>
 </robot>

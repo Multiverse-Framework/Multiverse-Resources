@@ -11,30 +11,45 @@
       <geometry>
         <box size="2.0 1.0 0.10000000149011612"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     <visual name="Geom_1">
       <origin xyz="0.949999988079071 0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.10000000149011612 0.10000000149011612 1.0"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     <visual name="Geom_2">
       <origin xyz="-0.949999988079071 0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.10000000149011612 0.10000000149011612 1.0"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     <visual name="Geom_3">
       <origin xyz="0.949999988079071 -0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.10000000149011612 0.10000000149011612 1.0"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
     <visual name="Geom_4">
       <origin xyz="-0.949999988079071 -0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
       <geometry>
         <box size="0.10000000149011612 0.10000000149011612 1.0"/>
       </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
     </visual>
   </link>
 </robot>

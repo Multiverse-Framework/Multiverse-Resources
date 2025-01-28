@@ -612,7 +612,7 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Alpha: 0.8999999761581421
+    - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
@@ -622,43 +622,13 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        montessori_box:
+        jeroen_cup_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        montessori_drawer_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        montessori_drawer_1_handle:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        montessori_drawer_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        montessori_drawer_2_handle:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        montessori_drawer_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        montessori_drawer_3_handle:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-      Name: MontessoriBox
-      Robot Description: montessori_box_description
+      Name: JeroenCup1
+      Robot Description: jeroen_cup_1_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -673,118 +643,13 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        montessori_object_1:
+        jeroen_cup_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-      Name: MontessoriObject1
-      Robot Description: montessori_object_1_description
-      TF Prefix: ""
-      Update Interval: 0
-      Value: true
-      Visual Enabled: true
-    - Alpha: 1
-      Class: rviz/RobotModel
-      Collision Enabled: false
-      Enabled: true
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        montessori_object_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-      Name: MontessoriObject2
-      Robot Description: montessori_object_2_description
-      TF Prefix: ""
-      Update Interval: 0
-      Value: true
-      Visual Enabled: true
-    - Alpha: 1
-      Class: rviz/RobotModel
-      Collision Enabled: false
-      Enabled: true
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        montessori_object_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-      Name: MontessoriObject3
-      Robot Description: montessori_object_3_description
-      TF Prefix: ""
-      Update Interval: 0
-      Value: true
-      Visual Enabled: true
-    - Alpha: 1
-      Class: rviz/RobotModel
-      Collision Enabled: false
-      Enabled: true
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        montessori_object_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-      Name: MontessoriObject4
-      Robot Description: montessori_object_4_description
-      TF Prefix: ""
-      Update Interval: 0
-      Value: true
-      Visual Enabled: true
-    - Alpha: 1
-      Class: rviz/RobotModel
-      Collision Enabled: false
-      Enabled: true
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        montessori_object_5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-      Name: MontessoriObject5
-      Robot Description: montessori_object_5_description
-      TF Prefix: ""
-      Update Interval: 0
-      Value: true
-      Visual Enabled: true
-    - Alpha: 1
-      Class: rviz/RobotModel
-      Collision Enabled: false
-      Enabled: true
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        montessori_object_6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-      Name: MontessoriObject6
-      Robot Description: montessori_object_6_description
+      Name: JeroenCup2
+      Robot Description: jeroen_cup_2_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -834,7 +699,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.2146271467208862
+      Distance: 1.857588768005371
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -842,17 +707,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.17396186292171478
-        Y: 0.16130657494068146
-        Z: 1.1537038087844849
+        X: -0.33550477027893066
+        Y: 0.2477346807718277
+        Z: 1.098129153251648
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5847972631454468
+      Pitch: 0.5553983449935913
       Target Frame: <Fixed Frame>
-      Yaw: 4.098567962646484
+      Yaw: 4.588574409484863
     Saved: ~
 Window Geometry:
   Displays:

@@ -220,7 +220,7 @@ multiverse_clients:
 
     ros_run:
       rviz:
-        config: iCub_with_montessori_toys_1/config/rviz.rviz
+        config: iCub_with_montessori_toys_2/config/rviz.rviz
         robot_descriptions:
           iCub_description: iCub/iCub.urdf
           table_description: table/table.urdf
