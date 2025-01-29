@@ -1,0 +1,192 @@
+resources: 
+  - ../../../robots
+  - ../../../worlds
+  - ../../../objects
+  - ../../../demos
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  panda_with_montessori_toys_2:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      panda:
+        path: franka_emika_panda/mjcf/panda_with_vel_control.xml
+        apply:
+          body:
+            link0:
+              pos: [0, 0, 1.05]
+            gravcomp: 1
+          geom:
+            "68": &friction
+              friction: [10, 0.005, 0.0001]
+              solimp: [0.95, 0.99, 0.001, 0.5, 2]
+              solref: [0.004, 1]
+            "69": *friction
+            "70": *friction
+            "71": *friction
+            "72": *friction
+            "76": *friction
+            "77": *friction
+            "78": *friction
+            "79": *friction
+            "80": *friction
+    objects:
+      table:
+        path: table/table.xml
+      small_table:
+        path: montessori_toys/small_table/small_table.xml
+        apply:
+          body:
+            small_table:
+              pos: [0.4, 0.0, 1.0]
+      montessori_box:
+        path: montessori_toys/montessori_box/mjcf/montessori_box.xml
+        apply:
+          body:
+            montessori_box:
+              pos: [0.4, 0, 1.39]
+      montessori_object_1:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_1.xml
+        apply:
+          body:
+            montessori_object_1:
+              pos: [0.425, 0.091, 1.5]
+      montessori_object_2:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_2.xml
+        apply:
+          body:
+            montessori_object_2:
+              pos: [0.4185, 0, 1.5]
+      montessori_object_3:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_3.xml
+        apply:
+          body:
+            montessori_object_3:
+              pos: [0.4205, -0.087, 1.5]
+      montessori_object_4:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_4.xml
+        apply:
+          body:
+            montessori_object_4:
+              pos: [0.3825, 0.091, 1.5]
+      montessori_object_5:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_5.xml
+        apply:
+          body:
+            montessori_object_5:
+              pos: [0.3735, 0, 1.5]
+      montessori_object_6:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_6.xml
+        apply:
+          body:
+            montessori_object_6:
+              pos: [0.3785, -0.087, 1.5]
+    config:
+      step_size: 0.004
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+      nativeccd: true
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  panda_with_montessori_toys_2:
+    port: 7500
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+    receive:
+      actuator1: ["cmd_joint_angular_velocity"]
+      actuator2: ["cmd_joint_angular_velocity"]
+      actuator3: ["cmd_joint_angular_velocity"]
+      actuator4: ["cmd_joint_angular_velocity"]
+      actuator5: ["cmd_joint_angular_velocity"]
+      actuator6: ["cmd_joint_angular_velocity"]
+      actuator7: ["cmd_joint_angular_velocity"]
+      actuator8: ["cmd_joint_tvalue"]
+
+  ros:
+    ros_nodes:
+      services:
+        socket:
+          - port: 7400
+    
+      publishers:
+        tf:
+          - meta_data:
+              world_name: world
+              length_unit: m
+              angle_unit: rad
+              mass_unit: kg
+              time_unit: s
+              handedness: rhs
+            port: 7301
+            topic: /tf
+            rate: 60
+            root_frame_id: map
+
+      subscribers:
+        data:
+          - meta_data:
+              world_name: world
+              length_unit: m
+              angle_unit: rad
+              mass_unit: kg
+              time_unit: s
+              handedness: rhs
+            port: 7700
+            msg_type: std_msgs/Float64
+            send:
+              actuator8: ["cmd_joint_tvalue"]
+            topic: /gripper_command
+    
+    ros_control:
+      - meta_data:
+          world_name: world
+          length_unit: m
+          angle_unit: rad
+          mass_unit: kg
+          time_unit: s
+          handedness: rhs
+        port: 7601
+        controller_manager:
+          robot: panda
+          robot_description: /robot_description
+          urdf: franka_emika_panda/urdf/panda.urdf
+          config: franka_emika_panda/config/ros_control.yaml
+          actuators:
+            actuator1: joint1
+            actuator2: joint2
+            actuator3: joint3
+            actuator4: joint4
+            actuator5: joint5
+            actuator6: joint6
+            actuator7: joint7
+          controllers:
+            spawn:
+              - joint_state_controller
+                joint_group_velocity_controller
+
+    ros_run:
+      rviz:
+        config: panda_with_montessori_toys_2/config/rviz.rviz
+        robot_descriptions:
+          panda_description: franka_emika_panda/urdf/panda.urdf
+          table_description: table/table.urdf
+          small_table_description: small_table/small_table.urdf
+          montessori_box_description: montessori_box/urdf/montessori_box.urdf
+          montessori_object_1_description: montessori_box/urdf/montessori_object_1.urdf
+          montessori_object_2_description: montessori_box/urdf/montessori_object_2.urdf
+          montessori_object_3_description: montessori_box/urdf/montessori_object_3.urdf
+          montessori_object_4_description: montessori_box/urdf/montessori_object_4.urdf
+          montessori_object_5_description: montessori_box/urdf/montessori_object_5.urdf
+          montessori_object_6_description: montessori_box/urdf/montessori_object_6.urdf
