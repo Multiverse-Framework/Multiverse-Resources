@@ -2,12 +2,12 @@
 <robot name="montessori_box" version="1.0">
   <link name="montessori_box">
     <inertial>
-      <origin xyz="0.0077242315746843815 -3.118418317171745e-05 3.499377999105491e-05" rpy="-1.5358649492263794 -1.5663851499557495 3.106299638748169"/>
-      <mass value="6.423900127410889"/>
-      <inertia ixx="0.051512788981199265" ixy="0.0" ixz="0.0" iyy="0.04794502258300781" iyz="0.0" izz="0.011703810654580593"/>
+      <origin xyz="0.026771999895572662 0.00018124992493540049 -0.00393274100497365" rpy="-0.012046600691974163 -0.001452900469303131 1.56771719455719"/>
+      <mass value="1.0220392942428589"/>
+      <inertia ixx="0.001928424695506692" ixy="0.0" ixz="0.0" iyy="0.006246736738830805" iyz="0.0" izz="0.006575485225766897"/>
     </inertial>
     <visual name="MontessoriBox">
-      <origin xyz="0.007486006245017052 -4.839265966438688e-05 6.116426811786368e-05" rpy="1.3951013088226318 -1.569304347038269 0.17560498416423798"/>
+      <origin xyz="0.005257507786154747 1.4678141269541811e-05 -0.0003088224621023983" rpy="-1.586214542388916 -1.556058406829834 -3.1267333030700684"/>
       <geometry>
         <mesh filename="file://./stl/MontessoriBox.stl" scale="1.0 1.0 1.0"/>
       </geometry>
@@ -17,7 +17,7 @@
     </visual>
   </link>
   <joint name="montessori_drawer_1_joint" type="prismatic">
-    <origin xyz="-0.004999999888241291 0.08929800242185593 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="-0.003000000026077032 0.08699999749660492 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="-1.0 0.0 0.0"/>
     <parent link="montessori_box"/>
     <child link="montessori_drawer_1"/>
@@ -25,12 +25,12 @@
   </joint>
   <link name="montessori_drawer_1">
     <inertial>
-      <origin xyz="-4.1819294693823394e-09 -4.8547952324895505e-09 -0.0074079083278775215" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
-      <mass value="0.16877292096614838"/>
-      <inertia ixx="0.00047040951903909445" ixy="0.0" ixz="0.0" iyy="0.000373675546143204" iyz="0.0" izz="0.00024498385027982295"/>
+      <origin xyz="0.02574862912297249 5.7039905243527755e-08 -0.002581819426268339" rpy="-1.694860074508142e-08 0.0319184735417366 -3.294945472021027e-08"/>
+      <mass value="0.13218805193901062"/>
+      <inertia ixx="0.00016433888231404126" ixy="0.0" ixz="0.0" iyy="0.00020200452127028257" iyz="0.0" izz="0.000267193594481796"/>
     </inertial>
     <visual name="MontessoriDrawer1">
-      <origin xyz="-4.145490173357302e-09 -2.7042544203936814e-08 -0.004347324836999178" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+      <origin xyz="0.0003927545330952853 -5.131831071203408e-10 -0.004749107174575329" rpy="0.0 -1.569690227508545 3.1415927410125732"/>
       <geometry>
         <mesh filename="file://./stl/MontessoriDrawer.stl" scale="1.0 1.0 1.0"/>
       </geometry>
@@ -40,28 +40,28 @@
     </visual>
   </link>
   <joint name="montessori_drawer_1_handle_joint" type="fixed">
-    <origin xyz="-0.07 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="-0.061 0.0 0.001" rpy="0.0 0.0 0.0"/>
     <parent link="montessori_drawer_1"/>
     <child link="montessori_drawer_1_handle"/>
   </joint>
   <link name="montessori_drawer_1_handle">
     <inertial>
-      <origin xyz="0.00043045321945101023 -1.14105731807701e-10 9.11589900787213e-12" rpy="0.0 0.0 0.0"/>
-      <mass value="0.004546803887933493"/>
-      <inertia ixx="1.6664310464875598e-07" ixy="0.0" ixz="0.0" iyy="1.1630291396613757e-07" iyz="0.0" izz="1.160418605650193e-07"/>
+      <origin xyz="0.003915580455213785 7.503021315358183e-09 -7.799903084526605e-11" rpy="-1.570796012878418 3.2139670480546556e-08 1.3462765764415963e-06"/>
+      <mass value="0.005739745683968067"/>
+      <inertia ixx="2.267717889026244e-07" ixy="0.0" ixz="0.0" iyy="3.54303949734458e-07" iyz="0.0" izz="3.5472436366035254e-07"/>
     </inertial>
-    <visual name="MontessoriDrawerHandle1">
-      <origin xyz="0.00043236391502432525 -2.2996576864997564e-10 1.837194979481538e-11" rpy="0.0 0.0 0.0"/>
+    <visual name="MontessoriDrawer1Handle">
+      <origin xyz="0.003915580455213785 7.525752465653568e-09 -2.2858904005773617e-11" rpy="1.5707963705062866 -1.3322676295501878e-15 1.5707963705062866"/>
       <geometry>
         <mesh filename="file://./stl/MontessoriDrawerHandle.stl" scale="1.0 1.0 1.0"/>
       </geometry>
-      <material name="MontessoriDrawerHandle1_material">
+      <material name="MontessoriDrawer1Handle_material">
         <color rgba="0.89 0.67 0.57 1.0"/>
       </material>
     </visual>
   </link>
   <joint name="montessori_drawer_2_joint" type="prismatic">
-    <origin xyz="-0.004999999888241291 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="-0.003000000026077032 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="-1.0 0.0 0.0"/>
     <parent link="montessori_box"/>
     <child link="montessori_drawer_2"/>
@@ -69,12 +69,12 @@
   </joint>
   <link name="montessori_drawer_2">
     <inertial>
-      <origin xyz="-4.1819294693823394e-09 -4.8547952324895505e-09 -0.0074079083278775215" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
-      <mass value="0.16877292096614838"/>
-      <inertia ixx="0.00047040951903909445" ixy="0.0" ixz="0.0" iyy="0.000373675546143204" iyz="0.0" izz="0.00024498385027982295"/>
+      <origin xyz="0.02574862912297249 5.7039905243527755e-08 -0.002581819426268339" rpy="-1.694860074508142e-08 0.0319184735417366 -3.294945472021027e-08"/>
+      <mass value="0.13218805193901062"/>
+      <inertia ixx="0.00016433888231404126" ixy="0.0" ixz="0.0" iyy="0.00020200452127028257" iyz="0.0" izz="0.000267193594481796"/>
     </inertial>
     <visual name="MontessoriDrawer2">
-      <origin xyz="-4.145490173357302e-09 -2.7042544203936814e-08 -0.004347324836999178" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+      <origin xyz="0.0003927545330952853 -5.131831071203408e-10 -0.004749107174575329" rpy="0.0 -1.569690227508545 3.1415927410125732"/>
       <geometry>
         <mesh filename="file://./stl/MontessoriDrawer.stl" scale="1.0 1.0 1.0"/>
       </geometry>
@@ -84,28 +84,28 @@
     </visual>
   </link>
   <joint name="montessori_drawer_2_handle_joint" type="fixed">
-    <origin xyz="-0.07 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="-0.061 0.0 0.001" rpy="0.0 0.0 0.0"/>
     <parent link="montessori_drawer_2"/>
     <child link="montessori_drawer_2_handle"/>
   </joint>
   <link name="montessori_drawer_2_handle">
     <inertial>
-      <origin xyz="0.00043045321945101023 -1.14105731807701e-10 9.11589900787213e-12" rpy="0.0 0.0 0.0"/>
-      <mass value="0.004546803887933493"/>
-      <inertia ixx="1.6664310464875598e-07" ixy="0.0" ixz="0.0" iyy="1.1630291396613757e-07" iyz="0.0" izz="1.160418605650193e-07"/>
+      <origin xyz="0.003915580455213785 7.503021315358183e-09 -7.799903084526605e-11" rpy="-1.570796012878418 3.2139670480546556e-08 1.3462765764415963e-06"/>
+      <mass value="0.005739745683968067"/>
+      <inertia ixx="2.267717889026244e-07" ixy="0.0" ixz="0.0" iyy="3.54303949734458e-07" iyz="0.0" izz="3.5472436366035254e-07"/>
     </inertial>
-    <visual name="MontessoriDrawerHandle2">
-      <origin xyz="0.00043236391502432525 -2.2996576864997564e-10 1.837194979481538e-11" rpy="0.0 0.0 0.0"/>
+    <visual name="MontessoriDrawer2Handle">
+      <origin xyz="0.003915580455213785 7.525752465653568e-09 -2.2858904005773617e-11" rpy="1.5707963705062866 -1.3322676295501878e-15 1.5707963705062866"/>
       <geometry>
         <mesh filename="file://./stl/MontessoriDrawerHandle.stl" scale="1.0 1.0 1.0"/>
       </geometry>
-      <material name="MontessoriDrawerHandle2_material">
+      <material name="MontessoriDrawer2Handle_material">
         <color rgba="0.89 0.67 0.57 1.0"/>
       </material>
     </visual>
   </link>
   <joint name="montessori_drawer_3_joint" type="prismatic">
-    <origin xyz="-0.004999999888241291 -0.08929800242185593 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="-0.003000000026077032 -0.08699999749660492 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="-1.0 0.0 0.0"/>
     <parent link="montessori_box"/>
     <child link="montessori_drawer_3"/>
@@ -113,12 +113,12 @@
   </joint>
   <link name="montessori_drawer_3">
     <inertial>
-      <origin xyz="-4.1819294693823394e-09 -4.8547952324895505e-09 -0.0074079083278775215" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
-      <mass value="0.16877292096614838"/>
-      <inertia ixx="0.00047040951903909445" ixy="0.0" ixz="0.0" iyy="0.000373675546143204" iyz="0.0" izz="0.00024498385027982295"/>
+      <origin xyz="0.02574862912297249 5.7039905243527755e-08 -0.002581819426268339" rpy="-1.694860074508142e-08 0.0319184735417366 -3.294945472021027e-08"/>
+      <mass value="0.13218805193901062"/>
+      <inertia ixx="0.00016433888231404126" ixy="0.0" ixz="0.0" iyy="0.00020200452127028257" iyz="0.0" izz="0.000267193594481796"/>
     </inertial>
     <visual name="MontessoriDrawer3">
-      <origin xyz="-4.145490173357302e-09 -2.7042544203936814e-08 -0.004347324836999178" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+      <origin xyz="0.0003927545330952853 -5.131831071203408e-10 -0.004749107174575329" rpy="0.0 -1.569690227508545 3.1415927410125732"/>
       <geometry>
         <mesh filename="file://./stl/MontessoriDrawer.stl" scale="1.0 1.0 1.0"/>
       </geometry>
@@ -128,22 +128,22 @@
     </visual>
   </link>
   <joint name="montessori_drawer_3_handle_joint" type="fixed">
-    <origin xyz="-0.07 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="-0.061 0.0 0.001" rpy="0.0 0.0 0.0"/>
     <parent link="montessori_drawer_3"/>
     <child link="montessori_drawer_3_handle"/>
   </joint>
   <link name="montessori_drawer_3_handle">
     <inertial>
-      <origin xyz="0.00043045321945101023 -1.14105731807701e-10 9.11589900787213e-12" rpy="0.0 0.0 0.0"/>
-      <mass value="0.004546803887933493"/>
-      <inertia ixx="1.6664310464875598e-07" ixy="0.0" ixz="0.0" iyy="1.1630291396613757e-07" iyz="0.0" izz="1.160418605650193e-07"/>
+      <origin xyz="0.003915580455213785 7.503021315358183e-09 -7.799903084526605e-11" rpy="-1.570796012878418 3.2139670480546556e-08 1.3462765764415963e-06"/>
+      <mass value="0.005739745683968067"/>
+      <inertia ixx="2.267717889026244e-07" ixy="0.0" ixz="0.0" iyy="3.54303949734458e-07" iyz="0.0" izz="3.5472436366035254e-07"/>
     </inertial>
-    <visual name="MontessoriDrawerHandle3">
-      <origin xyz="0.00043236391502432525 -2.2996576864997564e-10 1.837194979481538e-11" rpy="0.0 0.0 0.0"/>
+    <visual name="MontessoriDrawer3Handle">
+      <origin xyz="0.003915580455213785 7.525752465653568e-09 -2.2858904005773617e-11" rpy="1.5707963705062866 -1.3322676295501878e-15 1.5707963705062866"/>
       <geometry>
         <mesh filename="file://./stl/MontessoriDrawerHandle.stl" scale="1.0 1.0 1.0"/>
       </geometry>
-      <material name="MontessoriDrawerHandle3_material">
+      <material name="MontessoriDrawer3Handle_material">
         <color rgba="0.89 0.67 0.57 1.0"/>
       </material>
     </visual>

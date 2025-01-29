@@ -6,10 +6,10 @@
         </default>
     </default>
     <worldbody>
-        <body name="montessori_object_5" pos="-0.032522 0 0.043053" quat="1 0 0 0"> 
+        <body name="montessori_object_5" pos="-0.0265 0 0.04" quat="1 0 0 0"> 
             <freejoint/>
             <inertial mass="0.008732691407203674" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="1.2838365819334285e-06 7.132425139388943e-07 7.132425139388943e-07"/>
-			<geom name="MontessoriObject5" type="box" size="0.00495 0.01485 0.01485" class="montessori_object_5_collision"/>
+			<geom name="MontessoriObject5" type="box" size="0.01 0.02 0.015" class="montessori_object_5_collision"/>
         </body>
     </worldbody>
 </mujoco>

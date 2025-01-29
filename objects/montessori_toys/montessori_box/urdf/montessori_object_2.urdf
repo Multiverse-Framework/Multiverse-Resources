@@ -2,12 +2,12 @@
 <robot name="montessori_object_2" version="1.0">
   <link name="montessori_object_2">
     <inertial>
-      <origin xyz="5.131312597050908e-10 3.8798639301340643e-10 5.1740139950240405e-11" rpy="0.0 0.0 0.0"/>
-      <mass value="0.01134409662336111"/>
-      <inertia ixx="1.2508141935541062e-06" ixy="0.0" ixz="0.0" iyy="1.2508141935541062e-06" iyz="0.0" izz="8.338761290360708e-07"/>
+      <origin xyz="-0.005819993559271097 -2.7842136861407714e-20 3.725290298461914e-09" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0213395357131958"/>
+      <inertia ixx="3.0762159894948127e-06" ixy="0.0" ixz="0.0" iyy="3.0461055757768918e-06" iyz="0.0" izz="2.9213929337856825e-06"/>
     </inertial>
     <visual name="MontessoriObject2">
-      <origin xyz="5.131312597050908e-10 3.8798639301340643e-10 5.1740139950240405e-11" rpy="0.0 0.0 0.0"/>
+      <origin xyz="-0.005819993559271097 -2.7842136861407714e-20 3.725290298461914e-09" rpy="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="file://./stl/MontessoriObject_002.stl" scale="1.0 1.0 1.0"/>
       </geometry>

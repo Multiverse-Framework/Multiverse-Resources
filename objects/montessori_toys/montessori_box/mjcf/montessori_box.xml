@@ -15,85 +15,88 @@
     </default>
     <worldbody>
         <body name="montessori_box" pos="0 0 0" quat="1 0 0 0">
-            <geom name="MontessoriBox" type="mesh" mesh="MontessoriBox" class="montessori_box_visual"/>
-            <geom name="UCX_MontessoriBox_001" type="box" pos="-0.005 -0.044649 0" size="0.06 0.001326 0.033053" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_002" type="box" pos="-0.005 0.044649 0" size="0.06 0.001326 0.033053" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_003" type="box" pos="0.0605 0 0" size="0.0045 0.132621 0.033053" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_004" type="box" pos="0 -0.137621 0" size="0.065 0.005 0.033053" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_005" type="box" pos="0 0.137621 0" size="0.065 0.005 0.033053" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_006" type="box" pos="0 0 -0.038053" size="0.065 0.142621 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_007" type="box" pos="0 0.12346 0.038053 " size="0.065 0.0191615 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_008" type="box" pos="0 0.044649 0.038053 " size="0.065 0.029649 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_009" type="box" pos="0 -0.047149 0.038053 " size="0.065 0.032149 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_010" type="box" pos="0 -0.12096 0.038053 " size="0.065 0.0216615 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_011" type="box" pos="0.050243 0.089298 0.038053" size="0.0147815 0.015 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_012" type="box" pos="0.00597 0.089298 0.038053" size="0.0234915 0.015 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_013" type="box" pos="-0.056273 0.089298 0.038053" size="0.008751 0.015 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_014" type="box" pos="-0.017522 0.074298 0.038053" quat="0.9238795 0 0 0.3826834" size="0.006213 0.006213 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_015" type="box" pos="-0.017522 0.104298 0.038053" quat="0.9238795 0 0 0.3826834" size="0.006213 0.006213 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_016" type="box" pos="-0.047522 0.104298 0.038053" quat="0.9238795 0 0 0.3826834" size="0.006213 0.006213 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_017" type="box" pos="-0.047522 0.074298 0.038053" quat="0.9238795 0 0 0.3826834" size="0.006213 0.006213 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_018" type="box" pos="0.055238 0 0.038053" size="0.009786 0.015 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_019" type="box" pos="-0.051273 0 0.038053" size="0.013751 0.015 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_020" type="box" pos="-0.004025 0 0.038053" size="0.0235 0.015 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_021" type="box" pos="0.039961 -0.02049 0.038053" quat="0.9659258 0 0 0.258819" size="0.015 0.015 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_022" type="box" pos="0.039961 0.02049 0.038053" quat="0.9659258 0 0 -0.258819" size="0.015 0.015 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_023" type="box" pos="0.053743 -0.089298 0.038053" size="0.0112815 0.01 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_024" type="box" pos="0 -0.089298 0.038053" size="0.0224915 0.01 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_025" type="box" pos="-0.053773 -0.089298 0.038053" size="0.011251 0.01 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_026" type="box" pos="-0.042522 -0.099298 0.038053" quat="0.9238795 0 0 0.3826834" size="0.004142 0.004142 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_027" type="box" pos="-0.022522 -0.099298 0.038053" quat="0.9238795 0 0 0.3826834" size="0.004142 0.004142 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_028" type="box" pos="-0.022522 -0.079298 0.038053" quat="0.9238795 0 0 0.3826834" size="0.004142 0.004142 0.005" class="montessori_box_collision"/>
-            <geom name="UCX_MontessoriBox_029" type="box" pos="-0.042522 -0.079298 0.038053" quat="0.9238795 0 0 0.3826834" size="0.004142 0.004142 0.005" class="montessori_box_collision"/>
-        
-            <body name="montessori_drawer_1" pos="-0.005 0.089298 0">
-                <inertial mass="0.16877292096614838" pos="-4.1819294693823394e-09 -4.8547952324895505e-09 -0.0074079083278775215" quat="0.0 0.7071067690849304 0.0 0.7071067690849304" diaginertia="0.00047040951903909445 0.000373675546143204 0.00024498385027982295"/>
-                <geom name="MontessoriDrawer1" type="mesh" mesh="MontessoriDrawer" rgba="1.0 0.83 0.67 1.0" class="montessori_box_visual"/>
-                <geom name="UCX_MontessoriDrawer1_001" type="box" pos="0 0 -0.030247" size="0.06 0.04289 0.002475" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer1_002" type="box" pos="0 -0.040415 0.002475" size="0.06 0.0024755 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer1_003" type="box" pos="0 0.040415 0.002475" size="0.06 0.0024755 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer1_004" type="box" pos="-0.057524 0 0.002475" size="0.0025 0.0379395 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer1_005" type="box" pos="0.057524 0 0.002475" size="0.0025 0.0379395 0.030247" class="montessori_box_collision"/>
+            <inertial mass="1.0220392942428589" pos="0.026771999895572662 0.00018124992493540049 -0.00393274100497365" quat="0.7081846594810486 -0.003752764780074358 -0.0047669862397015095 0.7060012221336365" diaginertia="0.001928424695506692 0.006246736738830805 0.006575485225766897"/>
+			<geom name="MontessoriBox" type="mesh" mesh="MontessoriBox" class="montessori_box_visual"/>
+            <geom name="UCX_MontessoriBox_001" type="box" pos="-0.0075 0 0.036" size="0.008 0.021 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_002" type="box" pos="-0.04625 0 0.036" size="0.00875 0.141 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_003" type="box" pos="0 0.133 0" size="0.049 0.004 0.032" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_004" type="box" pos="0 -0.133 0" size="0.049 0.004 0.032" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_005" type="box" pos="0.045 0 0" size="0.001 0.129 0.032" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_006" type="box" pos="-0.0025 0.0435 0" size="0.0465 0.0015 0.032" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_007" type="box" pos="-0.0025 -0.0435 0" size="0.0465 0.0015 0.032" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_008" type="box" pos="0 0 -0.036" size="0.055 0.141 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_009" type="box" pos="0.04575 0 0.036" size="0.00925 0.141 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_010" type="box" pos="-0.0005 -0.122 0.036" size="0.037 0.019 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_011" type="box" pos="-0.0005 -0.046 0.036" size="0.037 0.025 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_012" type="box" pos="-0.0175 0.046 0.036" size="0.02 0.025 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_013" type="box" pos="-0.0175 0.126 0.036" size="0.02 0.015 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_014" type="box" pos="0.023937 0.019593 0.036" quat="0.9659258 0 0 -0.258819" size="0.021 0.0105 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_015" type="box" pos="-0.0005 -0.087 0.036" size="0.005 0.016 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_016" type="box" pos="0.032 0.081 0.036" size="0.0045 0.06 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_017" type="box" pos="0.025 0.044 0.036" size="0.0025 0.023 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_018" type="box" pos="0.025 0.128 0.036" size="0.0025 0.013 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_019" type="box" pos="0.0025 0.071 0.036" quat="0.9238795 0 0 0.3826834" size="0.0082845 0.0082845 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_020" type="box" pos="0.0125 0.081 0.036" size="0.01 0.06 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_021" type="box" pos="-0.0375 0.071 0.036" quat="0.9238795 0 0 0.3826834" size="0.0082845 0.0082845 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_022" type="box" pos="-0.0375 0.111 0.036" quat="0.9238795 0 0 0.3826834" size="0.0082845 0.0082845 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_023" type="box" pos="0.0025 0.111 0.036" quat="0.9238795 0 0 0.3826834" size="0.0082845 0.0082845 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_024" type="box" pos="0.023937 -0.019593 0.036" quat="0.9659258 0 0 0.258819" size="0.021 0.0105 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_025" type="box" pos="-0.0375 -0.071 0.036" quat="0.9238795 0 0 0.3826834" size="0.0066275 0.0066275 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_026" type="box" pos="-0.0055 -0.071 0.036" quat="0.9238795 0 0 0.3826834" size="0.0066275 0.0066275 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_027" type="box" pos="-0.0055 -0.103 0.036" quat="0.9238795 0 0 0.3826834" size="0.0066275 0.0066275 0.004" class="montessori_box_collision"/>
+            <geom name="UCX_MontessoriBox_028" type="box" pos="-0.0375 -0.103 0.036" quat="0.9238795 0 0 0.3826834" size="0.0066275 0.0066275 0.004" class="montessori_box_collision"/>
+
+            <body name="montessori_drawer_1" pos="-0.003 0.087 0">
+                <inertial mass="0.13218805193901062" pos="0.02574862912297249 5.7039905243527755e-08 -0.002581819426268339" quat="0.999872624874115 -8.210307989031662e-09 0.01595855876803398 -1.6337391883780583e-08" diaginertia="0.00016433888231404126 0.00020200452127028257 0.000267193594481796"/>
+				<geom name="MontessoriDrawer1" type="mesh" mesh="MontessoriDrawer" rgba="1.0 0.83 0.67 1.0" class="montessori_box_visual"/>
+                <geom name="UCX_MontessoriDrawer1_001" type="box" pos="0 0 -0.03" size="0.046 0.041 0.001" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer1_002" type="box" pos="-0.042 0 0.001" size="0.004 0.041 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer1_003" type="box" pos="0.004 0.0385 0.001" size="0.042 0.0025 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer1_004" type="box" pos="0.004 -0.0385 0.001" size="0.042 0.0025 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer1_005" type="box" pos="0.0435 0 0.001" size="0.0025 0.036 0.03" class="montessori_box_collision"/>
                 <joint name="montessori_drawer_1_joint" type="slide" axis="-1 0 0" range="0 0.1" damping="1"/>
 
-                <body name="montessori_drawer_1_handle" pos="-0.07 0 0" >
-                    <geom name="MontessoriDrawerHandle1" type="mesh" mesh="MontessoriDrawerHandle" class="montessori_box_visual"/>
-                    <geom name="UCX_MontessoriDrawer1Handle_001" type="cylinder" pos="0.005 0 0" quat="0.707 0 0.707 0" size="0.0025 0.005" class="montessori_box_collision"/>
-                    <geom name="UCX_MontessoriDrawer1Handle_002" type="ellipsoid" size="0.005 0.01 0.01" class="montessori_box_collision"/>
+                <body name="montessori_drawer_1_handle" pos="-0.061 0 0.001" >
+                    <inertial mass="0.005739745683968067" pos="0.003915580455213785 7.503021315358183e-09 -7.799903084526605e-11" quat="0.70710688829422 -0.7071066498756409 -4.6461747160719824e-07 4.873438115282624e-07" diaginertia="2.267717889026244e-07 3.54303949734458e-07 3.5472436366035254e-07"/>
+					<geom name="MontessoriDrawer1Handle" type="mesh" mesh="MontessoriDrawerHandle" class="montessori_box_visual"/>
+                    <geom name="UCX_MontessoriDrawer1Handle_001" type="cylinder" pos="0.0075 0 0" quat="0.707 0 0.707 0" size="0.008 0.0075" class="montessori_box_collision"/>
+                    <geom name="UCX_MontessoriDrawer1Handle_002" type="ellipsoid" size="0.005 0.011 0.011" class="montessori_box_collision"/>
                 </body>
             </body>
 
-            <body name="montessori_drawer_2" pos="-0.005 0 0">
-                <inertial mass="0.16877292096614838" pos="-4.1819294693823394e-09 -4.8547952324895505e-09 -0.0074079083278775215" quat="0.0 0.7071067690849304 0.0 0.7071067690849304" diaginertia="0.00047040951903909445 0.000373675546143204 0.00024498385027982295"/>
-                <geom name="MontessoriDrawer2" type="mesh" mesh="MontessoriDrawer" rgba="0.99 0.73 0.55 1.0" class="montessori_box_visual"/>
-                <geom name="UCX_MontessoriDrawer2_001" type="box" pos="0 0 -0.030247" size="0.06 0.04289 0.002475" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer2_002" type="box" pos="0 -0.040415 0.002475" size="0.06 0.0024755 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer2_003" type="box" pos="0 0.040415 0.002475" size="0.06 0.0024755 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer2_004" type="box" pos="-0.057524 0 0.002475" size="0.0025 0.0379395 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer2_005" type="box" pos="0.057524 0 0.002475" size="0.0025 0.0379395 0.030247" class="montessori_box_collision"/>
+           <body name="montessori_drawer_2" pos="-0.003 0 0">
+                <inertial mass="0.13218805193901062" pos="0.02574862912297249 5.7039905243527755e-08 -0.002581819426268339" quat="0.999872624874115 -8.210307989031662e-09 0.01595855876803398 -1.6337391883780583e-08" diaginertia="0.00016433888231404126 0.00020200452127028257 0.000267193594481796"/>
+				<geom name="MontessoriDrawer2" type="mesh" mesh="MontessoriDrawer" rgba="0.99 0.73 0.55 1.0" class="montessori_box_visual"/>
+                <geom name="UCX_MontessoriDrawer2_001" type="box" pos="0 0 -0.03" size="0.046 0.041 0.001" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer2_002" type="box" pos="-0.042 0 0.001" size="0.004 0.041 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer2_003" type="box" pos="0.004 0.0385 0.001" size="0.042 0.0025 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer2_004" type="box" pos="0.004 -0.0385 0.001" size="0.042 0.0025 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer2_005" type="box" pos="0.0435 0 0.001" size="0.0025 0.036 0.03" class="montessori_box_collision"/>
                 <joint name="montessori_drawer_2_joint" type="slide" axis="-1 0 0" range="0 0.1" damping="1"/>
 
-                <body name="montessori_drawer_2_handle" pos="-0.07 0 0" >
-                    <geom name="MontessoriDrawerHandle2" type="mesh" mesh="MontessoriDrawerHandle" class="montessori_box_visual"/>
-                    <geom name="UCX_MontessoriDrawer2Handle_001" type="cylinder" pos="0.005 0 0" quat="0.707 0 0.707 0" size="0.0025 0.005" class="montessori_box_collision"/>
-                    <geom name="UCX_MontessoriDrawer2Handle_002" type="ellipsoid" size="0.005 0.01 0.01" class="montessori_box_collision"/>
+                <body name="montessori_drawer_2_handle" pos="-0.061 0 0.001" >
+                    <inertial mass="0.005739745683968067" pos="0.003915580455213785 7.503021315358183e-09 -7.799903084526605e-11" quat="0.70710688829422 -0.7071066498756409 -4.6461747160719824e-07 4.873438115282624e-07" diaginertia="2.267717889026244e-07 3.54303949734458e-07 3.5472436366035254e-07"/>
+					<geom name="MontessoriDrawer2Handle" type="mesh" mesh="MontessoriDrawerHandle" class="montessori_box_visual"/>
+                    <geom name="UCX_MontessoriDrawer2Handle_001" type="cylinder" pos="0.0075 0 0" quat="0.707 0 0.707 0" size="0.008 0.0075" class="montessori_box_collision"/>
+                    <geom name="UCX_MontessoriDrawer2Handle_002" type="ellipsoid" size="0.005 0.011 0.011" class="montessori_box_collision"/>
                 </body>
             </body>
 
-            <body name="montessori_drawer_3" pos="-0.005 -0.089298 0">
-                <inertial mass="0.16877292096614838" pos="-4.1819294693823394e-09 -4.8547952324895505e-09 -0.0074079083278775215" quat="0.0 0.7071067690849304 0.0 0.7071067690849304" diaginertia="0.00047040951903909445 0.000373675546143204 0.00024498385027982295"/>
-                <geom name="MontessoriDrawer3" type="mesh" mesh="MontessoriDrawer" rgba="0.87 0.94 0.98 1.0" class="montessori_box_visual"/>
-                <geom name="UCX_MontessoriDrawer3_001" type="box" pos="0 0 -0.030247" size="0.06 0.04289 0.002475" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer3_002" type="box" pos="0 -0.040415 0.002475" size="0.06 0.0024755 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer3_003" type="box" pos="0 0.040415 0.002475" size="0.06 0.0024755 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer3_004" type="box" pos="-0.057524 0 0.002475" size="0.0025 0.0379395 0.030247" class="montessori_box_collision"/>
-                <geom name="UCX_MontessoriDrawer3_005" type="box" pos="0.057524 0 0.002475" size="0.0025 0.0379395 0.030247" class="montessori_box_collision"/>
+            <body name="montessori_drawer_3" pos="-0.003 -0.087 0">
+                <inertial mass="0.13218805193901062" pos="0.02574862912297249 5.7039905243527755e-08 -0.002581819426268339" quat="0.999872624874115 -8.210307989031662e-09 0.01595855876803398 -1.6337391883780583e-08" diaginertia="0.00016433888231404126 0.00020200452127028257 0.000267193594481796"/>
+				<geom name="MontessoriDrawer3" type="mesh" mesh="MontessoriDrawer" rgba="0.87 0.94 0.98 1.0" class="montessori_box_visual"/>
+                <geom name="UCX_MontessoriDrawer3_001" type="box" pos="0 0 -0.03" size="0.046 0.041 0.001" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer3_002" type="box" pos="-0.042 0 0.001" size="0.004 0.041 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer3_003" type="box" pos="0.004 0.0385 0.001" size="0.042 0.0025 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer3_004" type="box" pos="0.004 -0.0385 0.001" size="0.042 0.0025 0.03" class="montessori_box_collision"/>
+                <geom name="UCX_MontessoriDrawer3_005" type="box" pos="0.0435 0 0.001" size="0.0025 0.036 0.03" class="montessori_box_collision"/>
                 <joint name="montessori_drawer_3_joint" type="slide" axis="-1 0 0" range="0 0.1" damping="1"/>
 
-                <body name="montessori_drawer_3_handle" pos="-0.07 0 0" >
-                    <geom name="MontessoriDrawerHandle3" type="mesh" mesh="MontessoriDrawerHandle" class="montessori_box_visual"/>
-                    <geom name="UCX_MontessoriDrawer3Handle_001" type="cylinder" pos="0.005 0 0" quat="0.707 0 0.707 0" size="0.0025 0.005" class="montessori_box_collision"/>
-                    <geom name="UCX_MontessoriDrawer3Handle_002" type="ellipsoid" size="0.005 0.01 0.01" class="montessori_box_collision"/>
+                <body name="montessori_drawer_3_handle" pos="-0.061 0 0.001" >
+                    <inertial mass="0.005739745683968067" pos="0.003915580455213785 7.503021315358183e-09 -7.799903084526605e-11" quat="0.70710688829422 -0.7071066498756409 -4.6461747160719824e-07 4.873438115282624e-07" diaginertia="2.267717889026244e-07 3.54303949734458e-07 3.5472436366035254e-07"/>
+					<geom name="MontessoriDrawer3Handle" type="mesh" mesh="MontessoriDrawerHandle" class="montessori_box_visual"/>
+                    <geom name="UCX_MontessoriDrawer3Handle_001" type="cylinder" pos="0.0075 0 0" quat="0.707 0 0.707 0" size="0.008 0.0075" class="montessori_box_collision"/>
+                    <geom name="UCX_MontessoriDrawer3Handle_002" type="ellipsoid" size="0.005 0.011 0.011" class="montessori_box_collision"/>
                 </body>
             </body>
         </body>

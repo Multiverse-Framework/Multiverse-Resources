@@ -3,13 +3,13 @@
   <link name="montessori_object_5">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-      <mass value="0.008732691407203674"/>
-      <inertia ixx="1.2838365819334285e-06" ixy="0.0" ixz="0.0" iyy="7.132425139388943e-07" iyz="0.0" izz="7.132425139388943e-07"/>
+      <mass value="0.024000000208616257"/>
+      <inertia ixx="4.999999873689376e-06" ixy="0.0" ixz="0.0" iyy="2.6000000161729986e-06" iyz="0.0" izz="3.999999989900971e-06"/>
     </inertial>
     <visual name="MontessoriObject5">
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <box size="0.00989999994635582 0.02969999983906746 0.02969999983906746"/>
+        <box size="0.019999999552965164 0.03999999910593033 0.029999999329447746"/>
       </geometry>
       <material name="MontessoriObject5_material">
         <color rgba="0.99 0.73 0.55 1.0"/>

@@ -9,7 +9,7 @@ worlds:
     real_time_factor: 1
 
 simulations:
-  iCub_with_montessori_toys_1:
+  iCub_with_montessori_toys_2:
     simulator: pymujoco
     world:
       name: world
@@ -30,49 +30,49 @@ simulations:
         apply:
           body:
             small_table:
-              pos: [-0.3, 0.0, 1.0]
+              pos: [-0.35, 0.0, 1.0]
       montessori_box:
         path: montessori_toys/montessori_box/mjcf/montessori_box.xml
         apply:
           body:
             montessori_box:
-              pos: [-0.35, 0.0, 1.392]
+              pos: [-0.4, 0, 1.39]
       montessori_object_1:
         path: montessori_toys/montessori_box/mjcf/montessori_object_1.xml
         apply:
           body:
             montessori_object_1:
-              pos: [-0.317539, 0.089298, 1.5]
+              pos: [-0.375, 0.091, 1.5]
       montessori_object_2:
         path: montessori_toys/montessori_box/mjcf/montessori_object_2.xml
         apply:
           body:
             montessori_object_2:
-              pos: [-0.321869, 0, 1.5]
+              pos: [-0.3815, 0, 1.5]
       montessori_object_3:
         path: montessori_toys/montessori_box/mjcf/montessori_object_3.xml
         apply:
           body:
             montessori_object_3:
-              pos: [-0.317478, -0.089298, 1.5]
+              pos: [-0.3795, -0.087, 1.5]
       montessori_object_4:
         path: montessori_toys/montessori_box/mjcf/montessori_object_4.xml
         apply:
           body:
             montessori_object_4:
-              pos: [-0.382461, 0.089298, 1.5]
+              pos: [-0.4175, 0.091, 1.5]
       montessori_object_5:
         path: montessori_toys/montessori_box/mjcf/montessori_object_5.xml
         apply:
           body:
             montessori_object_5:
-              pos: [-0.382522, 0, 1.5]
+              pos: [-0.4265, 0, 1.5]
       montessori_object_6:
         path: montessori_toys/montessori_box/mjcf/montessori_object_6.xml
         apply:
           body:
             montessori_object_6:
-              pos: [-0.382461, -0.089298, 1.5]
+              pos: [-0.4215, -0.087, 1.5]
     config:
       step_size: 0.004
       integrator: IMPLICITFAST
@@ -85,7 +85,7 @@ multiverse_server:
   port: 7000
 
 multiverse_clients:
-  iCub_with_montessori_toys_1:
+  iCub_with_montessori_toys_2:
     port: 7500
     send:
       body: ["position", "quaternion"]
