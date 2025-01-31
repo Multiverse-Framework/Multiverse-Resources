@@ -95,7 +95,7 @@ if __name__ == "__main__":
         my_connector.send_and_receive_meta_data()
 
         # First: open the fingers
-        my_connector.send_data = [my_connector.sim_time] + left_fingers_state_dict["open"] + right_fingers_state_dict["open"]
+        my_connector.send_data = [0.1] + left_fingers_state_dict["open"] + right_fingers_state_dict["open"]
         my_connector.send_and_receive_data()
 
         time.sleep(1)
@@ -104,8 +104,8 @@ if __name__ == "__main__":
         left_fingers_state = "close"
         right_fingers_state = "open"
         
-        while my_connector.receive_data[0] > 0.0:
+        while my_connector.receive_data[0] >= 0.0:
             fingers_state = left_fingers_state_dict[left_fingers_state] + right_fingers_state_dict[right_fingers_state]
-            my_connector.send_data = [my_connector.sim_time] + fingers_state
+            my_connector.send_data = [0.1] + fingers_state
             my_connector.send_and_receive_data()
             time.sleep(0.1)

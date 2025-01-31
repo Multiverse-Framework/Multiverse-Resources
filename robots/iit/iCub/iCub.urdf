@@ -747,7 +747,7 @@
     <axis xyz="1.4990443730766856e-07 1.0 -1.2401537219375314e-07"/>
     <parent link="chest"/>
     <child link="r_shoulder_1"/>
-    <limit effort="50000.0" lower="-3.054326295852661" upper="0.3490658402442932" velocity="120.0"/>
+    <limit effort="50000.0" lower="-0.3490658402442932" upper="3.054326295852661" velocity="120.0"/>
   </joint>
   <link name="r_shoulder_1">
     <inertial>

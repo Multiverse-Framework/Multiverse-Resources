@@ -1,0 +1,138 @@
+resources: 
+  - ../../../robots
+  - ../../../worlds
+  - ../../../objects
+  - ../../../demos
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  iCub_with_montessori_toys_1:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      iCub:
+        path: iCub/iCub_only_primitives_with_ref.xml
+        apply:
+          body:
+            iCub:
+              pos: [-0.8, 0.0, 0.55]
+              quat: [1.0, 0.0, 0.0, 0.0]
+            gravcomp: 1
+    objects:
+      table:
+        path: table/table.xml
+      small_table:
+        path: montessori_toys/small_table/small_table.xml
+        apply:
+          body:
+            small_table:
+              pos: [-0.3, 0.0, 1.0]
+      jeroen_cup_1:
+        path: iai_objects/jeroen_cup/jeroen_cup.xml
+        apply:
+          body:
+            jeroen_cup:
+              pos: [-0.45, -0.2, 1.43]
+        suffix:
+          body: _1
+          geom: _1
+      jeroen_cup_2:
+        path: iai_objects/jeroen_cup/jeroen_cup.xml
+        apply:
+          body:
+            jeroen_cup:
+              pos: [-0.45, 0.2, 1.43]
+        suffix:
+          body: _2
+          geom: _2
+      liquid:
+        path: iai_objects/jeroen_cup/liquid.xml
+        apply:
+          body:
+            liquid:
+              pos: [-0.45, 0.2, 1.43]
+    # references:
+    #   l_head_controller:
+    #     body1: head_ref
+    #     body2: head
+    #     torquescale: 1
+    #   l_hand_controller:
+    #     body1: l_hand_ref
+    #     body2: l_hand
+    #     torquescale: 1
+    #   r_hand_controller:
+    #     body1: r_hand_ref
+    #     body2: r_hand
+    #     torquescale: 1
+    #   l_hip_1_controller:
+    #     body1: l_hip_1_ref
+    #     body2: l_hip_1
+    #     torquescale: 10
+    #   r_hip_1_controller:
+    #     body1: r_hip_1_ref
+    #     body2: r_hip_1
+    #     torquescale: 10
+    config:
+      step_size: 0.004
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+      nativeccd: true
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  iCub_with_montessori_toys_1:
+    port: 7500
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+    receive:
+      r_hand_thumb_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
+      r_hand_index_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_index_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_index_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_index_3_actuator: ["cmd_joint_rvalue"]
+      r_hand_middle_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_middle_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_middle_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_middle_3_actuator: ["cmd_joint_rvalue"]
+      r_hand_ring_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_ring_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_ring_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_ring_3_actuator: ["cmd_joint_rvalue"]
+      r_hand_little_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_little_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_little_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_little_3_actuator: ["cmd_joint_rvalue"]
+
+      l_hand_thumb_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_index_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_index_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_index_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_index_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_middle_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_middle_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_middle_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_middle_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_ring_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_ring_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_ring_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_ring_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_little_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_little_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_little_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_little_3_actuator: ["cmd_joint_rvalue"]
