@@ -1,7 +1,7 @@
 resources: 
-  - ../../../robots
-  - ../../../worlds
-  - ../../../objects
+  - ../../../../robots
+  - ../../../../worlds
+  - ../../../../objects
 
 worlds:
   g1_world:
@@ -23,5 +23,15 @@ simulations:
               pos: [0.0, 0.0, 1.0]
               quat: [1.0, 0.0, 0.0, 0.0]
     config:
-      step_size: 0.005
-      number_of_envs: 10
+      step_size: 0.01
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  g1_on_the_floor_simulation:
+    port: 8000
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]

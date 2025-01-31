@@ -5,7 +5,7 @@ resources:
 
 worlds:
   h1_world:
-    real_time_factor: 1
+    real_time_factor: -1
 
 simulations:
   h1_on_the_floor_simulation:
@@ -24,5 +24,4 @@ simulations:
               quat: [1.0, 0.0, 0.0, 0.0]
     config:
       step_size: 0.005
-      real_time_factor: -1.0
       number_of_envs: 2048
