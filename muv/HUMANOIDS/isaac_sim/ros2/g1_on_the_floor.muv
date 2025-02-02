@@ -2,24 +2,25 @@ resources:
   - ../../../../robots
   - ../../../../worlds
   - ../../../../objects
+  - ../../../../demos
 
 worlds:
-  g1_world:
-    real_time_factor: 1
+  world:
+    real_time_factor: -1
 
 simulations:
   g1_on_the_floor_simulation:
     simulator: isaac_sim
     headless: False
     world:
-      name: g1_world
+      name: world
       path: floor/floor.usda
     robots:
       g1:
         path: g1/g1_29dof_with_hand.usd
         apply:
           body:
-            pelvis:
+            g1_29dof_with_hand:
               pos: [0.0, 0.0, 1.0]
               quat: [1.0, 0.0, 0.0, 0.0]
     config:
@@ -35,3 +36,29 @@ multiverse_clients:
     send:
       body: ["position", "quaternion"]
       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+
+  ros2:
+    ros_nodes:
+      services:
+        socket:
+          - port: 7400
+    
+      publishers:
+        tf:
+          - meta_data:
+              world_name: world
+              length_unit: m
+              angle_unit: rad
+              mass_unit: kg
+              time_unit: s
+              handedness: rhs
+            port: 7301
+            topic: /tf
+            rate: 60
+            root_frame_id: map
+
+    ros2_run:
+      rviz2:
+        config: g1_on_the_floor/config/rviz2.rviz
+        robot_descriptions:
+          g1_description: g1/g1_29dof_with_hand.urdf
