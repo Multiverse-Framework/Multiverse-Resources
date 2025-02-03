@@ -72,7 +72,7 @@ multiverse_clients:
     port: 7501
     send:
       body: ["position", "quaternion"]
-      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_linear_acceleration", "joint_angular_acceleration", "joint_force", "joint_torque"]
     receive:
       actuator1: ["cmd_joint_rvalue"]
       actuator2: ["cmd_joint_rvalue"]
