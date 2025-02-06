@@ -1,0 +1,159 @@
+resources: 
+  - ../../../robots
+  - ../../../worlds
+  - ../../../objects
+  - ../../../demos
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  kinova_simulation:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      kinova:
+        path: kinova/gen3_with_2f85_with_ref.xml
+        apply:
+          body:
+            base_link:
+              pos: [0, 0, 1.05]
+            gravcomp: 1
+          joint:
+            joint_1: &damping
+              damping: 10.0
+            joint_2: *damping
+            joint_3: *damping
+            joint_4: *damping
+            joint_5: *damping
+            joint_6: *damping
+            joint_7: *damping
+        prefix:
+          joint: kinova_
+    references:
+      hand_controller:
+        body1: base_ref
+        body2: base
+        torquescale: 10
+    config:
+      step_size: 0.002
+      real_time_factor: 1
+      integrator: IMPLICITFAST
+
+  kinova_with_objects:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      kinova:
+        path: kinova/gen3_with_2f85.xml
+        apply:
+          body:
+            base_link:
+              pos: [0, 0, 1.05]
+            gravcomp: 1
+    objects:
+      table:
+        path: table/table.xml
+      milk_box:
+        path: others/milk_box/milk_box.xml
+        apply:
+          body:
+            milk_box:
+              pos: [0.35, 0.0, 1.2]
+      bowl:
+        path: ycb_objects/bowl/bowl.xml
+        apply:
+          body:
+            bowl:
+              pos: [0.35, 0.2, 1.2]
+      plate:
+        path: ycb_objects/plate/plate.xml
+        apply:
+          body:
+            plate:
+              pos: [0.35, -0.2, 1.2]
+      cracker_box:
+        path: ycb_objects/cracker_box/cracker_box.xml
+        apply:
+          body:
+            cracker_box:
+              pos: [0.45, 0.0, 1.2]
+      spoon:
+        path: ycb_objects/spoon/spoon.xml
+        apply:
+          body:
+            spoon:
+              pos: [0.55, 0.2, 1.2]
+    config:
+      step_size: 0.004
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+      nativeccd: true
+
+# multiverse_server:
+#   host: "tcp://127.0.0.1"
+#   port: 7000
+
+# multiverse_clients:
+#   panda_simulation:
+#     port: 7501
+#     send:
+#       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity"]
+#     receive:
+#       hand_ref: ["position", "quaternion"]
+    
+#   panda_with_montessori_toys_2:
+#     port: 7502
+#     send:
+#       body: ["position", "quaternion"]
+#       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+#     receive:
+#       actuator1: ["cmd_joint_rvalue"]
+#       actuator2: ["cmd_joint_rvalue"]
+#       actuator3: ["cmd_joint_rvalue"]
+#       actuator4: ["cmd_joint_rvalue"]
+#       actuator5: ["cmd_joint_rvalue"]
+#       actuator6: ["cmd_joint_rvalue"]
+#       actuator7: ["cmd_joint_rvalue"]
+#       actuator8: ["cmd_joint_tvalue"]
+
+#   ros:
+#     ros_nodes:
+#       services:
+#         socket:
+#           - port: 7400
+    
+#       publishers:
+#         tf:
+#           - meta_data:
+#               world_name: world
+#               length_unit: m
+#               angle_unit: rad
+#               mass_unit: kg
+#               time_unit: s
+#               handedness: rhs
+#             port: 7301
+#             topic: /tf
+#             rate: 60
+#             root_frame_id: map
+
+#     ros_run:
+#       rviz:
+#         config: panda_with_montessori_toys_2/config/rviz.rviz
+#         robot_descriptions:
+#           panda_description: franka_emika_panda/urdf/panda.urdf
+#           table_description: table/table.urdf
+#           small_table_description: small_table/small_table.urdf
+#           montessori_box_description: montessori_box/urdf/montessori_box.urdf
+#           montessori_object_1_description: montessori_box/urdf/montessori_object_1.urdf
+#           montessori_object_2_description: montessori_box/urdf/montessori_object_2.urdf
+#           montessori_object_3_description: montessori_box/urdf/montessori_object_3.urdf
+#           montessori_object_4_description: montessori_box/urdf/montessori_object_4.urdf
+#           montessori_object_5_description: montessori_box/urdf/montessori_object_5.urdf
+#           montessori_object_6_description: montessori_box/urdf/montessori_object_6.urdf

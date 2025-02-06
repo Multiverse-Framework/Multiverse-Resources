@@ -1,0 +1,222 @@
+<mujoco model="plate">
+    <compiler angle="radian" meshdir="./plate/meshes" autolimits="true" />
+    <asset>
+        <mesh name="Plate" file="obj/Plate.obj" />
+        <mesh name="UCX_Plate_0" file="stl/UCX_Plate_001.stl" />
+        <mesh name="UCX_Plate_1" file="stl/UCX_Plate_002.stl" />
+        <mesh name="UCX_Plate_2" file="stl/UCX_Plate_003.stl" />
+        <mesh name="UCX_Plate_3" file="stl/UCX_Plate_004.stl" />
+        <mesh name="UCX_Plate_4" file="stl/UCX_Plate_005.stl" />
+        <mesh name="UCX_Plate_5" file="stl/UCX_Plate_006.stl" />
+        <mesh name="UCX_Plate_6" file="stl/UCX_Plate_007.stl" />
+    </asset>
+
+    <default>
+        <default class="plate_visual">
+            <geom contype="0" conaffinity="0" />
+        </default>
+        <default class="plate_collision">
+            <geom rgba="0.9 0.9 0.9 1.0" group="3"/>
+        </default>
+    </default>
+
+    <worldbody>
+        <body name="plate" pos="0 0 0">
+            <freejoint />
+            <geom name="Plate" type="mesh" mesh="Plate" class="plate_visual"/>
+            <geom name="UCX_Plate_0" type="mesh" mesh="UCX_Plate_0" class="plate_collision"/>
+            <geom name="UCX_Plate_1_1" type="mesh" euler="0 0 0" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_1_2" type="mesh" euler="0 0 0" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_1_3" type="mesh" euler="0 0 0" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_1_4" type="mesh" euler="0 0 0" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_1_5" type="mesh" euler="0 0 0" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_1_6" type="mesh" euler="0 0 0" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_2_1" type="mesh" euler="0 0 0.1963" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_2_2" type="mesh" euler="0 0 0.1963" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_2_3" type="mesh" euler="0 0 0.1963" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_2_4" type="mesh" euler="0 0 0.1963" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_2_5" type="mesh" euler="0 0 0.1963" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_2_6" type="mesh" euler="0 0 0.1963" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_3_1" type="mesh" euler="0 0 0.3927" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_3_2" type="mesh" euler="0 0 0.3927" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_3_3" type="mesh" euler="0 0 0.3927" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_3_4" type="mesh" euler="0 0 0.3927" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_3_5" type="mesh" euler="0 0 0.3927" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_3_6" type="mesh" euler="0 0 0.3927" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_4_1" type="mesh" euler="0 0 0.5890" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_4_2" type="mesh" euler="0 0 0.5890" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_4_3" type="mesh" euler="0 0 0.5890" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_4_4" type="mesh" euler="0 0 0.5890" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_4_5" type="mesh" euler="0 0 0.5890" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_4_6" type="mesh" euler="0 0 0.5890" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_5_1" type="mesh" euler="0 0 0.7854" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_5_2" type="mesh" euler="0 0 0.7854" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_5_3" type="mesh" euler="0 0 0.7854" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_5_4" type="mesh" euler="0 0 0.7854" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_5_5" type="mesh" euler="0 0 0.7854" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_5_6" type="mesh" euler="0 0 0.7854" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_6_1" type="mesh" euler="0 0 0.9817" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_6_2" type="mesh" euler="0 0 0.9817" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_6_3" type="mesh" euler="0 0 0.9817" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_6_4" type="mesh" euler="0 0 0.9817" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_6_5" type="mesh" euler="0 0 0.9817" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_6_6" type="mesh" euler="0 0 0.9817" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_7_1" type="mesh" euler="0 0 1.1781" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_7_2" type="mesh" euler="0 0 1.1781" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_7_3" type="mesh" euler="0 0 1.1781" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_7_4" type="mesh" euler="0 0 1.1781" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_7_5" type="mesh" euler="0 0 1.1781" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_7_6" type="mesh" euler="0 0 1.1781" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_8_1" type="mesh" euler="0 0 1.3744" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_8_2" type="mesh" euler="0 0 1.3744" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_8_3" type="mesh" euler="0 0 1.3744" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_8_4" type="mesh" euler="0 0 1.3744" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_8_5" type="mesh" euler="0 0 1.3744" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_8_6" type="mesh" euler="0 0 1.3744" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_9_1" type="mesh" euler="0 0 1.5708" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_9_2" type="mesh" euler="0 0 1.5708" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_9_3" type="mesh" euler="0 0 1.5708" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_9_4" type="mesh" euler="0 0 1.5708" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_9_5" type="mesh" euler="0 0 1.5708" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_9_6" type="mesh" euler="0 0 1.5708" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_10_1" type="mesh" euler="0 0 1.7671" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_10_2" type="mesh" euler="0 0 1.7671" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_10_3" type="mesh" euler="0 0 1.7671" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_10_4" type="mesh" euler="0 0 1.7671" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_10_5" type="mesh" euler="0 0 1.7671" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_10_6" type="mesh" euler="0 0 1.7671" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_11_1" type="mesh" euler="0 0 1.9635" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_11_2" type="mesh" euler="0 0 1.9635" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_11_3" type="mesh" euler="0 0 1.9635" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_11_4" type="mesh" euler="0 0 1.9635" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_11_5" type="mesh" euler="0 0 1.9635" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_11_6" type="mesh" euler="0 0 1.9635" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_12_1" type="mesh" euler="0 0 2.1598" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_12_2" type="mesh" euler="0 0 2.1598" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_12_3" type="mesh" euler="0 0 2.1598" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_12_4" type="mesh" euler="0 0 2.1598" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_12_5" type="mesh" euler="0 0 2.1598" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_12_6" type="mesh" euler="0 0 2.1598" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_13_1" type="mesh" euler="0 0 2.3562" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_13_2" type="mesh" euler="0 0 2.3562" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_13_3" type="mesh" euler="0 0 2.3562" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_13_4" type="mesh" euler="0 0 2.3562" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_13_5" type="mesh" euler="0 0 2.3562" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_13_6" type="mesh" euler="0 0 2.3562" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_14_1" type="mesh" euler="0 0 2.5525" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_14_2" type="mesh" euler="0 0 2.5525" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_14_3" type="mesh" euler="0 0 2.5525" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_14_4" type="mesh" euler="0 0 2.5525" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_14_5" type="mesh" euler="0 0 2.5525" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_14_6" type="mesh" euler="0 0 2.5525" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_15_1" type="mesh" euler="0 0 2.7489" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_15_2" type="mesh" euler="0 0 2.7489" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_15_3" type="mesh" euler="0 0 2.7489" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_15_4" type="mesh" euler="0 0 2.7489" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_15_5" type="mesh" euler="0 0 2.7489" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_15_6" type="mesh" euler="0 0 2.7489" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_16_1" type="mesh" euler="0 0 2.9452" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_16_2" type="mesh" euler="0 0 2.9452" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_16_3" type="mesh" euler="0 0 2.9452" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_16_4" type="mesh" euler="0 0 2.9452" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_16_5" type="mesh" euler="0 0 2.9452" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_16_6" type="mesh" euler="0 0 2.9452" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_17_1" type="mesh" euler="0 0 3.1416" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_17_2" type="mesh" euler="0 0 3.1416" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_17_3" type="mesh" euler="0 0 3.1416" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_17_4" type="mesh" euler="0 0 3.1416" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_17_5" type="mesh" euler="0 0 3.1416" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_17_6" type="mesh" euler="0 0 3.1416" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_18_1" type="mesh" euler="0 0 3.3379" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_18_2" type="mesh" euler="0 0 3.3379" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_18_3" type="mesh" euler="0 0 3.3379" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_18_4" type="mesh" euler="0 0 3.3379" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_18_5" type="mesh" euler="0 0 3.3379" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_18_6" type="mesh" euler="0 0 3.3379" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_19_1" type="mesh" euler="0 0 3.5343" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_19_2" type="mesh" euler="0 0 3.5343" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_19_3" type="mesh" euler="0 0 3.5343" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_19_4" type="mesh" euler="0 0 3.5343" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_19_5" type="mesh" euler="0 0 3.5343" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_19_6" type="mesh" euler="0 0 3.5343" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_20_1" type="mesh" euler="0 0 3.7306" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_20_2" type="mesh" euler="0 0 3.7306" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_20_3" type="mesh" euler="0 0 3.7306" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_20_4" type="mesh" euler="0 0 3.7306" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_20_5" type="mesh" euler="0 0 3.7306" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_20_6" type="mesh" euler="0 0 3.7306" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_21_1" type="mesh" euler="0 0 3.9270" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_21_2" type="mesh" euler="0 0 3.9270" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_21_3" type="mesh" euler="0 0 3.9270" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_21_4" type="mesh" euler="0 0 3.9270" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_21_5" type="mesh" euler="0 0 3.9270" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_21_6" type="mesh" euler="0 0 3.9270" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_22_1" type="mesh" euler="0 0 4.1233" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_22_2" type="mesh" euler="0 0 4.1233" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_22_3" type="mesh" euler="0 0 4.1233" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_22_4" type="mesh" euler="0 0 4.1233" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_22_5" type="mesh" euler="0 0 4.1233" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_22_6" type="mesh" euler="0 0 4.1233" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_23_1" type="mesh" euler="0 0 4.3197" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_23_2" type="mesh" euler="0 0 4.3197" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_23_3" type="mesh" euler="0 0 4.3197" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_23_4" type="mesh" euler="0 0 4.3197" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_23_5" type="mesh" euler="0 0 4.3197" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_23_6" type="mesh" euler="0 0 4.3197" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_24_1" type="mesh" euler="0 0 4.5160" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_24_2" type="mesh" euler="0 0 4.5160" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_24_3" type="mesh" euler="0 0 4.5160" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_24_4" type="mesh" euler="0 0 4.5160" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_24_5" type="mesh" euler="0 0 4.5160" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_24_6" type="mesh" euler="0 0 4.5160" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_25_1" type="mesh" euler="0 0 4.7124" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_25_2" type="mesh" euler="0 0 4.7124" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_25_3" type="mesh" euler="0 0 4.7124" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_25_4" type="mesh" euler="0 0 4.7124" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_25_5" type="mesh" euler="0 0 4.7124" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_25_6" type="mesh" euler="0 0 4.7124" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_26_1" type="mesh" euler="0 0 4.9087" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_26_2" type="mesh" euler="0 0 4.9087" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_26_3" type="mesh" euler="0 0 4.9087" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_26_4" type="mesh" euler="0 0 4.9087" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_26_5" type="mesh" euler="0 0 4.9087" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_26_6" type="mesh" euler="0 0 4.9087" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_27_1" type="mesh" euler="0 0 5.1051" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_27_2" type="mesh" euler="0 0 5.1051" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_27_3" type="mesh" euler="0 0 5.1051" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_27_4" type="mesh" euler="0 0 5.1051" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_27_5" type="mesh" euler="0 0 5.1051" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_27_6" type="mesh" euler="0 0 5.1051" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_28_1" type="mesh" euler="0 0 5.3014" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_28_2" type="mesh" euler="0 0 5.3014" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_28_3" type="mesh" euler="0 0 5.3014" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_28_4" type="mesh" euler="0 0 5.3014" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_28_5" type="mesh" euler="0 0 5.3014" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_28_6" type="mesh" euler="0 0 5.3014" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_29_1" type="mesh" euler="0 0 5.4978" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_29_2" type="mesh" euler="0 0 5.4978" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_29_3" type="mesh" euler="0 0 5.4978" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_29_4" type="mesh" euler="0 0 5.4978" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_29_5" type="mesh" euler="0 0 5.4978" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_29_6" type="mesh" euler="0 0 5.4978" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_30_1" type="mesh" euler="0 0 5.6941" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_30_2" type="mesh" euler="0 0 5.6941" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_30_3" type="mesh" euler="0 0 5.6941" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_30_4" type="mesh" euler="0 0 5.6941" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_30_5" type="mesh" euler="0 0 5.6941" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_30_6" type="mesh" euler="0 0 5.6941" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_31_1" type="mesh" euler="0 0 5.8905" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_31_2" type="mesh" euler="0 0 5.8905" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_31_3" type="mesh" euler="0 0 5.8905" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_31_4" type="mesh" euler="0 0 5.8905" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_31_5" type="mesh" euler="0 0 5.8905" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_31_6" type="mesh" euler="0 0 5.8905" mesh="UCX_Plate_6" class="plate_collision"/>
+            <geom name="UCX_Plate_32_1" type="mesh" euler="0 0 6.0868" mesh="UCX_Plate_1" class="plate_collision"/>
+            <geom name="UCX_Plate_32_2" type="mesh" euler="0 0 6.0868" mesh="UCX_Plate_2" class="plate_collision"/>
+            <geom name="UCX_Plate_32_3" type="mesh" euler="0 0 6.0868" mesh="UCX_Plate_3" class="plate_collision"/>
+            <geom name="UCX_Plate_32_4" type="mesh" euler="0 0 6.0868" mesh="UCX_Plate_4" class="plate_collision"/>
+            <geom name="UCX_Plate_32_5" type="mesh" euler="0 0 6.0868" mesh="UCX_Plate_5" class="plate_collision"/>
+            <geom name="UCX_Plate_32_6" type="mesh" euler="0 0 6.0868" mesh="UCX_Plate_6" class="plate_collision"/>
+        </body>
+    </worldbody>
+</mujoco>

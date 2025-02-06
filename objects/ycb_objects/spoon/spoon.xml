@@ -1,0 +1,20 @@
+<mujoco model="spoon">
+    <compiler angle="radian" meshdir="./spoon/meshes" autolimits="true" />
+    <default>
+        <default class="spoon_collision">
+            <geom rgba="0.9 0.9 0.9 1.0" />
+        </default>
+    </default>
+    <asset>
+        <mesh name="UCX_Spoon_001" file="stl/UCX_Spoon_001.stl" />
+        <mesh name="UCX_Spoon_002" file="stl/UCX_Spoon_002.stl" />
+    </asset>
+
+    <worldbody>
+        <body name="spoon" >
+            <freejoint />
+            <geom name="UCX_Spoon_001" type="mesh" mesh="UCX_Spoon_001" class="spoon_collision"/>
+            <geom name="UCX_Spoon_002" type="mesh" mesh="UCX_Spoon_002" class="spoon_collision"/>
+        </body>
+    </worldbody>
+</mujoco>

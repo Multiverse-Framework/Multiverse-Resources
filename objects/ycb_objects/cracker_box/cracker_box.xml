@@ -1,0 +1,24 @@
+<mujoco model="cracker_box">
+    <compiler angle="radian" meshdir="./cracker_box/meshes" autolimits="true" />
+    <default>
+        <default class="cracker_box_visual">
+            <geom contype="0" conaffinity="0" />
+        </default>
+        <default class="cracker_box_collision">
+            <geom rgba="0.9 0.9 0.9 1.0" group="3"/>
+        </default>
+    </default>
+    <asset>
+        <mesh name="CrackerBox" file="obj/CrackerBox.obj" />
+        <mesh name="UCX_CrackerBox_001" file="stl/UCX_CrackerBox_001.stl" />
+    </asset>
+
+    <worldbody>
+        <body name="cracker_box" >
+            <freejoint />
+            <inertial mass="2.019251823425293" pos="0.02073943428695202 -0.012290057726204395 0.12366138398647308" quat="0.9971538186073303 0.0 0.0 -0.07539395242929459" diaginertia="0.012760210782289505 0.009210974909365177 0.0046439869329333305"/>
+			<geom name="CrackerBox" type="mesh" mesh="CrackerBox" class="cracker_box_visual"/>
+            <geom name="UCX_CrackerBox_001" type="mesh" mesh="UCX_CrackerBox_001" class="cracker_box_collision"/>
+        </body>
+    </worldbody>
+</mujoco>
