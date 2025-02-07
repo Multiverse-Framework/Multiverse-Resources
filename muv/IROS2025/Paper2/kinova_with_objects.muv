@@ -64,37 +64,37 @@ simulations:
         apply:
           body:
             milk_box:
-              pos: [0.35, 0.0, 1.2]
+              pos: [0.30, -0.1, 1.2]
       bowl:
         path: ycb_objects/bowl/bowl.xml
         apply:
           body:
             bowl:
-              pos: [0.35, 0.2, 1.2]
+              pos: [0.45, -0.1, 1.1]
       plate:
         path: ycb_objects/plate/plate.xml
         apply:
           body:
             plate:
-              pos: [0.35, -0.2, 1.2]
+              pos: [0.35, -0.3, 1.1]
       cracker_box:
         path: ycb_objects/cracker_box/cracker_box.xml
         apply:
           body:
             cracker_box:
-              pos: [0.45, 0.0, 1.2]
+              pos: [0.57, -0.1, 1.1]
       cereal_box:
         path: others/cereal_box/cereal_box.xml
         apply:
           body:
             cereal_box:
-              pos: [0.65, 0.0, 1.2]
+              pos: [0.57, -0.3, 1.2]
       spoon:
         path: ycb_objects/spoon/spoon.xml
         apply:
           body:
             spoon:
-              pos: [0.55, 0.2, 1.2]
+              pos: [0.45, 0.05, 1.1]
     config:
       step_size: 0.004
       integrator: IMPLICITFAST
