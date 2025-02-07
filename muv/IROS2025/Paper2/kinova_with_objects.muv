@@ -102,23 +102,23 @@ simulations:
       multiccd: true
       nativeccd: true
 
-# multiverse_server:
-#   host: "tcp://127.0.0.1"
-#   port: 7000
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
 
-# multiverse_clients:
-#   panda_simulation:
-#     port: 7501
-#     send:
-#       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity"]
-#     receive:
-#       hand_ref: ["position", "quaternion"]
+multiverse_clients:
+  panda_simulation:
+    port: 7501
+    send:
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity"]
+    # receive:
+    #   hand_ref: ["position", "quaternion"]
     
-#   panda_with_montessori_toys_2:
-#     port: 7502
-#     send:
-#       body: ["position", "quaternion"]
-#       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+  panda_with_montessori_toys_2:
+    port: 7502
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
 #     receive:
 #       actuator1: ["cmd_joint_rvalue"]
 #       actuator2: ["cmd_joint_rvalue"]
