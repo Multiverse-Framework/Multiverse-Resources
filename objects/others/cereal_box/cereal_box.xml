@@ -1,0 +1,19 @@
+<mujoco model="cereal_box">
+    <compiler angle="radian" meshdir="./cereal_box/meshes" autolimits="true" />
+    <default>
+        <default class="cereal_box_collision">
+            <geom rgba="0.9 0.9 0.9 1.0" />
+        </default>
+    </default>
+    <asset>
+        <mesh name="UCX_CerealBox_001" file="stl/UCX_CerealBox_001.stl" />
+    </asset>
+
+    <worldbody>
+        <body name="cereal_box" >
+            <freejoint />
+            <inertial mass="1.7608798742294312" pos="0.0 -9.62056443935285e-19 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.00989673100411892 0.0075958482921123505 0.0032881496008485556"/>
+			<geom name="UCX_CerealBox_001" type="mesh" mesh="UCX_CerealBox_001" class="cereal_box_collision"/>
+        </body>
+    </worldbody>
+</mujoco>
