@@ -9,40 +9,6 @@ worlds:
     real_time_factor: 1
 
 simulations:
-  kinova_simulation:
-    simulator: pymujoco
-    world:
-      name: world
-      path: floor/floor.xml
-    robots:
-      kinova:
-        path: kinova/gen3_with_2f85_with_ref.xml
-        apply:
-          body:
-            base_link:
-              pos: [0, 0, 1.05]
-            gravcomp: 1
-          joint:
-            joint_1: &damping
-              damping: 10.0
-            joint_2: *damping
-            joint_3: *damping
-            joint_4: *damping
-            joint_5: *damping
-            joint_6: *damping
-            joint_7: *damping
-        prefix:
-          joint: kinova_
-    references:
-      hand_controller:
-        body1: base_ref
-        body2: base
-        torquescale: 10
-    config:
-      step_size: 0.002
-      real_time_factor: 1
-      integrator: IMPLICITFAST
-
   kinova_with_objects:
     simulator: pymujoco
     world:
@@ -106,16 +72,12 @@ multiverse_server:
   host: "tcp://127.0.0.1"
   port: 7000
 
-multiverse_clients:
-  kinova_simulation:
-    port: 7501
-    send:
-      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity"]
-    receive:
-      base_ref: ["position", "quaternion"]
-    
+multiverse_clients:    
   kinova_with_objects:
     port: 7502
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_linear_acceleration", "joint_angular_acceleration", "joint_force", "joint_torque"]
     receive:
       actuator_1: ["cmd_joint_rvalue"]
       actuator_2: ["cmd_joint_rvalue"]
