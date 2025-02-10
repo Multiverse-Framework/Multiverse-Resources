@@ -1,0 +1,258 @@
+<?xml version="1.0" ?>
+<robot name="fr3" version="1.0">
+  <link name="fr3"/>
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="fr3"/>
+    <child link="base"/>
+  </joint>
+  <link name="base">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <joint name="fr3_link0_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="base"/>
+    <child link="fr3_link0"/>
+  </joint>
+  <link name="fr3_link0">
+    <inertial>
+      <origin xyz="-0.01720000058412552 0.00039999998989515007 0.07450000196695328" rpy="-1.5707963705062866 -0.8475756645202637 -3.1415927410125732"/>
+      <mass value="2.3966000080108643"/>
+      <inertia ixx="0.006734435446560383" ixy="0.0" ixz="0.0" iyy="0.010765564627945423" iyz="0.0" izz="0.011500000022351742"/>
+    </inertial>
+    <visual name="SM_fr3_link0_visual_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/dae/link0.dae"/>
+      </geometry>
+      <material name="SM_fr3_link0_visual_0_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision name="SM_fr3_link0_collision_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/stl/link0.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr3_joint1" type="revolute">
+    <origin xyz="0.0 0.0 0.3330000042915344" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="fr3_link0"/>
+    <child link="fr3_link1"/>
+    <limit effort="87.0" lower="-2.7437000274658203" upper="2.7437000274658203" velocity="2.619999885559082"/>
+  </joint>
+  <link name="fr3_link1">
+    <inertial>
+      <origin xyz="4.128000057335157e-07 -0.018125131726264954 -0.03860359638929367" rpy="-1.4969944953918457 -1.449410080909729 1.5190573930740356"/>
+      <mass value="2.9274654388427734"/>
+      <inertia ixx="0.0061063384637236595" ixy="0.0" ixz="0.0" iyy="0.022724615409970284" iyz="0.0" izz="0.023928621783852577"/>
+    </inertial>
+    <visual name="SM_fr3_link1_visual_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/dae/link1.dae"/>
+      </geometry>
+      <material name="SM_fr3_link1_visual_0_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision name="SM_fr3_link1_collision_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/stl/link1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr3_joint2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="fr3_link1"/>
+    <child link="fr3_link2"/>
+    <limit effort="87.0" lower="-1.7836999893188477" upper="1.7836999893188477" velocity="2.619999885559082"/>
+  </joint>
+  <link name="fr3_link2">
+    <inertial>
+      <origin xyz="0.003182886401191354 -0.0743221640586853 0.008814608678221703" rpy="2.956618547439575 0.11771196871995926 -1.5312153100967407"/>
+      <mass value="2.935537099838257"/>
+      <inertia ixx="0.024637065827846527" ixy="0.0" ixz="0.0" iyy="0.04119244962930679" iyz="0.0" izz="0.06295672059059143"/>
+    </inertial>
+    <visual name="SM_fr3_link2_visual_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/dae/link2.dae"/>
+      </geometry>
+      <material name="SM_fr3_link2_visual_0_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision name="SM_fr3_link2_collision_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/stl/link2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr3_joint3" type="revolute">
+    <origin xyz="0.0 -0.3160000145435333 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="fr3_link2"/>
+    <child link="fr3_link3"/>
+    <limit effort="87.0" lower="-2.900700092315674" upper="2.900700092315674" velocity="2.619999885559082"/>
+  </joint>
+  <link name="fr3_link3">
+    <inertial>
+      <origin xyz="0.04070156812667847 -0.004820056725293398 -0.028973082080483437" rpy="-0.7284845113754272 -0.9836986660957336 1.2802529335021973"/>
+      <mass value="2.244901418685913"/>
+      <inertia ixx="0.017158687114715576" ixy="0.0" ixz="0.0" iyy="0.01898687519133091" iyz="0.0" izz="0.026740889996290207"/>
+    </inertial>
+    <visual name="SM_fr3_link3_visual_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/dae/link3.dae"/>
+      </geometry>
+      <material name="SM_fr3_link3_visual_0_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision name="SM_fr3_link3_collision_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/stl/link3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr3_joint4" type="revolute">
+    <origin xyz="0.08250000327825546 0.0 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="fr3_link3"/>
+    <child link="fr3_link4"/>
+    <limit effort="87.0" lower="-3.042099952697754" upper="-0.1518000066280365" velocity="2.619999885559082"/>
+  </joint>
+  <link name="fr3_link4">
+    <inertial>
+      <origin xyz="-0.045910097658634186 0.06304929405450821 -0.00851878710091114" rpy="0.8381739258766174 -0.2950558662414551 2.3267662525177"/>
+      <mass value="2.615595579147339"/>
+      <inertia ixx="0.016004662960767746" ixy="0.0" ixz="0.0" iyy="0.037271659821271896" iyz="0.0" izz="0.051389992237091064"/>
+    </inertial>
+    <visual name="SM_fr3_link4_visual_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/dae/link4.dae"/>
+      </geometry>
+      <material name="SM_fr3_link4_visual_0_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision name="SM_fr3_link4_collision_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/stl/link4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr3_joint5" type="revolute">
+    <origin xyz="-0.08250000327825546 0.3840000033378601 0.0" rpy="-1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="fr3_link4"/>
+    <child link="fr3_link5"/>
+    <limit effort="12.0" lower="-2.80649995803833" upper="2.80649995803833" velocity="5.260000228881836"/>
+  </joint>
+  <link name="fr3_link5">
+    <inertial>
+      <origin xyz="-0.0016039605252444744 0.029253626242280006 -0.09729659557342529" rpy="0.6526071429252625 -1.2769997119903564 -1.410598635673523"/>
+      <mass value="2.327120780944824"/>
+      <inertia ixx="0.013063374906778336" ixy="0.0" ixz="0.0" iyy="0.0449143722653389" iyz="0.0" izz="0.05793345347046852"/>
+    </inertial>
+    <visual name="SM_fr3_link5_visual_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/dae/link5.dae"/>
+      </geometry>
+      <material name="SM_fr3_link5_visual_0_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision name="SM_fr3_link5_collision_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/stl/link5.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr3_joint6" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="fr3_link5"/>
+    <child link="fr3_link6"/>
+    <limit effort="12.0" lower="0.5444999933242798" upper="4.516900062561035" velocity="4.179999828338623"/>
+  </joint>
+  <link name="fr3_link6">
+    <inertial>
+      <origin xyz="0.05971312150359154 -0.041029468178749084 -0.010169272311031818" rpy="-1.9756429195404053 0.13147808611392975 -0.485081285238266"/>
+      <mass value="1.8170377016067505"/>
+      <inertia ixx="0.0019352874951437116" ixy="0.0" ixz="0.0" iyy="0.016112297773361206" iyz="0.0" izz="0.017503894865512848"/>
+    </inertial>
+    <visual name="SM_fr3_link6_visual_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/dae/link6.dae"/>
+      </geometry>
+      <material name="SM_fr3_link6_visual_0_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision name="SM_fr3_link6_collision_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/stl/link6.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr3_joint7" type="revolute">
+    <origin xyz="0.08799999952316284 0.0 0.0" rpy="1.5707963705062866 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="fr3_link6"/>
+    <child link="fr3_link7"/>
+    <limit effort="12.0" lower="-3.015899896621704" upper="3.015899896621704" velocity="5.260000228881836"/>
+  </joint>
+  <link name="fr3_link7">
+    <inertial>
+      <origin xyz="0.004522581584751606 0.00862619187682867 -0.016163324937224388" rpy="0.34054818749427795 -1.0289961099624634 -2.052215099334717"/>
+      <mass value="0.6271432638168335"/>
+      <inertia ixx="5.641318807647622e-07" ixy="0.0" ixz="0.0" iyy="0.00022364153119269758" iyz="0.0" izz="0.0002238358138129115"/>
+    </inertial>
+    <visual name="SM_fr3_link7_visual_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/dae/link7.dae"/>
+      </geometry>
+      <material name="SM_fr3_link7_visual_0_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+    <collision name="SM_fr3_link7_collision_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://fr3_no_ee/meshes/stl/link7.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr3_link8_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.107" rpy="0.0 0.0 0.0"/>
+    <parent link="fr3_link7"/>
+    <child link="fr3_link8"/>
+  </joint>
+  <link name="fr3_link8">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+</robot>
