@@ -8,41 +8,74 @@ worlds:
   world:
     real_time_factor: -1
 
-simulations:
-  g1_on_the_floor_simulation:
-    simulator: isaac_sim
-    headless: False
-    world:
-      name: world
-      path: floor/floor.usda
-    robots:
-      g1:
-        path: g1/g1_29dof_with_hand.usd
-        apply:
-          body:
-            g1_29dof_with_hand:
-              pos: [0.0, 0.0, 1.0]
-              quat: [1.0, 0.0, 0.0, 0.0]
-    config:
-      step_size: 0.01
+# simulations:
+#   g1_on_the_floor_simulation:
+#     simulator: isaac_sim
+#     headless: False
+#     world:
+#       name: world
+#       path: floor/floor.usda
+#     robots:
+#       g1:
+#         path: g1/g1.usda
+#         apply:
+#           body:
+#             g1:
+#               pos: [0.0, 0.0, 1.0]
+#               quat: [1.0, 0.0, 0.0, 0.0]
+#     config:
+#       step_size: 0.01
 
 multiverse_server:
   host: "tcp://127.0.0.1"
   port: 7000
 
 multiverse_clients:
-  g1_on_the_floor_simulation:
-    port: 8000
-    send:
-      body: ["position", "quaternion"]
-      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+  # g1_on_the_floor_simulation:
+  #   port: 8000
+  #   send:
+  #     body: ["position", "quaternion"]
+  #     joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+  #   receive:
+  #     left_hip_pitch_joint: ["cmd_joint_rvalue"]
+  #     right_hip_pitch_joint: ["cmd_joint_rvalue"]
+  #     torso_joint: ["cmd_joint_rvalue"]
+  #     left_hip_roll_joint: ["cmd_joint_rvalue"]
+  #     left_hip_yaw_joint: ["cmd_joint_rvalue"]
+  #     left_knee_joint: ["cmd_joint_rvalue"]
+  #     left_ankle_pitch_joint: ["cmd_joint_rvalue"]
+  #     left_ankle_roll_joint: ["cmd_joint_rvalue"]
+  #     right_hip_roll_joint: ["cmd_joint_rvalue"]
+  #     right_hip_yaw_joint: ["cmd_joint_rvalue"]
+  #     right_knee_joint: ["cmd_joint_rvalue"]
+  #     right_ankle_pitch_joint: ["cmd_joint_rvalue"]
+  #     right_ankle_roll_joint: ["cmd_joint_rvalue"]
+  #     left_shoulder_pitch_joint: ["cmd_joint_rvalue"]
+  #     right_shoulder_pitch_joint: ["cmd_joint_rvalue"]
+  #     left_shoulder_roll_joint: ["cmd_joint_rvalue"]
+  #     left_shoulder_yaw_joint: ["cmd_joint_rvalue"]
+  #     left_elbow_pitch_joint: ["cmd_joint_rvalue"]
+  #     left_five_joint: ["cmd_joint_rvalue"]
+  #     left_three_joint: ["cmd_joint_rvalue"]
+  #     left_zero_joint: ["cmd_joint_rvalue"]
+  #     left_six_joint: ["cmd_joint_rvalue"]
+  #     left_four_joint: ["cmd_joint_rvalue"]
+  #     left_one_joint: ["cmd_joint_rvalue"]
+  #     left_two_joint: ["cmd_joint_rvalue"]
+  #     right_shoulder_roll_joint: ["cmd_joint_rvalue"]
+  #     right_shoulder_yaw_joint: ["cmd_joint_rvalue"]
+  #     right_elbow_pitch_joint: ["cmd_joint_rvalue"]
+  #     right_elbow_roll_joint: ["cmd_joint_rvalue"]
+  #     right_five_joint: ["cmd_joint_rvalue"]
+  #     right_three_joint: ["cmd_joint_rvalue"]
+  #     right_zero_joint: ["cmd_joint_rvalue"]
+  #     right_six_joint: ["cmd_joint_rvalue"]
+  #     right_four_joint: ["cmd_joint_rvalue"]
+  #     right_one_joint: ["cmd_joint_rvalue"]
+  #     right_two_joint: ["cmd_joint_rvalue"]
 
   ros2:
     ros_nodes:
-      services:
-        socket:
-          - port: 7400
-    
       publishers:
         tf:
           - meta_data:
@@ -57,8 +90,65 @@ multiverse_clients:
             rate: 60
             root_frame_id: map
 
+    ros2_control:
+      - meta_data:
+          world_name: world
+          length_unit: m
+          angle_unit: rad
+          mass_unit: kg
+          time_unit: s
+          handedness: rhs
+        port: 7601
+        controller_manager:
+          robot: g1
+          robot_description: /robot_description
+          urdf: g1/g1.urdf
+          config: config/g1/ros2_control.yaml
+          tf_topic: /tf
+          actuators:
+            left_hip_pitch_joint: left_hip_pitch_joint
+            right_hip_pitch_joint: right_hip_pitch_joint
+            torso_joint: torso_joint
+            left_hip_roll_joint: left_hip_roll_joint
+            left_hip_yaw_joint: left_hip_yaw_joint
+            left_knee_joint: left_knee_joint
+            left_ankle_pitch_joint: left_ankle_pitch_joint
+            left_ankle_roll_joint: left_ankle_roll_joint
+            right_hip_roll_joint: right_hip_roll_joint
+            right_hip_yaw_joint: right_hip_yaw_joint
+            right_knee_joint: right_knee_joint
+            right_ankle_pitch_joint: right_ankle_pitch_joint
+            right_ankle_roll_joint: right_ankle_roll_joint
+            left_shoulder_pitch_joint: left_shoulder_pitch_joint
+            right_shoulder_pitch_joint: right_shoulder_pitch_joint
+            left_shoulder_roll_joint: left_shoulder_roll_joint
+            left_shoulder_yaw_joint: left_shoulder_yaw_joint
+            left_elbow_pitch_joint: left_elbow_pitch_joint
+            left_five_joint: left_five_joint
+            left_three_joint: left_three_joint
+            left_zero_joint: left_zero_joint
+            left_six_joint: left_six_joint
+            left_four_joint: left_four_joint
+            left_one_joint: left_one_joint
+            left_two_joint: left_two_joint
+            right_shoulder_roll_joint: right_shoulder_roll_joint
+            right_shoulder_yaw_joint: right_shoulder_yaw_joint
+            right_elbow_pitch_joint: right_elbow_pitch_joint
+            right_elbow_roll_joint: right_elbow_roll_joint
+            right_five_joint: right_five_joint
+            right_three_joint: right_three_joint
+            right_zero_joint: right_zero_joint
+            right_six_joint: right_six_joint
+            right_four_joint: right_four_joint
+            right_one_joint: right_one_joint
+            right_two_joint: right_two_joint
+          controllers:
+            spawner:
+              - joint_state_broadcaster
+                joint_trajectory_controller
+
     ros2_run:
       rviz2:
         config: g1_on_the_floor/config/rviz2.rviz
         robot_descriptions:
-          g1_description: g1/g1_29dof_with_hand.urdf
+          g1_description: urdf/g1/g1.urdf

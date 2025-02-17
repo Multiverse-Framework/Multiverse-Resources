@@ -1,0 +1,56 @@
+resources: 
+  - ../../robots
+  - ../../worlds
+  - ../../objects
+  - ../../demos
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  fr3_simulation:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      fr3:
+        path: franka_robotics/fr3/mjcf/fr3_no_ee.xml
+        apply:
+          body:
+            base:
+              pos: [0, 0, 1.05]
+            gravcomp: 1
+          joint:
+            fr3_joint1: &damping
+              damping: 10.0
+            fr3_joint2: *damping
+            fr3_joint3: *damping
+            fr3_joint4: *damping
+            fr3_joint5: *damping
+            fr3_joint6: *damping
+            fr3_joint7: *damping
+        prefix:
+          joint: sim_
+    references:
+      hand_controller:
+        body1: fr3_link7_ref
+        body2: fr3_link7
+        torquescale: 10
+    config:
+      step_size: 0.001
+      real_time_factor: 1
+      integrator: IMPLICITFAST
+
+multiverse_server:
+  host: "tcp://10.219.11.11"
+  port: 7000
+
+multiverse_clients:
+  fr3_simulation:
+    port: 7501
+    send:
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_linear_acceleration", "joint_angular_acceleration", "joint_torque", "joint_force"]
+    receive:
+      fr3_link7_ref: ["position", "quaternion"]
