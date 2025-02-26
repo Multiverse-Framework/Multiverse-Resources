@@ -30,37 +30,39 @@ simulations:
         apply:
           body:
             milk_box:
-              pos: [0.30, -0.1, 1.2]
+              pos: [0.5, -0.0322, 1.2]
       bowl:
-        path: ycb_objects/bowl/bowl.xml
+        path: ycb_objects/bowl/bowl_minh.xml
         apply:
           body:
             bowl:
-              pos: [0.45, -0.1, 1.1]
+              pos: [0.69, -0.20, 1.1]
       plate:
         path: ycb_objects/plate/plate.xml
         apply:
           body:
             plate:
-              pos: [0.35, -0.3, 1.1]
+              pos: [0.79, 0.0, 1.1]
       cracker_box:
         path: ycb_objects/cracker_box/cracker_box.xml
         apply:
           body:
             cracker_box:
-              pos: [0.63, -0.1, 1.1]
+              pos: [0.60, -0.34, 1.2]
+              quat: [0.9238795, 0.0, 0.0, 0.3826834]
       cereal_box:
         path: others/cereal_box/cereal_box.xml
         apply:
           body:
             cereal_box:
-              pos: [0.57, -0.3, 1.2]
-      spoon:
-        path: ycb_objects/spoon/spoon.xml
-        apply:
-          body:
-            spoon:
-              pos: [0.45, -0.11, 1.16]
+              pos: [0.50, -0.19105, 1.2]
+              quat: [0.9238795, 0.0, 0.0, -0.3826834]
+      # spoon:
+      #   path: ycb_objects/spoon/spoon.xml
+      #   apply:
+      #     body:
+      #       spoon:
+      #         pos: [0.45, -0.11, 1.16]
     config:
       step_size: 0.004
       integrator: IMPLICITFAST
