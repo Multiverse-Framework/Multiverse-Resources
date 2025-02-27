@@ -1,29 +1,5 @@
 #!/usr/bin/env python3
 
-from multiverse_client_py import MultiverseClient, MultiverseMetaData
-
-class JointStateSender(MultiverseClient):
-    def __init__(self, port: str, multiverse_meta_data: MultiverseMetaData) -> None:
-        super().__init__(port, multiverse_meta_data)
-
-    def loginfo(self, message: str) -> None:
-        print(f"INFO: {message}")
-
-    def logwarn(self, message: str) -> None:
-        print(f"WARN: {message}")
-
-    def _run(self) -> None:
-        self.loginfo("Start logging.")
-        self._connect_and_start()
-
-    def send_and_receive_meta_data(self) -> None:
-        self.loginfo("Sending request meta data: " + str(self.request_meta_data))
-        self._communicate(True)
-        self.loginfo("Received response meta data: " + str(self.response_meta_data))
-
-    def send_and_receive_data(self) -> None:
-        self._communicate(False)
-
 import rclpy
 from rclpy.node import Node
 
@@ -62,6 +38,30 @@ actuator_ids = {
     "fingers_actuator": 8,
 }
 
+from multiverse_client_py import MultiverseClient, MultiverseMetaData
+
+class JointStateSender(MultiverseClient):
+    def __init__(self, port: str, multiverse_meta_data: MultiverseMetaData) -> None:
+        super().__init__(port, multiverse_meta_data)
+
+    def loginfo(self, message: str) -> None:
+        print(f"INFO: {message}")
+
+    def logwarn(self, message: str) -> None:
+        print(f"WARN: {message}")
+
+    def _run(self) -> None:
+        self.loginfo("Start logging.")
+        self._connect_and_start()
+
+    def send_and_receive_meta_data(self) -> None:
+        self.loginfo("Sending request meta data: " + str(self.request_meta_data))
+        self._communicate(True)
+        self.loginfo("Received response meta data: " + str(self.response_meta_data))
+
+    def send_and_receive_data(self) -> None:
+        self._communicate(False)
+
 class JointStateSubscriber(Node):
     def __init__(self):
         multiverse_meta_data = MultiverseMetaData(
@@ -74,7 +74,7 @@ class JointStateSubscriber(Node):
             handedness="rhs",
         )
         self.joint_state_sender = JointStateSender(port="5000",
-                                            multiverse_meta_data=multiverse_meta_data)
+                                                   multiverse_meta_data=multiverse_meta_data)
         self.joint_state_sender.run()
 
         self.joint_state_sender.request_meta_data["send"] = {}
