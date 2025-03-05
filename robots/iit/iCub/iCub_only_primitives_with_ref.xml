@@ -1,6 +1,9 @@
 <?xml version="1.0" ?>
 <mujoco model="iCub">
-	<compiler angle="radian" autolimits="true" balanceinertia="true" boundmass="0.001" boundinertia="0.000001"/>
+	<compiler angle="radian" autolimits="true" />
+	<option timestep="0.002" integrator="implicitfast" cone="elliptic">
+		<flag multiccd="enable" nativeccd="enable" />
+	</option>
 	<default>
 		<default class="iCub_visual">
 			<geom contype="0" conaffinity="0"/>
@@ -8,18 +11,14 @@
 		<default class="iCub_collision">
 			<geom rgba="0.9 0.9 0.9 1.0"/>
 		</default>
-		<default class="iCub_joint">
-			<joint damping="10.0" />
-		</default>
 	</default>
 	<asset/>
 	<worldbody>
 		<body name="iCub" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
 			<freejoint/>
 			<body name="base_footprint" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
-				<inertial mass="0.0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0 0.0 0.0"/>
+				<inertial mass="0.5866924524307251" pos="0.011262650601565838 0.0 0.02912449836730957" quat="0.7209774851799011 0.0 -0.6929585337638855 -0.0" diaginertia="0.0006618420011363924 0.0015093681868165731 0.0015251357108354568"/>
 				<body name="root_link" pos="0.0 0.0 0.6349999904632568" quat="1.0 0.0 0.0 0.0">
-					<inertial mass="0.5866924524307251" pos="0.011262650601565838 0.0 0.02912449836730957" quat="0.7209774851799011 0.0 -0.6929585337638855 -0.0" diaginertia="0.0006618420011363924 0.0015093681868165731 0.0015251357108354568"/>
 					<geom name="SM_root_link_collision_0" type="cylinder" pos="0.0020000000949949026 0.0 0.05999999865889549" quat="0.7071067690849304 0.0 0.7071067690849304 0.0" size="0.03500000014901161 0.03700000047683716 0.0" class="iCub_collision"/>
 					<geom name="SM_root_link_collision_1" type="cylinder" pos="0.019999999552965164 0.0 0.0" quat="0.7071067690849304 0.7071067690849304 0.0 0.0" size="0.03099999949336052 0.05000000074505806 0.0" class="iCub_collision"/>
 					<body name="r_hip_1" pos="0.02160000056028366 -0.040550000965595245 0.0" quat="1.0 0.0 0.0 0.0">
@@ -125,7 +124,7 @@
 															<body name="r_hand" pos="-0.016300123184919357 0.006999390199780464 0.0" quat="-7.312061383896867e-14 0.7071067690849304 7.311908240340004e-14 0.7071067690849304">
 																<inertial mass="0.0650000050663948" pos="-0.03999999910593033 0.004999999888241291 0.009999999776482582" quat="0.9907810688018799 0.042749423533678055 0.11008170247077942 -0.06638852506875992" diaginertia="1.764310036378447e-05 0.00012932834215462208 0.00013876857701689005"/>
 																<geom name="SM_r_hand_collision_0" type="box" pos="-0.03999999910593033 0.004999999888241291 0.009999999776482582" quat="-0.7010573744773865 0.7010573744773865 -0.09229592978954315 -0.09229592978954315" size="0.02500000037252903 0.02500000037252903 0.013000000268220901" class="iCub_collision"/>
-																<joint name="r_wrist_yaw" type="hinge" pos="-7.534170295827952e-18 -2.6658087268144582e-17 -1.7189102642066309e-18" range="-0.2617993950843811 0.6108652353286743" axis="-2.494957698218059e-07 1.0 2.454089553793892e-07"/>
+																<joint name="r_wrist_yaw" type="hinge" pos="-7.534170295827952e-18 -2.6658087268144582e-17 -1.7189102642066309e-18" range="-0.2617993950843811 0.6108652353286743" axis="0.0 -1.0 0.0"/>
 																<body name="r_hand_little_0" pos="-0.06362900137901306 0.004443199839442968 -0.010110927745699883" quat="0.08513370156288147 0.02448935993015766 -0.6986569166183472 0.7099514007568359">
 																	<inertial mass="0.0015833628131076694" pos="0.007000000216066837 -0.0020000000949949026 -0.0010000000474974513" quat="0.964142382144928 0.22760315239429474 0.031356215476989746 -0.1328270584344864" diaginertia="2.9456517225412426e-08 1.246574612423501e-07 1.2561345386075118e-07"/>
 																	<geom name="SM_r_hand_little_0_collision_0" type="capsule" pos="0.007000000216066837 -0.0020000000949949026 -0.0010000000474974513" quat="-7.312061383896867e-14 0.7071067690849304 7.311908240340004e-14 0.7071067690849304" size="0.006000000052154064 0.007000000216066837 0.0" class="iCub_collision"/>
@@ -436,14 +435,14 @@
 													<inertial mass="0.0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0 0.0 0.0"/>
 												</body>
 												<body name="eyes_tilt_frame" pos="0.05000000074505806 0.0 0.014999999664723873" quat="0.0005633121472783387 0.0005628637736663222 0.7068249583244324 0.7073880434036255">
-													<inertial mass="0.0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0 0.0 0.0"/>
+													<inertial mass="0.001" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0001 0.0001 0.0001"/>
 													<joint name="eyes_tilt" type="hinge" pos="0.0 0.0 9.71445146547012e-17" range="-0.5235987901687622 0.5235987901687622" axis="0.0 0.0 1.0"/>
 													<body name="l_eye" pos="-1.3877787807814457e-17 2.220446049250313e-16 0.03400000184774399" quat="0.7073882818222046 -1.500311760715125e-20 -0.7068251967430115 2.3491687058435902e-20">
-														<inertial mass="0.0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0 0.0 0.0"/>
+														<inertial mass="0.001" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0001 0.0001 0.0001"/>
 														<joint name="l_eye_pan_joint" type="hinge" pos="-1.4231410828403326e-17 7.115693833673087e-18 -2.2201662636799231e-16" range="-0.5235987901687622 0.9599310755729675" axis="0.0 -1.0 0.0"/>
 													</body>
 													<body name="r_eye" pos="0.0 0.0 -0.03400000184774399" quat="0.7073882818222046 -1.500311760715125e-20 -0.7068251967430115 2.3491687058435902e-20">
-														<inertial mass="0.0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0 0.0 0.0"/>
+														<inertial mass="0.001" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0001 0.0001 0.0001"/>
 														<joint name="r_eye_pan_joint" type="hinge" pos="0.0 0.0 0.0" range="-0.9599310755729675 0.5235987901687622" axis="0.0 -1.0 0.0"/>
 													</body>
 												</body>
@@ -515,50 +514,49 @@
 	</worldbody>
 
 	<keyframe>
-		<key name="home" qpos="-0.8 0 0.55 1 0 0 0 1.5 0 0 0 0 0 0 0.5 0 0 0 -0.8727 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.8727 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5 0 0 0 0 0" />
+		<key name="home" qpos="-0.8 0 0.55 1 0 0 0 1.5 0 0 0 0 0 0 0.5 0 0 0 -0.8727 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.8727 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5 0 0 0 0 0" ctrl="1.4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
 	</keyframe>
 
 	<actuator>
-		<position name="r_hand_thumb_0_actuator" joint="r_hand_thumb_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="r_hand_thumb_1_actuator" joint="r_hand_thumb_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="r_hand_thumb_2_actuator" joint="r_hand_thumb_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="r_hand_thumb_3_actuator" joint="r_hand_thumb_3_joint" kp="40" kv="4" inheritrange="1"/>
-		<position name="r_hand_index_0_actuator" joint="r_hand_index_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="r_hand_index_1_actuator" joint="r_hand_index_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="r_hand_index_2_actuator" joint="r_hand_index_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="r_hand_index_3_actuator" joint="r_hand_index_3_joint" kp="40" kv="4" inheritrange="1"/>
-		<position name="r_hand_middle_0_actuator" joint="r_hand_middle_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="r_hand_middle_1_actuator" joint="r_hand_middle_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="r_hand_middle_2_actuator" joint="r_hand_middle_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="r_hand_middle_3_actuator" joint="r_hand_middle_3_joint" kp="40" kv="4" inheritrange="1"/>
-		<position name="r_hand_ring_0_actuator" joint="r_hand_ring_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="r_hand_ring_1_actuator" joint="r_hand_ring_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="r_hand_ring_2_actuator" joint="r_hand_ring_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="r_hand_ring_3_actuator" joint="r_hand_ring_3_joint" kp="40" kv="4" inheritrange="1"/>
-		<position name="r_hand_little_0_actuator" joint="r_hand_little_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="r_hand_little_1_actuator" joint="r_hand_little_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="r_hand_little_2_actuator" joint="r_hand_little_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="r_hand_little_3_actuator" joint="r_hand_little_3_joint" kp="40" kv="4" inheritrange="1"/>
-
-		<position name="l_hand_thumb_0_actuator" joint="l_hand_thumb_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="l_hand_thumb_1_actuator" joint="l_hand_thumb_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="l_hand_thumb_2_actuator" joint="l_hand_thumb_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="l_hand_thumb_3_actuator" joint="l_hand_thumb_3_joint" kp="40" kv="4" inheritrange="1"/>
-		<position name="l_hand_index_0_actuator" joint="l_hand_index_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="l_hand_index_1_actuator" joint="l_hand_index_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="l_hand_index_2_actuator" joint="l_hand_index_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="l_hand_index_3_actuator" joint="l_hand_index_3_joint" kp="40" kv="4" inheritrange="1"/>
-		<position name="l_hand_middle_0_actuator" joint="l_hand_middle_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="l_hand_middle_1_actuator" joint="l_hand_middle_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="l_hand_middle_2_actuator" joint="l_hand_middle_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="l_hand_middle_3_actuator" joint="l_hand_middle_3_joint" kp="40" kv="4" inheritrange="1"/>
-		<position name="l_hand_ring_0_actuator" joint="l_hand_ring_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="l_hand_ring_1_actuator" joint="l_hand_ring_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="l_hand_ring_2_actuator" joint="l_hand_ring_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="l_hand_ring_3_actuator" joint="l_hand_ring_3_joint" kp="40" kv="4" inheritrange="1"/>
-		<position name="l_hand_little_0_actuator" joint="l_hand_little_0_joint" kp="100" kv="10" inheritrange="1"/>
-		<position name="l_hand_little_1_actuator" joint="l_hand_little_1_joint" kp="80" kv="8" inheritrange="1"/>
-		<position name="l_hand_little_2_actuator" joint="l_hand_little_2_joint" kp="60" kv="6" inheritrange="1"/>
-		<position name="l_hand_little_3_actuator" joint="l_hand_little_3_joint" kp="40" kv="4" inheritrange="1"/>
+		<position name="r_hand_thumb_0_actuator" joint="r_hand_thumb_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_thumb_1_actuator" joint="r_hand_thumb_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_thumb_2_actuator" joint="r_hand_thumb_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_thumb_3_actuator" joint="r_hand_thumb_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_index_0_actuator" joint="r_hand_index_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_index_1_actuator" joint="r_hand_index_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_index_2_actuator" joint="r_hand_index_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_index_3_actuator" joint="r_hand_index_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_middle_0_actuator" joint="r_hand_middle_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_middle_1_actuator" joint="r_hand_middle_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_middle_2_actuator" joint="r_hand_middle_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_middle_3_actuator" joint="r_hand_middle_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_ring_0_actuator" joint="r_hand_ring_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_ring_1_actuator" joint="r_hand_ring_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_ring_2_actuator" joint="r_hand_ring_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_ring_3_actuator" joint="r_hand_ring_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_little_0_actuator" joint="r_hand_little_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_little_1_actuator" joint="r_hand_little_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_little_2_actuator" joint="r_hand_little_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="r_hand_little_3_actuator" joint="r_hand_little_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_thumb_0_actuator" joint="l_hand_thumb_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_thumb_1_actuator" joint="l_hand_thumb_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_thumb_2_actuator" joint="l_hand_thumb_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_thumb_3_actuator" joint="l_hand_thumb_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_index_0_actuator" joint="l_hand_index_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_index_1_actuator" joint="l_hand_index_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_index_2_actuator" joint="l_hand_index_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_index_3_actuator" joint="l_hand_index_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_middle_0_actuator" joint="l_hand_middle_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_middle_1_actuator" joint="l_hand_middle_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_middle_2_actuator" joint="l_hand_middle_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_middle_3_actuator" joint="l_hand_middle_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_ring_0_actuator" joint="l_hand_ring_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_ring_1_actuator" joint="l_hand_ring_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_ring_2_actuator" joint="l_hand_ring_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_ring_3_actuator" joint="l_hand_ring_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_little_0_actuator" joint="l_hand_little_0_joint" kp="100" kv="10" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_little_1_actuator" joint="l_hand_little_1_joint" kp="80" kv="8" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_little_2_actuator" joint="l_hand_little_2_joint" kp="60" kv="6" inheritrange="1" forcerange="-0.1 0.1"/>
+		<position name="l_hand_little_3_actuator" joint="l_hand_little_3_joint" kp="40" kv="4" inheritrange="1" forcerange="-0.1 0.1"/>
 	</actuator>
 </mujoco>

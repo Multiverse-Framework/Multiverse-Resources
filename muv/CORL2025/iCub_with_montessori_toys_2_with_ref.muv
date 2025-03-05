@@ -1,0 +1,228 @@
+resources: 
+  - ../../robots
+  - ../../worlds
+  - ../../objects
+  - ../../demos
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  iCub_with_montessori_toys_2:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      iCub:
+        path: iCub/iCub_only_primitives_with_ref.xml
+        apply:
+          body:
+            iCub:
+              pos: [-0.8, 0.0, 0.55]
+              quat: [1.0, 0.0, 0.0, 0.0]
+            gravcomp: 1
+          geom:
+            SM_r_hand_thumb_0_collision_0: &friction
+              friction: [10, 0.005, 0.0001]
+              solimp: [0.95, 0.99, 0.001, 0.5, 2]
+              solref: [0.004, 1]
+            SM_r_hand_thumb_1_collision_0: *friction
+            SM_r_hand_thumb_2_collision_0: *friction
+            SM_r_hand_thumb_3_collision_0: *friction
+            SM_r_hand_index_0_collision_0: *friction
+            SM_r_hand_index_1_collision_0: *friction
+            SM_r_hand_index_2_collision_0: *friction
+            SM_r_hand_index_3_collision_0: *friction
+            SM_r_hand_middle_0_collision_0: *friction
+            SM_r_hand_middle_1_collision_0: *friction
+            SM_r_hand_middle_2_collision_0: *friction
+            SM_r_hand_middle_3_collision_0: *friction
+            SM_r_hand_ring_0_collision_0: *friction
+            SM_r_hand_ring_1_collision_0: *friction
+            SM_r_hand_ring_2_collision_0: *friction
+            SM_r_hand_ring_3_collision_0: *friction
+            SM_r_hand_little_0_collision_0: *friction
+            SM_r_hand_little_1_collision_0: *friction
+            SM_r_hand_little_2_collision_0: *friction
+            SM_r_hand_little_3_collision_0: *friction
+            SM_l_hand_thumb_0_collision_0: *friction
+            SM_l_hand_thumb_1_collision_0: *friction
+            SM_l_hand_thumb_2_collision_0: *friction
+            SM_l_hand_thumb_3_collision_0: *friction
+            SM_l_hand_index_0_collision_0: *friction
+            SM_l_hand_index_1_collision_0: *friction
+            SM_l_hand_index_2_collision_0: *friction
+            SM_l_hand_index_3_collision_0: *friction
+            SM_l_hand_middle_0_collision_0: *friction
+            SM_l_hand_middle_1_collision_0: *friction
+            SM_l_hand_middle_2_collision_0: *friction
+            SM_l_hand_middle_3_collision_0: *friction
+            SM_l_hand_ring_0_collision_0: *friction
+            SM_l_hand_ring_1_collision_0: *friction
+            SM_l_hand_ring_2_collision_0: *friction
+            SM_l_hand_ring_3_collision_0: *friction
+            SM_l_hand_little_0_collision_0: *friction
+            SM_l_hand_little_1_collision_0: *friction
+            SM_l_hand_little_2_collision_0: *friction
+            SM_l_hand_little_3_collision_0: *friction
+          joint:
+            damping: 10.0
+            r_hand_thumb_0_joint: &damping
+              damping: 1.0
+            r_hand_thumb_2_joint: *damping
+            r_hand_thumb_3_joint: *damping
+            r_hand_middle_1_joint: *damping
+            r_hand_middle_2_joint: *damping
+            r_hand_ring_1_joint: *damping
+            r_hand_ring_2_joint: *damping
+            l_hand_thumb_0_joint: *damping
+            l_hand_thumb_2_joint: *damping
+            l_hand_thumb_3_joint: *damping
+            l_hand_middle_1_joint: *damping
+            l_hand_middle_2_joint: *damping
+            l_hand_ring_1_joint: *damping
+            l_hand_ring_2_joint: *damping
+    objects:
+      table:
+        path: table/table.xml
+      small_table:
+        path: montessori_toys/small_table/small_table.xml
+        apply:
+          body:
+            small_table:
+              pos: [-0.35, 0.0, 1.0]
+      montessori_box:
+        path: montessori_toys/montessori_box/mjcf/montessori_box.xml
+        apply:
+          body:
+            montessori_box:
+              pos: [-0.4, 0, 1.39]
+      montessori_object_1:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_1.xml
+        apply:
+          body:
+            montessori_object_1:
+              pos: [-0.375, 0.091, 1.5]
+          geom:
+            MontessoriObject1: *friction
+      montessori_object_2:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_2.xml
+        apply:
+          body:
+            montessori_object_2:
+              pos: [-0.4015, 0.2, 1.5]
+          geom:
+            MontessoriObject2: *friction
+      montessori_object_3:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_3.xml
+        apply:
+          body:
+            montessori_object_3:
+              pos: [-0.4015, -0.187, 1.5]
+          geom:
+            MontessoriObject3: *friction
+      montessori_object_4:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_4.xml
+        apply:
+          body:
+            montessori_object_4:
+              pos: [-0.4175, 0.091, 1.5]
+          geom:
+            MontessoriObject4: *friction
+      montessori_object_5:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_5.xml
+        apply:
+          body:
+            montessori_object_5:
+              pos: [-0.3095, 0.2, 1.5]
+          geom:
+            MontessoriObject5: *friction
+      montessori_object_6:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_6.xml
+        apply:
+          body:
+            montessori_object_6:
+              pos: [-0.3095, -0.187, 1.5]
+          geom:
+            MontessoriObject6: *friction
+    references:
+      # l_head_controller:
+      #   body1: head_ref
+      #   body2: head
+      #   torquescale: 1
+      l_hand_controller:
+        body1: l_hand_ref
+        body2: l_hand
+        torquescale: 1
+      r_hand_controller:
+        body1: r_hand_ref
+        body2: r_hand
+        torquescale: 1
+      l_hip_1_controller:
+        body1: l_hip_1_ref
+        body2: l_hip_1
+        torquescale: 1
+      r_hip_1_controller:
+        body1: r_hip_1_ref
+        body2: r_hip_1
+        torquescale: 1
+    config:
+      step_size: 0.002
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+      nativeccd: true
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  iCub_with_montessori_toys_2:
+    port: 7500
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+    receive:
+      l_hand_ref: ["position", "quaternion"]
+      r_hand_ref: ["position", "quaternion"]
+      r_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
+      r_hand_index_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_index_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_index_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_index_3_actuator: ["cmd_joint_rvalue"]
+      r_hand_middle_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_middle_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_middle_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_middle_3_actuator: ["cmd_joint_rvalue"]
+      r_hand_ring_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_ring_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_ring_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_ring_3_actuator: ["cmd_joint_rvalue"]
+      r_hand_little_0_actuator: ["cmd_joint_rvalue"]
+      r_hand_little_1_actuator: ["cmd_joint_rvalue"]
+      r_hand_little_2_actuator: ["cmd_joint_rvalue"]
+      r_hand_little_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_index_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_index_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_index_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_index_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_middle_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_middle_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_middle_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_middle_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_ring_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_ring_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_ring_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_ring_3_actuator: ["cmd_joint_rvalue"]
+      l_hand_little_0_actuator: ["cmd_joint_rvalue"]
+      l_hand_little_1_actuator: ["cmd_joint_rvalue"]
+      l_hand_little_2_actuator: ["cmd_joint_rvalue"]
+      l_hand_little_3_actuator: ["cmd_joint_rvalue"]
