@@ -112,7 +112,7 @@ simulations:
         apply:
           body:
             montessori_object_2:
-              pos: [-0.4015, 0.2, 1.5]
+              pos: [-0.4015, 0.25, 1.5]
           geom:
             MontessoriObject2: *friction
       montessori_object_3:
@@ -120,7 +120,7 @@ simulations:
         apply:
           body:
             montessori_object_3:
-              pos: [-0.4015, -0.187, 1.5]
+              pos: [-0.4015, -0.237, 1.5]
           geom:
             MontessoriObject3: *friction
       montessori_object_4:
@@ -136,7 +136,7 @@ simulations:
         apply:
           body:
             montessori_object_5:
-              pos: [-0.3095, 0.2, 1.5]
+              pos: [-0.3095, 0.25, 1.5]
           geom:
             MontessoriObject5: *friction
       montessori_object_6:
@@ -144,7 +144,7 @@ simulations:
         apply:
           body:
             montessori_object_6:
-              pos: [-0.3095, -0.187, 1.5]
+              pos: [-0.3095, -0.237, 1.5]
           geom:
             MontessoriObject6: *friction
     references:
@@ -175,54 +175,54 @@ simulations:
       multiccd: true
       nativeccd: true
 
-multiverse_server:
-  host: "tcp://127.0.0.1"
-  port: 7000
+# multiverse_server:
+#   host: "tcp://127.0.0.1"
+#   port: 7000
 
-multiverse_clients:
-  iCub_with_montessori_toys_2:
-    port: 7500
-    send:
-      body: ["position", "quaternion"]
-      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
-    receive:
-      l_hand_ref: ["position", "quaternion"]
-      r_hand_ref: ["position", "quaternion"]
-      r_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
-      r_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
-      r_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
-      r_hand_index_0_actuator: ["cmd_joint_rvalue"]
-      r_hand_index_1_actuator: ["cmd_joint_rvalue"]
-      r_hand_index_2_actuator: ["cmd_joint_rvalue"]
-      r_hand_index_3_actuator: ["cmd_joint_rvalue"]
-      r_hand_middle_0_actuator: ["cmd_joint_rvalue"]
-      r_hand_middle_1_actuator: ["cmd_joint_rvalue"]
-      r_hand_middle_2_actuator: ["cmd_joint_rvalue"]
-      r_hand_middle_3_actuator: ["cmd_joint_rvalue"]
-      r_hand_ring_0_actuator: ["cmd_joint_rvalue"]
-      r_hand_ring_1_actuator: ["cmd_joint_rvalue"]
-      r_hand_ring_2_actuator: ["cmd_joint_rvalue"]
-      r_hand_ring_3_actuator: ["cmd_joint_rvalue"]
-      r_hand_little_0_actuator: ["cmd_joint_rvalue"]
-      r_hand_little_1_actuator: ["cmd_joint_rvalue"]
-      r_hand_little_2_actuator: ["cmd_joint_rvalue"]
-      r_hand_little_3_actuator: ["cmd_joint_rvalue"]
-      l_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
-      l_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
-      l_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
-      l_hand_index_0_actuator: ["cmd_joint_rvalue"]
-      l_hand_index_1_actuator: ["cmd_joint_rvalue"]
-      l_hand_index_2_actuator: ["cmd_joint_rvalue"]
-      l_hand_index_3_actuator: ["cmd_joint_rvalue"]
-      l_hand_middle_0_actuator: ["cmd_joint_rvalue"]
-      l_hand_middle_1_actuator: ["cmd_joint_rvalue"]
-      l_hand_middle_2_actuator: ["cmd_joint_rvalue"]
-      l_hand_middle_3_actuator: ["cmd_joint_rvalue"]
-      l_hand_ring_0_actuator: ["cmd_joint_rvalue"]
-      l_hand_ring_1_actuator: ["cmd_joint_rvalue"]
-      l_hand_ring_2_actuator: ["cmd_joint_rvalue"]
-      l_hand_ring_3_actuator: ["cmd_joint_rvalue"]
-      l_hand_little_0_actuator: ["cmd_joint_rvalue"]
-      l_hand_little_1_actuator: ["cmd_joint_rvalue"]
-      l_hand_little_2_actuator: ["cmd_joint_rvalue"]
-      l_hand_little_3_actuator: ["cmd_joint_rvalue"]
+# multiverse_clients:
+#   iCub_with_montessori_toys_2:
+#     port: 7500
+#     send:
+#       body: ["position", "quaternion"]
+#       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+#     receive:
+#       l_hand_ref: ["position", "quaternion"]
+#       r_hand_ref: ["position", "quaternion"]
+#       r_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
+#       r_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
+#       r_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
+#       r_hand_index_0_actuator: ["cmd_joint_rvalue"]
+#       r_hand_index_1_actuator: ["cmd_joint_rvalue"]
+#       r_hand_index_2_actuator: ["cmd_joint_rvalue"]
+#       r_hand_index_3_actuator: ["cmd_joint_rvalue"]
+#       r_hand_middle_0_actuator: ["cmd_joint_rvalue"]
+#       r_hand_middle_1_actuator: ["cmd_joint_rvalue"]
+#       r_hand_middle_2_actuator: ["cmd_joint_rvalue"]
+#       r_hand_middle_3_actuator: ["cmd_joint_rvalue"]
+#       r_hand_ring_0_actuator: ["cmd_joint_rvalue"]
+#       r_hand_ring_1_actuator: ["cmd_joint_rvalue"]
+#       r_hand_ring_2_actuator: ["cmd_joint_rvalue"]
+#       r_hand_ring_3_actuator: ["cmd_joint_rvalue"]
+#       r_hand_little_0_actuator: ["cmd_joint_rvalue"]
+#       r_hand_little_1_actuator: ["cmd_joint_rvalue"]
+#       r_hand_little_2_actuator: ["cmd_joint_rvalue"]
+#       r_hand_little_3_actuator: ["cmd_joint_rvalue"]
+#       l_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
+#       l_hand_thumb_2_actuator: ["cmd_joint_rvalue"]
+#       l_hand_thumb_3_actuator: ["cmd_joint_rvalue"]
+#       l_hand_index_0_actuator: ["cmd_joint_rvalue"]
+#       l_hand_index_1_actuator: ["cmd_joint_rvalue"]
+#       l_hand_index_2_actuator: ["cmd_joint_rvalue"]
+#       l_hand_index_3_actuator: ["cmd_joint_rvalue"]
+#       l_hand_middle_0_actuator: ["cmd_joint_rvalue"]
+#       l_hand_middle_1_actuator: ["cmd_joint_rvalue"]
+#       l_hand_middle_2_actuator: ["cmd_joint_rvalue"]
+#       l_hand_middle_3_actuator: ["cmd_joint_rvalue"]
+#       l_hand_ring_0_actuator: ["cmd_joint_rvalue"]
+#       l_hand_ring_1_actuator: ["cmd_joint_rvalue"]
+#       l_hand_ring_2_actuator: ["cmd_joint_rvalue"]
+#       l_hand_ring_3_actuator: ["cmd_joint_rvalue"]
+#       l_hand_little_0_actuator: ["cmd_joint_rvalue"]
+#       l_hand_little_1_actuator: ["cmd_joint_rvalue"]
+#       l_hand_little_2_actuator: ["cmd_joint_rvalue"]
+#       l_hand_little_3_actuator: ["cmd_joint_rvalue"]
