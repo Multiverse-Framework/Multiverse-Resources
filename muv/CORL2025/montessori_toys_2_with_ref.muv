@@ -1,0 +1,109 @@
+resources: 
+  - ../../robots
+  - ../../worlds
+  - ../../objects
+  - ../../demos
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  iCub_with_montessori_toys_2:
+    simulator: pymujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    objects:
+      table:
+        path: table/table.xml
+      small_table:
+        path: montessori_toys/small_table/small_table.xml
+        apply:
+          body:
+            small_table:
+              pos: [-0.35, 0.0, 1.0]
+      montessori_box:
+        path: montessori_toys/montessori_box/mjcf/montessori_box.xml
+        apply:
+          body:
+            montessori_box:
+              pos: [-0.4, 0, 1.39]
+      montessori_object_1:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_1.xml
+        apply:
+          body:
+            montessori_object_1:
+              pos: [-0.375, 0.091, 1.5]
+      montessori_object_2:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_2.xml
+        apply:
+          body:
+            montessori_object_2:
+              pos: [-0.4015, 0.25, 1.36]
+      montessori_object_3:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_3.xml
+        apply:
+          body:
+            montessori_object_3:
+              pos: [-0.4015, -0.237, 1.36]
+      montessori_object_4:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_4.xml
+        apply:
+          body:
+            montessori_object_4:
+              pos: [-0.4175, 0.091, 1.5]
+      montessori_object_5:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_5.xml
+        apply:
+          body:
+            montessori_object_5:
+              pos: [-0.3095, 0.25, 1.36]
+      montessori_object_6:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_6.xml
+        apply:
+          body:
+            montessori_object_6:
+              pos: [-0.3095, -0.237, 1.36]
+    references:
+      montessori_object_2_controller:
+        body1: montessori_object_2_ref
+        body2: montessori_object_2
+        torquescale: 1
+      montessori_object_3_controller:
+        body1: montessori_object_3_ref
+        body2: montessori_object_3
+        torquescale: 1
+      montessori_object_5_controller:
+        body1: montessori_object_5_ref
+        body2: montessori_object_5
+        torquescale: 1
+      montessori_object_6_controller:
+        body1: montessori_object_6_ref
+        body2: montessori_object_6
+        torquescale: 1
+      
+    config:
+      step_size: 0.004
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      noslip_iterations: 3
+      noslip_tolerance: 10E-9
+      multiccd: true
+      nativeccd: true
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  iCub_with_montessori_toys_2:
+    port: 7500
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+    receive:
+      montessori_object_2_ref: ["position", "quaternion"]
+      montessori_object_3_ref: ["position", "quaternion"]
+      montessori_object_5_ref: ["position", "quaternion"]
+      montessori_object_6_ref: ["position", "quaternion"]

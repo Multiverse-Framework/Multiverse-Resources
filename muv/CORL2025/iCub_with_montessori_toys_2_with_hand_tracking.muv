@@ -68,7 +68,7 @@ simulations:
             SM_l_hand_little_2_collision_0: *friction
             SM_l_hand_little_3_collision_0: *friction
           joint:
-            damping: 10.0
+            damping: 2.0
             r_hand_thumb_0_joint: &damping
               damping: 0.0
             r_hand_thumb_1_joint: *damping
@@ -131,48 +131,36 @@ simulations:
           body:
             montessori_object_1:
               pos: [-0.375, 0.091, 1.5]
-          geom:
-            MontessoriObject1: *friction
       montessori_object_2:
         path: montessori_toys/montessori_box/mjcf/montessori_object_2.xml
         apply:
           body:
             montessori_object_2:
               pos: [-0.4015, 0.25, 1.5]
-          geom:
-            MontessoriObject2: *friction
       montessori_object_3:
         path: montessori_toys/montessori_box/mjcf/montessori_object_3.xml
         apply:
           body:
             montessori_object_3:
               pos: [-0.4015, -0.237, 1.5]
-          geom:
-            MontessoriObject3: *friction
       montessori_object_4:
         path: montessori_toys/montessori_box/mjcf/montessori_object_4.xml
         apply:
           body:
             montessori_object_4:
               pos: [-0.4175, 0.091, 1.5]
-          geom:
-            MontessoriObject4: *friction
       montessori_object_5:
         path: montessori_toys/montessori_box/mjcf/montessori_object_5.xml
         apply:
           body:
             montessori_object_5:
               pos: [-0.3095, 0.25, 1.5]
-          geom:
-            MontessoriObject5: *friction
       montessori_object_6:
         path: montessori_toys/montessori_box/mjcf/montessori_object_6.xml
         apply:
           body:
             montessori_object_6:
               pos: [-0.3095, -0.237, 1.5]
-          geom:
-            MontessoriObject6: *friction
     references:
       # l_head_controller:
       #   body1: head_ref
@@ -226,7 +214,7 @@ simulations:
         body2: r_hand_little_3_ref
       
     config:
-      step_size: 0.002
+      step_size: 0.004
       integrator: IMPLICITFAST
       cone: ELLIPTIC
       noslip_iterations: 3
