@@ -1,6 +1,7 @@
 <mujoco model="g1_29dof">
   <compiler angle="radian" meshdir="meshes" />
 
+  <option timestep="0.002" integrator="implicitfast"/>
   <default>
     <default class="torso_motor">
       <joint damping="0.05" armature="0.01" frictionloss="0.2"/>
@@ -100,7 +101,7 @@
     <body name="pelvis" pos="0 0 0.793">
       <inertial pos="0 0 -0.07605" quat="1 0 -0.000399148 0" mass="3.813"
         diaginertia="0.010549 0.0093089 0.0079184" />
-      <joint name="floating_base_joint" type="free" limited="false" actuatorfrclimited="false" />
+      <!-- <joint name="floating_base_joint" type="free" limited="false" actuatorfrclimited="false" /> -->
       <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 0.2 0.2 1"
         mesh="pelvis" />
       <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.7 0.7 0.7 1"
@@ -752,5 +753,21 @@
 		<exclude name="right_hand_base_link_right_ring_proximal" body1="right_hand_base_link" body2="right_ring_proximal"/>
 		<exclude name="right_hand_base_link_right_pinky_proximal" body1="right_hand_base_link" body2="right_pinky_proximal"/>
 	</contact>
+
+  <actuator>
+    <position name="left_thumb_proximal_yaw_actuator" joint="left_thumb_proximal_yaw_joint" kp="1.0" kv="0.1" inheritrange="1"/>
+    <position name="left_thumb_proximal_pitch_actuator" joint="left_thumb_proximal_pitch_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+    <position name="left_index_proximal_actuator" joint="left_index_proximal_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+    <position name="left_middle_proximal_actuator" joint="left_middle_proximal_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+    <position name="left_ring_proximal_actuator" joint="left_ring_proximal_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+    <position name="left_pinky_proximal_actuator" joint="left_pinky_proximal_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+
+    <position name="right_thumb_proximal_yaw_actuator" joint="right_thumb_proximal_yaw_joint" kp="1.0" kv="0.1" inheritrange="1"/>
+    <position name="right_thumb_proximal_pitch_actuator" joint="right_thumb_proximal_pitch_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+    <position name="right_index_proximal_actuator" joint="right_index_proximal_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+    <position name="right_middle_proximal_actuator" joint="right_middle_proximal_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+    <position name="right_ring_proximal_actuator" joint="right_ring_proximal_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+    <position name="right_pinky_proximal_actuator" joint="right_pinky_proximal_joint" kp="0.1" kv="0.01" inheritrange="1"/>
+  </actuator>
 
 </mujoco>
