@@ -341,10 +341,10 @@
                           <body name="inspire_hand_left" pos="0.0415 0.003 0" quat="-0.5 0.5 -0.5 0.5">
                             <body name="left_base" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
                               <body name="left_hand_base_link" pos="0.0 0.0 0.0" quat="9.381856784784759e-07 -9.381856784784759e-07 -0.7071067690849304 0.7071067690849304">
-                                <body name="left_base_ref" pos="0.0 0.0 0.0" quat="0.0 -1.0 1.0 0.0">
-                                  <geom name="left_base_ref_1" type="box" pos="0.038 0.0032 0.0" quat="0.0 -1.0 1.0 0.0" size="0.01954999938607216 0.010099999606609344 0.028699999675154686" class="inspire_hand_left_reference"/>
-                                  <geom name="left_base_ref_2" type="box" pos="0.0682 0.0032 0.0" quat="0.0 -1.0 1.0 0.0" size="0.01954999938607216 0.019999999552965164 0.040699999779462814" class="inspire_hand_left_reference"/>
-                                  <geom name="left_base_ref_3" type="box" pos="0.1081 0.0 0.0" quat="0.0 -1.0 1.0 0.0" size="0.016100000590085983 0.019999999552965164 0.040699999779462814" class="inspire_hand_left_reference"/>
+                                <body name="left_base_ref" pos="0.0 -0.03 0.0" quat="0.0 -1.0 1.0 0.0">
+                                  <geom name="left_base_ref_1" type="box" pos="0.008 0.0032 0.0" quat="0.0 -1.0 1.0 0.0" size="0.01954999938607216 0.010099999606609344 0.028699999675154686" class="inspire_hand_left_reference"/>
+                                  <geom name="left_base_ref_2" type="box" pos="0.0382 0.0032 0.0" quat="0.0 -1.0 1.0 0.0" size="0.01954999938607216 0.019999999552965164 0.040699999779462814" class="inspire_hand_left_reference"/>
+                                  <geom name="left_base_ref_3" type="box" pos="0.0781 0.0 0.0" quat="0.0 -1.0 1.0 0.0" size="0.016100000590085983 0.019999999552965164 0.040699999779462814" class="inspire_hand_left_reference"/>
                                 </body>
                                 <inertial mass="0.14143000543117523" pos="-0.002526399912312627 -0.06604699790477753 -0.001959800021722913" quat="0.09772733598947525 0.7170524597167969 -0.06282567977905273 -0.6872685551643372" diaginertia="7.619507960043848e-05 8.411859744228423e-05 0.00012299131776671857"/>
                                 <geom name="SM_left_hand_base_link_collision_0" type="cylinder" pos="0.0 -0.01360000018030405 0.0" quat="0.7071090340614319 0.7071045637130737 0.0 0.0" size="0.02800000086426735 0.013899999670684338 0.0" class="inspire_hand_left_collision"/>
@@ -504,10 +504,10 @@
                           <body name="inspire_hand_right" pos="0.0415 -0.003 0" quat="0.5 0.5 0.5 0.5">
                             <body name="right_base" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
                               <body name="right_hand_base_link" pos="0.0 0.0 0.0" quat="9.381886343362567e-07 -9.381827226206951e-07 -0.7071045637130737 0.7071090340614319">
-                                <body name="right_base_ref" pos="0.0 0.0 0.0" quat="0.0 1.0 1.0 0.0">
-                                  <geom name="right_base_ref_1" type="box" pos="-0.038 -0.0032 0.0" quat="0.0 1.0 1.0 0.0" size="0.01954999938607216 0.010099999606609344 0.028699999675154686" class="inspire_hand_right_reference"/>
-                                  <geom name="right_base_ref_2" type="box" pos="-0.0682 -0.0032 0.0" quat="0.0 1.0 1.0 0.0" size="0.01954999938607216 0.019999999552965164 0.040699999779462814" class="inspire_hand_right_reference"/>
-                                  <geom name="right_base_ref_3" type="box" pos="-0.1081 0.0 0.0" quat="0.0 1.0 1.0 0.0" size="0.016100000590085983 0.019999999552965164 0.040699999779462814" class="inspire_hand_right_reference"/>
+                                <body name="right_base_ref" pos="0.0 -0.03 0.0" quat="0.0 1.0 1.0 0.0">
+                                  <geom name="right_base_ref_1" type="box" pos="-0.008 -0.0032 0.0" quat="0.0 1.0 1.0 0.0" size="0.01954999938607216 0.010099999606609344 0.028699999675154686" class="inspire_hand_right_reference"/>
+                                  <geom name="right_base_ref_2" type="box" pos="-0.0382 -0.0032 0.0" quat="0.0 1.0 1.0 0.0" size="0.01954999938607216 0.019999999552965164 0.040699999779462814" class="inspire_hand_right_reference"/>
+                                  <geom name="right_base_ref_3" type="box" pos="-0.0781 0.0 0.0" quat="0.0 1.0 1.0 0.0" size="0.016100000590085983 0.019999999552965164 0.040699999779462814" class="inspire_hand_right_reference"/>
                                 </body>
                                 <inertial mass="0.14143000543117523" pos="-0.002526399912312627 -0.06604699790477753 0.001959800021722913" quat="0.09772733598947525 0.7170524597167969 -0.06282567977905273 -0.6872685551643372" diaginertia="7.619507960043848e-05 8.411859744228423e-05 0.00012299131776671857"/>
                                 <geom name="SM_right_hand_base_link_collision_0" type="cylinder" pos="0.0 -0.01360000018030405 0.0" quat="0.7071090340614319 0.7071045637130737 0.0 0.0" size="0.02800000086426735 0.013899999670684338 0.0" class="inspire_hand_right_collision"/>
