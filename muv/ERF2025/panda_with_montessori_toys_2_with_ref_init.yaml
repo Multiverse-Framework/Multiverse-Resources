@@ -1,0 +1,19 @@
+hand_ref:
+  position: [0.554499, 0, 1.6745]
+  quaternion: [0, 0.7071417803094686, 0.7070717803312158, 0]
+actuator1:
+  cmd_joint_rvalue: [2.736747627051669e-22]
+actuator2:
+  cmd_joint_rvalue: [4.365160413505077e-19]
+actuator3:
+  cmd_joint_rvalue: [3.484470242480707e-22]
+actuator4:
+  cmd_joint_rvalue: [-1.57079]
+actuator5:
+  cmd_joint_rvalue: [1.4393546577003483e-20]
+actuator6:
+  cmd_joint_rvalue: [1.57079]
+actuator7:
+  cmd_joint_rvalue: [-0.7853]
+actuator8:
+  cmd_joint_tvalue: [255]
