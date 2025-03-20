@@ -37,14 +37,14 @@ simulations:
       hand_controller:
         body1: fr3_link7_ref
         body2: fr3_link7
-        torquescale: 10
+        torquescale: 1
     config:
       step_size: 0.001
       real_time_factor: 1
       integrator: IMPLICITFAST
 
 multiverse_server:
-  host: "tcp://10.219.11.11"
+  host: "tcp://127.0.0.1"
   port: 7000
 
 multiverse_clients:
