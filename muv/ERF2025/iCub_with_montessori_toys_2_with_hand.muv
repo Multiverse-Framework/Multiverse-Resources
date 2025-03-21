@@ -16,7 +16,7 @@ simulations:
       path: floor/floor.xml
     robots:
       iCub:
-        path: iCub/iCub_only_primitives_with_ref_torque.xml
+        path: iCub/iCub_only_primitives_with_ref.xml
         apply:
           body:
             iCub:
@@ -161,57 +161,6 @@ simulations:
           body:
             montessori_object_6:
               pos: [-0.3095, -0.237, 1.5]
-    references:
-      # l_head_controller:
-      #   body1: head_ref
-      #   body2: head
-      #   torquescale: 1
-      l_hand_controller:
-        body1: LeftHand_WristRoot
-        body2: l_hand_ref
-        torquescale: 1
-      r_hand_controller:
-        body1: RightHand_WristRoot
-        body2: r_hand_ref
-        torquescale: 1
-      l_hip_1_controller:
-        body1: l_hip_1_ref
-        body2: l_hip_1
-        torquescale: 1
-      r_hip_1_controller:
-        body1: r_hip_1_ref
-        body2: r_hip_1
-        torquescale: 1
-      l_hand_thumb_tip:
-        body1: LeftHand_ThumbTip
-        body2: l_hand_thumb_3_ref
-      l_hand_index_tip:
-        body1: LeftHand_IndexTip
-        body2: l_hand_index_3_ref
-      l_hand_middle_tip:
-        body1: LeftHand_MiddleTip
-        body2: l_hand_middle_3_ref
-      l_hand_ring_tip:
-        body1: LeftHand_RingTip
-        body2: l_hand_ring_3_ref
-      l_hand_little_tip:
-        body1: LeftHand_PinkyTip
-        body2: l_hand_little_3_ref
-      r_hand_thumb_tip:
-        body1: RightHand_ThumbTip
-        body2: r_hand_thumb_3_ref
-      r_hand_index_tip:
-        body1: RightHand_IndexTip
-        body2: r_hand_index_3_ref
-      r_hand_middle_tip:
-        body1: RightHand_MiddleTip
-        body2: r_hand_middle_3_ref
-      r_hand_ring_tip:
-        body1: RightHand_RingTip
-        body2: r_hand_ring_3_ref
-      r_hand_little_tip:
-        body1: RightHand_PinkyTip
-        body2: r_hand_little_3_ref
       
     config:
       step_size: 0.004
@@ -232,19 +181,6 @@ multiverse_clients:
     send:
       body: ["position", "quaternion"]
       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
-    receive:
-      LeftHand_WristRoot: ["position", "quaternion"]
-      LeftHand_ThumbTip: ["position", "quaternion"]
-      LeftHand_IndexTip: ["position", "quaternion"]
-      LeftHand_MiddleTip: ["position", "quaternion"]
-      LeftHand_RingTip: ["position", "quaternion"]
-      LeftHand_PinkyTip: ["position", "quaternion"]
-      RightHand_WristRoot: ["position", "quaternion"]
-      RightHand_ThumbTip: ["position", "quaternion"]
-      RightHand_IndexTip: ["position", "quaternion"]
-      RightHand_MiddleTip: ["position", "quaternion"]
-      RightHand_RingTip: ["position", "quaternion"]
-      RightHand_PinkyTip: ["position", "quaternion"]
 
   ros:
     ros_nodes:
