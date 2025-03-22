@@ -16,7 +16,7 @@ simulations:
       path: floor/floor.xml
     robots:
       iCub:
-        path: iCub/iCub_only_primitives_with_ref.xml
+        path: iCub/iCub_only_primitives_with_ref_torque.xml
         apply:
           body:
             iCub:
