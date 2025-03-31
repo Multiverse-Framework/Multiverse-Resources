@@ -73,38 +73,39 @@ simulations:
     objects:
       table:
         path: table/table.xml
-      small_table:
-        path: montessori_toys/small_table/small_table.xml
+      meta_quest_boxes:
+        path: others/meta_quest_box/meta_quest_boxes.xml
         apply:
           body:
-            small_table:
-              pos: [0.4, 0.0, 1.0]
+            meta_quest_boxes:
+              pos: [0.4, 0.0, 1.05]
       montessori_object_2:
         path: montessori_toys/montessori_box/mjcf/montessori_object_2.xml
         apply:
           body:
             montessori_object_2:
-              pos: [0.4185, 0, 1.5]
+              pos: [0.48, 0.087, 1.5]
+              quat: [1, 1, 0, 0]
       montessori_object_3:
         path: montessori_toys/montessori_box/mjcf/montessori_object_3.xml
         apply:
           body:
             montessori_object_3:
-              pos: [0.4205, -0.087, 1.5]
+              pos: [0.49, -0.087, 1.5]
       montessori_object_5:
         path: montessori_toys/montessori_box/mjcf/montessori_object_5.xml
         apply:
           body:
             montessori_object_5:
-              pos: [0.3735, 0, 1.5]
+              pos: [0.32, 0.087, 1.5]
       montessori_object_6:
         path: montessori_toys/montessori_box/mjcf/montessori_object_6.xml
         apply:
           body:
             montessori_object_6:
-              pos: [0.3785, -0.087, 1.5]
+              pos: [0.32, -0.087, 1.5]
     config:
-      step_size: 0.004
+      step_size: 0.002
       integrator: IMPLICITFAST
       cone: ELLIPTIC
       multiccd: true
@@ -121,7 +122,7 @@ multiverse_clients:
       joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity"]
     receive:
       hand_ref: ["position", "quaternion"]
-    
+
   panda_with_montessori_toys_2:
     port: 7502
     send:
@@ -163,7 +164,7 @@ multiverse_clients:
         robot_descriptions:
           panda_description: franka_emika_panda/urdf/panda.urdf
           table_description: table/table.urdf
-          small_table_description: small_table/small_table.urdf
+          meta_quest_boxes_description: meta_quest_box/meta_quest_boxes.urdf
           montessori_object_2_description: montessori_box/urdf/montessori_object_2.urdf
           montessori_object_3_description: montessori_box/urdf/montessori_object_3.urdf
           montessori_object_5_description: montessori_box/urdf/montessori_object_5.urdf

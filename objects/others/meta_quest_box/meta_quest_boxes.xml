@@ -1,0 +1,7 @@
+<mujoco model="meta_quest_boxes">
+    <worldbody>
+        <body name="meta_quest_boxes" pos="0 0 0" quat="1 0 0 0">
+            <geom name="meta_quest_boxes_geom" type="box" pos="0.0 0.0 0.12" size="0.11 0.11 0.12" rgba="0.9 0.9 .9 1" mass="6" condim="4" friction="10 0.005 0.0001" />
+        </body>
+    </worldbody>
+</mujoco>

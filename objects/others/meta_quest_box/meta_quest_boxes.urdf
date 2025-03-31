@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<robot name="meta_quest_boxes" version="1.0">
+  <link name="meta_quest_boxes">
+    <inertial>
+      <origin xyz="0.0 0.0 0.11999999731779099" rpy="0.0 0.0 0.0"/>
+      <mass value="6.0"/>
+      <inertia ixx="0.05299999937415123" ixy="0.0" ixz="0.0" iyy="0.05299999937415123" iyz="0.0" izz="0.04839999973773956"/>
+    </inertial>
+    <visual name="meta_quest_boxes_geom">
+      <origin xyz="0.0 0.0 0.11999999731779099" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.2199999988079071 0.2199999988079071 0.23999999463558197"/>
+      </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+</robot>

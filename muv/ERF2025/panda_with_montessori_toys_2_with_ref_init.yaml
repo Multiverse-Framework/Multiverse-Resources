@@ -1,6 +1,6 @@
 hand_ref:
-  position: [0.554499, 0, 1.6745]
-  quaternion: [0, 0.7071417803094686, 0.7070717803312158, 0]
+  position: [0.3067, 0.0, 1.6401]
+  quaternion: [0, 1, 0, 0]
 actuator1:
   cmd_joint_rvalue: [2.736747627051669e-22]
 actuator2:
@@ -17,3 +17,9 @@ actuator7:
   cmd_joint_rvalue: [-0.7853]
 actuator8:
   cmd_joint_tvalue: [255]
+finger_joint1:
+  joint_tvalue: [0.04]
+finger_joint2:
+  joint_tvalue: [0.04]
+gripper_trigger:
+  cmd_joint_tvalue: [0.0]
