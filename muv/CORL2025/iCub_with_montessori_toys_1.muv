@@ -10,7 +10,7 @@ worlds:
 
 simulations:
   iCub_with_montessori_toys_1:
-    simulator: pymujoco
+    simulator: mujoco
     world:
       name: world
       path: floor/floor.xml

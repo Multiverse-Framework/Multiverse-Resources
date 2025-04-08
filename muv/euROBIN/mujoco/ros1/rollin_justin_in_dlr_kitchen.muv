@@ -10,7 +10,7 @@ worlds:
 
 simulations:
   rollin_justin_in_dlr_kitchen_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     world:
       name: world
       path: dlr_kitchen/dlr_kitchen.xml

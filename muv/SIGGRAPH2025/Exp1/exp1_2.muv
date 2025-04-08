@@ -9,7 +9,7 @@ worlds:
 
 simulations:
   table_and_ball_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     headless: False
     world:
       name: world
@@ -22,7 +22,7 @@ simulations:
       save_log_path: exp1_2_table_and_ball.csv
 
   ball_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     headless: False
     world:
       name: world
@@ -35,7 +35,7 @@ simulations:
       save_log_path: exp1_2_ball.csv
 
   table_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     headless: False
     world:
       name: world

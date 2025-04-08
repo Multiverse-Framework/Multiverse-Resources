@@ -10,7 +10,7 @@ worlds:
 
 simulations:
   kinova_with_objects:
-    simulator: pymujoco
+    simulator: mujoco
     world:
       name: world
       path: floor/floor.xml

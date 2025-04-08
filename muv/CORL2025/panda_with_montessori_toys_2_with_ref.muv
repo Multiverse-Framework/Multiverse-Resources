@@ -10,7 +10,7 @@ worlds:
 
 simulations:
   panda_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     world:
       name: world
       path: floor/floor.xml
@@ -44,7 +44,7 @@ simulations:
       integrator: IMPLICITFAST
 
   panda_with_montessori_toys_2:
-    simulator: pymujoco
+    simulator: mujoco
     world:
       name: world
       path: floor/floor.xml

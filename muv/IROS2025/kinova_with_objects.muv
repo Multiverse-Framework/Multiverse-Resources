@@ -10,7 +10,7 @@ worlds:
 
 simulations:
   kinova_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     world:
       name: world
       path: floor/floor.xml
@@ -44,7 +44,7 @@ simulations:
       integrator: IMPLICITFAST
 
   kinova_with_objects:
-    simulator: pymujoco
+    simulator: mujoco
     world:
       name: world
       path: floor/floor.xml

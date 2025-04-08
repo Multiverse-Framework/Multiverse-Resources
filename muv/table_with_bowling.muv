@@ -9,28 +9,28 @@ worlds:
 
 simulations:
   table_with_bowling_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     headless: False
     world:
       name: world
       path: table_with_bowling/table_with_bowling.xml
 
   bowling_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     headless: False
     world:
       name: world
       path: table_with_bowling/bowling.xml
 
   table_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     headless: False
     world:
       name: world
       path: table_with_bowling/table.xml
 
   cube_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     headless: False
     world:
       name: world

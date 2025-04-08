@@ -10,7 +10,7 @@ worlds:
 
 simulations:
   fr3_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     world:
       name: world
       path: floor/floor.xml

@@ -9,7 +9,7 @@ worlds:
 
 simulations:
   h1_and_g1_on_the_floor_simulation:
-    simulator: pymujoco
+    simulator: mujoco
     headless: False
     world:
       name: h1_and_g1_world
