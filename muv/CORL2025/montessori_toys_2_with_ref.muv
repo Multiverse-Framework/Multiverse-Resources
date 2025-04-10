@@ -9,7 +9,7 @@ worlds:
     real_time_factor: 1
 
 simulations:
-  iCub_with_montessori_toys_2:
+  montessori_toys:
     simulator: mujoco
     world:
       name: world
@@ -97,7 +97,7 @@ multiverse_server:
   port: 7000
 
 multiverse_clients:
-  iCub_with_montessori_toys_2:
+  montessori_toys:
     port: 7500
     send:
       body: ["position", "quaternion"]
