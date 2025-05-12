@@ -250,7 +250,7 @@
             mesh="waist_roll_link" />
           <body name="torso_link" pos="0 0 0.019">
             <body name="head_ref" pos="0.0039635 0 -0.054">
-              <!-- <geom name="head_ref_0" type="mesh" mesh="head_link" contype="0" conaffinity="0" group="4" /> -->
+              <geom name="head_ref_0" type="mesh" mesh="head_link" contype="0" conaffinity="0" group="4" />
             </body>
             <inertial pos="0.00331658 0.000261533 0.179856"
               quat="0.999831 0.000376204 0.0179895 -0.00377704" mass="9.598"
