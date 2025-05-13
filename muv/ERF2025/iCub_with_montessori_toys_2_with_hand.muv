@@ -25,7 +25,7 @@ simulations:
             gravcomp: 1
           geom:
             SM_r_hand_thumb_0_collision_0: &friction
-              friction: [10, 0.005, 0.0001]
+              friction: [1, 0.005, 0.0001]
               solimp: [0.95, 0.99, 0.001, 0.5, 2]
               solref: [0.004, 1]
             SM_r_hand_thumb_1_collision_0: *friction
