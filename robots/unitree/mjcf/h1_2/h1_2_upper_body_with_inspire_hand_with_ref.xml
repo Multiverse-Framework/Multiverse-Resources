@@ -1,0 +1,437 @@
+<mujoco model="h1_2">
+  <compiler angle="radian" meshdir="meshes/" />
+  <option timestep="0.002" integrator="implicitfast"/>
+
+  <default>
+    <default class="h1_2">
+      <geom friction="0.01" margin="0.001" condim="1"/>
+      <joint damping="2" armature="0.1" frictionloss="0.1"/>
+      <default class="visual">
+        <geom contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom group="3" mass="0" density="0" />
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <mesh name="head_link" file="head_link.STL" />
+    <mesh name="pelvis" file="pelvis.STL"/>
+    <mesh name="left_hip_yaw_link" file="left_hip_yaw_link.STL"/>
+    <mesh name="left_hip_pitch_link" file="left_hip_pitch_link.STL"/>
+    <mesh name="left_hip_roll_link" file="left_hip_roll_link.STL"/>
+    <mesh name="left_knee_link" file="left_knee_link.STL"/>
+    <mesh name="left_ankle_pitch_link" file="left_ankle_pitch_link.STL"/>
+    <mesh name="left_ankle_roll_link" file="left_ankle_roll_link.STL"/>
+    <mesh name="right_hip_yaw_link" file="right_hip_yaw_link.STL"/>
+    <mesh name="right_hip_pitch_link" file="right_hip_pitch_link.STL"/>
+    <mesh name="right_hip_roll_link" file="right_hip_roll_link.STL"/>
+    <mesh name="right_knee_link" file="right_knee_link.STL"/>
+    <mesh name="right_ankle_pitch_link" file="right_ankle_pitch_link.STL"/>
+    <mesh name="right_ankle_roll_link" file="right_ankle_roll_link.STL"/>
+    <mesh name="torso_link" file="torso_link.STL"/>
+    <mesh name="left_shoulder_pitch_link" file="left_shoulder_pitch_link.STL"/>
+    <mesh name="left_shoulder_roll_link" file="left_shoulder_roll_link.STL"/>
+    <mesh name="left_shoulder_yaw_link" file="left_shoulder_yaw_link.STL"/>
+    <mesh name="left_elbow_link" file="left_elbow_link.STL"/>
+    <mesh name="left_wrist_roll_link" file="left_wrist_roll_link.STL"/>
+    <mesh name="left_wrist_pitch_link" file="left_wrist_pitch_link.STL"/>
+    <mesh name="wrist_yaw_link" file="wrist_yaw_link.STL"/>
+    <mesh name="right_shoulder_pitch_link" file="right_shoulder_pitch_link.STL"/>
+    <mesh name="right_shoulder_roll_link" file="right_shoulder_roll_link.STL"/>
+    <mesh name="right_shoulder_yaw_link" file="right_shoulder_yaw_link.STL"/>
+    <mesh name="right_elbow_link" file="right_elbow_link.STL"/>
+    <mesh name="right_wrist_roll_link" file="right_wrist_roll_link.STL"/>
+    <mesh name="right_wrist_pitch_link" file="right_wrist_pitch_link.STL"/>
+    <mesh name="logo_link" file="logo_link.STL"/>
+  </asset>
+    <default>
+		<default class="inspire_hand_left_visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="inspire_hand_left_collision">
+			<geom rgba="0.9 0.9 0.9 1.0"/>
+		</default>
+    <default class="inspire_hand_left_reference">
+			<geom contype="0" conaffinity="0" rgba="0.0 0.9 0.0 1.0" group="4"/>
+		</default>
+	</default>
+  <asset>
+		<mesh name="left_thumb_proximal_base" file="left_thumb_proximal_base.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="left_thumb_proximal" file="left_thumb_proximal.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="left_thumb_intermediate" file="left_thumb_intermediate.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="left_thumb_distal" file="left_thumb_distal.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="left_index_proximal" file="left_index_proximal.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="left_index_intermediate" file="left_index_intermediate.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="left_middle_intermediate" file="left_middle_intermediate.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="left_pinky_intermediate" file="left_pinky_intermediate.stl" scale="1.0 1.0 1.0"/>
+	</asset>
+  <default>
+    <default class="inspire_hand">
+      <joint damping="0.0" armature="0.01" frictionloss="0.0"/>
+    </default>
+		<default class="inspire_hand_right_visual">
+			<geom contype="0" conaffinity="0"/>
+		</default>
+		<default class="inspire_hand_right_collision">
+			<geom rgba="0.9 0.9 0.9 1.0"/>
+		</default>
+    <default class="inspire_hand_right_reference">
+			<geom contype="0" conaffinity="0" rgba="0.0 0.9 0.0 1.0" group="4"/>
+		</default>
+	</default>
+  <asset>
+		<mesh name="right_thumb_proximal_base" file="right_thumb_proximal_base.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="right_thumb_proximal" file="right_thumb_proximal.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="right_thumb_intermediate" file="right_thumb_intermediate.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="right_thumb_distal" file="right_thumb_distal.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="right_index_proximal" file="right_index_proximal.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="right_index_intermediate" file="right_index_intermediate.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="right_middle_intermediate" file="right_middle_intermediate.stl" scale="1.0 1.0 1.0"/>
+		<mesh name="right_pinky_intermediate" file="right_pinky_intermediate.stl" scale="1.0 1.0 1.0"/>
+	</asset>
+
+  <worldbody>
+    <light name="spotlight" mode="targetbodycom" target="torso_link" pos="0 -6 4" cutoff="30"/>
+    <body name="torso_link" childclass="h1_2">
+      <freejoint />
+      <body name="head_ref" pos="0 0 0.657">
+        <geom name="head_ref_0" type="mesh" mesh="head_link" pos="0 0 -0.657" contype="0" conaffinity="0" rgba="0.0 0.9 0.0 1.0" group="4" />
+      </body>
+      <inertial pos="0.000489 0.002797 0.20484" quat="0.999989 -0.00130808 -0.00282289 -0.00349105" mass="17.789" diaginertia="0.487315 0.409628 0.127837"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="torso_link"/>
+      <geom size="0.04 0.08 0.05" pos="0 0 0.15" type="box" rgba="0.1 0.1 0.1 1"/>
+      <site name="imu" pos="-0.04452 -0.01891 0.27756" rgba="1 0 0 0" size = "0.05"/>
+      <body name="left_shoulder_pitch_link" pos="0 0.14806 0.42333" quat="0.991445 0.130526 0 0">
+        <inertial pos="0.003053 0.06042 -0.0059" quat="0.761799 0.645681 -0.0378496 -0.0363943" mass="1.327" diaginertia="0.000588757 0.00053309 0.000393023"/>
+        <joint name="left_shoulder_pitch_joint" pos="0 0 0" axis="0 1 0" range="-3.14 1.57" actuatorfrcrange="-40 40"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="left_shoulder_pitch_link"/>
+        <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="left_shoulder_pitch_link"/>
+        <body name="left_shoulder_roll_link" pos="0.0342 0.061999 -0.0060011" quat="0.991445 -0.130526 0 0">
+          <inertial pos="-0.030932 -1e-06 -0.10609" quat="0.986055 0.000456937 0.166408 0.00213553" mass="1.393" diaginertia="0.00200869 0.00193464 0.000449847"/>
+          <joint name="left_shoulder_roll_joint" pos="0 0 0" axis="1 0 0" range="-0.38 3.4" actuatorfrcrange="-40 40"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="left_shoulder_roll_link"/>
+          <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="left_shoulder_roll_link"/>
+          <body name="left_shoulder_yaw_link" pos="-0.0342 0 -0.1456">
+            <inertial pos="0.004583 0.001128 -0.001128" quat="0.663644 -0.0108866 -0.0267235 0.747492" mass="1.505" diaginertia="0.00431782 0.00420697 0.000645658"/>
+            <joint name="left_shoulder_yaw_joint" pos="0 0 0" axis="0 0 1" range="-2.66 3.01" actuatorfrcrange="-18 18"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="left_shoulder_yaw_link"/>
+            <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="left_shoulder_yaw_link"/>
+            <body name="left_elbow_link" pos="0.006 0.0329 -0.182">
+              <inertial pos="0.077092 -0.028751 -0.009714" quat="0.544921 0.610781 0.423352 0.388305" mass="0.691" diaginertia="0.000942091 0.000905273 0.00023025"/>
+              <joint name="left_elbow_joint" pos="0 0 0" axis="0 1 0" range="-0.95 3.18" actuatorfrcrange="-18 18"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="left_elbow_link"/>
+              <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="left_elbow_link"/>
+              <body name="left_wrist_roll_link" pos="0.121 -0.0329 -0.011">
+                <inertial pos="0.035281 -0.00232 0.000337" quat="0.334998 0.622198 -0.240131 0.66557" mass="0.683" diaginertia="0.00034681 0.000328248 0.000294628"/>
+                <joint name="left_wrist_roll_joint" pos="0 0 0" axis="1 0 0" range="-3.01 2.75" actuatorfrcrange="-19 19"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="left_wrist_roll_link"/>
+                <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="left_wrist_roll_link"/>
+                <body name="left_wrist_pitch_link" pos="0.087 0 0">
+                  <inertial pos="0.020395 3.6e-05 -0.002973" quat="0.915893 -0.228405 -0.327262 -0.0432527" mass="0.484" diaginertia="7.25675e-05 7.00325e-05 6.9381e-05"/>
+                  <joint name="left_wrist_pitch_joint" pos="0 0 0" axis="0 1 0" range="-0.4625 0.4625" actuatorfrcrange="-19 19"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="left_wrist_pitch_link"/>
+                  <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="left_wrist_pitch_link"/>
+                  <body name="left_wrist_yaw_link" pos="0.02 0 0">
+                    <inertial pos="0.0770303 -0.00131441 -0.00068617" quat="0.499919 0.510625 0.506813 0.482165" mass="0.26543" diaginertia="0.000854397 0.000723298 0.00022115"/>
+                    <joint name="left_wrist_yaw_joint" pos="0 0 0" axis="0 0 1" range="-1.27 1.27" actuatorfrcrange="-19 19"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="wrist_yaw_link"/>
+                        <body name="inspire_hand_left" pos="0.0415 0.003 0" quat="-0.5 0.5 -0.5 0.5">
+                          <body name="left_base" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" childclass="inspire_hand" >
+                            <body name="left_hand_base_link" pos="0.0 0.0 0.0" quat="9.381856784784759e-07 -9.381856784784759e-07 -0.7071067690849304 0.7071067690849304">
+                              <body name="left_base_ref" pos="0.0 -0.03 0.0" quat="0.0 -1.0 1.0 0.0">
+                                <geom name="left_base_ref_1" type="box" pos="0.008 0.0032 0.0" quat="0.0 -1.0 1.0 0.0" size="0.01954999938607216 0.010099999606609344 0.028699999675154686" class="inspire_hand_left_reference"/>
+                                <geom name="left_base_ref_2" type="box" pos="0.0382 0.0032 0.0" quat="0.0 -1.0 1.0 0.0" size="0.01954999938607216 0.019999999552965164 0.040699999779462814" class="inspire_hand_left_reference"/>
+                                <geom name="left_base_ref_3" type="box" pos="0.0781 0.0 0.0" quat="0.0 -1.0 1.0 0.0" size="0.016100000590085983 0.019999999552965164 0.040699999779462814" class="inspire_hand_left_reference"/>
+                              </body>
+                              <inertial mass="0.14143000543117523" pos="-0.002526399912312627 -0.06604699790477753 -0.001959800021722913" quat="0.09772733598947525 0.7170524597167969 -0.06282567977905273 -0.6872685551643372" diaginertia="7.619507960043848e-05 8.411859744228423e-05 0.00012299131776671857"/>
+                              <geom name="SM_left_hand_base_link_collision_0" type="cylinder" pos="0.0 -0.01360000018030405 0.0" quat="0.7071090340614319 0.7071045637130737 0.0 0.0" size="0.02800000086426735 0.013899999670684338 0.0" class="inspire_hand_left_collision"/>
+                              <geom name="SM_left_hand_base_link_collision_1" type="box" pos="-0.0031999999191612005 -0.03799999877810478 0.0" quat="1.0 0.0 0.0 0.0" size="0.01954999938607216 0.010099999606609344 0.028699999675154686" class="inspire_hand_left_collision"/>
+                              <geom name="SM_left_hand_base_link_collision_2" type="box" pos="-0.0031999999191612005 -0.0681999996304512 0.0" quat="1.0 0.0 0.0 0.0" size="0.01954999938607216 0.019999999552965164 0.040699999779462814" class="inspire_hand_left_collision"/>
+                              <geom name="SM_left_hand_base_link_collision_3" type="box" pos="0.0 -0.10809999704360962 0.0" quat="1.0 0.0 0.0 0.0" size="0.016100000590085983 0.019999999552965164 0.040699999779462814" class="inspire_hand_left_collision"/>
+                              <geom name="SM_left_hand_base_link_collision_4" type="box" pos="-0.0015999999595806003 -0.1340000033378601 -0.030899999663233757" quat="1.0 0.0 0.0 0.0" size="0.0062500000931322575 0.005549999885261059 0.004449999891221523" class="inspire_hand_left_collision"/>
+                              <geom name="SM_left_hand_base_link_collision_5" type="box" pos="-0.0015999999595806003 -0.1340000033378601 -0.011800000444054604" quat="1.0 0.0 0.0 0.0" size="0.0062500000931322575 0.005549999885261059 0.004449999891221523" class="inspire_hand_left_collision"/>
+                              <geom name="SM_left_hand_base_link_collision_6" type="box" pos="-0.0015999999595806003 -0.1340000033378601 0.007000000216066837" quat="1.0 0.0 0.0 0.0" size="0.0062500000931322575 0.005549999885261059 0.004449999891221523" class="inspire_hand_left_collision"/>
+                              <geom name="SM_left_hand_base_link_collision_7" type="box" pos="-0.0015999999595806003 -0.1340000033378601 0.026200000196695328" quat="1.0 0.0 0.0 0.0" size="0.0062500000931322575 0.005549999885261059 0.004449999891221523" class="inspire_hand_left_collision"/>
+                              <body name="left_index_proximal" pos="0.0002853299956768751 -0.13652999699115753 0.03226799890398979" quat="0.9998477101325989 -0.01745261438190937 1.8409575947661283e-24 8.498105667334897e-25">
+                                <inertial mass="0.004240300040692091" pos="0.0012259000213816762 -0.0119420001283288 -0.006000100169330835" quat="0.7193485498428345 -2.7051870347349904e-05 1.8907079720520414e-05 -0.694649338722229" diaginertia="2.1090872337481414e-07 6.628712867495778e-07 6.939799845895323e-07"/>
+                                <geom name="SM_left_index_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_index_proximal" class="inspire_hand_left_collision"/>
+                                <joint name="left_index_proximal_joint" type="hinge" pos="5.421010862427522e-20 6.938893903907228e-18 -4.2075554220458793e-26" range="0.0 1.7" axis="0.0 0.0 -1.0"/>
+                                <body name="left_index_intermediate" pos="-0.00261380011215806 -0.03202600032091141 -0.0010000000474974513" quat="1.0 9.244463733058732e-33 -1.039160601322504e-22 -6.583179149284136e-24">
+                                  <inertial mass="0.00456830020993948" pos="0.0019696999806910753 -0.019588999450206757 -0.004999999888241291" quat="-0.6601166725158691 -9.285805390391033e-06 9.442229384148959e-06 0.7511630654335022" diaginertia="8.472122203784238e-08 7.724647730356082e-07 7.817899927431426e-07"/>
+                                  <geom name="SM_left_index_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_index_intermediate" class="inspire_hand_left_collision"/>
+                                  <joint name="left_index_intermediate_joint" type="hinge" pos="-2.938735877055719e-39 -7.801500180554065e-18 -2.7243741481589783e-19" range="-0.04544999822974205 1.5600000619888306" axis="0.0 0.0 -1.0"/>
+                                  <body name="left_index_tip" pos="-0.0007999999797903001 -0.04500000178813934 -0.004999999888241291" quat="1.0 9.244463733058732e-33 -1.039160601322504e-22 -6.583179149284136e-24">
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="left_middle_proximal" pos="0.0002853299956768751 -0.1370999962091446 0.01295000035315752" quat="1.0 8.271806125530277e-25 -6.0772272707285915e-31 3.1554436208840472e-30">
+                                <inertial mass="0.004240300040692091" pos="0.0012969999806955457 -0.011934000067412853 -0.006000100169330835" quat="0.7214158177375793 -2.875800601032097e-05 1.813349263102282e-05 -0.6925021409988403" diaginertia="2.1091464930123038e-07 6.628653181905975e-07 6.939699801478127e-07"/>
+                                <geom name="SM_left_middle_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_index_proximal" class="inspire_hand_left_collision"/>
+                                <joint name="left_middle_proximal_joint" type="hinge" pos="5.421010862427522e-20 1.734723475976807e-18 9.736965619925347e-26" range="0.0 1.7" axis="0.0 0.0 -1.0"/>
+                                <body name="left_middle_intermediate" pos="-0.002422899939119816 -0.032040998339653015 -0.0010000000474974513" quat="1.0 8.271806125530277e-25 -6.0772272707285915e-31 3.1554436208840472e-30">
+                                  <inertial mass="0.0050396001897752285" pos="0.0019209999591112137 -0.020795999094843864 -0.004999999888241291" quat="-0.6592898964881897 -5.518809120985679e-05 5.767871698481031e-05 0.7518888115882874" diaginertia="9.140141088437304e-08 9.732785883898032e-07 9.838399819273036e-07"/>
+                                  <geom name="SM_left_middle_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_middle_intermediate" class="inspire_hand_left_collision"/>
+                                  <joint name="left_middle_intermediate_joint" type="hinge" pos="4.337176785314604e-19 -8.673621515787098e-19 -1.3877786980633844e-17" range="-0.04544999822974205 1.5600000619888306" axis="0.0 0.0 -1.0"/>
+                                  <body name="left_middle_tip" pos="-0.0010000000474974513 -0.04800000041723251 -0.004999999888241291" quat="1.0 8.271806125530277e-25 -6.0772272707285915e-31 3.1554436208840472e-30">
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="left_ring_proximal" pos="0.0002853299956768751 -0.13691000640392303 -0.0062871999107301235" quat="0.9996573328971863 0.02617700956761837 -2.7253564581423253e-24 7.601245759884602e-25">
+                                <inertial mass="0.004240300040692091" pos="0.0012969999806955457 -0.011934000067412853 -0.006000199820846319" quat="0.7214158177375793 -2.6212075681542046e-05 1.5668043488403782e-05 -0.6925021409988403" diaginertia="2.1091464930123038e-07 6.628653181905975e-07 6.939699801478127e-07"/>
+                                <geom name="SM_left_ring_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_index_proximal" class="inspire_hand_left_collision"/>
+                                <joint name="left_ring_proximal_joint" type="hinge" pos="0.0 -8.673617379884035e-19 2.3240868403285377e-26" range="0.0 1.7" axis="0.0 0.0 -1.0"/>
+                                <body name="left_ring_intermediate" pos="-0.002422899939119816 -0.032040998339653015 -0.0010000000474974513" quat="1.0 0.0 -1.0899610348082025e-22 8.162126849572873e-26">
+                                  <inertial mass="0.00456830020993948" pos="0.0021752999164164066 -0.01956699974834919 -0.004999999888241291" quat="-0.6640501618385315 -1.9659373720060103e-05 2.1428197214845568e-05 0.7476879954338074" diaginertia="8.472197521314229e-08 7.724480042270443e-07 7.817699838597036e-07"/>
+                                  <geom name="SM_left_ring_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_index_intermediate" class="inspire_hand_left_collision"/>
+                                  <joint name="left_ring_intermediate_joint" type="hinge" pos="-1.1047786193986395e-22 4.465819914178851e-19 4.166709584882328e-17" range="-0.04544999822974205 1.5600000619888306" axis="0.0 0.0 -1.0"/>
+                                  <body name="left_ring_tip" pos="-0.0007999999797903001 -0.04500000178813934 -0.004999999888241291" quat="1.0 0.0 -1.0899610348082025e-22 8.162126849572873e-26">
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="left_pinky_proximal" pos="0.0002853299956768751 -0.1357100009918213 -0.025488000363111496" quat="0.9986295104026794 0.05233607813715935 -5.162623674711105e-24 4.840701963849668e-25">
+                                <inertial mass="0.004240300040692091" pos="0.0012969999806955457 -0.011934000067412853 -0.006000100169330835" quat="0.7214158177375793 -2.779311398626305e-05 1.683872687863186e-05 -0.6925021409988403" diaginertia="2.1091464930123038e-07 6.628653181905975e-07 6.939699801478127e-07"/>
+                                <geom name="SM_left_pinky_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_index_proximal" class="inspire_hand_left_collision"/>
+                                <joint name="left_pinky_proximal_joint" type="hinge" pos="7.365191006353838e-23 -6.938894731087841e-18 -2.7755575615628914e-17" range="0.0 1.7" axis="0.0 0.0 -1.0"/>
+                                <body name="left_pinky_intermediate" pos="-0.002422899939119816 -0.032040998339653015 -0.0010000000474974513" quat="1.0 6.938893903907228e-18 1.0034541061795595e-22 2.900099453144354e-25">
+                                  <inertial mass="0.0035995999351143837" pos="0.0024747999850660563 -0.016202999278903008 -0.005003099795430899" quat="-0.0033152850810438395 0.7450506687164307 0.6669934988021851 -0.0028730568010360003" diaginertia="6.565379351286538e-08 4.437228255937953e-07 4.486703915063117e-07"/>
+                                  <geom name="SM_left_pinky_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_pinky_intermediate" class="inspire_hand_left_collision"/>
+                                  <joint name="left_pinky_intermediate_joint" type="hinge" pos="-3.682595503176919e-23 5.880173650576879e-19 1.389242725029542e-17" range="-0.04544999822974205 1.5600000619888306" axis="0.0 0.0 -1.0"/>
+                                  <body name="left_pinky_tip" pos="-0.0007999999797903001 -0.03700000047683716 -0.004999999888241291" quat="1.0 6.938893903907228e-18 1.0034541061795595e-22 2.900099453144354e-25">
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="left_thumb_proximal_base" pos="-0.01696000061929226 -0.06909999996423721 0.02044999971985817" quat="0.49999815225601196 0.5 -0.5 0.500001847743988">
+                                <inertial mass="0.0018869000487029552" pos="0.004881700035184622 0.0009381999843753874 -0.0072200000286102295" quat="0.6526864767074585 0.7102533578872681 0.0756545141339302 0.2526201903820038" diaginertia="4.941936637692379e-08 6.873204227986207e-08 8.660258998816062e-08"/>
+                                <geom name="SM_left_thumb_proximal_base_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_thumb_proximal_base" class="inspire_hand_left_collision"/>
+                                <joint name="left_thumb_proximal_yaw_joint" type="hinge" pos="3.469446951953614e-18 3.469446951953614e-18 9.113525444566528e-24" range="-0.1 1.3079999685287476" axis="0.0 0.0 1.0"/>
+                                <body name="left_thumb_proximal" pos="0.009986699558794498 0.009824199602007866 -0.008899999782443047" quat="-0.7045708894729614 0.7045734524726868 0.05981694534420967 -0.05981672555208206">
+                                  <inertial mass="0.006607499904930592" pos="0.021932000294327736 -0.012784999795258045 -0.008038599975407124" quat="0.933698296546936 -0.0018248790875077248 0.0006946377689018846 -0.3580555021762848" diaginertia="8.645660045658587e-07 2.439328682157793e-06 2.786005325106089e-06"/>
+                                  <geom name="SM_left_thumb_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_thumb_proximal" class="inspire_hand_left_collision"/>
+                                  <joint name="left_thumb_proximal_pitch_joint" type="hinge" pos="-1.7347251303380322e-18 -1.7347025896663401e-18 5.204177045375322e-18" range="-0.1 0.6000000238418579" axis="0.0 0.0 -1.0"/>
+                                  <body name="left_thumb_intermediate" pos="0.04407000169157982 -0.03455299884080887 -0.0007999999797903001" quat="1.0 -6.617444900424222e-24 -2.5099553452876955e-23 7.703719777548943e-34">
+                                    <inertial mass="0.0037847000639885664" pos="0.009554400108754635 0.0016282000578939915 -0.007199699990451336" quat="0.9005143642425537 0.00011290622205706313 -5.981473077554256e-05 -0.4348262548446655" diaginertia="2.456612264722935e-07 4.4808876964452793e-07 4.6530999497917946e-07"/>
+                                    <geom name="SM_left_thumb_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_thumb_intermediate" class="inspire_hand_left_collision"/>
+                                    <joint name="left_thumb_intermediate_joint" type="hinge" pos="6.839578463661049e-18 4.878914325678139e-18 -1.1697731796735026e-18" range="0.0 0.800000011920929" axis="0.0 0.0 -1.0"/>
+                                    <body name="left_thumb_distal" pos="0.02024799957871437 -0.010156000033020973 -0.0012000000569969416" quat="1.0 -6.617444900424222e-24 -2.5099553452876955e-23 7.703719777548943e-34">
+                                      <inertial mass="0.0033440999686717987" pos="0.009288799948990345 -0.0049529001116752625 -0.006003300193697214" quat="0.9273728132247925 -0.00246614683419466 0.00030418275855481625 -0.3741303086280823" diaginertia="8.159298658938496e-08 1.9524669880865986e-07 2.0026031677389255e-07"/>
+                                      <geom name="SM_left_thumb_distal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="left_thumb_distal" class="inspire_hand_left_collision"/>
+                                      <joint name="left_thumb_distal_joint" type="hinge" pos="1.2464620868800289e-17 7.155743437391067e-18 -1.9730944292019282e-17" range="0.0 0.4000000059604645" axis="0.0 0.0 -1.0"/>
+                                      <body name="left_thumb_tip" pos="0.02019999921321869 -0.014000000432133675 -0.006000000052154064" quat="1.0 -6.617444900424222e-24 -2.5099553452876955e-23 7.703719777548943e-34">
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+      <body name="right_shoulder_pitch_link" pos="0 -0.14806 0.42333" quat="0.991445 -0.130526 0 0">
+        <inertial pos="0.003053 -0.06042 -0.0059" quat="0.645681 0.761799 0.0363943 0.0378496" mass="1.327" diaginertia="0.000588757 0.00053309 0.000393023"/>
+        <joint name="right_shoulder_pitch_joint" pos="0 0 0" axis="0 1 0" range="-3.14 1.57" actuatorfrcrange="-40 40"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="right_shoulder_pitch_link"/>
+        <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="right_shoulder_pitch_link"/>
+        <body name="right_shoulder_roll_link" pos="0.0342 -0.061999 -0.0060011" quat="0.991445 0.130526 0 0">
+          <inertial pos="-0.030932 1e-06 -0.10609" quat="0.986055 -0.000456937 0.166408 -0.00213553" mass="1.393" diaginertia="0.00200869 0.00193464 0.000449847"/>
+          <joint name="right_shoulder_roll_joint" pos="0 0 0" axis="1 0 0" range="-3.4 0.38" actuatorfrcrange="-40 40"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="right_shoulder_roll_link"/>
+          <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="right_shoulder_roll_link"/>
+          <body name="right_shoulder_yaw_link" pos="-0.0342 0 -0.1456">
+            <inertial pos="0.004583 -0.001128 -0.001128" quat="0.747492 -0.0267235 -0.0108866 0.663644" mass="1.505" diaginertia="0.00431782 0.00420697 0.000645658"/>
+            <joint name="right_shoulder_yaw_joint" pos="0 0 0" axis="0 0 1" range="-3.01 2.66" actuatorfrcrange="-18 18"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="right_shoulder_yaw_link"/>
+            <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="right_shoulder_yaw_link"/>
+            <body name="right_elbow_link" pos="0.006 -0.0329 -0.182">
+              <inertial pos="0.077092 0.028751 -0.009714" quat="0.388305 0.423352 0.610781 0.544921" mass="0.691" diaginertia="0.000942091 0.000905273 0.00023025"/>
+              <joint name="right_elbow_joint" pos="0 0 0" axis="0 1 0" range="-0.95 3.18" actuatorfrcrange="-18 18"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="right_elbow_link"/>
+              <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="right_elbow_link"/>
+              <body name="right_wrist_roll_link" pos="0.121 0.0329 -0.011">
+                <inertial pos="0.035281 -0.00232 0.000337" quat="0.334998 0.622198 -0.240131 0.66557" mass="0.683" diaginertia="0.00034681 0.000328248 0.000294628"/>
+                <joint name="right_wrist_roll_joint" pos="0 0 0" axis="1 0 0" range="-2.75 3.01" actuatorfrcrange="-19 19"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="right_wrist_roll_link"/>
+                <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="right_wrist_roll_link"/>
+                <body name="right_wrist_pitch_link" pos="0.087 0 0">
+                  <inertial pos="0.020395 3.6e-05 -0.002973" quat="0.915893 -0.228405 -0.327262 -0.0432527" mass="0.484" diaginertia="7.25675e-05 7.00325e-05 6.9381e-05"/>
+                  <joint name="right_wrist_pitch_joint" pos="0 0 0" axis="0 1 0" range="-0.4625 0.4625" actuatorfrcrange="-19 19"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="right_wrist_pitch_link"/>
+                  <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="right_wrist_pitch_link"/>
+                  <body name="right_wrist_yaw_link" pos="0.02 0 0">
+                    <inertial pos="0.0770303 0.0013013 -0.000699011" quat="0.482149 0.506915 0.510629 0.499827" mass="0.26543" diaginertia="0.00085381 0.000722728 0.000221145"/>
+                    <joint name="right_wrist_yaw_joint" pos="0 0 0" axis="0 0 1" range="-1.27 1.27" actuatorfrcrange="-19 19"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 0.1 0.1 1" mesh="wrist_yaw_link"/>
+                        <body name="inspire_hand_right" pos="0.0415 -0.003 0" quat="0.5 0.5 0.5 0.5" childclass="inspire_hand">
+                          <body name="right_base" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+                            <body name="right_hand_base_link" pos="0.0 0.0 0.0" quat="9.381886343362567e-07 -9.381827226206951e-07 -0.7071045637130737 0.7071090340614319">
+                              <body name="right_base_ref" pos="0.0 -0.03 0.0" quat="0.0 1.0 1.0 0.0">
+                                <geom name="right_base_ref_1" type="box" pos="-0.008 -0.0032 0.0" quat="0.0 1.0 1.0 0.0" size="0.01954999938607216 0.010099999606609344 0.028699999675154686" class="inspire_hand_right_reference"/>
+                                <geom name="right_base_ref_2" type="box" pos="-0.0382 -0.0032 0.0" quat="0.0 1.0 1.0 0.0" size="0.01954999938607216 0.019999999552965164 0.040699999779462814" class="inspire_hand_right_reference"/>
+                                <geom name="right_base_ref_3" type="box" pos="-0.0781 0.0 0.0" quat="0.0 1.0 1.0 0.0" size="0.016100000590085983 0.019999999552965164 0.040699999779462814" class="inspire_hand_right_reference"/>
+                              </body>
+                              <inertial mass="0.14143000543117523" pos="-0.002526399912312627 -0.06604699790477753 0.001959800021722913" quat="0.09772733598947525 0.7170524597167969 -0.06282567977905273 -0.6872685551643372" diaginertia="7.619507960043848e-05 8.411859744228423e-05 0.00012299131776671857"/>
+                              <geom name="SM_right_hand_base_link_collision_0" type="cylinder" pos="0.0 -0.01360000018030405 0.0" quat="0.7071090340614319 0.7071045637130737 0.0 0.0" size="0.02800000086426735 0.013899999670684338 0.0" class="inspire_hand_right_collision"/>
+                              <geom name="SM_right_hand_base_link_collision_1" type="box" pos="-0.0031999999191612005 -0.03799999877810478 0.0" quat="1.0 0.0 0.0 0.0" size="0.01954999938607216 0.010099999606609344 0.028699999675154686" class="inspire_hand_right_collision"/>
+                              <geom name="SM_right_hand_base_link_collision_2" type="box" pos="-0.0031999999191612005 -0.0681999996304512 0.0" quat="1.0 0.0 0.0 0.0" size="0.01954999938607216 0.019999999552965164 0.040699999779462814" class="inspire_hand_right_collision"/>
+                              <geom name="SM_right_hand_base_link_collision_3" type="box" pos="0.0 -0.10809999704360962 0.0" quat="1.0 0.0 0.0 0.0" size="0.016100000590085983 0.019999999552965164 0.040699999779462814" class="inspire_hand_right_collision"/>
+                              <geom name="SM_right_hand_base_link_collision_4" type="box" pos="-0.0015999999595806003 -0.1340000033378601 0.030899999663233757" quat="1.0 0.0 0.0 0.0" size="0.0062500000931322575 0.005549999885261059 0.004449999891221523" class="inspire_hand_right_collision"/>
+                              <geom name="SM_right_hand_base_link_collision_5" type="box" pos="-0.0015999999595806003 -0.1340000033378601 0.011800000444054604" quat="1.0 0.0 0.0 0.0" size="0.0062500000931322575 0.005549999885261059 0.004449999891221523" class="inspire_hand_right_collision"/>
+                              <geom name="SM_right_hand_base_link_collision_6" type="box" pos="-0.0015999999595806003 -0.1340000033378601 -0.007000000216066837" quat="1.0 0.0 0.0 0.0" size="0.0062500000931322575 0.005549999885261059 0.004449999891221523" class="inspire_hand_right_collision"/>
+                              <geom name="SM_right_hand_base_link_collision_7" type="box" pos="-0.0015999999595806003 -0.1340000033378601 -0.026200000196695328" quat="1.0 0.0 0.0 0.0" size="0.0062500000931322575 0.005549999885261059 0.004449999891221523" class="inspire_hand_right_collision"/>
+                              <body name="right_index_proximal" pos="0.0002853299956768751 -0.13652999699115753 -0.03226799890398979" quat="-0.017445441335439682 0.9998478293418884 4.842071804592604e-19 8.341038073185411e-21">
+                                <inertial mass="0.004240300040692091" pos="0.0012259000213816762 0.0119420001283288 -0.006000100169330835" quat="-0.694649338722229 1.8907079720520414e-05 -2.7051870347349904e-05 0.7193485498428345" diaginertia="2.1090872337481414e-07 6.628712867495778e-07 6.939799845895323e-07"/>
+                                <geom name="SM_right_index_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_index_proximal" class="inspire_hand_right_collision"/>
+                                <joint name="right_index_proximal_joint" type="hinge" pos="1.4693679385278594e-39 6.938893903907228e-18 -4.3900958189883325e-23" range="0.0 1.7" axis="0.0 0.0 1.0"/>
+                                <body name="right_index_intermediate" pos="-0.00261380011215806 0.03202600032091141 -0.0010000000474974513" quat="1.0 9.244463733058732e-33 -1.6162664417396406e-24 -3.280516531330707e-24">
+                                  <inertial mass="0.00456830020993948" pos="0.0019696999806910753 0.019588999450206757 -0.004999999888241291" quat="0.7511630654335022 9.442229384148959e-06 -9.285805390391033e-06 -0.6601166725158691" diaginertia="8.472122203784238e-08 7.724647730356082e-07 7.817899927431426e-07"/>
+                                  <geom name="SM_right_index_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_index_intermediate" class="inspire_hand_right_collision"/>
+                                  <joint name="right_index_intermediate_joint" type="hinge" pos="4.336808689942018e-19 -2.6005007495018653e-18 9.079053624025337e-20" range="-0.04544999822974205 1.5600000619888306" axis="0.0 0.0 1.0"/>
+                                  <body name="right_index_tip" pos="-0.0007999999797903001 0.04500000178813934 -0.004999999888241291" quat="1.0 9.244463733058732e-33 -1.6162664417396406e-24 -3.280516531330707e-24">
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="right_middle_proximal" pos="0.0002853299956768751 -0.1370999962091446 -0.01295000035315752" quat="3.6732051285071066e-06 1.0 3.029189524120985e-28 4.6160661823683426e-29">
+                                <inertial mass="0.004240300040692091" pos="0.0012969999806955457 0.011934000067412853 -0.006000100169330835" quat="-0.6925021409988403 1.813349263102282e-05 -2.875800601032097e-05 0.7214158177375793" diaginertia="2.1091464930123038e-07 6.628653181905975e-07 6.939699801478127e-07"/>
+                                <geom name="SM_right_middle_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_index_proximal" class="inspire_hand_right_collision"/>
+                                <joint name="right_middle_proximal_joint" type="hinge" pos="0.0 0.0 0.0" range="0.0 1.7" axis="0.0 0.0 1.0"/>
+                                <body name="right_middle_intermediate" pos="-0.002422899939119816 0.032040998339653015 -0.0010000000474974513" quat="1.0 0.0 4.616546461148224e-29 -1.0097417179416521e-28">
+                                  <inertial mass="0.0050396001897752285" pos="0.0019209999591112137 0.020795999094843864 -0.004999999888241291" quat="0.7518888115882874 5.767871698481031e-05 -5.518809120985679e-05 -0.6592898964881897" diaginertia="9.140141088437304e-08 9.732785883898032e-07 9.838399819273036e-07"/>
+                                  <geom name="SM_right_middle_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_middle_intermediate" class="inspire_hand_right_collision"/>
+                                  <joint name="right_middle_intermediate_joint" type="hinge" pos="3.682595503176919e-23 2.6020711518947972e-18 1.3877791116536907e-17" range="-0.04544999822974205 1.5600000619888306" axis="0.0 0.0 1.0"/>
+                                  <body name="right_middle_tip" pos="-0.0010000000474974513 0.04800000041723251 -0.004999999888241291" quat="1.0 0.0 4.616546461148224e-29 -1.0097417179416521e-28">
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="right_ring_proximal" pos="0.0002853299956768751 -0.13691000640392303 0.0062871999107301235" quat="0.02619333006441593 0.9996569156646729 1.666354671878583e-24 1.082144874741528e-22">
+                                <inertial mass="0.004240300040692091" pos="0.0012969999806955457 0.011934000067412853 -0.006000199820846319" quat="-0.6925021409988403 1.5668043488403782e-05 -2.6212075681542046e-05 0.7214158177375793" diaginertia="2.1091464930123038e-07 6.628653181905975e-07 6.939699801478127e-07"/>
+                                <geom name="SM_right_ring_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_index_proximal" class="inspire_hand_right_collision"/>
+                                <joint name="right_ring_proximal_joint" type="hinge" pos="0.0 0.0 0.0" range="0.0 1.7" axis="0.0 0.0 1.0"/>
+                                <body name="right_ring_intermediate" pos="-0.002422899939119816 0.032040998339653015 -0.0010000000474974513" quat="1.0 -1.734723475976807e-18 1.0830465743106318e-22 6.354698604291806e-26">
+                                  <inertial mass="0.00456830020993948" pos="0.0021752999164164066 0.01956699974834919 -0.004999999888241291" quat="0.7476879954338074 2.1428197214845568e-05 -1.9659373720060103e-05 -0.6640501618385315" diaginertia="8.472197521314229e-08 7.724480042270443e-07 7.817699838597036e-07"/>
+                                  <geom name="SM_right_ring_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_index_intermediate" class="inspire_hand_right_collision"/>
+                                  <joint name="right_ring_intermediate_joint" type="hinge" pos="4.337176785314604e-19 1.394980649464154e-19 1.3904164943187548e-17" range="-0.04544999822974205 1.5600000619888306" axis="0.0 0.0 1.0"/>
+                                  <body name="right_ring_tip" pos="-0.0007999999797903001 0.04500000178813934 -0.004999999888241291" quat="1.0 -1.734723475976807e-18 1.0830465743106318e-22 6.354698604291806e-26">
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="right_pinky_proximal" pos="0.0002853299956768751 -0.1357100009918213 0.025488000363111496" quat="0.052322424948215485 0.9986302256584167 5.331118043334088e-19 4.5107813163741705e-18">
+                                <inertial mass="0.004240300040692091" pos="0.0012969999806955457 0.011934000067412853 -0.006000100169330835" quat="-0.6925021409988403 1.683872687863186e-05 -2.779311398626305e-05 0.7214158177375793" diaginertia="2.1091464930123038e-07 6.628653181905975e-07 6.939699801478127e-07"/>
+                                <geom name="SM_right_pinky_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_index_proximal" class="inspire_hand_right_collision"/>
+                                <joint name="right_pinky_proximal_joint" type="hinge" pos="-5.4136457238015324e-20 -3.469622727833782e-18 -2.7755554108932987e-17" range="0.0 1.7" axis="0.0 0.0 1.0"/>
+                                <body name="right_pinky_intermediate" pos="-0.002422899939119816 0.032040998339653015 -0.0010000000474974513" quat="1.0 -1.0408340855860843e-17 7.186291710318188e-24 1.352471256426121e-23">
+                                  <inertial mass="0.0035995999351143837" pos="0.0024747999850660563 0.016202999278903008 -0.005003099795430899" quat="0.7450506687164307 -0.0033152850810438395 0.0028730568010360003 -0.6669934988021851" diaginertia="6.565379351286538e-08 4.437228255937953e-07 4.486703915063117e-07"/>
+                                  <geom name="SM_right_pinky_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_pinky_intermediate" class="inspire_hand_right_collision"/>
+                                  <joint name="right_pinky_intermediate_joint" type="hinge" pos="-3.682595503176919e-23 2.312775692797492e-18 -1.3711177088834026e-17" range="-0.04544999822974205 1.5600000619888306" axis="0.0 0.0 1.0"/>
+                                  <body name="right_pinky_tip" pos="-0.0007999999797903001 0.03700000047683716 -0.004999999888241291" quat="1.0 -1.0408340855860843e-17 7.186291710318188e-24 1.352471256426121e-23">
+                                  </body>
+                                </body>
+                              </body>
+                              <body name="right_thumb_proximal_base" pos="-0.01696000061929226 -0.06909999996423721 -0.02044999971985817" quat="0.49999815225601196 0.5 -0.5 0.500001847743988">
+                                <inertial mass="0.0018869000487029552" pos="-0.0048063998110592365 0.0009381999843753874 -0.007569999899715185" quat="0.6526864767074585 0.7102533578872681 -0.0756545141339302 -0.2526201903820038" diaginertia="4.941936637692379e-08 6.873204227986207e-08 8.660258998816062e-08"/>
+                                <geom name="SM_right_thumb_proximal_base_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_thumb_proximal_base" class="inspire_hand_right_collision"/>
+                                <joint name="right_thumb_proximal_yaw_joint" type="hinge" pos="3.469446951953614e-18 5.824756644121128e-29 9.206488757942298e-24" range="-0.1 1.3079999685287476" axis="0.0 0.0 -1.0"/>
+                                <body name="right_thumb_proximal" pos="-0.008809899911284447 0.010892000049352646 -0.00925000011920929" quat="0.09968429803848267 0.09968466311693192 0.7000463008880615 0.7000437378883362">
+                                  <inertial mass="0.006607499904930592" pos="0.021932000294327736 0.012784999795258045 -0.008038599975407124" quat="0.933698296546936 0.0018248790875077248 0.0006946377689018846 0.3580555021762848" diaginertia="8.645660045658587e-07 2.439328682157793e-06 2.786005325106089e-06"/>
+                                  <geom name="SM_right_thumb_proximal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_thumb_proximal" class="inspire_hand_right_collision"/>
+                                  <joint name="right_thumb_proximal_pitch_joint" type="hinge" pos="1.734739812793905e-18 5.20417497742379e-18 1.7346933872820255e-18" range="-0.1 0.6000000238418579" axis="0.0 0.0 1.0"/>
+                                  <body name="right_thumb_intermediate" pos="0.04407000169157982 0.03455299884080887 -0.0007999999797903001" quat="1.0 1.2037062152420224e-35 2.212510229155447e-22 -4.235164736271502e-22">
+                                    <inertial mass="0.0037847000639885664" pos="0.009554400108754635 -0.0016282000578939915 -0.007199699990451336" quat="-0.4348262548446655 -5.981473077554256e-05 0.00011290622205706313 0.9005143642425537" diaginertia="2.456612264722935e-07 4.4808876964452793e-07 4.6530999497917946e-07"/>
+                                    <geom name="SM_right_thumb_intermediate_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_thumb_intermediate" class="inspire_hand_right_collision"/>
+                                    <joint name="right_thumb_intermediate_joint" type="hinge" pos="-1.3326153465012031e-17 -4.878983395259287e-18 3.873747606360851e-18" range="0.0 0.800000011920929" axis="0.0 0.0 1.0"/>
+                                    <body name="right_thumb_distal" pos="0.02024799957871437 0.010156000033020973 -0.0012000000569969416" quat="1.0 1.2037062152420224e-35 2.212510229155447e-22 -4.235164736271502e-22">
+                                      <inertial mass="0.0033440999686717987" pos="0.009288799948990345 0.0049529001116752625 -0.006003300193697214" quat="0.9273728132247925 0.00246614683419466 0.00030418275855481625 0.3741303086280823" diaginertia="8.159298658938496e-08 1.9524669880865986e-07 2.0026031677389255e-07"/>
+                                      <geom name="SM_right_thumb_distal_collision_0" type="mesh" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" mesh="right_thumb_distal" class="inspire_hand_right_collision"/>
+                                      <joint name="right_thumb_distal_joint" type="hinge" pos="1.7897268508085207e-17 -2.167591898513117e-19 5.636657675300709e-18" range="0.0 0.4000000059604645" axis="0.0 0.0 1.0"/>
+                                      <body name="right_thumb_tip" pos="0.02019999921321869 0.014000000432133675 -0.006000000052154064" quat="1.0 1.2037062152420224e-35 2.212510229155447e-22 -4.235164736271502e-22">
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="left_shoulder_pitch_joint" joint="left_shoulder_pitch_joint"/>
+    <motor name="left_shoulder_roll_joint" joint="left_shoulder_roll_joint"/>
+    <motor name="left_shoulder_yaw_joint" joint="left_shoulder_yaw_joint"/>
+    <motor name="left_elbow_joint" joint="left_elbow_joint"/>
+    <motor name="left_wrist_roll_joint" joint="left_wrist_roll_joint"/>
+    <motor name="left_wrist_pitch_joint" joint="left_wrist_pitch_joint"/>
+    <motor name="left_wrist_yaw_joint" joint="left_wrist_yaw_joint"/>
+    <motor name="right_shoulder_pitch_joint" joint="right_shoulder_pitch_joint"/>
+    <motor name="right_shoulder_roll_joint" joint="right_shoulder_roll_joint"/>
+    <motor name="right_shoulder_yaw_joint" joint="right_shoulder_yaw_joint"/>
+    <motor name="right_elbow_joint" joint="right_elbow_joint"/>
+    <motor name="right_wrist_roll_joint" joint="right_wrist_roll_joint"/>
+    <motor name="right_wrist_pitch_joint" joint="right_wrist_pitch_joint"/>
+    <motor name="right_wrist_yaw_joint" joint="right_wrist_yaw_joint"/>
+  </actuator>
+
+  <equality>
+		<joint name="left_index_intermediate_joint_left_index_proximal_joint" joint1="left_index_intermediate_joint" joint2="left_index_proximal_joint" polycoef="-0.04544999822974205 1.0639899969100952 0.0 0.0 0.0"/>
+		<joint name="left_middle_intermediate_joint_left_middle_proximal_joint" joint1="left_middle_intermediate_joint" joint2="left_middle_proximal_joint" polycoef="-0.04544999822974205 1.0639899969100952 0.0 0.0 0.0"/>
+		<joint name="left_ring_intermediate_joint_left_ring_proximal_joint" joint1="left_ring_intermediate_joint" joint2="left_ring_proximal_joint" polycoef="-0.04544999822974205 1.0639899969100952 0.0 0.0 0.0"/>
+		<joint name="left_pinky_intermediate_joint_left_pinky_proximal_joint" joint1="left_pinky_intermediate_joint" joint2="left_pinky_proximal_joint" polycoef="-0.04544999822974205 1.0639899969100952 0.0 0.0 0.0"/>
+		<joint name="left_thumb_intermediate_joint_left_thumb_proximal_pitch_joint" joint1="left_thumb_intermediate_joint" joint2="left_thumb_proximal_pitch_joint" polycoef="0.0 1.3339999914169312 0.0 0.0 0.0"/>
+		<joint name="left_thumb_distal_joint_thumb_left_proximal_pitch_joint" joint1="left_thumb_distal_joint" joint2="left_thumb_proximal_pitch_joint" polycoef="0.0 0.6669999957084656 0.0 0.0 0.0"/>
+	</equality>
+	<contact>
+		<exclude name="left_hand_base_link_thumb_proximal_base" body1="left_hand_base_link" body2="left_thumb_proximal_base"/>
+		<exclude name="left_hand_base_link_thumb_proximal" body1="left_hand_base_link" body2="left_thumb_proximal"/>
+		<exclude name="left_hand_base_link_index_proximal" body1="left_hand_base_link" body2="left_index_proximal"/>
+		<exclude name="left_hand_base_link_middle_proximal" body1="left_hand_base_link" body2="left_middle_proximal"/>
+		<exclude name="left_hand_base_link_ring_proximal" body1="left_hand_base_link" body2="left_ring_proximal"/>
+		<exclude name="left_hand_base_link_pinky_proximal" body1="left_hand_base_link" body2="left_pinky_proximal"/>
+	</contact>
+
+  <equality>
+		<joint name="right_index_intermediate_joint_right_index_proximal_joint" joint1="right_index_intermediate_joint" joint2="right_index_proximal_joint" polycoef="-0.04544999822974205 1.0639899969100952 0.0 0.0 0.0"/>
+		<joint name="right_middle_intermediate_joint_right_middle_proximal_joint" joint1="right_middle_intermediate_joint" joint2="right_middle_proximal_joint" polycoef="-0.04544999822974205 1.0639899969100952 0.0 0.0 0.0"/>
+		<joint name="right_ring_intermediate_joint_right_ring_proximal_joint" joint1="right_ring_intermediate_joint" joint2="right_ring_proximal_joint" polycoef="-0.04544999822974205 1.0639899969100952 0.0 0.0 0.0"/>
+		<joint name="right_pinky_intermediate_joint_right_pinky_proximal_joint" joint1="right_pinky_intermediate_joint" joint2="right_pinky_proximal_joint" polycoef="-0.04544999822974205 1.0639899969100952 0.0 0.0 0.0"/>
+		<joint name="right_thumb_intermediate_joint_right_thumb_proximal_pitch_joint" joint1="right_thumb_intermediate_joint" joint2="right_thumb_proximal_pitch_joint" polycoef="0.0 1.3339999914169312 0.0 0.0 0.0"/>
+		<joint name="right_thumb_distal_joint_thumb_right_proximal_pitch_joint" joint1="right_thumb_distal_joint" joint2="right_thumb_proximal_pitch_joint" polycoef="0.0 0.6669999957084656 0.0 0.0 0.0"/>
+	</equality>
+	<contact>
+		<exclude name="right_hand_base_link_right_thumb_proximal_base" body1="right_hand_base_link" body2="right_thumb_proximal_base"/>
+		<exclude name="right_hand_base_link_right_thumb_proximal" body1="right_hand_base_link" body2="right_thumb_proximal"/>
+		<exclude name="right_hand_base_link_right_index_proximal" body1="right_hand_base_link" body2="right_index_proximal"/>
+		<exclude name="right_hand_base_link_right_middle_proximal" body1="right_hand_base_link" body2="right_middle_proximal"/>
+		<exclude name="right_hand_base_link_right_ring_proximal" body1="right_hand_base_link" body2="right_ring_proximal"/>
+		<exclude name="right_hand_base_link_right_pinky_proximal" body1="right_hand_base_link" body2="right_pinky_proximal"/>
+	</contact>
+
+  <actuator>
+    <position name="left_thumb_proximal_yaw_actuator" joint="left_thumb_proximal_yaw_joint" kp="20.0" kv="4.5" inheritrange="1"/>
+    <position name="left_thumb_proximal_pitch_actuator" joint="left_thumb_proximal_pitch_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+    <position name="left_index_proximal_actuator" joint="left_index_proximal_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+    <position name="left_middle_proximal_actuator" joint="left_middle_proximal_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+    <position name="left_ring_proximal_actuator" joint="left_ring_proximal_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+    <position name="left_pinky_proximal_actuator" joint="left_pinky_proximal_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+
+    <position name="right_thumb_proximal_yaw_actuator" joint="right_thumb_proximal_yaw_joint" kp="20.0" kv="4.5" inheritrange="1"/>
+    <position name="right_thumb_proximal_pitch_actuator" joint="right_thumb_proximal_pitch_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+    <position name="right_index_proximal_actuator" joint="right_index_proximal_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+    <position name="right_middle_proximal_actuator" joint="right_middle_proximal_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+    <position name="right_ring_proximal_actuator" joint="right_ring_proximal_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+    <position name="right_pinky_proximal_actuator" joint="right_pinky_proximal_joint" kp="7.0" kv="1.8" inheritrange="1"/>
+  </actuator>
+</mujoco>
