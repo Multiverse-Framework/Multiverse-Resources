@@ -69,8 +69,6 @@ class FingersCommand(MultiverseClient):
         if right:
             self.hand_states["r_hand"]["position"] = response_meta_data["receive"]["r_hand"]["position"]
             self.hand_states["r_hand"]["quaternion"] = response_meta_data["receive"]["r_hand"]["quaternion"]
-        
-        self.loginfo(self.hand_states)
 
         grasped_success = False
         for object_name in self.object_states.keys():
@@ -99,6 +97,7 @@ class FingersCommand(MultiverseClient):
                                 (self.object_states[object_name]["position"][2] - self.hand_states["r_hand"]["position"][2]) ** 2) ** 0.5
                 self.loginfo(f"Checking grasp for object {object_name} with right hand. Distance: {right_distance:.2f} m")
                 if right_distance < self.grasp_radius:
+                    self.loginfo(f"Object {object_name} is within grasping range for right hand. Distance: {right_distance:.2f} m")
                     # Calculate relative position of the object to the hand
                     hand_rot = Rotation.from_quat(self.hand_states["r_hand"]["quaternion"])
                     object_rot = Rotation.from_quat(self.object_states[object_name]["quaternion"])
@@ -134,7 +133,6 @@ class FingersCommand(MultiverseClient):
                     hand_rotation = Rotation.from_quat(self.hand_states[hand_name]["quaternion"])
                     self.object_states[object_name]["position"] = (hand_position + hand_rotation.apply(relative_position)).tolist()
                     self.object_states[object_name]["quaternion"] = ((hand_rotation * Rotation.from_quat(relative_quaternion)).as_quat()).tolist()
-                    self.loginfo(self.object_states[object_name]["position"])
 
             send_data = [self.sim_time]
             for object_name, object_attributes in self.response_meta_data["send"].items():
