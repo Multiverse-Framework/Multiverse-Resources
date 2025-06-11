@@ -16,6 +16,44 @@
       </material>
     </visual>
   </link>
+
+  <joint name="montessori_hole_1_joint" type="fixed">
+    <origin xyz="0.025 0.091 0.04" rpy="0.0 0.0 0.0"/>
+    <parent link="montessori_toys"/>
+    <child link="montessori_hole_1"/>
+  </joint>
+  <link name="montessori_hole_1" />
+  <joint name="montessori_hole_2_joint" type="fixed">
+    <origin xyz="0.0185 0 0.04" rpy="0.0 0.0 0.0"/>
+    <parent link="montessori_toys"/>
+    <child link="montessori_hole_2"/>
+  </joint>
+  <link name="montessori_hole_2" />
+  <joint name="montessori_hole_3_joint" type="fixed">
+    <origin xyz="0.0205 -0.087 0.04" rpy="0.0 0.0 0.0"/>
+    <parent link="montessori_toys"/>
+    <child link="montessori_hole_3"/>
+  </joint>
+  <link name="montessori_hole_3" />
+  <joint name="montessori_hole_4_joint" type="fixed">
+    <origin xyz="-0.0175 0.091 0.04" rpy="0.0 0.0 0.0"/>
+    <parent link="montessori_toys"/>
+    <child link="montessori_hole_4"/>
+  </joint>
+  <link name="montessori_hole_4" />
+  <joint name="montessori_hole_5_joint" type="fixed">
+    <origin xyz="-0.0265 0 0.04" rpy="0.0 0.0 0.0"/>
+    <parent link="montessori_toys"/>
+    <child link="montessori_hole_5"/>
+  </joint>
+  <link name="montessori_hole_5" />
+  <joint name="montessori_hole_6_joint" type="fixed">
+    <origin xyz="-0.0215 -0.087 0.04" rpy="0.0 0.0 0.0"/>
+    <parent link="montessori_toys"/>
+    <child link="montessori_hole_6"/>
+  </joint>
+  <link name="montessori_hole_6" />
+
   <joint name="montessori_drawer_1_joint" type="prismatic">
     <origin xyz="-0.003000000026077032 0.08699999749660492 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="-1.0 0.0 0.0"/>
