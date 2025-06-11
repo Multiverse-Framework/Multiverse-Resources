@@ -903,7 +903,7 @@
   </link>
   <joint name="r_wrist_yaw" type="revolute">
     <origin xyz="-0.016300123184919357 0.006999390199780464 0.0" rpy="0.0 -1.5707963705062866 3.1415927410125732"/>
-    <axis xyz="-2.4949582666522474e-07 -1.000000238418579 -2.7942487434984287e-08"/>
+    <axis xyz="-2.4949582666522474e-07 1.000000238418579 -2.7942487434984287e-08"/>
     <parent link="r_wrist_1"/>
     <child link="r_hand"/>
     <limit effort="50000.0" lower="-0.2617993950843811" upper="0.6108652353286743" velocity="120.0"/>
@@ -1454,7 +1454,7 @@
     </inertial>
   </link>
   <joint name="r_gripper_tool_frame_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.13" rpy="0.0 0.0 0.0"/>
+    <origin xyz="-0.075 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <parent link="r_hand"/>
     <child link="r_gripper_tool_frame"/>
   </joint>
@@ -1657,7 +1657,7 @@
     </visual>
   </link>
   <joint name="l_gripper_tool_frame_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.13" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.075 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <parent link="l_hand"/>
     <child link="l_gripper_tool_frame"/>
   </joint>

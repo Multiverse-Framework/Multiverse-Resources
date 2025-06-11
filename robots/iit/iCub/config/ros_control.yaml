@@ -4,10 +4,14 @@ joint_state_controller:
 
 torso_trajectory_controller: 
   type: position_controllers/JointTrajectoryController  
-  joints:
+  joints: &torso_joints
     - torso_roll
     - torso_pitch
     - torso_yaw
+
+torso_velocity_controller: 
+  type: velocity_controllers/JointGroupVelocityController
+  joints: *torso_joints
 
 neck_trajectory_controller: 
   type: position_controllers/JointTrajectoryController  

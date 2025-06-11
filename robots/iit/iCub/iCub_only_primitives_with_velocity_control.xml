@@ -13,7 +13,7 @@
 	<asset/>
 	<worldbody>
 		<body name="iCub" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
-			<freejoint/>
+			<!-- <freejoint/> -->
 			<body name="base_footprint" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
 				<inertial mass="0.0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0 0.0 0.0"/>
 				<body name="root_link" pos="0.0 0.0 0.6349999904632568" quat="1.0 0.0 0.0 0.0">
@@ -147,7 +147,7 @@
 																		</body>
 																	</body>
 																</body>
-																<body name="r_gripper_tool_frame" pos="1.1102230246251565e-16 2.7755575615628914e-17 0.12999999523162842" quat="1.0 1.1275702593849246e-17 0.0 0.0">
+																<body name="r_gripper_tool_frame" pos="-0.075 0 0" quat="1.0 1.1275702593849246e-17 0.0 0.0">
 																	<inertial mass="0.0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0 0.0 0.0"/>
 																</body>
 																<body name="r_hand_middle_0" pos="-0.05754045024514198 0.0060431999154388905 0.023777974769473076" quat="0.09229592978954315 0.09229592978954315 -0.7010573744773865 0.7010573744773865">
@@ -330,7 +330,7 @@
 																		</body>
 																	</body>
 																</body>
-																<body name="l_gripper_tool_frame" pos="-1.1102230246251565e-16 2.7755575615628914e-17 0.12999999523162842" quat="1.0 -8.673617379884035e-19 1.734723475976807e-18 1.6263032587282567e-19">
+																<body name="l_gripper_tool_frame" pos="0.075 0 0" quat="1.0 -8.673617379884035e-19 1.734723475976807e-18 1.6263032587282567e-19">
 																	<inertial mass="0.0" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" diaginertia="0.0 0.0 0.0"/>
 																</body>
 																<body name="l_hand_thumb_0" pos="0.0318492129445076 -0.004056800156831741 0.019202696159482002" quat="-0.016224896535277367 0.7875446677207947 0.03826058655977249 0.6148546934127808">
@@ -513,7 +513,8 @@
 	</worldbody>
 	<equality/>
 	<keyframe>
-		<key name="home" qpos="-0.8 0 0.55 1 0 0 0 1.5 0 0 0 0 0 0 0.5 0 1.11 0.42 -0.21 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.0 0.42 -0.21 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5 0 0 0 0 0" ctrl="1.5 1.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
+		<!-- <key name="home" qpos="-0.8 0 0.55 1 0 0 0 1.5 0 0 0 0 0 0 0.5 0 2.0 0.42 -0.21 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.0 0.42 -0.21 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5 0 0 0 0 0" ctrl="1.5 1.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/> -->
+		<key name="home" qpos="1.5 0 0 0 0 0 0 0.5 0 2.0 0.42 -0.21 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.0 0.42 -0.21 1.309 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5 0 0 0 0 0" ctrl="1.5 1.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"/>
 	</keyframe>
 
 	<actuator>
@@ -524,9 +525,9 @@
 		<position name="neck_pitch_actuator" joint="neck_pitch" kp="15" kv="1" inheritrange="1"/>
 		<position name="neck_yaw_actuator" joint="neck_yaw" kp="15" kv="1" inheritrange="1"/>
 
-		<position name="torso_roll_actuator" joint="torso_roll" kp="500" kv="40" inheritrange="1"/>
-		<position name="torso_pitch_actuator" joint="torso_pitch" kp="500" kv="40" inheritrange="1"/>
-		<position name="torso_yaw_actuator" joint="torso_yaw" kp="500" kv="40" inheritrange="1"/>
+		<velocity name="torso_roll_actuator" joint="torso_roll" kv="40" />
+		<velocity name="torso_pitch_actuator" joint="torso_pitch" kv="40" />
+		<velocity name="torso_yaw_actuator" joint="torso_yaw" kv="40" />
 
 		<velocity name="r_shoulder_pitch_actuator" joint="r_shoulder_pitch" kv="100" />
 		<velocity name="r_shoulder_roll_actuator" joint="r_shoulder_roll" kv="100" />
