@@ -18,7 +18,7 @@ neck_trajectory_controller:
 
 right_arm_trajectory_controller: 
   type: position_controllers/JointTrajectoryController  
-  joints:
+  joints: &right_arm_joints
     - r_shoulder_pitch
     - r_shoulder_roll
     - r_shoulder_yaw
@@ -29,7 +29,7 @@ right_arm_trajectory_controller:
 
 left_arm_trajectory_controller: 
   type: position_controllers/JointTrajectoryController  
-  joints:
+  joints: &left_arm_joints
     - l_shoulder_pitch
     - l_shoulder_roll
     - l_shoulder_yaw
@@ -37,3 +37,11 @@ left_arm_trajectory_controller:
     - l_wrist_prosup
     - l_wrist_pitch
     - l_wrist_yaw
+
+right_arm_velocity_controller: 
+  type: velocity_controllers/JointGroupVelocityController  
+  joints: *right_arm_joints
+
+left_arm_velocity_controller: 
+  type: velocity_controllers/JointGroupVelocityController  
+  joints: *left_arm_joints

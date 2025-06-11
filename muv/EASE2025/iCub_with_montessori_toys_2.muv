@@ -18,12 +18,13 @@ simulations:
       path: floor/floor.xml
     robots:
       iCub:
-        path: iCub/iCub_only_primitives.xml
+        path: iCub/iCub_only_primitives_with_velocity_control.xml
         apply:
           body:
             iCub:
               pos: [-0.8, 0.0, 0.55]
               quat: [1.0, 0.0, 0.0, 0.0]
+            gravcomp: 1
     objects:
       table:
         path: table/table.xml
@@ -114,26 +115,26 @@ multiverse_clients:
       montessori_object_3_ref: ["position", "quaternion"]
       montessori_object_5_ref: ["position", "quaternion"]
       montessori_object_6_ref: ["position", "quaternion"]
-      torso_roll_actuator: ["cmd_joint_rvalue"]
-      torso_pitch_actuator: ["cmd_joint_rvalue"]
-      torso_yaw_actuator: ["cmd_joint_rvalue"]
-      neck_roll_actuator: ["cmd_joint_rvalue"]
-      neck_pitch_actuator: ["cmd_joint_rvalue"]
-      neck_yaw_actuator: ["cmd_joint_rvalue"]
-      r_shoulder_pitch_actuator: ["cmd_joint_rvalue"]
-      r_shoulder_roll_actuator: ["cmd_joint_rvalue"]
-      r_shoulder_yaw_actuator: ["cmd_joint_rvalue"]
-      r_elbow_actuator: ["cmd_joint_rvalue"]
-      r_wrist_prosup_actuator: ["cmd_joint_rvalue"]
-      r_wrist_pitch_actuator: ["cmd_joint_rvalue"]
-      r_wrist_yaw_actuator: ["cmd_joint_rvalue"]
-      l_shoulder_pitch_actuator: ["cmd_joint_rvalue"]
-      l_shoulder_roll_actuator: ["cmd_joint_rvalue"]
-      l_shoulder_yaw_actuator: ["cmd_joint_rvalue"]
-      l_elbow_actuator: ["cmd_joint_rvalue"]
-      l_wrist_prosup_actuator: ["cmd_joint_rvalue"]
-      l_wrist_pitch_actuator: ["cmd_joint_rvalue"]
-      l_wrist_yaw_actuator: ["cmd_joint_rvalue"]
+      torso_roll_actuator: ["cmd_joint_angular_velocity"]
+      torso_pitch_actuator: ["cmd_joint_angular_velocity"]
+      torso_yaw_actuator: ["cmd_joint_angular_velocity"]
+      neck_roll_actuator: ["cmd_joint_angular_velocity"]
+      neck_pitch_actuator: ["cmd_joint_angular_velocity"]
+      neck_yaw_actuator: ["cmd_joint_angular_velocity"]
+      r_shoulder_pitch_actuator: ["cmd_joint_angular_velocity"]
+      r_shoulder_roll_actuator: ["cmd_joint_angular_velocity"]
+      r_shoulder_yaw_actuator: ["cmd_joint_angular_velocity"]
+      r_elbow_actuator: ["cmd_joint_angular_velocity"]
+      r_wrist_prosup_actuator: ["cmd_joint_angular_velocity"]
+      r_wrist_pitch_actuator: ["cmd_joint_angular_velocity"]
+      r_wrist_yaw_actuator: ["cmd_joint_angular_velocity"]
+      l_shoulder_pitch_actuator: ["cmd_joint_angular_velocity"]
+      l_shoulder_roll_actuator: ["cmd_joint_angular_velocity"]
+      l_shoulder_yaw_actuator: ["cmd_joint_angular_velocity"]
+      l_elbow_actuator: ["cmd_joint_angular_velocity"]
+      l_wrist_prosup_actuator: ["cmd_joint_angular_velocity"]
+      l_wrist_pitch_actuator: ["cmd_joint_angular_velocity"]
+      l_wrist_yaw_actuator: ["cmd_joint_angular_velocity"]
 
       # r_hand_thumb_0_actuator: ["cmd_joint_rvalue"]
       # r_hand_thumb_1_actuator: ["cmd_joint_rvalue"]
@@ -238,8 +239,8 @@ multiverse_clients:
               - joint_state_controller
                 torso_trajectory_controller
                 neck_trajectory_controller
-                right_arm_trajectory_controller
-                left_arm_trajectory_controller
+                right_arm_velocity_controller
+                left_arm_velocity_controller
 
     # ros_run:
     #   rviz:
