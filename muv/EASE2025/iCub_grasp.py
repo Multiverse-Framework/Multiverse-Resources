@@ -1,5 +1,6 @@
 from multiverse_client_py import MultiverseClient, MultiverseMetaData
 
+from typing import Dict
 from std_srvs.srv import SetBool, SetBoolResponse
 import rospy
 
@@ -7,7 +8,58 @@ import threading
 import numpy
 from scipy.spatial.transform import Rotation
 
-class FingersCommand(MultiverseClient):
+class SwichtingCommand(MultiverseClient):
+    object_physics = {
+        "montessori_object_2": True,
+        "montessori_object_3": True,
+        "montessori_object_5": True,
+        "montessori_object_6": True,
+    }
+    def __init__(self, port: str, multiverse_meta_data: MultiverseMetaData) -> None:
+        super().__init__(port, multiverse_meta_data)
+
+    def init(self) -> None:
+        self.run()
+
+    def switch_physics(self) -> None:
+        self.request_meta_data["meta_data"]["simulation_name"] = "montessori_toys_2"
+        self.request_meta_data["send"] = {}
+        self.request_meta_data["receive"] = {}
+        for object_name, mujoco_takes_over in self.object_physics.items():
+            if mujoco_takes_over:
+                self.request_meta_data["send"][f"{object_name}_ref"] = ["position", "quaternion"]
+            else:
+                self.request_meta_data["receive"][f"{object_name}_ref"] = ["position", "quaternion"]
+        self.send_and_receive_meta_data()
+        send_data = [self.sim_time]
+        if "send" in self.response_meta_data:
+            idx = 0
+            for _, object_attributes in self.response_meta_data["send"].items():
+                for _, attribute_values in object_attributes.items():
+                    send_data += attribute_values
+                    idx += len(attribute_values)
+        self.send_data = send_data
+        self.send_and_receive_data()
+
+    def loginfo(self, message: str) -> None:
+        print(f"INFO: {message}")
+
+    def logwarn(self, message: str) -> None:
+        print(f"WARN: {message}")
+
+    def _run(self) -> None:
+        self.loginfo("Start running the client.")
+        self._connect_and_start()
+
+    def send_and_receive_meta_data(self) -> None:
+        self.loginfo("Sending request meta data: " + str(self.request_meta_data))
+        self._communicate(True)
+        self.loginfo("Received response meta data: " + str(self.response_meta_data))
+
+    def send_and_receive_data(self) -> None:
+        self._communicate(False)
+
+class GraspingCommand(MultiverseClient):
     left_hand_grasped = False
     right_hand_grasped = False
     grasp_radius = 0.1
@@ -24,7 +76,8 @@ class FingersCommand(MultiverseClient):
     grasp_thread = threading.Thread()
     grasp_stop = False
 
-    def __init__(self, port: str, multiverse_meta_data: MultiverseMetaData) -> None:
+    def __init__(self, port: str, multiverse_meta_data: MultiverseMetaData, switching_connector: SwichtingCommand) -> None:
+        self.switching_connector = switching_connector
         rospy.Service('grasp_with_left_hand', SetBool, self.grasp_with_left_hand)
         rospy.Service('grasp_with_right_hand', SetBool, self.grasp_with_right_hand)
         super().__init__(port, multiverse_meta_data)
@@ -91,6 +144,7 @@ class FingersCommand(MultiverseClient):
                     object_relative_quaternion = object_relative_rotation.as_quat()
                     self.hand_states["l_hand"]["grasped_objects"][object_name] = [object_relative_position, object_relative_quaternion]
                     grasped_success = True
+                    self.switching_connector.object_physics[object_name] = False
             if right and object_name not in self.hand_states["r_hand"]["grasped_objects"]:
                 right_distance = ((self.object_states[object_name]["position"][0] - self.hand_states["r_hand"]["position"][0]) ** 2 +
                                 (self.object_states[object_name]["position"][1] - self.hand_states["r_hand"]["position"][1]) ** 2 +
@@ -108,6 +162,7 @@ class FingersCommand(MultiverseClient):
                     object_relative_quaternion = object_relative_rotation.as_quat()
                     self.hand_states["r_hand"]["grasped_objects"][object_name] = [object_relative_position, object_relative_quaternion]
                     grasped_success = True
+                    self.switching_connector.object_physics[object_name] = False
         return grasped_success
         
     def grasp(self) -> None:
@@ -156,6 +211,8 @@ class FingersCommand(MultiverseClient):
             return SetBoolResponse(success=True, message="Left hand grasped successfully.")
         else:
             self.left_hand_grasped = False
+            for object_name in self.hand_states["l_hand"]["grasped_objects"].keys():
+                self.switching_connector.object_physics[object_name] = True
             self.hand_states["l_hand"]["grasped_objects"] = {}
             return SetBoolResponse(success=True, message="Left hand released successfully.")
 
@@ -173,6 +230,8 @@ class FingersCommand(MultiverseClient):
             return SetBoolResponse(success=True, message="Right hand grasped successfully.")
         else:
             self.right_hand_grasped = False
+            for object_name in self.hand_states["r_hand"]["grasped_objects"].keys():
+                self.switching_connector.object_physics[object_name] = True
             self.hand_states["r_hand"]["grasped_objects"] = {}
             return SetBoolResponse(success=True, message="Right hand released successfully.")
 
@@ -183,15 +242,28 @@ if __name__ == "__main__":
 
     multiverse_meta_data = MultiverseMetaData(
         world_name="world",
-        simulation_name="gripper_command",
+        simulation_name="switching_command",
         length_unit="m",
         angle_unit="rad",
         mass_unit="kg",
         time_unit="s",
         handedness="rhs",
     )
-    my_connector = FingersCommand(port="1856", multiverse_meta_data=multiverse_meta_data)
-    my_connector.init()
+    switching_connector = SwichtingCommand(port="1855", multiverse_meta_data=multiverse_meta_data)
+    switching_connector.init()
+    print("Ready to switch physics.")
+
+    multiverse_meta_data = MultiverseMetaData(
+        world_name="world",
+        simulation_name="grasping_command",
+        length_unit="m",
+        angle_unit="rad",
+        mass_unit="kg",
+        time_unit="s",
+        handedness="rhs",
+    )
+    grasping_connector = GraspingCommand(port="1856", multiverse_meta_data=multiverse_meta_data, switching_connector=switching_connector)
+    grasping_connector.init()
 
     print("Ready to grasp.")
     rospy.spin()

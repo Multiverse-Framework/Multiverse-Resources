@@ -100,11 +100,82 @@ simulations:
       multiccd: true
       nativeccd: true
 
+  montessori_toys_2:
+    simulator: mujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    objects:
+      table:
+        path: table/table.xml
+      small_table:
+        path: montessori_toys/small_table/small_table.xml
+        apply:
+          body:
+            small_table:
+              pos: [-0.35, 0.0, 1.0]
+      montessori_box:
+        path: montessori_toys/montessori_box/mjcf/montessori_box.xml
+        apply:
+          body:
+            montessori_box:
+              pos: [-0.4, 0, 1.39]
+      montessori_object_2:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_2.xml
+        apply:
+          body:
+            montessori_object_2:
+              pos: [-0.4015, 0.25, 1.40]
+        suffix:
+          body: _ref
+      montessori_object_3:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_3.xml
+        apply:
+          body:
+            montessori_object_3:
+              pos: [-0.4015, -0.237, 1.40]
+        suffix:
+          body: _ref
+      montessori_object_5:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_5.xml
+        apply:
+          body:
+            montessori_object_5:
+              pos: [-0.3095, 0.25, 1.40]
+        suffix:
+          body: _ref
+      montessori_object_6:
+        path: montessori_toys/montessori_box/mjcf/montessori_object_6.xml
+        apply:
+          body:
+            montessori_object_6:
+              pos: [-0.3095, -0.237, 1.40]
+        suffix:
+          body: _ref
+    config:
+      step_size: 0.004
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+      nativeccd: true
+
 multiverse_server:
   host: "tcp://127.0.0.1"
   port: 7000
 
 multiverse_clients:
+  montessori_toys_2:
+    port: 7512
+    send:
+      montessori_object_2_ref: ["position", "quaternion"]
+      montessori_object_3_ref: ["position", "quaternion"]
+      montessori_object_5_ref: ["position", "quaternion"]
+      montessori_object_6_ref: ["position", "quaternion"]
+    receive:
+      montessori_drawer_1_joint: ["joint_tvalue"]
+      montessori_drawer_2_joint: ["joint_tvalue"]
+      montessori_drawer_3_joint: ["joint_tvalue"]
+
   iCub_with_montessori_toys_2:
     port: 7500
     send:
