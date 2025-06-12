@@ -236,8 +236,12 @@ class GraspingCommand(MultiverseClient):
             return SetBoolResponse(success=True, message="Right hand released successfully.")
 
 import time
+import argparse
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="iCub Grasping Server")
+    parser.add_argument("--port", type=str, default="1855", help="Port for the switching command")
+    args = parser.parse_args()
     rospy.init_node('iCub_grasp_server')
 
     multiverse_meta_data = MultiverseMetaData(
@@ -249,9 +253,9 @@ if __name__ == "__main__":
         time_unit="s",
         handedness="rhs",
     )
-    switching_connector = SwichtingCommand(port="1855", multiverse_meta_data=multiverse_meta_data)
+    switching_connector = SwichtingCommand(port=args.port, multiverse_meta_data=multiverse_meta_data)
     switching_connector.init()
-    print("Ready to switch physics.")
+    rospy.loginfo("Ready to switch physics.")
 
     multiverse_meta_data = MultiverseMetaData(
         world_name="world",
@@ -265,5 +269,5 @@ if __name__ == "__main__":
     grasping_connector = GraspingCommand(port="1856", multiverse_meta_data=multiverse_meta_data, switching_connector=switching_connector)
     grasping_connector.init()
 
-    print("Ready to grasp.")
+    rospy.loginfo("Ready to grasp.")
     rospy.spin()

@@ -334,3 +334,5 @@ processes:
       simulation_name: multiverse_initializer
       port: 5000
       data_path: iCub_with_montessori_toys_2_init.yaml
+  - iCub_grasp.py:
+      port: 5004
