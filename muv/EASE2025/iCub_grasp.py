@@ -59,17 +59,22 @@ class SwichtingCommand(MultiverseClient):
         for object_name, mujoco_takes_over in self.object_physics.items():
             if mujoco_takes_over:
                 self.request_meta_data["send"][f"{object_name}_ref"] = ["position", "quaternion"]
+                self.request_meta_data["send"][f"{object_name}_unreal"] = ["scalar"]
                 self.request_meta_data["receive"][f"{object_name}_ref"] = []
             else:
                 self.request_meta_data["send"][f"{object_name}_ref"] = []
+                self.request_meta_data["send"][f"{object_name}_unreal"] = ["scalar"]
                 self.request_meta_data["receive"][f"{object_name}_ref"] = ["position", "quaternion", "relative_velocity"]
         self.send_and_receive_meta_data()
         send_data = [self.sim_time]
         if "send" in self.response_meta_data:
             idx = 0
-            for _, object_attributes in self.response_meta_data["send"].items():
-                for _, attribute_values in object_attributes.items():
-                    send_data += attribute_values
+            for object_name, object_attributes in self.response_meta_data["send"].items():
+                for attribute_name, attribute_values in object_attributes.items():
+                    if attribute_name == "scalar":
+                        send_data += [-1.0 if self.object_physics[object_name[:-7]] else 1.0]
+                    else:
+                        send_data += attribute_values
                     idx += len(attribute_values)
         self.send_data = send_data
         self.send_and_receive_data()
