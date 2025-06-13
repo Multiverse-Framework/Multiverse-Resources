@@ -1,12 +1,16 @@
 montessori_object_2_ref:
   position: [-0.4015, 0.25, 1.40]
   quaternion: [1.0, 0.0, 0.0, 0.0]
+  relative_velocity: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 montessori_object_3_ref:
   position: [-0.4015, -0.237, 1.40]
   quaternion: [1.0, 0.0, 0.0, 0.0]
+  relative_velocity: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 montessori_object_5_ref:
   position: [-0.3095, 0.25, 1.40]
   quaternion: [1.0, 0.0, 0.0, 0.0]
+  relative_velocity: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 montessori_object_6_ref:
   position: [-0.3095, -0.237, 1.40]
   quaternion: [1.0, 0.0, 0.0, 0.0]
+  relative_velocity: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]

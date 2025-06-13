@@ -28,8 +28,10 @@ class SwichtingCommand(MultiverseClient):
         for object_name, mujoco_takes_over in self.object_physics.items():
             if mujoco_takes_over:
                 self.request_meta_data["send"][f"{object_name}_ref"] = ["position", "quaternion"]
+                self.request_meta_data["receive"][f"{object_name}_ref"] = []
             else:
-                self.request_meta_data["receive"][f"{object_name}_ref"] = ["position", "quaternion"]
+                self.request_meta_data["send"][f"{object_name}_ref"] = []
+                self.request_meta_data["receive"][f"{object_name}_ref"] = ["position", "quaternion", "relative_velocity"]
         self.send_and_receive_meta_data()
         send_data = [self.sim_time]
         if "send" in self.response_meta_data:
@@ -135,13 +137,13 @@ class GraspingCommand(MultiverseClient):
                 if left_distance < self.grasp_radius:
                     self.loginfo(f"Object {object_name} is within grasping range for left hand. Distance: {left_distance:.2f} m")
                     # Calculate relative position of the object to the hand
-                    hand_rot = Rotation.from_quat(self.hand_states["l_hand"]["quaternion"])
-                    object_rot = Rotation.from_quat(self.object_states[object_name]["quaternion"])
+                    hand_rot = Rotation.from_quat(self.hand_states["l_hand"]["quaternion"], scalar_first=True)
+                    object_rot = Rotation.from_quat(self.object_states[object_name]["quaternion"], scalar_first=True)
                     # Compute relative position
                     relative_position = numpy.array(self.object_states[object_name]["position"]) - numpy.array(self.hand_states["l_hand"]["position"])
                     object_relative_position = hand_rot.inv().apply(relative_position)
                     object_relative_rotation = hand_rot.inv() * object_rot
-                    object_relative_quaternion = object_relative_rotation.as_quat()
+                    object_relative_quaternion = object_relative_rotation.as_quat(scalar_first=True)
                     self.hand_states["l_hand"]["grasped_objects"][object_name] = [object_relative_position, object_relative_quaternion]
                     grasped_success = True
                     self.switching_connector.object_physics[object_name] = False
@@ -153,13 +155,13 @@ class GraspingCommand(MultiverseClient):
                 if right_distance < self.grasp_radius:
                     self.loginfo(f"Object {object_name} is within grasping range for right hand. Distance: {right_distance:.2f} m")
                     # Calculate relative position of the object to the hand
-                    hand_rot = Rotation.from_quat(self.hand_states["r_hand"]["quaternion"])
-                    object_rot = Rotation.from_quat(self.object_states[object_name]["quaternion"])
+                    hand_rot = Rotation.from_quat(self.hand_states["r_hand"]["quaternion"], scalar_first=True)
+                    object_rot = Rotation.from_quat(self.object_states[object_name]["quaternion"], scalar_first=True)
                     # Compute relative position
                     relative_position = numpy.array(self.object_states[object_name]["position"]) - numpy.array(self.hand_states["r_hand"]["position"])
                     object_relative_position = hand_rot.inv().apply(relative_position)
                     object_relative_rotation = hand_rot.inv() * object_rot
-                    object_relative_quaternion = object_relative_rotation.as_quat()
+                    object_relative_quaternion = object_relative_rotation.as_quat(scalar_first=True)
                     self.hand_states["r_hand"]["grasped_objects"][object_name] = [object_relative_position, object_relative_quaternion]
                     grasped_success = True
                     self.switching_connector.object_physics[object_name] = False
@@ -185,9 +187,9 @@ class GraspingCommand(MultiverseClient):
                 for object_name, object_data in self.hand_states[hand_name]["grasped_objects"].items():
                     relative_position, relative_quaternion = object_data
                     hand_position = numpy.array(self.hand_states[hand_name]["position"])
-                    hand_rotation = Rotation.from_quat(self.hand_states[hand_name]["quaternion"])
+                    hand_rotation = Rotation.from_quat(self.hand_states[hand_name]["quaternion"], scalar_first=True)
                     self.object_states[object_name]["position"] = (hand_position + hand_rotation.apply(relative_position)).tolist()
-                    self.object_states[object_name]["quaternion"] = ((hand_rotation * Rotation.from_quat(relative_quaternion)).as_quat()).tolist()
+                    self.object_states[object_name]["quaternion"] = ((hand_rotation * Rotation.from_quat(relative_quaternion, scalar_first=True))).as_quat(scalar_first=True).tolist()
 
             send_data = [self.sim_time]
             for object_name, object_attributes in self.response_meta_data["send"].items():
@@ -205,6 +207,7 @@ class GraspingCommand(MultiverseClient):
             self.left_hand_grasped = self.can_grasp(left=True, right=self.right_hand_grasped)
             if not self.left_hand_grasped:
                 return SetBoolResponse(success=False, message="Left hand cannot grasp the object.")
+            self.switching_connector.switch_physics()
             self.grasp_stop = False
             self.grasp_thread = threading.Thread(target=self.grasp)
             self.grasp_thread.start()
@@ -213,6 +216,7 @@ class GraspingCommand(MultiverseClient):
             self.left_hand_grasped = False
             for object_name in self.hand_states["l_hand"]["grasped_objects"].keys():
                 self.switching_connector.object_physics[object_name] = True
+            self.switching_connector.switch_physics()
             self.hand_states["l_hand"]["grasped_objects"] = {}
             return SetBoolResponse(success=True, message="Left hand released successfully.")
 
@@ -224,6 +228,7 @@ class GraspingCommand(MultiverseClient):
             self.right_hand_grasped = self.can_grasp(left=self.left_hand_grasped, right=True)
             if not self.right_hand_grasped:
                 return SetBoolResponse(success=False, message="Right hand cannot grasp the object.")
+            self.switching_connector.switch_physics()
             self.grasp_stop = False
             self.grasp_thread = threading.Thread(target=self.grasp)
             self.grasp_thread.start()
@@ -232,6 +237,7 @@ class GraspingCommand(MultiverseClient):
             self.right_hand_grasped = False
             for object_name in self.hand_states["r_hand"]["grasped_objects"].keys():
                 self.switching_connector.object_physics[object_name] = True
+            self.switching_connector.switch_physics()
             self.hand_states["r_hand"]["grasped_objects"] = {}
             return SetBoolResponse(success=True, message="Right hand released successfully.")
 

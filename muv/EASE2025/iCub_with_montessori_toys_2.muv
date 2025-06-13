@@ -313,20 +313,20 @@ multiverse_clients:
                 right_arm_velocity_controller
                 left_arm_velocity_controller
 
-    # ros_run:
-    #   rviz:
-    #     config: iCub_with_montessori_toys_2/config/rviz.rviz
-    #     robot_descriptions:
-    #       iCub_description: iCub/iCub.urdf
-    #       table_description: table/table.urdf
-    #       small_table_description: small_table/small_table.urdf
-    #       montessori_box_description: montessori_box/urdf/montessori_box.urdf
-    #       montessori_object_1_description: montessori_box/urdf/montessori_object_1.urdf
-    #       montessori_object_2_description: montessori_box/urdf/montessori_object_2.urdf
-    #       montessori_object_3_description: montessori_box/urdf/montessori_object_3.urdf
-    #       montessori_object_4_description: montessori_box/urdf/montessori_object_4.urdf
-    #       montessori_object_5_description: montessori_box/urdf/montessori_object_5.urdf
-    #       montessori_object_6_description: montessori_box/urdf/montessori_object_6.urdf
+    ros_run:
+      rviz:
+        config: iCub_with_montessori_toys_2/config/rviz.rviz
+        robot_descriptions:
+          iCub_description: iCub/iCub.urdf
+          table_description: table/table.urdf
+          small_table_description: small_table/small_table.urdf
+          montessori_box_description: montessori_box/urdf/montessori_box.urdf
+          montessori_object_1_description: montessori_box/urdf/montessori_object_1.urdf
+          montessori_object_2_description: montessori_box/urdf/montessori_object_2.urdf
+          montessori_object_3_description: montessori_box/urdf/montessori_object_3.urdf
+          montessori_object_4_description: montessori_box/urdf/montessori_object_4.urdf
+          montessori_object_5_description: montessori_box/urdf/montessori_object_5.urdf
+          montessori_object_6_description: montessori_box/urdf/montessori_object_6.urdf
 
 processes:
   - multiverse_initializing.py:
