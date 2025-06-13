@@ -82,6 +82,7 @@ class GraspingCommand(MultiverseClient):
         self.switching_connector = switching_connector
         rospy.Service('grasp_with_left_hand', SetBool, self.grasp_with_left_hand)
         rospy.Service('grasp_with_right_hand', SetBool, self.grasp_with_right_hand)
+        rospy.Service('mujoco_takes_over', SetBool, self.mujoco_takes_over)
         super().__init__(port, multiverse_meta_data)
 
     def init(self) -> None:
@@ -240,6 +241,12 @@ class GraspingCommand(MultiverseClient):
             self.switching_connector.switch_physics()
             self.hand_states["r_hand"]["grasped_objects"] = {}
             return SetBoolResponse(success=True, message="Right hand released successfully.")
+
+    def mujoco_takes_over(self, req):
+        for object_name in self.switching_connector.object_physics.keys():
+            self.switching_connector.object_physics[object_name] = req.data
+        self.switching_connector.switch_physics()
+        return SetBoolResponse(success=True, message="Mujoco physics switched successfully.")
 
 import time
 import argparse
