@@ -253,6 +253,7 @@ class GraspingCommand(MultiverseClient):
             self.grasp_stop = False
             self.grasp_thread = threading.Thread(target=self.grasp)
             self.grasp_thread.start()
+            self.switching_connector.lock.release()
             return SetBoolResponse(success=True, message="Left hand grasped successfully.")
         else:
             self.left_hand_grasped = False
@@ -277,6 +278,7 @@ class GraspingCommand(MultiverseClient):
             self.grasp_stop = False
             self.grasp_thread = threading.Thread(target=self.grasp)
             self.grasp_thread.start()
+            self.switching_connector.lock.release()
             return SetBoolResponse(success=True, message="Right hand grasped successfully.")
         else:
             self.right_hand_grasped = False
