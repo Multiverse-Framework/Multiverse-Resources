@@ -14,3 +14,12 @@ montessori_object_6_ref:
   position: [-0.3095, -0.237, 1.40]
   quaternion: [1.0, 0.0, 0.0, 0.0]
   relative_velocity: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+montessori_object_2_unreal:
+  scalar: [1.0]
+montessori_object_3_unreal:
+  scalar: [1.0]
+montessori_object_5_unreal:
+  scalar: [1.0]
+montessori_object_6_unreal:
+  scalar: [1.0]
