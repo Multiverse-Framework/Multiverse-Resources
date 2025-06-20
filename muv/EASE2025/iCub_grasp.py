@@ -17,6 +17,7 @@ class SwichtingCommand(MultiverseClient):
     }
     check_physics_thread = threading.Thread()
     lock = threading.Lock()
+    being_grasped = False
 
     def __init__(self, port: str, multiverse_meta_data: MultiverseMetaData) -> None:
         super().__init__(port, multiverse_meta_data)
@@ -28,28 +29,29 @@ class SwichtingCommand(MultiverseClient):
 
     def check_physics(self) -> None:
         while not rospy.is_shutdown():
-            self.lock.acquire()
-            self.request_meta_data["meta_data"]["simulation_name"] = "switching_command"
-            self.request_meta_data["send"] = {}
-            self.request_meta_data["receive"] = {}
-            self.request_meta_data["receive"]["montessori_object_2_unreal"] = ["scalar"]
-            self.request_meta_data["receive"]["montessori_object_3_unreal"] = ["scalar"]
-            self.request_meta_data["receive"]["montessori_object_5_unreal"] = ["scalar"]
-            self.request_meta_data["receive"]["montessori_object_6_unreal"] = ["scalar"]
-            self.send_and_receive_meta_data()
-            need_switch = False
-            for object_ref_name, object_attributes in self.response_meta_data["receive"].items():
-                object_name = object_ref_name[:-7]  # Remove '_unreal' suffix
-                if object_attributes["scalar"][0] > 0.0 and self.object_physics[object_name]:
-                    self.object_physics[object_name] = False
-                    need_switch = True
-                elif object_attributes["scalar"][0] < 0.0 and not self.object_physics[object_name]:
-                    self.object_physics[object_name] = True
-                    need_switch = True
-            if need_switch:
-                self.logwarn("Physics state changed, switching physics.")
-                self.switch_physics()
-            self.lock.release()
+            if not self.being_grasped:
+                self.lock.acquire()
+                self.request_meta_data["meta_data"]["simulation_name"] = "switching_command"
+                self.request_meta_data["send"] = {}
+                self.request_meta_data["receive"] = {}
+                self.request_meta_data["receive"]["montessori_object_2_unreal"] = ["scalar"]
+                self.request_meta_data["receive"]["montessori_object_3_unreal"] = ["scalar"]
+                self.request_meta_data["receive"]["montessori_object_5_unreal"] = ["scalar"]
+                self.request_meta_data["receive"]["montessori_object_6_unreal"] = ["scalar"]
+                self.send_and_receive_meta_data()
+                need_switch = False
+                for object_ref_name, object_attributes in self.response_meta_data["receive"].items():
+                    object_name = object_ref_name[:-7]  # Remove '_unreal' suffix
+                    if object_attributes["scalar"][0] > 0.0 and self.object_physics[object_name]:
+                        self.object_physics[object_name] = False
+                        need_switch = True
+                    elif object_attributes["scalar"][0] < 0.0 and not self.object_physics[object_name]:
+                        self.object_physics[object_name] = True
+                        need_switch = True
+                if need_switch:
+                    self.logwarn("Physics state changed, switching physics.")
+                    self.switch_physics()
+                self.lock.release()
             time.sleep(0.1)
 
     def switch_physics(self) -> None:
@@ -100,7 +102,7 @@ class SwichtingCommand(MultiverseClient):
 class GraspingCommand(MultiverseClient):
     left_hand_grasped = False
     right_hand_grasped = False
-    grasp_radius = 0.05
+    grasp_radius = 0.1
     object_states = {
         "montessori_object_2": {"position": [0.0, 0.0, 0.0], "quaternion": [1.0, 0.0, 0.0, 0.0]},
         "montessori_object_3": {"position": [0.0, 0.0, 0.0], "quaternion": [1.0, 0.0, 0.0, 0.0]},
@@ -253,6 +255,7 @@ class GraspingCommand(MultiverseClient):
             self.grasp_stop = False
             self.grasp_thread = threading.Thread(target=self.grasp)
             self.grasp_thread.start()
+            self.switching_connector.being_grasped = True
             self.switching_connector.lock.release()
             return SetBoolResponse(success=True, message="Left hand grasped successfully.")
         else:
@@ -261,6 +264,7 @@ class GraspingCommand(MultiverseClient):
                 self.switching_connector.object_physics[object_name] = True
             self.switching_connector.switch_physics()
             self.hand_states["l_gripper_tool_frame"]["grasped_objects"] = {}
+            self.switching_connector.being_grasped = False
             self.switching_connector.lock.release()
             return SetBoolResponse(success=True, message="Left hand released successfully.")
 
@@ -278,6 +282,7 @@ class GraspingCommand(MultiverseClient):
             self.grasp_stop = False
             self.grasp_thread = threading.Thread(target=self.grasp)
             self.grasp_thread.start()
+            self.switching_connector.being_grasped = True
             self.switching_connector.lock.release()
             return SetBoolResponse(success=True, message="Right hand grasped successfully.")
         else:
@@ -286,6 +291,7 @@ class GraspingCommand(MultiverseClient):
                 self.switching_connector.object_physics[object_name] = True
             self.switching_connector.switch_physics()
             self.hand_states["r_gripper_tool_frame"]["grasped_objects"] = {}
+            self.switching_connector.being_grasped = False
             self.switching_connector.lock.release()
             return SetBoolResponse(success=True, message="Right hand released successfully.")
 

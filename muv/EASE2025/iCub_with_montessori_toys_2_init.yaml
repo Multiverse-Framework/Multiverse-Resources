@@ -23,3 +23,52 @@ montessori_object_5_unreal:
   scalar: [1.0]
 montessori_object_6_unreal:
   scalar: [1.0]
+
+l_hand_thumb_0_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_thumb_1_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_thumb_2_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_thumb_3_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_index_0_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_index_1_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_index_2_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_index_3_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_middle_0_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_middle_1_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_middle_2_actuator:
+  cmd_joint_rvalue: [0.0]
+l_hand_middle_3_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_thumb_0_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_thumb_1_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_thumb_2_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_thumb_3_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_index_0_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_index_1_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_index_2_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_index_3_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_middle_0_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_middle_1_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_middle_2_actuator:
+  cmd_joint_rvalue: [0.0]
+r_hand_middle_3_actuator:
+  cmd_joint_rvalue: [0.0]

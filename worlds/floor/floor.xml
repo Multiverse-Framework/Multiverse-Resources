@@ -1,4 +1,8 @@
 <mujoco model="floor">
+  <option timestep="0.004" cone="elliptic">
+    <flag multiccd="enable" nativeccd="enable" />
+  </option>
+  
   <visual>
     <rgba haze="0.15 0.25 0.35 1"/>
     <quality shadowsize="4096"/>
