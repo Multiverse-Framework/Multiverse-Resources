@@ -300,6 +300,7 @@ class GraspingCommand(MultiverseClient):
         for object_name in self.switching_connector.object_physics.keys():
             self.switching_connector.object_physics[object_name] = req.data
         self.switching_connector.switch_physics()
+        self.switching_connector.switch_physics()
         self.switching_connector.lock.release()
         return SetBoolResponse(success=True, message="Mujoco physics switched successfully.")
 
