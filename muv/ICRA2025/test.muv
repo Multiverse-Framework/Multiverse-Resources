@@ -1,0 +1,43 @@
+resources: 
+  - ../../robots/shadow_hand
+  - ../../worlds/
+  - ../../objects/
+  - ../../../Multiverse-Utilities/scripts/
+  - ./
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  gazebo_sim:
+    simulator: gazebo
+    headless: False
+    world:
+      name: world
+      path: floor.sdf
+    robots:
+      left_shadow_hand:
+        path: left_hand.sdf
+        apply:
+          body:
+            left_shadow_hand:
+              pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
+              quat: [1.0, 0.0, 1.0, 0.0]
+            gravcomp: 1
+      right_shadow_hand:
+        path: right_hand.sdf
+        apply:
+          body:
+            right_shadow_hand:
+              pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
+              quat: [0.0, 1.0, 0.0, 1.0]
+            gravcomp: 1
+    objects:
+      table:
+        path: table/table.sdf
+        apply:
+          body:
+            table:
+              pos: [1.0, 0.0, 1.0]
+              quat: [1.0, 0.0, 0.0, 1.0]

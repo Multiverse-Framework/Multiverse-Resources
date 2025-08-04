@@ -1,0 +1,119 @@
+<sdf version='1.11'>
+  <model name='table'>
+    <static>true</static>
+    <link name='table'>
+      <inertial>
+        <pose>0 0 -0.20000000298023221 -3.141592566167013 -1.570796282091413 0</pose>
+        <mass>10</mass>
+        <inertia>
+          <ixx>6.9266667366027832</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.5516667366027832</iyy>
+          <iyz>0</iyz>
+          <izz>2.251666784286499</izz>
+        </inertia>
+      </inertial>
+      <collision name='table_fixed_joint_lump__Geom_0_collision_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2 1 0.10000000149011611</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='table_fixed_joint_lump__Geom_1_collision_collision_1'>
+        <pose>0.94999998807907104 0.44999998807907099 -0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.10000000149011611 0.10000000149011611 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='table_fixed_joint_lump__Geom_2_collision_collision_2'>
+        <pose>-0.94999998807907104 0.44999998807907099 -0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.10000000149011611 0.10000000149011611 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='table_fixed_joint_lump__Geom_3_collision_collision_3'>
+        <pose>0.94999998807907104 -0.44999998807907099 -0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.10000000149011611 0.10000000149011611 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='table_fixed_joint_lump__Geom_4_collision_collision_4'>
+        <pose>-0.94999998807907104 -0.44999998807907099 -0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.10000000149011611 0.10000000149011611 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='table_fixed_joint_lump__Geom_0_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2 1 0.10000000149011611</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='table_fixed_joint_lump__Geom_1_visual_1'>
+        <pose>0.94999998807907104 0.44999998807907099 -0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.10000000149011611 0.10000000149011611 1</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='table_fixed_joint_lump__Geom_2_visual_2'>
+        <pose>-0.94999998807907104 0.44999998807907099 -0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.10000000149011611 0.10000000149011611 1</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='table_fixed_joint_lump__Geom_3_visual_3'>
+        <pose>0.94999998807907104 -0.44999998807907099 -0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.10000000149011611 0.10000000149011611 1</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='table_fixed_joint_lump__Geom_4_visual_4'>
+        <pose>-0.94999998807907104 -0.44999998807907099 -0.5 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.10000000149011611 0.10000000149011611 1</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

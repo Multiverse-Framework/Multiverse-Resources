@@ -1,0 +1,714 @@
+<?xml version="1.0" ?>
+<robot name="right_shadow_hand" version="1.0">
+  <link name="rh_palm">
+    <inertial>
+      <origin xyz="0.0 0.0 0.03500000014901161" rpy="0.0 0.0 0.0"/>
+      <mass value="0.30000001192092896"/>
+      <inertia ixx="0.0003580999909900129" ixy="0.0" ixz="0.0" iyy="0.0005287000094540417" iyz="0.0" izz="0.00019099999917671084"/>
+    </inertial>
+    <collision name="Geom_1">
+      <origin xyz="0.010999999940395355 0.008500000461935997 0.03799999877810478" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.06199999898672104 0.007000000216066837 0.09799999743700027"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2">
+      <origin xyz="-0.0020000000949949026 -0.0035000001080334187 0.03799999877810478" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.035999998450279236 0.017000000923871994 0.09799999743700027"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3">
+      <origin xyz="0.028999999165534973 -0.0035000001080334187 0.0820000022649765" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.026000000536441803 0.017000000923871994 0.009999999776482582"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_4">
+      <origin xyz="0.026499999687075615 -0.0010000000474974513 0.07000000029802322" rpy="0.19999998807907104 -3.255858871398232e-08 0.2500001788139343"/>
+      <geometry>
+        <box size="0.026000000536441803 0.014000000432133675 0.017999999225139618"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_5">
+      <origin xyz="0.03150000050663948 -0.008500000461935997 0.0010000000474974513" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.020999999716877937 0.027000000700354576 0.024000000208616257"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_6">
+      <origin xyz="0.012500000186264515 -0.014999999664723873 0.004000000189989805" rpy="0.0 0.0 -0.48000070452690125"/>
+      <geometry>
+        <box size="0.02199999988079071 0.004999999888241291 0.029999999329447746"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_7">
+      <origin xyz="0.010999999940395355 0.0 0.08900000154972076" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.017999999225139618 0.024000000208616257 0.004000000189989805"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_8">
+      <origin xyz="-0.029999999329447746 0.0 0.008999999612569809" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.019999999552965164 0.024000000208616257 0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_0">
+      <origin xyz="0.005374445114284754 -0.0022442906629294157 0.0320129431784153" rpy="0.21004581451416016 0.0831327736377716 1.550321102142334"/>
+      <geometry>
+        <mesh filename="file://assets/obj/palm.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_0_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_palm_ref_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+    <parent link="rh_palm"/>
+    <child link="rh_palm_ref"/>
+  </joint>
+  <link name="rh_palm_ref">
+    <inertial>
+      <origin xyz="-0.0320129431784153 -0.0022442906629294157 0.005374445114284754" rpy="0.0 0.0 0.0"/>
+      <mass value="0.20768529176712036"/>
+      <inertia ixx="9.706315904622898e-05" ixy="1.1757299944292754e-05" ixz="1.6685895388945937e-05" iyy="0.0002412537724012509" iyz="9.062969041906399e-08" izz="0.00016990101721603423"/>
+    </inertial>
+    <visual name="Geom_9">
+      <origin xyz="-0.0320129431784153 -0.0022442906629294157 0.005374445114284754" rpy="-1.3590500354766846 -0.020404502749443054 1.487646222114563"/>
+      <geometry>
+        <mesh filename="file://assets/stl/palm.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_9_material">
+        <color rgba="0.0 1.0 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_FFJ4" type="revolute">
+    <origin xyz="0.032999999821186066 0.0 0.0949999988079071" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="rh_palm"/>
+    <child link="rh_ffknuckle"/>
+    <limit effort="1000.0" lower="-0.34906598925590515" upper="0.34906598925590515" velocity="1000.0"/>
+  </joint>
+  <link name="rh_ffknuckle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.00800000037997961"/>
+      <inertia ixx="2.6000000730164174e-07" ixy="0.0" ixz="0.0" iyy="2.6000000730164174e-07" iyz="0.0" izz="3.199999980552093e-07"/>
+    </inertial>
+    <collision name="Geom_11">
+      <origin xyz="0.0 0.0 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.017999999225139618"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_10">
+      <origin xyz="-8.01595342636574e-06 0.0002838333311956376 0.00031411455711349845" rpy="0.47617125511169434 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_knuckle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_10_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_FFJ3" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_ffknuckle"/>
+    <child link="rh_ffproximal"/>
+    <limit effort="1000.0" lower="-0.26179900765419006" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_ffproximal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.02250000089406967" rpy="0.0 0.0 0.0"/>
+      <mass value="0.029999999329447746"/>
+      <inertia ixx="9.800000043469481e-06" ixy="0.0" ixz="0.0" iyy="9.999999747378752e-06" iyz="0.0" izz="1.7999999499807018e-06"/>
+    </inertial>
+    <collision name="Geom_13">
+      <origin xyz="0.0 0.0 0.02500000037252903" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_12">
+      <origin xyz="1.2104840152460383e-06 9.761789442563895e-06 0.02288065291941166" rpy="0.0 0.01189393736422062 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_proximal.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_12_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_FFJ2" type="revolute">
+    <origin xyz="0.0 0.0 0.04500000178813934" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_ffproximal"/>
+    <child link="rh_ffmiddle"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_ffmiddle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.012500000186264515" rpy="0.0 0.0 0.0"/>
+      <mass value="0.017000000923871994"/>
+      <inertia ixx="2.6000000161729986e-06" ixy="0.0" ixz="0.0" iyy="2.7000000955013093e-06" iyz="0.0" izz="8.700000080352766e-07"/>
+    </inertial>
+    <collision name="Geom_15">
+      <origin xyz="0.0 0.0 0.012500000186264515" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.02500000037252903"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_14">
+      <origin xyz="-2.7197006602364127e-06 -3.2192867365665734e-05 0.011511409655213356" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_middle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_14_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_FFJ1" type="revolute">
+    <origin xyz="0.0 0.0 0.02500000037252903" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_ffmiddle"/>
+    <child link="rh_ffdistal"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_ffdistal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.013076899573206902" rpy="0.0 0.0 0.0"/>
+      <mass value="0.013000000268220901"/>
+      <inertia ixx="1.1209200465600588e-06" ixy="0.0" ixz="0.0" iyy="1.2809199461116805e-06" iyz="0.0" izz="5.300000225361146e-07"/>
+    </inertial>
+    <visual name="Geom_16">
+      <origin xyz="-2.3984401195775717e-05 0.00042073254007846117 0.01764647476375103" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_distal_pst.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_16_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+    <collision name="Geom_17">
+      <origin xyz="-2.3984401195775717e-05 0.00042073254007846117 0.01764647476375103" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/stl/f_distal_pst.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rh_MFJ4" type="revolute">
+    <origin xyz="0.010999999940395355 0.0 0.0989999994635582" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="rh_palm"/>
+    <child link="rh_mfknuckle"/>
+    <limit effort="1000.0" lower="-0.34906598925590515" upper="0.34906598925590515" velocity="1000.0"/>
+  </joint>
+  <link name="rh_mfknuckle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.00800000037997961"/>
+      <inertia ixx="2.6000000730164174e-07" ixy="0.0" ixz="0.0" iyy="2.6000000730164174e-07" iyz="0.0" izz="3.199999980552093e-07"/>
+    </inertial>
+    <collision name="Geom_19">
+      <origin xyz="0.0 0.0 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.017999999225139618"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_18">
+      <origin xyz="-8.01595342636574e-06 0.0002838333311956376 0.00031411455711349845" rpy="0.47617125511169434 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_knuckle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_18_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_MFJ3" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_mfknuckle"/>
+    <child link="rh_mfproximal"/>
+    <limit effort="1000.0" lower="-0.26179900765419006" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_mfproximal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.02250000089406967" rpy="0.0 0.0 0.0"/>
+      <mass value="0.029999999329447746"/>
+      <inertia ixx="9.800000043469481e-06" ixy="0.0" ixz="0.0" iyy="9.999999747378752e-06" iyz="0.0" izz="1.7999999499807018e-06"/>
+    </inertial>
+    <collision name="Geom_21">
+      <origin xyz="0.0 0.0 0.02500000037252903" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_20">
+      <origin xyz="1.2104840152460383e-06 9.761789442563895e-06 0.02288065291941166" rpy="0.0 0.01189393736422062 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_proximal.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_20_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_MFJ2" type="revolute">
+    <origin xyz="0.0 0.0 0.04500000178813934" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_mfproximal"/>
+    <child link="rh_mfmiddle"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_mfmiddle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.012500000186264515" rpy="0.0 0.0 0.0"/>
+      <mass value="0.017000000923871994"/>
+      <inertia ixx="2.6000000161729986e-06" ixy="0.0" ixz="0.0" iyy="2.7000000955013093e-06" iyz="0.0" izz="8.700000080352766e-07"/>
+    </inertial>
+    <collision name="Geom_23">
+      <origin xyz="0.0 0.0 0.012500000186264515" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.02500000037252903"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_22">
+      <origin xyz="-2.7197006602364127e-06 -3.2192867365665734e-05 0.011511409655213356" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_middle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_22_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_MFJ1" type="revolute">
+    <origin xyz="0.0 0.0 0.02500000037252903" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_mfmiddle"/>
+    <child link="rh_mfdistal"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_mfdistal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.013076899573206902" rpy="0.0 0.0 0.0"/>
+      <mass value="0.013000000268220901"/>
+      <inertia ixx="1.1209200465600588e-06" ixy="0.0" ixz="0.0" iyy="1.2809199461116805e-06" iyz="0.0" izz="5.300000225361146e-07"/>
+    </inertial>
+    <visual name="Geom_24">
+      <origin xyz="-2.3984401195775717e-05 0.00042073254007846117 0.01764647476375103" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_distal_pst.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_24_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+    <collision name="Geom_25">
+      <origin xyz="-2.3984401195775717e-05 0.00042073254007846117 0.01764647476375103" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/stl/f_distal_pst.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rh_RFJ4" type="revolute">
+    <origin xyz="-0.010999999940395355 0.0 0.0949999988079071" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="rh_palm"/>
+    <child link="rh_rfknuckle"/>
+    <limit effort="1000.0" lower="-0.34906598925590515" upper="0.34906598925590515" velocity="1000.0"/>
+  </joint>
+  <link name="rh_rfknuckle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.00800000037997961"/>
+      <inertia ixx="2.6000000730164174e-07" ixy="0.0" ixz="0.0" iyy="2.6000000730164174e-07" iyz="0.0" izz="3.199999980552093e-07"/>
+    </inertial>
+    <collision name="Geom_27">
+      <origin xyz="0.0 0.0 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.017999999225139618"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_26">
+      <origin xyz="-8.01595342636574e-06 0.0002838333311956376 0.00031411455711349845" rpy="0.47617125511169434 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_knuckle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_26_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_RFJ3" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_rfknuckle"/>
+    <child link="rh_rfproximal"/>
+    <limit effort="1000.0" lower="-0.26179900765419006" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_rfproximal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.02250000089406967" rpy="0.0 0.0 0.0"/>
+      <mass value="0.029999999329447746"/>
+      <inertia ixx="9.800000043469481e-06" ixy="0.0" ixz="0.0" iyy="9.999999747378752e-06" iyz="0.0" izz="1.7999999499807018e-06"/>
+    </inertial>
+    <collision name="Geom_29">
+      <origin xyz="0.0 0.0 0.02500000037252903" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_28">
+      <origin xyz="1.2104840152460383e-06 9.761789442563895e-06 0.02288065291941166" rpy="0.0 0.01189393736422062 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_proximal.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_28_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_RFJ2" type="revolute">
+    <origin xyz="0.0 0.0 0.04500000178813934" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_rfproximal"/>
+    <child link="rh_rfmiddle"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_rfmiddle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.012500000186264515" rpy="0.0 0.0 0.0"/>
+      <mass value="0.017000000923871994"/>
+      <inertia ixx="2.6000000161729986e-06" ixy="0.0" ixz="0.0" iyy="2.7000000955013093e-06" iyz="0.0" izz="8.700000080352766e-07"/>
+    </inertial>
+    <collision name="Geom_31">
+      <origin xyz="0.0 0.0 0.012500000186264515" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.02500000037252903"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_30">
+      <origin xyz="-2.7197006602364127e-06 -3.2192867365665734e-05 0.011511409655213356" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_middle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_30_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_RFJ1" type="revolute">
+    <origin xyz="0.0 0.0 0.02500000037252903" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_rfmiddle"/>
+    <child link="rh_rfdistal"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_rfdistal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.013076899573206902" rpy="0.0 0.0 0.0"/>
+      <mass value="0.013000000268220901"/>
+      <inertia ixx="1.1209200465600588e-06" ixy="0.0" ixz="0.0" iyy="1.2809199461116805e-06" iyz="0.0" izz="5.300000225361146e-07"/>
+    </inertial>
+    <visual name="Geom_32">
+      <origin xyz="-2.3984401195775717e-05 0.00042073254007846117 0.01764647476375103" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_distal_pst.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_32_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+    <collision name="Geom_33">
+      <origin xyz="-2.3984401195775717e-05 0.00042073254007846117 0.01764647476375103" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/stl/f_distal_pst.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rh_LFJ5" type="revolute">
+    <origin xyz="-0.032999999821186066 0.0 0.02071000076830387" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.5735761523246765 0.0 0.8191522359848022"/>
+    <parent link="rh_palm"/>
+    <child link="rh_lfmetacarpal"/>
+    <limit effort="1000.0" lower="0.0" upper="0.785398006439209" velocity="1000.0"/>
+  </joint>
+  <link name="rh_lfmetacarpal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.03999999910593033" rpy="0.0 0.0 0.0"/>
+      <mass value="0.029999999329447746"/>
+      <inertia ixx="1.4500000361294951e-05" ixy="0.0" ixz="0.0" iyy="1.6379999578930438e-05" iyz="0.0" izz="4.271999841876095e-06"/>
+    </inertial>
+    <collision name="Geom_35">
+      <origin xyz="0.0020000000949949026 0.0 0.032999999821186066" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.02199999988079071 0.024000000208616257 0.05000000074505806"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_34">
+      <origin xyz="0.002477748319506645 0.0006623358931392431 0.03647977486252785" rpy="-0.23058989644050598 0.03969009593129158 1.5495450496673584"/>
+      <geometry>
+        <mesh filename="file://assets/obj/lf_metacarpal.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_34_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_LFJ4" type="revolute">
+    <origin xyz="0.0 0.0 0.06578999757766724" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="rh_lfmetacarpal"/>
+    <child link="rh_lfknuckle"/>
+    <limit effort="1000.0" lower="-0.34906598925590515" upper="0.34906598925590515" velocity="1000.0"/>
+  </joint>
+  <link name="rh_lfknuckle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.00800000037997961"/>
+      <inertia ixx="2.6000000730164174e-07" ixy="0.0" ixz="0.0" iyy="2.6000000730164174e-07" iyz="0.0" izz="3.199999980552093e-07"/>
+    </inertial>
+    <collision name="Geom_37">
+      <origin xyz="0.0 0.0 0.0" rpy="-0.0 1.5707963705062866 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.017999999225139618"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_36">
+      <origin xyz="-8.01595342636574e-06 0.0002838333311956376 0.00031411455711349845" rpy="0.47617125511169434 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_knuckle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_36_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_LFJ3" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_lfknuckle"/>
+    <child link="rh_lfproximal"/>
+    <limit effort="1000.0" lower="-0.26179900765419006" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_lfproximal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.02250000089406967" rpy="0.0 0.0 0.0"/>
+      <mass value="0.029999999329447746"/>
+      <inertia ixx="9.800000043469481e-06" ixy="0.0" ixz="0.0" iyy="9.999999747378752e-06" iyz="0.0" izz="1.7999999499807018e-06"/>
+    </inertial>
+    <collision name="Geom_39">
+      <origin xyz="0.0 0.0 0.02500000037252903" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.03999999910593033"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_38">
+      <origin xyz="1.2104840152460383e-06 9.761789442563895e-06 0.02288065291941166" rpy="0.0 0.01189393736422062 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_proximal.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_38_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_LFJ2" type="revolute">
+    <origin xyz="0.0 0.0 0.04500000178813934" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_lfproximal"/>
+    <child link="rh_lfmiddle"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_lfmiddle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.012500000186264515" rpy="0.0 0.0 0.0"/>
+      <mass value="0.017000000923871994"/>
+      <inertia ixx="2.6000000161729986e-06" ixy="0.0" ixz="0.0" iyy="2.7000000955013093e-06" iyz="0.0" izz="8.700000080352766e-07"/>
+    </inertial>
+    <collision name="Geom_41">
+      <origin xyz="0.0 0.0 0.012500000186264515" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.02500000037252903"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_40">
+      <origin xyz="-2.7197006602364127e-06 -3.2192867365665734e-05 0.011511409655213356" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_middle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_40_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_LFJ1" type="revolute">
+    <origin xyz="0.0 0.0 0.02500000037252903" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_lfmiddle"/>
+    <child link="rh_lfdistal"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_lfdistal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.013076899573206902" rpy="0.0 0.0 0.0"/>
+      <mass value="0.013000000268220901"/>
+      <inertia ixx="1.1209200465600588e-06" ixy="0.0" ixz="0.0" iyy="1.2809199461116805e-06" iyz="0.0" izz="5.300000225361146e-07"/>
+    </inertial>
+    <visual name="Geom_42">
+      <origin xyz="-2.3984401195775717e-05 0.00042073254007846117 0.01764647476375103" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/f_distal_pst.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_42_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+    <collision name="Geom_43">
+      <origin xyz="-2.3984401195775717e-05 0.00042073254007846117 0.01764647476375103" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/stl/f_distal_pst.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rh_THJ5" type="revolute">
+    <origin xyz="0.03400000184774399 -0.008580000139772892 0.028999999165534973" rpy="0.0 0.7853969931602478 0.0"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <parent link="rh_palm"/>
+    <child link="rh_thbase"/>
+    <limit effort="1000.0" lower="-1.0471999645233154" upper="1.0471999645233154" velocity="1000.0"/>
+  </joint>
+  <link name="rh_thbase">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.009999999776482582"/>
+      <inertia ixx="1.5999999902760464e-07" ixy="0.0" ixz="0.0" iyy="1.5999999902760464e-07" iyz="0.0" izz="1.5999999902760464e-07"/>
+    </inertial>
+    <collision name="Geom_44">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.013000000268220901"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rh_THJ4" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_thbase"/>
+    <child link="rh_thproximal"/>
+    <limit effort="1000.0" lower="0.0" upper="1.2217299938201904" velocity="1000.0"/>
+  </joint>
+  <link name="rh_thproximal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.01899999938905239" rpy="0.0 0.0 0.0"/>
+      <mass value="0.03999999910593033"/>
+      <inertia ixx="1.359999987471383e-05" ixy="0.0" ixz="0.0" iyy="1.359999987471383e-05" iyz="0.0" izz="3.130000095552532e-06"/>
+    </inertial>
+    <collision name="Geom_46">
+      <origin xyz="0.0 0.0 0.019999999552965164" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.010499999858438969" length="0.017999999225139618"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_45">
+      <origin xyz="-6.3788961597310845e-06 -2.6031300876638852e-05 0.01671529747545719" rpy="-0.0004153375921305269 0.0010145187843590975 -2.710505431213761e-20"/>
+      <geometry>
+        <mesh filename="file://assets/obj/th_proximal.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_45_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_THJ3" type="revolute">
+    <origin xyz="-6.938893903907228e-18 0.0 0.03799999877810478" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_thproximal"/>
+    <child link="rh_thhub"/>
+    <limit effort="1000.0" lower="-0.20943999290466309" upper="0.20943999290466309" velocity="1000.0"/>
+  </joint>
+  <link name="rh_thhub">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.004999999888241291"/>
+      <inertia ixx="9.999999974752427e-07" ixy="0.0" ixz="0.0" iyy="9.999999974752427e-07" iyz="0.0" izz="3.000000106112566e-07"/>
+    </inertial>
+    <collision name="Geom_47">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.010999999940395355"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rh_THJ2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="rh_thhub"/>
+    <child link="rh_thmiddle"/>
+    <limit effort="1000.0" lower="-0.6981319785118103" upper="0.6981319785118103" velocity="1000.0"/>
+  </joint>
+  <link name="rh_thmiddle">
+    <inertial>
+      <origin xyz="0.0 0.0 0.01600000075995922" rpy="0.0 0.0 0.0"/>
+      <mass value="0.019999999552965164"/>
+      <inertia ixx="5.100000180391362e-06" ixy="0.0" ixz="0.0" iyy="5.100000180391362e-06" iyz="0.0" izz="1.2100000503778574e-06"/>
+    </inertial>
+    <collision name="Geom_49">
+      <origin xyz="0.0 0.0 0.012000000104308128" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.008999999612569809" length="0.017999999225139618"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_50">
+      <origin xyz="0.0 0.0 0.029999999329447746" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.009999999776482582"/>
+      </geometry>
+    </collision>
+    <visual name="Geom_48">
+      <origin xyz="7.479631312889978e-05 -4.5069773477735e-05 0.015348398126661777" rpy="0.0 -0.0009035483817569911 0.0"/>
+      <geometry>
+        <mesh filename="file://assets/obj/th_middle.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_48_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rh_THJ1" type="revolute">
+    <origin xyz="6.938893903907228e-18 0.0 0.03200000151991844" rpy="0.0 0.0 -1.5707963705062866"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rh_thmiddle"/>
+    <child link="rh_thdistal"/>
+    <limit effort="1000.0" lower="-0.26179900765419006" upper="1.5708000659942627" velocity="1000.0"/>
+  </joint>
+  <link name="rh_thdistal">
+    <inertial>
+      <origin xyz="0.0 0.0 0.01455879956483841" rpy="0.0 0.0 0.0"/>
+      <mass value="0.017000000923871994"/>
+      <inertia ixx="2.277939984196564e-06" ixy="0.0" ixz="0.0" iyy="2.377940063524875e-06" iyz="0.0" izz="9.999999974752427e-07"/>
+    </inertial>
+    <visual name="Geom_51">
+      <origin xyz="-8.254521617345745e-07 0.0008025187999010086 0.019553372636437416" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/obj/th_distal_pst.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Geom_51_material">
+        <color rgba="0.16355 0.16355 0.16355 1.0"/>
+      </material>
+    </visual>
+    <collision name="Geom_52">
+      <origin xyz="-8.254521617345745e-07 0.0008025187999010086 0.019553372636437416" rpy="0.0 0.0 1.5707963705062866"/>
+      <geometry>
+        <mesh filename="file://assets/stl/th_distal_pst.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

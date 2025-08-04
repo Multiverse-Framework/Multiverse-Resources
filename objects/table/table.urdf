@@ -51,5 +51,35 @@
         <color rgba="0.9 0.9 0.9 1.0"/>
       </material>
     </visual>
+    <collision name="Geom_0_collision">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="2.0 1.0 0.10000000149011612"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_1_collision">
+      <origin xyz="0.949999988079071 0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.10000000149011612 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_2_collision">
+      <origin xyz="-0.949999988079071 0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.10000000149011612 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_3_collision">
+      <origin xyz="0.949999988079071 -0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.10000000149011612 1.0"/>
+      </geometry>
+    </collision>
+    <collision name="Geom_4_collision">
+      <origin xyz="-0.949999988079071 -0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.10000000149011612 1.0"/>
+      </geometry>
+    </collision>
   </link>
 </robot>

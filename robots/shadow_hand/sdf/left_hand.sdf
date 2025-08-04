@@ -1,0 +1,1303 @@
+<sdf version='1.11'>
+  <model name='left_shadow_hand'>
+    <link name='lh_palm'>
+      <inertial>
+        <pose>-0.0021985926178870719 -0.00091810075126349774 0.033778046718497323 0 0 0</pose>
+        <mass>0.50768530368804932</mass>
+        <inertia>
+          <ixx>0.00052971416725619428</ixx>
+          <ixy>-1.570920562171566e-06</ixy>
+          <ixz>1.471569991708484e-05</ixz>
+          <iyy>0.0007745936598541678</iyy>
+          <iyz>-1.2580024292888871e-05</iyz>
+          <izz>0.00029222616847752152</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_palm_fixed_joint_lump__Geom_1_collision'>
+        <pose>-0.01099999994039536 0.008500000461935997 0.037999998778104782 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.061999998986721039 0.0070000002160668373 0.097999997437000275</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='lh_palm_fixed_joint_lump__Geom_2_collision_1'>
+        <pose>0.002000000094994903 -0.0035000001080334191 0.037999998778104782 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.035999998450279243 0.017000000923871991 0.097999997437000275</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='lh_palm_fixed_joint_lump__Geom_3_collision_2'>
+        <pose>-0.02899999916553497 -0.0035000001080334191 0.082000002264976501 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0260000005364418 0.017000000923871991 0.0099999997764825821</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='lh_palm_fixed_joint_lump__Geom_4_collision_3'>
+        <pose>-0.026499999687075611 -0.0010000000474974511 0.070000000298023224 0.19393959641456601 0.049171395599842072 -0.24521610140800468</pose>
+        <geometry>
+          <box>
+            <size>0.0260000005364418 0.014000000432133669 0.017999999225139621</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='lh_palm_fixed_joint_lump__Geom_5_collision_4'>
+        <pose>-0.031500000506639481 -0.008500000461935997 0.0010000000474974511 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020999999716877941 0.02700000070035458 0.02239999920129776</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='lh_palm_fixed_joint_lump__Geom_6_collision_5'>
+        <pose>-0.01250000018626451 -0.01499999966472387 0.0040000001899898052 0 0 0.48000070452690119</pose>
+        <geometry>
+          <box>
+            <size>0.02199999988079071 0.004999999888241291 0.02999999932944775</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='lh_palm_fixed_joint_lump__Geom_7_collision_6'>
+        <pose>-0.01099999994039536 0 0.089000001549720764 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.017999999225139621 0.02400000020861626 0.0040000001899898052</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='lh_palm_fixed_joint_lump__Geom_8_collision_7'>
+        <pose>0.02999999932944775 0 0.008999999612569809 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.019999999552965161 0.02400000020861626 0.039999999105930328</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='lh_palm_fixed_joint_lump__Geom_0_visual'>
+        <pose>-0.0053744451142847538 -0.0022442906629294161 0.032012943178415298 -0.2100458145141601 0.083132773637771648 1.5912715196609499</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/palm.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+      <visual name='lh_palm_fixed_joint_lump__Geom_9_visual_1'>
+        <pose>-0.0053744463174128371 -0.0022442911327783398 0.032012942943490802 -0.21004586614623108 0.083132724894495622 1.5912716350672993</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/stl/palm.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 1 0 1</diffuse>
+          <ambient>0 1 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_FFJ4' type='revolute'>
+      <pose relative_to='lh_palm'>-0.032999999821186073 0 0.094999998807907104 0 0 0</pose>
+      <parent>lh_palm</parent>
+      <child>lh_ffknuckle</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.34906598925590521</lower>
+          <upper>0.34906598925590521</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_ffknuckle'>
+      <pose relative_to='lh_FFJ4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0080000003799796104</mass>
+        <inertia>
+          <ixx>2.6000000730164169e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.6000000730164169e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.1999999805520929e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_ffknuckle_fixed_joint_lump__Geom_11_collision'>
+        <pose>0 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.017999999225139621</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_ffknuckle_fixed_joint_lump__Geom_10_visual'>
+        <pose>-8.0159534263657406e-06 0.00028383333119563758 0.0003141145571134984 0.47617125511169428 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_knuckle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_FFJ3' type='revolute'>
+      <pose relative_to='lh_ffknuckle'>0 0 0 0 0 0</pose>
+      <parent>lh_ffknuckle</parent>
+      <child>lh_ffproximal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.26179900765419012</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_ffproximal'>
+      <pose relative_to='lh_FFJ3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.022500000894069672 0 0 0</pose>
+        <mass>0.02999999932944775</mass>
+        <inertia>
+          <ixx>9.8000000434694812e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999997473787516e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.799999949980702e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_ffproximal_fixed_joint_lump__Geom_13_collision'>
+        <pose>0 0 0.02500000037252903 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.039999999105930328</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_ffproximal_fixed_joint_lump__Geom_12_visual'>
+        <pose>1.2104840152460379e-06 9.7617894425638951e-06 0.022880652919411659 -8.674230925925565e-19 0.011893937364220619 1.5707963705062868</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_proximal.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_FFJ2' type='revolute'>
+      <pose relative_to='lh_ffproximal'>0 0 0.045000001788139343 0 0 0</pose>
+      <parent>lh_ffproximal</parent>
+      <child>lh_ffmiddle</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_ffmiddle'>
+      <pose relative_to='lh_FFJ2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.01250000018626451 0 0 0</pose>
+        <mass>0.017000000923871991</mass>
+        <inertia>
+          <ixx>2.600000016172999e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.7000000955013088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8.7000000803527655e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_ffmiddle_fixed_joint_lump__Geom_15_collision'>
+        <pose>0 0 0.01250000018626451 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.02500000037252903</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_ffmiddle_fixed_joint_lump__Geom_14_visual'>
+        <pose>-2.7197006602364131e-06 -3.2192867365665727e-05 0.011511409655213359 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_middle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_FFJ1' type='revolute'>
+      <pose relative_to='lh_ffmiddle'>0 0 0.02500000037252903 0 0 0</pose>
+      <parent>lh_ffmiddle</parent>
+      <child>lh_ffdistal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_ffdistal'>
+      <pose relative_to='lh_FFJ1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.0130768995732069 0 0 0</pose>
+        <mass>0.0130000002682209</mass>
+        <inertia>
+          <ixx>1.120920046560059e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.2809199461116801e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.3000002253611456e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_ffdistal_fixed_joint_lump__Geom_17_collision'>
+        <pose>-2.3984401195775721e-05 0.00042073254007846122 0.01764647476375103 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/stl/f_distal_pst.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lh_ffdistal_fixed_joint_lump__Geom_16_visual'>
+        <pose>-2.3984401195775721e-05 0.00042073254007846122 0.01764647476375103 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_distal_pst.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_LFJ5' type='revolute'>
+      <pose relative_to='lh_palm'>0.032999999821186073 0 0.020710000768303871 0 0 0</pose>
+      <parent>lh_palm</parent>
+      <child>lh_lfmetacarpal</child>
+      <axis>
+        <xyz>0.57357615232467651 0 -0.81915223598480225</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.78539800643920898</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_lfmetacarpal'>
+      <pose relative_to='lh_LFJ5'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.039999999105930328 0 0 0</pose>
+        <mass>0.02999999932944775</mass>
+        <inertia>
+          <ixx>1.450000036129495e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.6379999578930441e-05</iyy>
+          <iyz>0</iyz>
+          <izz>4.2719998418760952e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_lfmetacarpal_fixed_joint_lump__Geom_35_collision'>
+        <pose>-0.002000000094994903 0 0.032999999821186073 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02199999988079071 0.02400000020861626 0.05000000074505806</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='lh_lfmetacarpal_fixed_joint_lump__Geom_34_visual'>
+        <pose>-0.0024777483195066452 0.00066233589313924313 0.036479774862527847 0.23058989644050601 0.039690095931291594 1.5920475721359251</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/lf_metacarpal.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_LFJ4' type='revolute'>
+      <pose relative_to='lh_lfmetacarpal'>0 0 0.065789997577667236 0 0 0</pose>
+      <parent>lh_lfmetacarpal</parent>
+      <child>lh_lfknuckle</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.34906598925590521</lower>
+          <upper>0.34906598925590521</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_lfknuckle'>
+      <pose relative_to='lh_LFJ4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0080000003799796104</mass>
+        <inertia>
+          <ixx>2.6000000730164169e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.6000000730164169e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.1999999805520929e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_lfknuckle_fixed_joint_lump__Geom_37_collision'>
+        <pose>0 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.017999999225139621</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_lfknuckle_fixed_joint_lump__Geom_36_visual'>
+        <pose>-8.0159534263657406e-06 0.00028383333119563758 0.0003141145571134984 0.47617125511169428 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_knuckle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_LFJ3' type='revolute'>
+      <pose relative_to='lh_lfknuckle'>0 0 0 0 0 0</pose>
+      <parent>lh_lfknuckle</parent>
+      <child>lh_lfproximal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.26179900765419012</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_lfproximal'>
+      <pose relative_to='lh_LFJ3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.022500000894069672 0 0 0</pose>
+        <mass>0.02999999932944775</mass>
+        <inertia>
+          <ixx>9.8000000434694812e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999997473787516e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.799999949980702e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_lfproximal_fixed_joint_lump__Geom_39_collision'>
+        <pose>0 0 0.02500000037252903 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.039999999105930328</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_lfproximal_fixed_joint_lump__Geom_38_visual'>
+        <pose>1.2104840152460379e-06 9.7617894425638951e-06 0.022880652919411659 -8.674230925925565e-19 0.011893937364220619 1.5707963705062868</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_proximal.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_LFJ2' type='revolute'>
+      <pose relative_to='lh_lfproximal'>0 0 0.045000001788139343 0 0 0</pose>
+      <parent>lh_lfproximal</parent>
+      <child>lh_lfmiddle</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_lfmiddle'>
+      <pose relative_to='lh_LFJ2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.01250000018626451 0 0 0</pose>
+        <mass>0.017000000923871991</mass>
+        <inertia>
+          <ixx>2.600000016172999e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.7000000955013088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8.7000000803527655e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_lfmiddle_fixed_joint_lump__Geom_41_collision'>
+        <pose>0 0 0.01250000018626451 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.02500000037252903</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_lfmiddle_fixed_joint_lump__Geom_40_visual'>
+        <pose>-2.7197006602364131e-06 -3.2192867365665727e-05 0.011511409655213359 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_middle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_LFJ1' type='revolute'>
+      <pose relative_to='lh_lfmiddle'>0 0 0.02500000037252903 0 0 0</pose>
+      <parent>lh_lfmiddle</parent>
+      <child>lh_lfdistal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_lfdistal'>
+      <pose relative_to='lh_LFJ1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.0130768995732069 0 0 0</pose>
+        <mass>0.0130000002682209</mass>
+        <inertia>
+          <ixx>1.120920046560059e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.2809199461116801e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.3000002253611456e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_lfdistal_fixed_joint_lump__Geom_43_collision'>
+        <pose>-2.3984401195775721e-05 0.00042073254007846122 0.01764647476375103 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/stl/f_distal_pst.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lh_lfdistal_fixed_joint_lump__Geom_42_visual'>
+        <pose>-2.3984401195775721e-05 0.00042073254007846122 0.01764647476375103 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_distal_pst.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_MFJ4' type='revolute'>
+      <pose relative_to='lh_palm'>-0.01099999994039536 0 0.098999999463558197 0 0 0</pose>
+      <parent>lh_palm</parent>
+      <child>lh_mfknuckle</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.34906598925590521</lower>
+          <upper>0.34906598925590521</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_mfknuckle'>
+      <pose relative_to='lh_MFJ4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0080000003799796104</mass>
+        <inertia>
+          <ixx>2.6000000730164169e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.6000000730164169e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.1999999805520929e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_mfknuckle_fixed_joint_lump__Geom_19_collision'>
+        <pose>0 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.017999999225139621</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_mfknuckle_fixed_joint_lump__Geom_18_visual'>
+        <pose>-8.0159534263657406e-06 0.00028383333119563758 0.0003141145571134984 0.47617125511169428 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_knuckle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_MFJ3' type='revolute'>
+      <pose relative_to='lh_mfknuckle'>0 0 0 0 0 0</pose>
+      <parent>lh_mfknuckle</parent>
+      <child>lh_mfproximal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.26179900765419012</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_mfproximal'>
+      <pose relative_to='lh_MFJ3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.022500000894069672 0 0 0</pose>
+        <mass>0.02999999932944775</mass>
+        <inertia>
+          <ixx>9.8000000434694812e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999997473787516e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.799999949980702e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_mfproximal_fixed_joint_lump__Geom_21_collision'>
+        <pose>0 0 0.02500000037252903 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.039999999105930328</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_mfproximal_fixed_joint_lump__Geom_20_visual'>
+        <pose>1.2104840152460379e-06 9.7617894425638951e-06 0.022880652919411659 -8.674230925925565e-19 0.011893937364220619 1.5707963705062868</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_proximal.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_MFJ2' type='revolute'>
+      <pose relative_to='lh_mfproximal'>0 0 0.045000001788139343 0 0 0</pose>
+      <parent>lh_mfproximal</parent>
+      <child>lh_mfmiddle</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_mfmiddle'>
+      <pose relative_to='lh_MFJ2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.01250000018626451 0 0 0</pose>
+        <mass>0.017000000923871991</mass>
+        <inertia>
+          <ixx>2.600000016172999e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.7000000955013088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8.7000000803527655e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_mfmiddle_fixed_joint_lump__Geom_23_collision'>
+        <pose>0 0 0.01250000018626451 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.02500000037252903</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_mfmiddle_fixed_joint_lump__Geom_22_visual'>
+        <pose>-2.7197006602364131e-06 -3.2192867365665727e-05 0.011511409655213359 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_middle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_MFJ1' type='revolute'>
+      <pose relative_to='lh_mfmiddle'>0 0 0.02500000037252903 0 0 0</pose>
+      <parent>lh_mfmiddle</parent>
+      <child>lh_mfdistal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_mfdistal'>
+      <pose relative_to='lh_MFJ1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.0130768995732069 0 0 0</pose>
+        <mass>0.0130000002682209</mass>
+        <inertia>
+          <ixx>1.120920046560059e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.2809199461116801e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.3000002253611456e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_mfdistal_fixed_joint_lump__Geom_25_collision'>
+        <pose>-2.3984401195775721e-05 0.00042073254007846122 0.01764647476375103 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/stl/f_distal_pst.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lh_mfdistal_fixed_joint_lump__Geom_24_visual'>
+        <pose>-2.3984401195775721e-05 0.00042073254007846122 0.01764647476375103 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_distal_pst.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_RFJ4' type='revolute'>
+      <pose relative_to='lh_palm'>0.01099999994039536 0 0.094999998807907104 0 0 0</pose>
+      <parent>lh_palm</parent>
+      <child>lh_rfknuckle</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.34906598925590521</lower>
+          <upper>0.34906598925590521</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_rfknuckle'>
+      <pose relative_to='lh_RFJ4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0080000003799796104</mass>
+        <inertia>
+          <ixx>2.6000000730164169e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.6000000730164169e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.1999999805520929e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_rfknuckle_fixed_joint_lump__Geom_27_collision'>
+        <pose>0 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.017999999225139621</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_rfknuckle_fixed_joint_lump__Geom_26_visual'>
+        <pose>-8.0159534263657406e-06 0.00028383333119563758 0.0003141145571134984 0.47617125511169428 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_knuckle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_RFJ3' type='revolute'>
+      <pose relative_to='lh_rfknuckle'>0 0 0 0 0 0</pose>
+      <parent>lh_rfknuckle</parent>
+      <child>lh_rfproximal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.26179900765419012</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_rfproximal'>
+      <pose relative_to='lh_RFJ3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.022500000894069672 0 0 0</pose>
+        <mass>0.02999999932944775</mass>
+        <inertia>
+          <ixx>9.8000000434694812e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999997473787516e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.799999949980702e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_rfproximal_fixed_joint_lump__Geom_29_collision'>
+        <pose>0 0 0.02500000037252903 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.039999999105930328</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_rfproximal_fixed_joint_lump__Geom_28_visual'>
+        <pose>1.2104840152460379e-06 9.7617894425638951e-06 0.022880652919411659 -8.674230925925565e-19 0.011893937364220619 1.5707963705062868</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_proximal.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_RFJ2' type='revolute'>
+      <pose relative_to='lh_rfproximal'>0 0 0.045000001788139343 0 0 0</pose>
+      <parent>lh_rfproximal</parent>
+      <child>lh_rfmiddle</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_rfmiddle'>
+      <pose relative_to='lh_RFJ2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.01250000018626451 0 0 0</pose>
+        <mass>0.017000000923871991</mass>
+        <inertia>
+          <ixx>2.600000016172999e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.7000000955013088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>8.7000000803527655e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_rfmiddle_fixed_joint_lump__Geom_31_collision'>
+        <pose>0 0 0.01250000018626451 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.02500000037252903</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_rfmiddle_fixed_joint_lump__Geom_30_visual'>
+        <pose>-2.7197006602364131e-06 -3.2192867365665727e-05 0.011511409655213359 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_middle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_RFJ1' type='revolute'>
+      <pose relative_to='lh_rfmiddle'>0 0 0.02500000037252903 0 0 0</pose>
+      <parent>lh_rfmiddle</parent>
+      <child>lh_rfdistal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_rfdistal'>
+      <pose relative_to='lh_RFJ1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.0130768995732069 0 0 0</pose>
+        <mass>0.0130000002682209</mass>
+        <inertia>
+          <ixx>1.120920046560059e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.2809199461116801e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.3000002253611456e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_rfdistal_fixed_joint_lump__Geom_33_collision'>
+        <pose>-2.3984401195775721e-05 0.00042073254007846122 0.01764647476375103 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/stl/f_distal_pst.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lh_rfdistal_fixed_joint_lump__Geom_32_visual'>
+        <pose>-2.3984401195775721e-05 0.00042073254007846122 0.01764647476375103 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/f_distal_pst.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_THJ5' type='revolute'>
+      <pose relative_to='lh_palm'>-0.034000001847743988 -0.008580000139772892 0.02899999916553497 0 0.78539699316024758 -3.141592566167013</pose>
+      <parent>lh_palm</parent>
+      <child>lh_thbase</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.047199964523315</lower>
+          <upper>1.047199964523315</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_thbase'>
+      <pose relative_to='lh_THJ5'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0099999997764825821</mass>
+        <inertia>
+          <ixx>1.5999999902760459e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.5999999902760459e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.5999999902760459e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_thbase_fixed_joint_lump__Geom_44_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.0130000002682209</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+    <joint name='lh_THJ4' type='revolute'>
+      <pose relative_to='lh_thbase'>8.6736173798840355e-19 0 6.9388939039072284e-18 0 0 0</pose>
+      <parent>lh_thbase</parent>
+      <child>lh_thproximal</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.22172999382019</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_thproximal'>
+      <pose relative_to='lh_THJ4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.018999999389052391 0 0 0</pose>
+        <mass>0.039999999105930328</mass>
+        <inertia>
+          <ixx>1.3599999874713831e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3599999874713831e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.130000095552532e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_thproximal_fixed_joint_lump__Geom_46_collision'>
+        <pose>0 0 0.019999999552965161 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.017999999225139621</length>
+            <radius>0.01049999985843897</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lh_thproximal_fixed_joint_lump__Geom_45_visual'>
+        <pose>-6.3788961597310836e-06 -2.6031300876638849e-05 0.016715297475457191 -0.0004153375921305269 0.001014518784359097 -2.7131538054283686e-20</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/th_proximal.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_THJ3' type='revolute'>
+      <pose relative_to='lh_thproximal'>-6.0715321659188248e-18 0 0.037999998778104782 0 0 0</pose>
+      <parent>lh_thproximal</parent>
+      <child>lh_thhub</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.20943999290466311</lower>
+          <upper>0.20943999290466311</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_thhub'>
+      <pose relative_to='lh_THJ3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.004999999888241291</mass>
+        <inertia>
+          <ixx>9.9999999747524271e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.9999999747524271e-07</iyy>
+          <iyz>0</iyz>
+          <izz>3.0000001061125658e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_thhub_fixed_joint_lump__Geom_47_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01099999994039536</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+    <joint name='lh_THJ2' type='revolute'>
+      <pose relative_to='lh_thhub'>8.6736173798840355e-19 0 1.387778780781446e-17 0 0 0</pose>
+      <parent>lh_thhub</parent>
+      <child>lh_thmiddle</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.6981319785118103</lower>
+          <upper>0.6981319785118103</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_thmiddle'>
+      <pose relative_to='lh_THJ2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.016000000759959221 0 0 0</pose>
+        <mass>0.019999999552965161</mass>
+        <inertia>
+          <ixx>5.1000001803913619e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.1000001803913619e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.210000050377857e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_thmiddle_fixed_joint_lump__Geom_49_collision'>
+        <pose>0 0 0.01200000010430813 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.017999999225139621</length>
+            <radius>0.008999999612569809</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='lh_thmiddle_fixed_joint_lump__Geom_50_collision_1'>
+        <pose>0 0 0.02999999932944775 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.0099999997764825821</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='lh_thmiddle_fixed_joint_lump__Geom_48_visual'>
+        <pose>7.4796313128899783e-05 -4.5069773477734998e-05 0.015348398126661779 0 -0.00090354838175699115 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/th_middle.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='lh_THJ1' type='revolute'>
+      <pose relative_to='lh_thmiddle'>8.6736173798840355e-19 0 0.032000001519918442 0 0 -1.5707963705062871</pose>
+      <parent>lh_thmiddle</parent>
+      <child>lh_thdistal</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.26179900765419012</lower>
+          <upper>1.5708000659942629</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lh_thdistal'>
+      <pose relative_to='lh_THJ1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.014558799564838409 0 0 0</pose>
+        <mass>0.017000000923871991</mass>
+        <inertia>
+          <ixx>2.2779399841965642e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.3779400635248749e-06</iyy>
+          <iyz>0</iyz>
+          <izz>9.9999999747524271e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='lh_thdistal_fixed_joint_lump__Geom_52_collision'>
+        <pose>-8.2545216173457447e-07 0.00080251879990100861 0.01955337263643742 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/stl/th_distal_pst.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lh_thdistal_fixed_joint_lump__Geom_51_visual'>
+        <pose>-8.2545216173457447e-07 0.00080251879990100861 0.01955337263643742 0 0 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./assets/obj/th_distal_pst.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.204437509 0.204437509 0.204437509 1</diffuse>
+          <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <frame name='lh_palm_ref_joint' attached_to='lh_palm'>
+      <pose>0 0 0 -3.141592566167013 -1.570796282091413 0</pose>
+    </frame>
+    <frame name='lh_palm_ref' attached_to='lh_palm_ref_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>
