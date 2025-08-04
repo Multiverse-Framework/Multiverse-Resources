@@ -1,0 +1,317 @@
+resources: 
+  - ../../robots/shadow_hand
+  - ../../worlds/
+  - ../../objects/
+  - ../../../Multiverse-Utilities/scripts/
+  - ./
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  hands_simulation:
+    simulator: mujoco
+    headless: False
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      lh_palm:
+        path: left_hand_teleop.xml
+        apply:
+          body:
+            lh_palm:
+              pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
+              quat: [1.0, 0.0, 1.0, 0.0]
+            gravcomp: 1
+        suffix:
+          joint: _hands
+      rh_palm:
+        path: right_hand_teleop.xml
+        apply:
+          body:
+            rh_palm:
+              pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
+              quat: [0.0, 1.0, 0.0, 1.0]
+            gravcomp: 1
+        suffix:
+          joint: _hands
+    references:
+      lh_palm:
+        body1: LeftHand_WristRoot
+        body2: lh_palm_ref
+      lh_thdistal:
+        body1: LeftHand_ThumbTip
+        body2: lh_thdistal_ref
+      lh_ffdistal:
+        body1: LeftHand_IndexTip
+        body2: lh_ffdistal_ref
+      lh_mfdistal:
+        body1: LeftHand_MiddleTip
+        body2: lh_mfdistal_ref
+      lh_rfdistal:
+        body1: LeftHand_RingTip
+        body2: lh_rfdistal_ref
+      lh_lfdistal:
+        body1: LeftHand_PinkyTip
+        body2: lh_lfdistal_ref
+      rh_palm:
+        body1: RightHand_WristRoot
+        body2: rh_palm_ref
+      rh_thdistal:
+        body1: RightHand_ThumbTip
+        body2: rh_thdistal_ref
+      rh_ffdistal:
+        body1: RightHand_IndexTip
+        body2: rh_ffdistal_ref
+      rh_mfdistal:
+        body1: RightHand_MiddleTip
+        body2: rh_mfdistal_ref
+      rh_rfdistal:
+        body1: RightHand_RingTip
+        body2: rh_rfdistal_ref
+      rh_lfdistal:
+        body1: RightHand_PinkyTip
+        body2: rh_lfdistal_ref
+    config:
+      step_size: 0.01
+      integrator: IMPLICITFAST
+
+  multi_sim_simulation:
+    simulator: mujoco
+    headless: False
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      lh_palm:
+        path: left_hand.xml
+        apply:
+          body:
+            lh_palm:
+              pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
+              quat: [1.0, 0.0, 1.0, 0.0]
+            gravcomp: 1
+      rh_palm:
+        path: right_hand.xml
+        apply:
+          body:
+            rh_palm:
+              pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
+              quat: [0.0, 1.0, 0.0, 1.0]
+            gravcomp: 1
+    objects:
+      table:
+        path: table/table.xml
+        apply:
+          body:
+            table:
+              pos: [1.0, 0.0, 1.0]
+              quat: [1.0, 0.0, 0.0, 1.0]
+      cube_1:
+        path: cubes/mujoco/cube.xml
+        apply:
+          body:
+            cube:
+              pos: [0.7, 0.9, 1.5]
+              quat: [0.0, 0.0, 0.0, 1.0]
+        suffix:
+          body: _1
+          geom: _1
+      cube_2:
+        path: cubes/mujoco/cube.xml
+        apply:
+          body:
+            cube:
+              pos: [0.7, 0.84, 1.5]
+              quat: [1.0, 0.0, 0.0, 1.0]
+        suffix:
+          body: _2
+          geom: _2
+      cube_3:
+        path: cubes/mujoco/cube.xml
+        apply:
+          body:
+            cube:
+              pos: [0.7, 0.78, 1.5]
+              quat: [1.0, 0.0, 0.0, 0.0]
+        suffix:
+          body: _3
+          geom: _3
+      cube_4:
+        path: cubes/mujoco/cube.xml
+        apply:
+          body:
+            cube:
+              pos: [0.7, 0.72, 1.5]
+              quat: [1.0, 0.0, 0.0, -1.0]
+        suffix:
+          body: _4
+          geom: _4
+      cube_5:
+        path: cubes/mujoco/cube.xml
+        apply:
+          body:
+            cube:
+              pos: [0.7, 0.66, 1.5]
+              quat: [0.0, -1.0, 0.0, 1.0]
+        suffix:
+          body: _5
+          geom: _5
+      cube_6:
+        path: cubes/mujoco/cube.xml
+        apply:
+          body:
+            cube:
+              pos: [0.7, 0.6, 1.5]
+              quat: [0.0, 1.0, 0.0, 1.0]
+        suffix:
+          body: _6
+          geom: _6
+    references:
+      lh_palm:
+        body1: LeftHand_WristRoot
+        body2: lh_palm_ref
+      rh_palm:
+        body1: RightHand_WristRoot
+        body2: rh_palm_ref
+    config:
+      step_size: 0.002
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+      nativeccd: true
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  hands_simulation:
+    port: 7500
+    send:
+      lh_THJ5_hands: ["joint_rvalue"]
+      lh_THJ4_hands: ["joint_rvalue"]
+      lh_THJ3_hands: ["joint_rvalue"]
+      lh_THJ2_hands: ["joint_rvalue"]
+      lh_THJ1_hands: ["joint_rvalue"]
+      lh_FFJ4_hands: ["joint_rvalue"]
+      lh_FFJ3_hands: ["joint_rvalue"]
+      lh_FFJ2_hands: ["joint_rvalue"]
+      lh_FFJ1_hands: ["joint_rvalue"]
+      lh_MFJ4_hands: ["joint_rvalue"]
+      lh_MFJ3_hands: ["joint_rvalue"]
+      lh_MFJ2_hands: ["joint_rvalue"]
+      lh_MFJ1_hands: ["joint_rvalue"]
+      lh_RFJ4_hands: ["joint_rvalue"]
+      lh_RFJ3_hands: ["joint_rvalue"]
+      lh_RFJ2_hands: ["joint_rvalue"]
+      lh_RFJ1_hands: ["joint_rvalue"]
+      lh_LFJ5_hands: ["joint_rvalue"]
+      lh_LFJ4_hands: ["joint_rvalue"]
+      lh_LFJ3_hands: ["joint_rvalue"]
+      lh_LFJ2_hands: ["joint_rvalue"]
+      lh_LFJ1_hands: ["joint_rvalue"]
+      rh_THJ5_hands: ["joint_rvalue"]
+      rh_THJ4_hands: ["joint_rvalue"]
+      rh_THJ3_hands: ["joint_rvalue"]
+      rh_THJ2_hands: ["joint_rvalue"]
+      rh_THJ1_hands: ["joint_rvalue"]
+      rh_FFJ4_hands: ["joint_rvalue"]
+      rh_FFJ3_hands: ["joint_rvalue"]
+      rh_FFJ2_hands: ["joint_rvalue"]
+      rh_FFJ1_hands: ["joint_rvalue"]
+      rh_MFJ4_hands: ["joint_rvalue"]
+      rh_MFJ3_hands: ["joint_rvalue"]
+      rh_MFJ2_hands: ["joint_rvalue"]
+      rh_MFJ1_hands: ["joint_rvalue"]
+      rh_RFJ4_hands: ["joint_rvalue"]
+      rh_RFJ3_hands: ["joint_rvalue"]
+      rh_RFJ2_hands: ["joint_rvalue"]
+      rh_RFJ1_hands: ["joint_rvalue"]
+      rh_LFJ5_hands: ["joint_rvalue"]
+      rh_LFJ4_hands: ["joint_rvalue"]
+      rh_LFJ3_hands: ["joint_rvalue"]
+      rh_LFJ2_hands: ["joint_rvalue"]
+      rh_LFJ1_hands: ["joint_rvalue"]
+    receive:
+      LeftHand_WristRoot: ["position", "quaternion"]
+      LeftHand_ThumbTip: ["position", "quaternion"]
+      LeftHand_IndexTip: ["position", "quaternion"]
+      LeftHand_MiddleTip: ["position", "quaternion"]
+      LeftHand_RingTip: ["position", "quaternion"]
+      LeftHand_PinkyTip: ["position", "quaternion"]
+      RightHand_WristRoot: ["position", "quaternion"]
+      RightHand_ThumbTip: ["position", "quaternion"]
+      RightHand_IndexTip: ["position", "quaternion"]
+      RightHand_MiddleTip: ["position", "quaternion"]
+      RightHand_RingTip: ["position", "quaternion"]
+      RightHand_PinkyTip: ["position", "quaternion"]
+
+  multi_sim_simulation:
+    port: 7501
+    send:
+      body: ["position", "quaternion"]
+      joint: ["joint_rvalue"]
+    receive:
+      LeftHand_WristRoot: ["position", "quaternion"]
+      RightHand_WristRoot: ["position", "quaternion"]
+      lh_THJ5_actuator: ["cmd_joint_rvalue"]
+      lh_THJ4_actuator: ["cmd_joint_rvalue"]
+      lh_THJ3_actuator: ["cmd_joint_rvalue"]
+      lh_THJ2_actuator: ["cmd_joint_rvalue"]
+      lh_THJ1_actuator: ["cmd_joint_rvalue"]
+      lh_FFJ4_actuator: ["cmd_joint_rvalue"]
+      lh_FFJ3_actuator: ["cmd_joint_rvalue"]
+      lh_FFJ2_actuator: ["cmd_joint_rvalue"]
+      lh_FFJ1_actuator: ["cmd_joint_rvalue"]
+      lh_MFJ4_actuator: ["cmd_joint_rvalue"]
+      lh_MFJ3_actuator: ["cmd_joint_rvalue"]
+      lh_MFJ2_actuator: ["cmd_joint_rvalue"]
+      lh_MFJ1_actuator: ["cmd_joint_rvalue"]
+      lh_RFJ4_actuator: ["cmd_joint_rvalue"]
+      lh_RFJ3_actuator: ["cmd_joint_rvalue"]
+      lh_RFJ2_actuator: ["cmd_joint_rvalue"]
+      lh_RFJ1_actuator: ["cmd_joint_rvalue"]
+      lh_LFJ5_actuator: ["cmd_joint_rvalue"]
+      lh_LFJ4_actuator: ["cmd_joint_rvalue"]
+      lh_LFJ3_actuator: ["cmd_joint_rvalue"]
+      lh_LFJ2_actuator: ["cmd_joint_rvalue"]
+      lh_LFJ1_actuator: ["cmd_joint_rvalue"]
+      rh_THJ5_actuator: ["cmd_joint_rvalue"]
+      rh_THJ4_actuator: ["cmd_joint_rvalue"]
+      rh_THJ3_actuator: ["cmd_joint_rvalue"]
+      rh_THJ2_actuator: ["cmd_joint_rvalue"]
+      rh_THJ1_actuator: ["cmd_joint_rvalue"]
+      rh_FFJ4_actuator: ["cmd_joint_rvalue"]
+      rh_FFJ3_actuator: ["cmd_joint_rvalue"]
+      rh_FFJ2_actuator: ["cmd_joint_rvalue"]
+      rh_FFJ1_actuator: ["cmd_joint_rvalue"]
+      rh_MFJ4_actuator: ["cmd_joint_rvalue"]
+      rh_MFJ3_actuator: ["cmd_joint_rvalue"]
+      rh_MFJ2_actuator: ["cmd_joint_rvalue"]
+      rh_MFJ1_actuator: ["cmd_joint_rvalue"]
+      rh_RFJ4_actuator: ["cmd_joint_rvalue"]
+      rh_RFJ3_actuator: ["cmd_joint_rvalue"]
+      rh_RFJ2_actuator: ["cmd_joint_rvalue"]
+      rh_RFJ1_actuator: ["cmd_joint_rvalue"]
+      rh_LFJ5_actuator: ["cmd_joint_rvalue"]
+      rh_LFJ4_actuator: ["cmd_joint_rvalue"]
+      rh_LFJ3_actuator: ["cmd_joint_rvalue"]
+      rh_LFJ2_actuator: ["cmd_joint_rvalue"]
+      rh_LFJ1_actuator: ["cmd_joint_rvalue"]
+
+processes:
+  - multiverse_initializing.py:
+      world: world
+      simulation_name: multiverse_initializer
+      port: 5000
+      data_path: multi_sim_init.yaml
+  - multiverse_smoothing.py:
+      world: world
+      simulation_name: multiverse_smoother
+      port: 5006
+      object_names: ["lh_THJ5_hands", "lh_THJ4_hands", "lh_THJ3_hands", "lh_THJ2_hands", "lh_THJ1_hands", "lh_FFJ4_hands", "lh_FFJ3_hands", "lh_FFJ2_hands", "lh_FFJ1_hands", "lh_MFJ4_hands", "lh_MFJ3_hands", "lh_MFJ2_hands", "lh_MFJ1_hands", "lh_RFJ4_hands", "lh_RFJ3_hands", "lh_RFJ2_hands", "lh_RFJ1_hands", "lh_LFJ5_hands", "lh_LFJ4_hands", "lh_LFJ3_hands", "lh_LFJ2_hands", "lh_LFJ1_hands", "rh_THJ5_hands", "rh_THJ4_hands", "rh_THJ3_hands", "rh_THJ2_hands", "rh_THJ1_hands", "rh_FFJ4_hands", "rh_FFJ3_hands", "rh_FFJ2_hands", "rh_FFJ1_hands", "rh_MFJ4_hands", "rh_MFJ3_hands", "rh_MFJ2_hands", "rh_MFJ1_hands", "rh_RFJ4_hands", "rh_RFJ3_hands", "rh_RFJ2_hands", "rh_RFJ1_hands", "rh_LFJ5_hands", "rh_LFJ4_hands", "rh_LFJ3_hands", "rh_LFJ2_hands", "rh_LFJ1_hands"]
+      attribute_names: ["joint_rvalue"]
+      map: ["hands", "actuator"]

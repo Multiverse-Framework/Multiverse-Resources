@@ -1,0 +1,15 @@
+<mujoco>
+    <compiler meshdir="./" texturedir="./" />
+    <asset>
+        <texture name="cube_texture" type="2d" file="logo.png" />
+        <material name="cube_material" texture="cube_texture" specular="1" shininess="1" />
+        <mesh name="cube_mesh" file="cube.obj"/>
+    </asset>
+    <worldbody>
+        <body name="cube">
+            <freejoint />
+            <inertial mass="0.125" pos="0 0 0" quat="1 0 0 0" diaginertia="5.208E-5 5.208E-5 5.208E-5"/>
+            <geom name="cube_geom" type="mesh" mesh="cube_mesh" material="cube_material"/>
+        </body>
+    </worldbody>
+</mujoco>
