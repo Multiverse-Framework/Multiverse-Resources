@@ -64,7 +64,7 @@ class SwichtingCommand(MultiverseClient):
             else:
                 self.request_meta_data["send"][f"{object_name}_ref"] = []
                 self.request_meta_data["send"][f"{object_name}_unreal"] = ["scalar"]
-                self.request_meta_data["receive"][f"{object_name}_ref"] = ["position", "quaternion", "relative_velocity"]
+                self.request_meta_data["receive"][f"{object_name}_ref"] = ["position", "quaternion", "linear_velocity", "angular_velocity"]
         self.send_and_receive_meta_data()
         send_data = [self.sim_time]
         if "send" in self.response_meta_data:

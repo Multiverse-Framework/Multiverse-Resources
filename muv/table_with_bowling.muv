@@ -47,25 +47,25 @@ multiverse_clients:
       bowling: ["force", "torque"]
       table: ["force", "torque"]
     receive:
-      bowling: ["relative_velocity", "position", "quaternion"]
-      table: ["relative_velocity", "position", "quaternion"]
-      cube: ["relative_velocity", "position", "quaternion"]
+      bowling: ["linear_velocity", "angular_velocity", "position", "quaternion"]
+      table: ["linear_velocity", "angular_velocity", "position", "quaternion"]
+      cube: ["linear_velocity", "angular_velocity", "position", "quaternion"]
 
   bowling_simulation:
     port: 7502
     send:
-      bowling: ["relative_velocity", "position", "quaternion"]
+      bowling: ["linear_velocity", "angular_velocity", "position", "quaternion"]
     receive:
       bowling: ["force", "torque"]
 
   table_simulation:
     port: 7503
     send:
-      table: ["relative_velocity", "position", "quaternion"]
+      table: ["linear_velocity", "angular_velocity", "position", "quaternion"]
     receive:
       table: ["force", "torque"]
 
   cube_simulation:
     port: 7504
     send:
-      cube: ["relative_velocity", "position", "quaternion"]
+      cube: ["linear_velocity", "angular_velocity", "position", "quaternion"]

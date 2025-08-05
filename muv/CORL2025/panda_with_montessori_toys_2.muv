@@ -103,7 +103,7 @@ multiverse_clients:
     port: 7500
     send:
       body: ["position", "quaternion"]
-      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+      joint: ["joint_angular_position", "joint_linear_position", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
     receive:
       actuator1: ["cmd_joint_angular_velocity"]
       actuator2: ["cmd_joint_angular_velocity"]
@@ -112,7 +112,7 @@ multiverse_clients:
       actuator5: ["cmd_joint_angular_velocity"]
       actuator6: ["cmd_joint_angular_velocity"]
       actuator7: ["cmd_joint_angular_velocity"]
-      actuator8: ["cmd_joint_tvalue"]
+      actuator8: ["cmd_joint_linear_position"]
 
   ros:
     ros_nodes:
@@ -146,7 +146,7 @@ multiverse_clients:
             port: 7700
             msg_type: std_msgs/Float64
             send:
-              actuator8: ["cmd_joint_tvalue"]
+              actuator8: ["cmd_joint_linear_position"]
             topic: /gripper_command
     
     ros_control:

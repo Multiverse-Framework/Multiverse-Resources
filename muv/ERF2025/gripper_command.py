@@ -39,9 +39,9 @@ if __name__ == "__main__":
         my_connector.run()
 
         my_connector.request_meta_data["send"] = {}
-        my_connector.request_meta_data["send"]["actuator8"] = ["cmd_joint_tvalue"]
+        my_connector.request_meta_data["send"]["actuator8"] = ["cmd_joint_linear_position"]
         my_connector.request_meta_data["receive"] = {}
-        my_connector.request_meta_data["receive"]["gripper_trigger"] = ["cmd_joint_tvalue"]
+        my_connector.request_meta_data["receive"]["gripper_trigger"] = ["cmd_joint_linear_position"]
         my_connector.send_and_receive_meta_data()
 
         # First: open the fingers

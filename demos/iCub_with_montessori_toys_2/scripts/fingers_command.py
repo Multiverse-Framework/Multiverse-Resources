@@ -91,7 +91,7 @@ if __name__ == "__main__":
             "r_hand_thumb_2_actuator", 
             "r_hand_thumb_3_actuator"]
         for gripper_name in gripper_names:
-            my_connector.request_meta_data["send"][gripper_name] = ["cmd_joint_rvalue"]
+            my_connector.request_meta_data["send"][gripper_name] = ["cmd_joint_angular_position"]
         my_connector.send_and_receive_meta_data()
 
         # First: open the fingers

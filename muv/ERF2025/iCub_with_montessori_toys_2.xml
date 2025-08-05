@@ -785,7 +785,7 @@
         <config key="client_port" value="7500" />
         <config key="world_name" value="world" />
         <config key="simulation_name" value="iCub_with_montessori_toys_2" />
-        <config key="send" value="{'body': ['position', 'quaternion'], 'joint': ['joint_rvalue', 'joint_tvalue', 'joint_linear_velocity', 'joint_angular_velocity', 'joint_force', 'joint_torque']}" />
+        <config key="send" value="{'body': ['position', 'quaternion'], 'joint': ['joint_angular_position', 'joint_linear_position', 'joint_linear_velocity', 'joint_angular_velocity', 'joint_force', 'joint_torque']}" />
         <config key="receive" value="{}" />
       </instance>
     </plugin>

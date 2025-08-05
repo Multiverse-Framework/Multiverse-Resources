@@ -101,7 +101,7 @@ multiverse_clients:
     port: 7500
     send:
       body: ["position", "quaternion"]
-      joint: ["joint_rvalue", "joint_tvalue", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
+      joint: ["joint_angular_position", "joint_linear_position", "joint_linear_velocity", "joint_angular_velocity", "joint_force", "joint_torque"]
     receive:
       montessori_object_2_ref: ["position", "quaternion"]
       montessori_object_3_ref: ["position", "quaternion"]

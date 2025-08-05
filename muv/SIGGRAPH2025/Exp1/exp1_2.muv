@@ -58,19 +58,19 @@ multiverse_clients:
       ball: ["force", "torque"]
       table: ["force", "torque"]
     receive:
-      ball: ["relative_velocity"]
-      table: ["relative_velocity"]
+      ball: ["linear_velocity", "angular_velocity"]
+      table: ["linear_velocity", "angular_velocity"]
 
   ball_simulation:
     port: 7502
     send:
-      ball: ["relative_velocity"]
+      ball: ["linear_velocity", "angular_velocity"]
     receive:
       ball: ["force", "torque"]
 
   table_simulation:
     port: 7503
     send:
-      table: ["relative_velocity"]
+      table: ["linear_velocity", "angular_velocity"]
     receive:
       table: ["force", "torque"]

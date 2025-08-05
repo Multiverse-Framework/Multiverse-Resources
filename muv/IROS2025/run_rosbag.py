@@ -6,14 +6,14 @@ from rclpy.node import Node
 from sensor_msgs.msg import JointState
 
 object_attributes = {
-    "actuator_1": ["cmd_joint_rvalue"],
-    "actuator_2": ["cmd_joint_rvalue"],
-    "actuator_3": ["cmd_joint_rvalue"],
-    "actuator_4": ["cmd_joint_rvalue"],
-    "actuator_5": ["cmd_joint_rvalue"],
-    "actuator_6": ["cmd_joint_rvalue"],
-    "actuator_7": ["cmd_joint_rvalue"],
-    "fingers_actuator": ["cmd_joint_tvalue"],
+    "actuator_1": ["cmd_joint_angular_position"],
+    "actuator_2": ["cmd_joint_angular_position"],
+    "actuator_3": ["cmd_joint_angular_position"],
+    "actuator_4": ["cmd_joint_angular_position"],
+    "actuator_5": ["cmd_joint_angular_position"],
+    "actuator_6": ["cmd_joint_angular_position"],
+    "actuator_7": ["cmd_joint_angular_position"],
+    "fingers_actuator": ["cmd_joint_linear_position"],
 }
 
 joint_actuator_map = {
