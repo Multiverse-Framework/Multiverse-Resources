@@ -1,5 +1,5 @@
 <sdf version='1.11'>
-  <model name='left_shadow_hand'>
+  <model name='lh_palm'>
     <link name='lh_palm'>
       <inertial>
         <pose>-0.0021985926178870719 -0.00091810075126349774 0.033778046718497323 0 0 0</pose>
@@ -1293,11 +1293,5 @@
         </material>
       </visual>
     </link>
-    <frame name='lh_palm_ref_joint' attached_to='lh_palm'>
-      <pose>0 0 0 -3.141592566167013 -1.570796282091413 0</pose>
-    </frame>
-    <frame name='lh_palm_ref' attached_to='lh_palm_ref_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
   </model>
 </sdf>

@@ -1,5 +1,5 @@
 <sdf version='1.11'>
-  <model name='right_shadow_hand'>
+  <model name='rh_palm'>
     <link name='rh_palm'>
       <inertial>
         <pose>0.0021985926981499858 -0.00091810055905640667 0.033778046718497323 0 0 0</pose>
@@ -1293,11 +1293,5 @@
         </material>
       </visual>
     </link>
-    <frame name='rh_palm_ref_joint' attached_to='rh_palm'>
-      <pose>0 0 0 0 1.570796282091413 0</pose>
-    </frame>
-    <frame name='rh_palm_ref' attached_to='rh_palm_ref_joint'>
-      <pose>0 0 0 0 0 0</pose>
-    </frame>
   </model>
 </sdf>

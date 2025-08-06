@@ -35,43 +35,43 @@ simulations:
               quat: [0.0, 1.0, 0.0, 1.0]
         suffix:
           joint: _hands
-    # references:
-    #   lh_palm:
-    #     body1: LeftHand_WristRoot
-    #     body2: lh_palm_ref
-    #   lh_thdistal:
-    #     body1: LeftHand_ThumbTip
-    #     body2: lh_thdistal_ref
-    #   lh_ffdistal:
-    #     body1: LeftHand_IndexTip
-    #     body2: lh_ffdistal_ref
-    #   lh_mfdistal:
-    #     body1: LeftHand_MiddleTip
-    #     body2: lh_mfdistal_ref
-    #   lh_rfdistal:
-    #     body1: LeftHand_RingTip
-    #     body2: lh_rfdistal_ref
-    #   lh_lfdistal:
-    #     body1: LeftHand_PinkyTip
-    #     body2: lh_lfdistal_ref
-    #   rh_palm:
-    #     body1: RightHand_WristRoot
-    #     body2: rh_palm_ref
-    #   rh_thdistal:
-    #     body1: RightHand_ThumbTip
-    #     body2: rh_thdistal_ref
-    #   rh_ffdistal:
-    #     body1: RightHand_IndexTip
-    #     body2: rh_ffdistal_ref
-    #   rh_mfdistal:
-    #     body1: RightHand_MiddleTip
-    #     body2: rh_mfdistal_ref
-    #   rh_rfdistal:
-    #     body1: RightHand_RingTip
-    #     body2: rh_rfdistal_ref
-    #   rh_lfdistal:
-    #     body1: RightHand_PinkyTip
-    #     body2: rh_lfdistal_ref
+    references:
+      lh_palm:
+        body1: LeftHand_WristRoot
+        body2: lh_palm_ref
+      lh_thdistal:
+        body1: LeftHand_ThumbTip
+        body2: lh_thdistal_ref
+      lh_ffdistal:
+        body1: LeftHand_IndexTip
+        body2: lh_ffdistal_ref
+      lh_mfdistal:
+        body1: LeftHand_MiddleTip
+        body2: lh_mfdistal_ref
+      lh_rfdistal:
+        body1: LeftHand_RingTip
+        body2: lh_rfdistal_ref
+      lh_lfdistal:
+        body1: LeftHand_PinkyTip
+        body2: lh_lfdistal_ref
+      rh_palm:
+        body1: RightHand_WristRoot
+        body2: rh_palm_ref
+      rh_thdistal:
+        body1: RightHand_ThumbTip
+        body2: rh_thdistal_ref
+      rh_ffdistal:
+        body1: RightHand_IndexTip
+        body2: rh_ffdistal_ref
+      rh_mfdistal:
+        body1: RightHand_MiddleTip
+        body2: rh_mfdistal_ref
+      rh_rfdistal:
+        body1: RightHand_RingTip
+        body2: rh_rfdistal_ref
+      rh_lfdistal:
+        body1: RightHand_PinkyTip
+        body2: rh_lfdistal_ref
     config:
       step_size: 0.01
       integrator: IMPLICITFAST
@@ -180,6 +180,37 @@ simulations:
       cone: ELLIPTIC
       multiccd: true
       nativeccd: true
+  gazebo_sim:
+    simulator: gazebo
+    headless: False
+    world:
+      name: world
+      path: floor.sdf
+    robots:
+      left_shadow_hand:
+        path: left_hand.sdf
+        apply:
+          body:
+            lh_palm:
+              pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
+              quat: [1.0, 0.0, 1.0, 0.0]
+            gravcomp: 1
+      right_shadow_hand:
+        path: right_hand.sdf
+        apply:
+          body:
+            rh_palm:
+              pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
+              quat: [0.0, 1.0, 0.0, 1.0]
+            gravcomp: 1
+    objects:
+      table:
+        path: table/table.sdf
+        apply:
+          body:
+            table:
+              pos: [1.0, 0.0, 1.0]
+              quat: [1.0, 0.0, 0.0, 1.0]
 
 multiverse_server:
   host: "tcp://127.0.0.1"
@@ -189,7 +220,6 @@ multiverse_clients:
   hands_simulation:
     port: 7500
     send:
-      lh_palm: ["force", "torque"]
       lh_THJ5_hands: ["joint_angular_position"]
       lh_THJ4_hands: ["joint_angular_position"]
       lh_THJ3_hands: ["joint_angular_position"]
@@ -236,12 +266,12 @@ multiverse_clients:
       rh_LFJ1_hands: ["joint_angular_position"]
     receive:
       LeftHand_WristRoot: ["position", "quaternion"]
+      RightHand_WristRoot: ["position", "quaternion"]
       LeftHand_ThumbTip: ["position", "quaternion"]
       LeftHand_IndexTip: ["position", "quaternion"]
       LeftHand_MiddleTip: ["position", "quaternion"]
       LeftHand_RingTip: ["position", "quaternion"]
       LeftHand_PinkyTip: ["position", "quaternion"]
-      RightHand_WristRoot: ["position", "quaternion"]
       RightHand_ThumbTip: ["position", "quaternion"]
       RightHand_IndexTip: ["position", "quaternion"]
       RightHand_MiddleTip: ["position", "quaternion"]
@@ -300,6 +330,12 @@ multiverse_clients:
       rh_LFJ3_actuator: ["cmd_joint_angular_position"]
       rh_LFJ2_actuator: ["cmd_joint_angular_position"]
       rh_LFJ1_actuator: ["cmd_joint_angular_position"]
+  
+  gazebo_sim:
+    port: 7502
+    receive:
+      lh_palm: ["position", "quaternion"]
+      rh_palm: ["position", "quaternion"]
 
 processes:
   - multiverse_initializing.py:
