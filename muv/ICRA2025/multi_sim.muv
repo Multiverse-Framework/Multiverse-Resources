@@ -194,7 +194,7 @@ simulations:
             lh_palm:
               pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
               quat: [1.0, 0.0, 1.0, 0.0]
-            gravcomp: 1
+            gravity: "false"
       right_shadow_hand:
         path: right_hand.sdf
         apply:
@@ -202,7 +202,7 @@ simulations:
             rh_palm:
               pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
               quat: [0.0, 1.0, 0.0, 1.0]
-            gravcomp: 1
+            gravity: "false"
     objects:
       table:
         path: table/table.sdf
