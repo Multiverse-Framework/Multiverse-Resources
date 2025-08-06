@@ -1,0 +1,29 @@
+<sdf version='1.12'>
+  <model name='cube'>
+    <link name='cube'>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>10</mass>
+        <inertia>
+          <ixx>0.066666670143604279</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.066666670143604279</iyy>
+          <iyz>0</iyz>
+          <izz>0.066666670143604279</izz>
+        </inertia>
+      </inertial>
+      <visual name='cube_fixed_joint_lump__Geom_0_visual_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.20000000298023221 0.20000000298023221 0.20000000298023221</size>
+          </box>
+        </geometry>
+        <material>
+            <diffuse>0 0 1 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

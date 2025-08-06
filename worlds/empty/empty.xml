@@ -1,0 +1,10 @@
+<mujoco model="bowling">
+  <option timestep="0.001" integrator="RK4" gravity="0 0 -9.81">
+    <flag energy="enable" contact="enable" multiccd="enable" nativeccd="enable" />
+  </option>
+  <compiler angle="radian" />
+
+  <visual>
+    <global fovy="45" azimuth="225" elevation="-30" />
+  </visual>
+</mujoco>

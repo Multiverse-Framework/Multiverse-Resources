@@ -1,0 +1,29 @@
+<sdf version='1.12'>
+  <model name='bowling'>
+    <link name='bowling'>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>10</mass>
+        <inertia>
+          <ixx>0.039999999105930328</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.039999999105930328</iyy>
+          <iyz>0</iyz>
+          <izz>0.039999999105930328</izz>
+        </inertia>
+      </inertial>
+      <visual name='bowling_fixed_joint_lump__Geom_0_visual_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.10000000149011611</radius>
+          </sphere>
+        </geometry>
+        <material>
+            <diffuse>0 0 1 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

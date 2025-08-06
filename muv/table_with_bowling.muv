@@ -16,18 +16,32 @@ simulations:
       path: table_with_bowling/table_with_bowling.xml
 
   bowling_simulation:
-    simulator: mujoco
+    simulator: gazebo
     headless: False
     world:
       name: world
-      path: table_with_bowling/bowling.xml
+      path: empty/empty.sdf
+    objects:
+      bowling:
+        path: table_with_bowling/bowling.sdf
+        apply:
+          body:
+            bowling:
+              pos: [0.0, 0.0, 16.0]
 
   table_simulation:
     simulator: mujoco
     headless: False
     world:
       name: world
-      path: table_with_bowling/table.xml
+      path: empty/empty.xml
+    objects:
+      table:
+        path: table_with_bowling/table.xml
+        apply:
+          body:
+            table:
+              pos: [0.0, 0.0, 8.0]
 
   cube_simulation:
     simulator: mujoco
