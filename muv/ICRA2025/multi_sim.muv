@@ -76,7 +76,7 @@ simulations:
       step_size: 0.01
       integrator: IMPLICITFAST
 
-  multi_sim_simulation:
+  mujoco_sim:
     simulator: mujoco
     headless: False
     world:
@@ -91,6 +91,8 @@ simulations:
               pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
               quat: [1.0, 0.0, 1.0, 0.0]
             gravcomp: 1
+        suffix:
+          joint: mujoco_
       rh_palm:
         path: right_hand.xml
         apply:
@@ -99,6 +101,8 @@ simulations:
               pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
               quat: [0.0, 1.0, 0.0, 1.0]
             gravcomp: 1
+        suffix:
+          joint: mujoco_
     objects:
       table:
         path: table/table.xml
@@ -180,41 +184,42 @@ simulations:
       cone: ELLIPTIC
       multiccd: true
       nativeccd: true
-  gazebo_sim:
-    simulator: gazebo
-    headless: False
-    world:
-      name: world
-      path: floor.sdf
-    robots:
-      left_shadow_hand:
-        path: left_hand.sdf
-        apply:
-          body:
-            lh_palm:
-              pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
-              quat: [1.0, 0.0, 1.0, 0.0]
-            gravity: "false"
-        suffix:
-          joint: _hands
-      right_shadow_hand:
-        path: right_hand.sdf
-        apply:
-          body:
-            rh_palm:
-              pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
-              quat: [0.0, 1.0, 0.0, 1.0]
-            gravity: "false"
-        suffix:
-          joint: _hands
-    objects:
-      table:
-        path: table/table.sdf
-        apply:
-          body:
-            table:
-              pos: [1.0, 0.0, 1.0]
-              quat: [1.0, 0.0, 0.0, 1.0]
+
+  # gazebo_sim:
+  #   simulator: gazebo
+  #   headless: False
+  #   world:
+  #     name: world
+  #     path: floor.sdf
+  #   robots:
+  #     left_shadow_hand:
+  #       path: left_hand.sdf
+  #       apply:
+  #         body:
+  #           lh_palm:
+  #             pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
+  #             quat: [1.0, 0.0, 1.0, 0.0]
+  #           gravity: "false"
+  #       prefix:
+  #         joint: gazebo_
+  #     right_shadow_hand:
+  #       path: right_hand.sdf
+  #       apply:
+  #         body:
+  #           rh_palm:
+  #             pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
+  #             quat: [0.0, 1.0, 0.0, 1.0]
+  #           gravity: "false"
+  #       prefix:
+  #         joint: gazebo_
+  #   objects:
+  #     table:
+  #       path: table/table.sdf
+  #       apply:
+  #         body:
+  #           table:
+  #             pos: [1.0, 0.0, 1.0]
+  #             quat: [1.0, 0.0, 0.0, 1.0]
 
 multiverse_server:
   host: "tcp://127.0.0.1"
@@ -282,7 +287,7 @@ multiverse_clients:
       RightHand_RingTip: ["position", "quaternion"]
       RightHand_PinkyTip: ["position", "quaternion"]
 
-  multi_sim_simulation:
+  mujoco_sim:
     port: 7501
     send:
       body: ["position", "quaternion"]
@@ -335,56 +340,101 @@ multiverse_clients:
       rh_LFJ2_actuator: ["cmd_joint_angular_position"]
       rh_LFJ1_actuator: ["cmd_joint_angular_position"]
   
-  gazebo_sim:
-    port: 7502
-    send:
-      lh_THJ5_hands: ["joint_angular_position"]
-      lh_THJ4_hands: ["joint_angular_position"]
-      lh_THJ3_hands: ["joint_angular_position"]
-      lh_THJ2_hands: ["joint_angular_position"]
-      lh_THJ1_hands: ["joint_angular_position"]
-      lh_FFJ4_hands: ["joint_angular_position"]
-      lh_FFJ3_hands: ["joint_angular_position"]
-      lh_FFJ2_hands: ["joint_angular_position"]
-      lh_FFJ1_hands: ["joint_angular_position"]
-      lh_MFJ4_hands: ["joint_angular_position"]
-      lh_MFJ3_hands: ["joint_angular_position"]
-      lh_MFJ2_hands: ["joint_angular_position"]
-      lh_MFJ1_hands: ["joint_angular_position"]
-      lh_RFJ4_hands: ["joint_angular_position"]
-      lh_RFJ3_hands: ["joint_angular_position"]
-      lh_RFJ2_hands: ["joint_angular_position"]
-      lh_RFJ1_hands: ["joint_angular_position"]
-      lh_LFJ5_hands: ["joint_angular_position"]
-      lh_LFJ4_hands: ["joint_angular_position"]
-      lh_LFJ3_hands: ["joint_angular_position"]
-      lh_LFJ2_hands: ["joint_angular_position"]
-      lh_LFJ1_hands: ["joint_angular_position"]
-      rh_THJ5_hands: ["joint_angular_position"]
-      rh_THJ4_hands: ["joint_angular_position"]
-      rh_THJ3_hands: ["joint_angular_position"]
-      rh_THJ2_hands: ["joint_angular_position"]
-      rh_THJ1_hands: ["joint_angular_position"]
-      rh_FFJ4_hands: ["joint_angular_position"]
-      rh_FFJ3_hands: ["joint_angular_position"]
-      rh_FFJ2_hands: ["joint_angular_position"]
-      rh_FFJ1_hands: ["joint_angular_position"]
-      rh_MFJ4_hands: ["joint_angular_position"]
-      rh_MFJ3_hands: ["joint_angular_position"]
-      rh_MFJ2_hands: ["joint_angular_position"]
-      rh_MFJ1_hands: ["joint_angular_position"]
-      rh_RFJ4_hands: ["joint_angular_position"]
-      rh_RFJ3_hands: ["joint_angular_position"]
-      rh_RFJ2_hands: ["joint_angular_position"]
-      rh_RFJ1_hands: ["joint_angular_position"]
-      rh_LFJ5_hands: ["joint_angular_position"]
-      rh_LFJ4_hands: ["joint_angular_position"]
-      rh_LFJ3_hands: ["joint_angular_position"]
-      rh_LFJ2_hands: ["joint_angular_position"]
-      rh_LFJ1_hands: ["joint_angular_position"]
-    receive:
-      lh_palm: ["position", "quaternion"]
-      rh_palm: ["position", "quaternion"]
+  # gazebo_sim:
+  #   port: 7502
+  #   send:
+  #     body: ["position", "quaternion"]
+  #     gazebo_lh_THJ5: ["joint_angular_position"]
+  #     gazebo_lh_THJ4: ["joint_angular_position"]
+  #     gazebo_lh_THJ3: ["joint_angular_position"]
+  #     gazebo_lh_THJ2: ["joint_angular_position"]
+  #     gazebo_lh_THJ1: ["joint_angular_position"]
+  #     gazebo_lh_FFJ4: ["joint_angular_position"]
+  #     gazebo_lh_FFJ3: ["joint_angular_position"]
+  #     gazebo_lh_FFJ2: ["joint_angular_position"]
+  #     gazebo_lh_FFJ1: ["joint_angular_position"]
+  #     gazebo_lh_MFJ4: ["joint_angular_position"]
+  #     gazebo_lh_MFJ3: ["joint_angular_position"]
+  #     gazebo_lh_MFJ2: ["joint_angular_position"]
+  #     gazebo_lh_MFJ1: ["joint_angular_position"]
+  #     gazebo_lh_RFJ4: ["joint_angular_position"]
+  #     gazebo_lh_RFJ3: ["joint_angular_position"]
+  #     gazebo_lh_RFJ2: ["joint_angular_position"]
+  #     gazebo_lh_RFJ1: ["joint_angular_position"]
+  #     gazebo_lh_LFJ5: ["joint_angular_position"]
+  #     gazebo_lh_LFJ4: ["joint_angular_position"]
+  #     gazebo_lh_LFJ3: ["joint_angular_position"]
+  #     gazebo_lh_LFJ2: ["joint_angular_position"]
+  #     gazebo_lh_LFJ1: ["joint_angular_position"]
+  #     gazebo_rh_THJ5: ["joint_angular_position"]
+  #     gazebo_rh_THJ4: ["joint_angular_position"]
+  #     gazebo_rh_THJ3: ["joint_angular_position"]
+  #     gazebo_rh_THJ2: ["joint_angular_position"]
+  #     gazebo_rh_THJ1: ["joint_angular_position"]
+  #     gazebo_rh_FFJ4: ["joint_angular_position"]
+  #     gazebo_rh_FFJ3: ["joint_angular_position"]
+  #     gazebo_rh_FFJ2: ["joint_angular_position"]
+  #     gazebo_rh_FFJ1: ["joint_angular_position"]
+  #     gazebo_rh_MFJ4: ["joint_angular_position"]
+  #     gazebo_rh_MFJ3: ["joint_angular_position"]
+  #     gazebo_rh_MFJ2: ["joint_angular_position"]
+  #     gazebo_rh_MFJ1: ["joint_angular_position"]
+  #     gazebo_rh_RFJ4: ["joint_angular_position"]
+  #     gazebo_rh_RFJ3: ["joint_angular_position"]
+  #     gazebo_rh_RFJ2: ["joint_angular_position"]
+  #     gazebo_rh_RFJ1: ["joint_angular_position"]
+  #     gazebo_rh_LFJ5: ["joint_angular_position"]
+  #     gazebo_rh_LFJ4: ["joint_angular_position"]
+  #     gazebo_rh_LFJ3: ["joint_angular_position"]
+  #     gazebo_rh_LFJ2: ["joint_angular_position"]
+  #     gazebo_rh_LFJ1: ["joint_angular_position"]
+  #   receive:
+  #     lh_palm: ["position", "quaternion"]
+  #     rh_palm: ["position", "quaternion"]
+  #     gazebo_lh_THJ5: ["cmd_joint_torque"]
+  #     gazebo_lh_THJ4: ["cmd_joint_torque"]
+  #     gazebo_lh_THJ3: ["cmd_joint_torque"]
+  #     gazebo_lh_THJ2: ["cmd_joint_torque"]
+  #     gazebo_lh_THJ1: ["cmd_joint_torque"]
+      # gazebo_lh_FFJ4: ["cmd_joint_torque"]
+      # gazebo_lh_FFJ3: ["cmd_joint_torque"]
+      # gazebo_lh_FFJ2: ["cmd_joint_torque"]
+      # gazebo_lh_FFJ1: ["cmd_joint_torque"]
+      # gazebo_lh_MFJ4: ["cmd_joint_torque"]
+      # gazebo_lh_MFJ3: ["cmd_joint_torque"]
+      # gazebo_lh_MFJ2: ["cmd_joint_torque"]
+      # gazebo_lh_MFJ1: ["cmd_joint_torque"]
+      # gazebo_lh_RFJ4: ["cmd_joint_torque"]
+      # gazebo_lh_RFJ3: ["cmd_joint_torque"]
+      # gazebo_lh_RFJ2: ["cmd_joint_torque"]
+      # gazebo_lh_RFJ1: ["cmd_joint_torque"]
+      # gazebo_lh_LFJ5: ["cmd_joint_torque"]
+      # gazebo_lh_LFJ4: ["cmd_joint_torque"]
+      # gazebo_lh_LFJ3: ["cmd_joint_torque"]
+      # gazebo_lh_LFJ2: ["cmd_joint_torque"]
+      # gazebo_lh_LFJ1: ["cmd_joint_torque"]
+      # gazebo_rh_THJ5: ["cmd_joint_torque"]
+      # gazebo_rh_THJ4: ["cmd_joint_torque"]
+      # gazebo_rh_THJ3: ["cmd_joint_torque"]
+      # gazebo_rh_THJ2: ["cmd_joint_torque"]
+      # gazebo_rh_THJ1: ["cmd_joint_torque"]
+      # gazebo_rh_FFJ4: ["cmd_joint_torque"]
+      # gazebo_rh_FFJ3: ["cmd_joint_torque"]
+      # gazebo_rh_FFJ2: ["cmd_joint_torque"]
+      # gazebo_rh_FFJ1: ["cmd_joint_torque"]
+      # gazebo_rh_MFJ4: ["cmd_joint_torque"]
+      # gazebo_rh_MFJ3: ["cmd_joint_torque"]
+      # gazebo_rh_MFJ2: ["cmd_joint_torque"]
+      # gazebo_rh_MFJ1: ["cmd_joint_torque"]
+      # gazebo_rh_RFJ4: ["cmd_joint_torque"]
+      # gazebo_rh_RFJ3: ["cmd_joint_torque"]
+      # gazebo_rh_RFJ2: ["cmd_joint_torque"]
+      # gazebo_rh_RFJ1: ["cmd_joint_torque"]
+      # gazebo_rh_LFJ5: ["cmd_joint_torque"]
+      # gazebo_rh_LFJ4: ["cmd_joint_torque"]
+      # gazebo_rh_LFJ3: ["cmd_joint_torque"]
+      # gazebo_rh_LFJ2: ["cmd_joint_torque"]
+      # gazebo_rh_LFJ1: ["cmd_joint_torque"]
 
 processes:
   - multiverse_initializing.py:
@@ -400,3 +450,10 @@ processes:
       object_names: ["lh_THJ5_hands", "lh_THJ4_hands", "lh_THJ3_hands", "lh_THJ2_hands", "lh_THJ1_hands", "lh_FFJ4_hands", "lh_FFJ3_hands", "lh_FFJ2_hands", "lh_FFJ1_hands", "lh_MFJ4_hands", "lh_MFJ3_hands", "lh_MFJ2_hands", "lh_MFJ1_hands", "lh_RFJ4_hands", "lh_RFJ3_hands", "lh_RFJ2_hands", "lh_RFJ1_hands", "lh_LFJ5_hands", "lh_LFJ4_hands", "lh_LFJ3_hands", "lh_LFJ2_hands", "lh_LFJ1_hands", "rh_THJ5_hands", "rh_THJ4_hands", "rh_THJ3_hands", "rh_THJ2_hands", "rh_THJ1_hands", "rh_FFJ4_hands", "rh_FFJ3_hands", "rh_FFJ2_hands", "rh_FFJ1_hands", "rh_MFJ4_hands", "rh_MFJ3_hands", "rh_MFJ2_hands", "rh_MFJ1_hands", "rh_RFJ4_hands", "rh_RFJ3_hands", "rh_RFJ2_hands", "rh_RFJ1_hands", "rh_LFJ5_hands", "rh_LFJ4_hands", "rh_LFJ3_hands", "rh_LFJ2_hands", "rh_LFJ1_hands"]
       attribute_names: ["joint_angular_position"]
       map: ["hands", "actuator"]
+  - sleep: 1
+  - multiverse_control.py:
+      world: world
+      simulation_name: multiverse_controller
+      port: 5007
+      rate: 1000
+      data_path: multi_sim_controller.yaml

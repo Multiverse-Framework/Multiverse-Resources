@@ -1,0 +1,575 @@
+gazebo_lh_THJ5:
+  cmd_joint_torque:
+    range: [-3.0, 3.0]
+    depends_on:
+      lh_THJ5_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 0.4
+          range: [-1.0472, 1.0472]
+      gazebo_lh_THJ5:
+        joint_angular_position: 
+          gain:
+            kp: -0.4
+
+gazebo_lh_THJ4:
+  cmd_joint_torque:
+    range: [-2.0, 2.0]
+    depends_on:
+      lh_THJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [0.0, 1.22173]
+      gazebo_lh_THJ4:
+        joint_angular_position:
+          gain:
+            kp: -1.0
+
+gazebo_lh_THJ3:
+  cmd_joint_torque:
+    depends_on:
+      lh_THJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [-0.20944, 0.20944]
+      gazebo_lh_THJ3:
+        joint_angular_position: 
+          gain:
+            kp: -0.5      
+
+gazebo_lh_THJ2:
+  cmd_joint_torque:
+    depends_on:
+      lh_THJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.5
+          range: [-0.698132, 0.698132]
+      gazebo_lh_THJ2:
+        joint_angular_position: 
+          gain:
+            kp: -1.5      
+
+gazebo_lh_THJ1:
+  cmd_joint_torque:
+    depends_on:
+      lh_THJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_lh_THJ1:
+        joint_angular_position: 
+          gain:
+            kp: -1.0      
+
+gazebo_lh_FFJ4:
+  cmd_joint_torque:
+    depends_on:
+      lh_FFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.349066, 0.349066]
+      gazebo_lh_FFJ4:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_FFJ3:
+  cmd_joint_torque:
+    depends_on:
+      lh_FFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_lh_FFJ3:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_FFJ2:
+  cmd_joint_torque:
+    depends_on:
+      lh_FFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_lh_FFJ2:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_lh_FFJ1:
+  cmd_joint_torque:
+    depends_on:
+      lh_FFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_lh_FFJ1:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_lh_MFJ4:
+  cmd_joint_torque:
+    depends_on:
+      lh_MFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.349066, 0.349066]
+      gazebo_lh_MFJ4:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_MFJ3:
+  cmd_joint_torque:
+    depends_on:
+      lh_MFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_lh_MFJ3:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_MFJ2:
+  cmd_joint_torque:
+    depends_on:
+      lh_MFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_lh_MFJ2:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_lh_MFJ1:
+  cmd_joint_torque:
+    depends_on:
+      lh_MFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_lh_MFJ1:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_lh_RFJ4:
+  cmd_joint_torque:
+    depends_on:
+      lh_RFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.349066, 0.349066]
+      gazebo_lh_RFJ4:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_RFJ3:
+  cmd_joint_torque:
+    depends_on:
+      lh_RFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_lh_RFJ3:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_RFJ2:
+  cmd_joint_torque:
+    depends_on:
+      lh_RFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_lh_RFJ2:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_lh_RFJ1:
+  cmd_joint_torque:
+    depends_on:
+      lh_RFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_lh_RFJ1:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_lh_LFJ5:
+  cmd_joint_torque:
+    depends_on:
+      lh_LFJ5_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [0, 0.785398]
+      gazebo_lh_LFJ5:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_LFJ4:
+  cmd_joint_torque:
+    depends_on:
+      lh_LFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.349066, 0.349066]
+      gazebo_lh_LFJ4:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_LFJ3:
+  cmd_joint_torque:
+    depends_on:
+      lh_LFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_lh_LFJ3:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_lh_LFJ2:
+  cmd_joint_torque:
+    depends_on:
+      lh_LFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_lh_LFJ2:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_lh_LFJ1:
+  cmd_joint_torque:
+    depends_on:
+      lh_LFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_lh_LFJ1:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_rh_THJ5:
+  cmd_joint_torque:
+    range: [-3.0, 3.0]
+    depends_on:
+      rh_THJ5_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 0.4
+          range: [-1.0472, 1.0472]
+      gazebo_rh_THJ5:
+        joint_angular_position: 
+          gain:
+            kp: -0.4
+
+gazebo_rh_THJ4:
+  cmd_joint_torque:
+    range: [-2.0, 2.0]
+    depends_on:
+      rh_THJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [0.0, 1.22173]
+      gazebo_rh_THJ4:
+        joint_angular_position:
+          gain:
+            kp: -1.0
+
+gazebo_rh_THJ3:
+  cmd_joint_torque:
+    depends_on:
+      rh_THJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [-0.20944, 0.20944]
+      gazebo_rh_THJ3:
+        joint_angular_position: 
+          gain:
+            kp: -0.5      
+
+gazebo_rh_THJ2:
+  cmd_joint_torque:
+    depends_on:
+      rh_THJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.5
+          range: [-0.698132, 0.698132]
+      gazebo_rh_THJ2:
+        joint_angular_position: 
+          gain:
+            kp: -1.5      
+
+gazebo_rh_THJ1:
+  cmd_joint_torque:
+    depends_on:
+      rh_THJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_rh_THJ1:
+        joint_angular_position: 
+          gain:
+            kp: -1.0      
+
+gazebo_rh_FFJ4:
+  cmd_joint_torque:
+    depends_on:
+      rh_FFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.349066, 0.349066]
+      gazebo_rh_FFJ4:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_FFJ3:
+  cmd_joint_torque:
+    depends_on:
+      rh_FFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_rh_FFJ3:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_FFJ2:
+  cmd_joint_torque:
+    depends_on:
+      rh_FFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_rh_FFJ2:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_rh_FFJ1:
+  cmd_joint_torque:
+    depends_on:
+      rh_FFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_rh_FFJ1:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_rh_MFJ4:
+  cmd_joint_torque:
+    depends_on:
+      rh_MFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.349066, 0.349066]
+      gazebo_rh_MFJ4:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_MFJ3:
+  cmd_joint_torque:
+    depends_on:
+      rh_MFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_rh_MFJ3:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_MFJ2:
+  cmd_joint_torque:
+    depends_on:
+      rh_MFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_rh_MFJ2:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_rh_MFJ1:
+  cmd_joint_torque:
+    depends_on:
+      rh_MFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_rh_MFJ1:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_rh_RFJ4:
+  cmd_joint_torque:
+    depends_on:
+      rh_RFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.349066, 0.349066]
+      gazebo_rh_RFJ4:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_RFJ3:
+  cmd_joint_torque:
+    depends_on:
+      rh_RFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_rh_RFJ3:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_RFJ2:
+  cmd_joint_torque:
+    depends_on:
+      rh_RFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_rh_RFJ2:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_rh_RFJ1:
+  cmd_joint_torque:
+    depends_on:
+      rh_RFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_rh_RFJ1:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_rh_LFJ5:
+  cmd_joint_torque:
+    depends_on:
+      rh_LFJ5_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [0, 0.785398]
+      gazebo_rh_LFJ5:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_LFJ4:
+  cmd_joint_torque:
+    depends_on:
+      rh_LFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.349066, 0.349066]
+      gazebo_rh_LFJ4:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_LFJ3:
+  cmd_joint_torque:
+    depends_on:
+      rh_LFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+          range: [-0.261799, 1.5708]
+      gazebo_rh_LFJ3:
+        joint_angular_position: 
+          gain:
+            kp: -1.0
+
+gazebo_rh_LFJ2:
+  cmd_joint_torque:
+    depends_on:
+      rh_LFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_rh_LFJ2:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
+
+gazebo_rh_LFJ1:
+  cmd_joint_torque:
+    depends_on:
+      rh_LFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 0.5
+          range: [0.0, 3.1415]
+      gazebo_rh_LFJ1:
+        joint_angular_position: 
+          gain:
+            kp: -0.5
