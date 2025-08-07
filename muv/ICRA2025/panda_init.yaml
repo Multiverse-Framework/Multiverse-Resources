@@ -1,0 +1,45 @@
+actuator1:
+  cmd_joint_angular_position: [0.0]
+  cmd_joint_torque: [0.0]
+actuator2:
+  cmd_joint_angular_position: [0.0]
+  cmd_joint_torque: [0.0]
+actuator3:
+  cmd_joint_angular_position: [0.0]
+  cmd_joint_torque: [0.0]
+actuator4:
+  cmd_joint_angular_position: [-1.57079]
+  cmd_joint_torque: [0.0]
+actuator5:
+  cmd_joint_angular_position: [0.0]
+  cmd_joint_torque: [0.0]
+actuator6:
+  cmd_joint_angular_position: [1.57079]
+  cmd_joint_torque: [0.0]
+actuator7:
+  cmd_joint_angular_position: [-0.7853]
+  cmd_joint_torque: [0.0]
+actuator8:
+  scalar: [255]
+
+gazebo_joint1:
+  cmd_joint_angular_position: [0.0]
+  cmd_joint_torque: [0.0]
+gazebo_joint2:
+  cmd_joint_angular_position: [0.0]
+  cmd_joint_torque: [0.0]
+gazebo_joint3:
+  cmd_joint_angular_position: [0.0]
+  cmd_joint_torque: [0.0]
+gazebo_joint4:
+  cmd_joint_angular_position: [-1.57079]
+  cmd_joint_torque: [0.0]
+gazebo_joint5:
+  cmd_joint_angular_position: [0.0]
+  cmd_joint_torque: [0.0]
+gazebo_joint6:
+  cmd_joint_angular_position: [1.57079]
+  cmd_joint_torque: [0.0]
+gazebo_joint7:
+  cmd_joint_angular_position: [-0.7853]
+  cmd_joint_torque: [0.0]

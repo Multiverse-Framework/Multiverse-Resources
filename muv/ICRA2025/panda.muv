@@ -1,0 +1,148 @@
+resources: 
+  - ../../robots
+  - ../../worlds
+  - ../../objects
+  - ../../demos
+  - ./
+  - ../../../Multiverse-Utilities/scripts/
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  panda_teleop:
+    simulator: mujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      panda:
+        path: franka_emika_panda/mjcf/panda_with_ref.xml
+        apply:
+          body:
+            gravcomp: 1
+          joint:
+            joint1: &damping
+              damping: 10.0
+            joint2: *damping
+            joint3: *damping
+            joint4: *damping
+            joint5: *damping
+            joint6: *damping
+            joint7: *damping
+        prefix:
+          joint: panda_
+    references:
+      hand_controller:
+        body1: hand_ref
+        body2: hand
+        torquescale: 1
+    config:
+      step_size: 0.002
+      real_time_factor: 1
+      integrator: IMPLICITFAST
+
+  mujoco_simulation:
+    simulator: mujoco
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      panda:
+        path: franka_emika_panda/mjcf/panda_with_torque_control.xml
+        apply:
+          body:
+            gravcomp: 1
+        prefix:
+          joint: "mujoco_"
+    config:
+      step_size: 0.002
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+      nativeccd: true
+
+  gazebo_simulation:
+    simulator: gazebo
+    world:
+      name: world
+      path: floor/floor.sdf
+    robots:
+      panda:
+        path: franka_emika_panda/sdf/panda.sdf
+        apply:
+          body:
+            gravity: "false"
+        prefix:
+          joint: "gazebo_"
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  panda_teleop:
+    port: 7505
+    send:
+      joint: ["joint_angular_position", "joint_linear_position", "joint_linear_velocity", "joint_angular_velocity"]
+
+  mujoco_simulation:
+    port: 7500
+    send:
+      joint: ["joint_angular_position", "joint_angular_velocity"]
+    receive:
+      actuator1: ["cmd_joint_torque"]
+      actuator2: ["cmd_joint_torque"]
+      actuator3: ["cmd_joint_torque"]
+      actuator4: ["cmd_joint_torque"]
+      actuator5: ["cmd_joint_torque"]
+      actuator6: ["cmd_joint_torque"]
+      actuator7: ["cmd_joint_torque"]
+      actuator8: ["scalar"]
+
+  gazebo_simulation:
+    port: 6500
+    send:
+      gazebo_joint1: ["joint_angular_position", "joint_angular_velocity"]
+      gazebo_joint2: ["joint_angular_position", "joint_angular_velocity"]
+      gazebo_joint3: ["joint_angular_position", "joint_angular_velocity"]
+      gazebo_joint4: ["joint_angular_position", "joint_angular_velocity"]
+      gazebo_joint5: ["joint_angular_position", "joint_angular_velocity"]
+      gazebo_joint6: ["joint_angular_position", "joint_angular_velocity"]
+      gazebo_joint7: ["joint_angular_position", "joint_angular_velocity"]
+    receive:
+      gazebo_joint1: ["cmd_joint_torque"]
+      gazebo_joint2: ["cmd_joint_torque"]
+      gazebo_joint3: ["cmd_joint_torque"]
+      gazebo_joint4: ["cmd_joint_torque"]
+      gazebo_joint5: ["cmd_joint_torque"]
+      gazebo_joint6: ["cmd_joint_torque"]
+      gazebo_joint7: ["cmd_joint_torque"]
+
+processes:
+  - multiverse_initializing.py:
+      world: world
+      simulation_name: multiverse_initializer
+      port: 5000
+      data_path: panda_init.yaml
+  - multiverse_control.py:
+      world: world
+      simulation_name: multiverse_controller
+      port: 5001
+      rate: 100
+      data_path: panda_controller.yaml
+  - multiverse_smoothing.py:
+      world: world
+      simulation_name: multiverse_smoother1
+      port: 5002
+      object_names: ["panda_joint1", "panda_joint2", "panda_joint3", "panda_joint4", "panda_joint5", "panda_joint6", "panda_joint7"]
+      attribute_names: ["joint_angular_position"]
+      map: ["panda_joint", "actuator"]
+  - multiverse_smoothing.py:
+      world: world
+      simulation_name: multiverse_smoother2
+      port: 5003
+      object_names: ["panda_joint1", "panda_joint2", "panda_joint3", "panda_joint4", "panda_joint5", "panda_joint6", "panda_joint7"]
+      attribute_names: ["joint_angular_position"]
+      map: ["panda_", "gazebo_"]

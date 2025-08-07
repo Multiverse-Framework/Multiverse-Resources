@@ -1,0 +1,1282 @@
+<sdf version='1.12'>
+  <model name='panda'>
+    <joint name="fix_to_world" type="fixed">
+      <parent>world</parent>
+      <child>panda</child>
+    </joint>
+    <link name='panda'>
+      <inertial>
+        <pose>-0.041018001735210419 -0.00014000000373926011 0.049973998218774802 0 0 0</pose>
+        <mass>0.62976902723312378</mass>
+        <inertia>
+          <ixx>0.0031499998923813278</ixx>
+          <ixy>8.2897145737138682e-07</ixy>
+          <ixz>0.00014999999438674289</ixz>
+          <iyy>0.0038799999968735272</iyy>
+          <iyz>8.2299114240520787e-06</iyz>
+          <izz>0.0042850001213994744</izz>
+        </inertia>
+      </inertial>
+      <collision name='panda_fixed_joint_lump__Geom_11_collision'>
+        <pose>-0.02918976545333862 -0.00087946496205404401 0.056603193283081048 0.073410503566265134 -1.1999953985214227 3.0813767910003662</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_c.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='panda_fixed_joint_lump__Geom_0_visual'>
+        <pose>-0.02434170804917812 0.068985842168331146 0.037001296877861023 0.88097333908081055 -0.00090121978428207774 1.731059789657593</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_1_visual_1'>
+        <pose>-0.025005137547850609 0.072889678180217743 0.036978751420974731 2.3542244434356689 -0.066276095807552476 1.6549332141876218</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_2_visual_2'>
+        <pose>-0.02374683320522308 -0.065352961421012878 0.062999323010444641 1.5704005956649782 -0.0057430132292210822 -0.16589890420436862</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_3_visual_3'>
+        <pose>-0.024884207174181942 -0.072681337594985962 0.062931284308433533 0.86253124475479115 0.085192404687404716 1.286632180213928</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_4_visual_4'>
+        <pose>-0.06482117623090744 -0.065604247152805328 0.048001378774642937 0.030375862494111058 0.012032273225486277 1.4114311933517463</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_5_visual_5'>
+        <pose>-0.059638854116201401 0.057885069400072098 0.036908484995365143 1.7514346837997441 -1.1657341758564144e-15 1.731783270835876</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_6_visual_6'>
+        <pose>0.0110528040677309 -0.072000034153461456 0.04606270045042038 -0.12475356459617619 0.002619338454678613 1.41191554069519</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_7.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_7_visual_7'>
+        <pose>-0.029952924698591229 -3.4480170143069699e-05 0.053494546562433243 -0.0013455851003527633 -1.135651707649231 -3.1380126476287842</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_8.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_8_visual_8'>
+        <pose>-0.02499927394092083 -0.073032073676586151 0.0328950434923172 1.8630088567733756 -1.5551604032516493 -0.43340367078781517</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_9.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_9_visual_9'>
+        <pose>-0.02378720045089722 -0.065486304461956024 0.032974105328321457 1.5455597639083858 -0.011791349388659007 -0.15464279055595401</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_10.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='panda_fixed_joint_lump__Geom_10_visual_10'>
+        <pose>0.01104283332824707 0.071996957063674927 0.046087440103292472 -0.12477058172225948 -0.0025225700810551726 1.7314902544021611</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link0_11.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint1' type='revolute'>
+      <pose relative_to='panda'>0 0 0.33300000429153442 0 0 0</pose>
+      <parent>panda</parent>
+      <child>link1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.897300004959106</lower>
+          <upper>2.897300004959106</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link1'>
+      <pose relative_to='joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0038749999366700649 0.0020810000132769351 -0.047619998455047607 -0.009398424997925767 -0.027576528489589695 1.5581063032150273</pose>
+        <mass>4.9706840515136719</mass>
+        <inertia>
+          <ixx>0.70713698863983154</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.70343542098999023</iyy>
+          <iyz>0</iyz>
+          <izz>0.0085245566442608833</izz>
+        </inertia>
+      </inertial>
+      <collision name='link1_fixed_joint_lump__Geom_13_collision'>
+        <pose>1.1398981769161759e-05 -0.031265527009963989 -0.06937330961227417 0.35075756907463085 -0.0003218273341190071 0.0006491282838396727</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link1_c.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link1_fixed_joint_lump__Geom_12_visual'>
+        <pose>2.2415551939047869e-06 -0.032479386776685708 -0.067575864493846893 0.38337042927741999 0.00014062898117117595 -0.00037883082404732704</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint2' type='revolute'>
+      <pose relative_to='link1'>0 0 0 -1.5707963705062871 0 0</pose>
+      <parent>link1</parent>
+      <child>link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.762799978256226</lower>
+          <upper>1.762799978256226</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link2'>
+      <pose relative_to='joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.003140999935567379 -0.028720000758767131 0.0034950000699609518 -2.3514454364776611 -0.96178817749023482 -0.72298550605773948</pose>
+        <mass>0.64692598581314087</mass>
+        <inertia>
+          <ixx>0.031032642349600788</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.028300106525421139</iyy>
+          <iyz>0</iyz>
+          <izz>0.002734250389039516</izz>
+        </inertia>
+      </inertial>
+      <collision name='link2_fixed_joint_lump__Geom_15_collision'>
+        <pose>-1.317655369348358e-05 -0.070321552455425262 0.031178239732980732 1.916776657104492 3.8633865187875893e-05 -0.0001752009702613577</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link2_c.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link2_fixed_joint_lump__Geom_14_visual'>
+        <pose>3.082552893829416e-06 -0.068602755665779114 0.032209731638431549 1.9510754346847528 -0.00039106394979171487 -0.00013279869745019815</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint3' type='revolute'>
+      <pose relative_to='link2'>0 -0.31600001454353333 2.4651903288156619e-32 1.5707963705062871 0 0</pose>
+      <parent>link2</parent>
+      <child>link3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.897300004959106</lower>
+          <upper>2.897300004959106</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link3'>
+      <pose relative_to='joint3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.027518000453710559 0.039252001792192459 -0.066501997411251068 0.37785014510154724 0.35082399845123308 1.7004150152206423</pose>
+        <mass>3.2286040782928471</mass>
+        <inertia>
+          <ixx>0.04150138795375824</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.041479256004095078</iyy>
+          <iyz>0</iyz>
+          <izz>0.0012463544262573121</izz>
+        </inertia>
+      </inertial>
+      <collision name='link3_fixed_joint_lump__Geom_20_collision'>
+        <pose>0.044348306953907013 0.024928325787186619 -0.038129985332489007 0.62642812728881847 -0.64891242980957053 2.788815021514893</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link3_c.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link3_fixed_joint_lump__Geom_16_visual'>
+        <pose>0.041640069335699081 0.024441450834274289 -0.037274930626153953 0.57065826654434204 -0.72423368692398138 2.9041154384613042</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link3_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link3_fixed_joint_lump__Geom_17_visual_1'>
+        <pose>0.021553479135036469 -0.01122317090630531 -0.01154831890016794 -3.1202132701873779 -1.0597566366195679 -1.4907529354095459</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link3_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link3_fixed_joint_lump__Geom_18_visual_2'>
+        <pose>0.056876711547374732 -0.01139492075890303 -0.061174463480710983 0.0014353713486343616 -0.0078644454479217495 2.3501865863800049</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link3_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link3_fixed_joint_lump__Geom_19_visual_3'>
+        <pose>0.077491171658039093 0.079633466899394989 -0.0040228888392448434 0.91038072109222423 0.053157500922679714 1.636165976524353</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link3_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint4' type='revolute'>
+      <pose relative_to='link3'>0.082500003278255463 -1.2325951644078309e-32 1.110223024625157e-16 1.5707963705062871 0 0</pose>
+      <parent>link3</parent>
+      <child>link4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.0717999935150151</lower>
+          <upper>-0.069799996912479401</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link4'>
+      <pose relative_to='joint4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.053169999271631241 0.1044190004467964 0.02745399996638298 0.94913733005523671 -0.76513409614562977 0.96968561410903942</pose>
+        <mass>3.5878949165344238</mass>
+        <inertia>
+          <ixx>0.034959640353918083</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.02814827673137188</iyy>
+          <iyz>0</iyz>
+          <izz>0.01062008365988731</izz>
+        </inertia>
+      </inertial>
+      <collision name='link4_fixed_joint_lump__Geom_25_collision'>
+        <pose>-0.038550294935703278 0.039525609463453293 0.024716241285204891 1.157525300979614 0.36233735084533691 0.6286469101905825</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link4_c.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link4_fixed_joint_lump__Geom_21_visual'>
+        <pose>-0.025622488930821419 0.061185218393802643 -0.01139383111149073 -1.5781503915786741 -0.79126405715942449 -3.1295969486236568</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link4_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link4_fixed_joint_lump__Geom_22_visual_1'>
+        <pose>-0.041551943868398673 0.038693804293870933 0.024040184915065769 1.1469171047210689 0.32720360159873962 0.65765702724456787</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link4_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link4_fixed_joint_lump__Geom_23_visual_2'>
+        <pose>-0.0050090090371668339 0.004010283388197422 0.079634472727775574 0.017287049442529945 -1.4866933822631876 2.4623763561248775</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link4_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link4_fixed_joint_lump__Geom_24_visual_3'>
+        <pose>-0.060935694724321372 0.01154452096670866 -0.011228485032916071 -0.11249836534261695 -0.50914639234542847 1.6149866580963128</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link4_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint5' type='revolute'>
+      <pose relative_to='link4'>-0.082500003278255463 0.38400000333786011 0 -1.5707963705062871 0 0</pose>
+      <parent>link4</parent>
+      <child>link5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.897300004959106</lower>
+          <upper>2.897300004959106</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link5'>
+      <pose relative_to='joint5'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.01195299997925758 0.041064999997615807 -0.038437001407146447 -0.044814899563789395 0.13901987671852112 -0.28689983487129206</pose>
+        <mass>1.2259459495544429</mass>
+        <inertia>
+          <ixx>0.0367625392973423</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.028853090479969978</iyy>
+          <iyz>0</iyz>
+          <izz>0.0080343708395957947</izz>
+        </inertia>
+      </inertial>
+      <collision name='link5_fixed_joint_lump__Geom_29_collision'>
+        <pose>0.00097325880778953433 0.019922221079468731 -0.20910695195198059 -2.9667460918426509 -0.90616524219512962 -1.8724935054779053</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link5_c0.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='link5_fixed_joint_lump__Geom_30_collision_1'>
+        <pose>-0.00023507016885560011 0.080059252679347992 -0.12115345150232321 0.0037856136914342637 0.24683557450771332 1.5664136409759519</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link5_c1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='link5_fixed_joint_lump__Geom_31_collision_2'>
+        <pose>0.0001502534287283197 0.069182969629764557 -0.0045388308353722104 1.1780917644500728 -0.0051827174611389637 0.0052076573483645925</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link5_c2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link5_fixed_joint_lump__Geom_26_visual'>
+        <pose>-0.0001290949294343591 0.095753885805606842 -0.032729625701904297 0.0021646835375577159 0.04994665086269378 1.5671027898788448</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link5_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link5_fixed_joint_lump__Geom_27_visual_1'>
+        <pose>-0.010146972723305231 0.10322721302509311 -0.11142128705978389 0.12574712932109833 0.17403830587863933 1.692032933235168</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link5_fixed_joint_lump__Geom_28_visual_2'>
+        <pose>-1.4686699500998659e-07 0.044252697378396988 -0.1112985387444496 -0.27700033783912659 2.4900251446524642e-05 6.5546038968022886e-05</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link5_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint6' type='revolute'>
+      <pose relative_to='link5'>0 -3.081487911019577e-33 0 1.5707963705062871 0 0</pose>
+      <parent>link5</parent>
+      <child>link6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.017500000074505809</lower>
+          <upper>3.752500057220459</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link6'>
+      <pose relative_to='joint6'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.060148999094963067 -0.01411699969321489 -0.010517000220716 0.51302474737167314 -1.2262420654296884 2.524661540985107</pose>
+        <mass>1.6665550470352171</mass>
+        <inertia>
+          <ixx>0.0058427611365914336</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0043103736825287342</iyy>
+          <iyz>0</iyz>
+          <izz>0.0015978650189936161</izz>
+        </inertia>
+      </inertial>
+      <collision name='link6_fixed_joint_lump__Geom_49_collision'>
+        <pose>0.051002293825149543 0.0069326730445027351 0.0061689931899309158 -3.061599969863892 -1.4277689456939708 0.048520706593990284</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_c.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link6_fixed_joint_lump__Geom_32_visual'>
+        <pose>0.025386864319443699 -0.01551799941807985 -0.0051399674266576767 0.16938182711601221 -1.5174187421798704 2.4590718746185307</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_33_visual_1'>
+        <pose>9.6891286375466734e-05 0.001489222166128457 0.052967306226491928 -1.7817827463150022 -1.4691929817199723 -3.1375558376312274</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_34_visual_2'>
+        <pose>0.1033527925610542 0.068194136023521423 -0.00058207398978993297 1.4199872016906741 -0.0099118994548915811 1.3432543277740481</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_35_visual_3'>
+        <pose>0.088205479085445404 0.077725529670715332 -0.010604832321405411 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_36_visual_4'>
+        <pose>0.098668210208415985 0.075884878635406494 -3.8183816286618821e-06 1.5707963705062871 -1.1657341758564144e-15 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_37_visual_5'>
+        <pose>0.088203072547912598 0.077727921307086945 0.01061945594847202 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_38_visual_6'>
+        <pose>0.077755987644195557 0.079569511115550995 -2.4452554043818959e-06 1.5707963705062871 -1.1657341758564144e-15 1.5707963705062871</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_39_visual_7'>
+        <pose>0.063389331102371216 0.08160700649023056 -1.3937560083832071e-07 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_7.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0490199998 0.676470041 0.975489974 1</diffuse>
+          <ambient>0.0490199998 0.676470041 0.975489974 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_40_visual_8'>
+        <pose>0.1144352480769157 0.070936717092990875 -1.2390758001856741e-06 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_8.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0490199998 0.676470041 0.975489974 1</diffuse>
+          <ambient>0.0490199998 0.676470041 0.975489974 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_41_visual_9'>
+        <pose>-0.00072939199162647128 -0.0001012687789625488 0.052537377923727042 -0.012449674308300024 -1.468942165374759 -3.141592566167013</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_9.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_42_visual_10'>
+        <pose>0.091525919735431671 0.075753055512905121 -6.295970524661243e-05 1.6008551120758059 -0.00059030129341403103 1.351572632789612</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_10.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_43_visual_11'>
+        <pose>0.088052384555339813 0.076807066798210144 -1.222126047650818e-05 0 0 1.3960084915161131</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_11.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_44_visual_12'>
+        <pose>0.088302627205848694 0.077489271759986877 -0.024865582585334781 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_12.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 1 0 1</diffuse>
+          <ambient>0 1 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_45_visual_13'>
+        <pose>0.088170304894447327 0.077455528080463409 0.025032425299286839 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_13.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_46_visual_14'>
+        <pose>0.0074149947613477707 0.00012494443217292431 0.043721359223127372 0.02864136174321167 -1.4710581302642891 3.1242022514343262</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_14.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_47_visual_15'>
+        <pose>0.089545324444770813 0.074201710522174835 -2.5736657335073691e-05 1.5450208187103267 5.6026026868550017e-05 1.350536465644836</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_15.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link6_fixed_joint_lump__Geom_48_visual_16'>
+        <pose>0.058400500565767288 0.003517891513183713 0.0083698667585849762 2.9469649791717529 -1.3099440336227433 0.18028473854064975</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link6_16.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint7' type='revolute'>
+      <pose relative_to='link6'>0.087999999523162842 0 -2.4651903288156619e-32 1.5707963705062871 0 0</pose>
+      <parent>link6</parent>
+      <child>link7</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.897300004959106</lower>
+          <upper>2.897300004959106</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link7'>
+      <pose relative_to='joint7'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0017561012677413969 0.001388201661357434 0.099156444260258533 -0.16143882274627694 0.13793462514877325 -0.11924774199724202</pose>
+        <mass>1.4655219912528989</mass>
+        <inertia>
+          <ixx>0.016244986351674481</ixx>
+          <ixy>0.00068806902398565952</ixy>
+          <ixz>0.00087063954314434058</ixz>
+          <iyy>0.01423590995201165</iyy>
+          <iyz>0.00019952156607243641</iyz>
+          <izz>0.0065638560560614618</izz>
+        </inertia>
+      </inertial>
+      <collision name='link7_fixed_joint_lump__Geom_58_collision'>
+        <pose>0.010361372493207449 0.01035960391163826 0.079107776284217834 3.1380321979522723 -1.5171405076980675 -2.3520386219024663</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_c.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='link7_fixed_joint_lump__Geom_64_collision_1'>
+        <pose>-0.00043715864536744958 -0.00043324671033444321 0.13092952144145961 1.596544504165649 -0.00045987850171514267 -0.78562712656275824</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/hand_c.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link7_fixed_joint_lump__Geom_50_visual'>
+        <pose>0.041777942329645157 0.04183594137430191 0.082172580063343048 -1.5847380161285385 -1.3546061515808119 -2.3566710948944105</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_51_visual_1'>
+        <pose>0.063813894987106323 0.017703890800476071 0.08298637717962265 1.8028622865676878 0.0020412425510584406 -0.70134317874908436</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_52_visual_2'>
+        <pose>-0.031759034842252731 -0.031760748475790017 0.085781209170818329 -1.6960048675537112 -1.4537425041198759 2.4810845851898189</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_53_visual_3'>
+        <pose>-0.036950308829545968 -0.036942269653081887 0.08580172061920166 0 0 0.78510922193527211</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_54_visual_4'>
+        <pose>-0.037706732749938958 -0.037708986550569527 0.08578035980463028 0 0 0.78515225648880005</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_55_visual_5'>
+        <pose>0.017698489129543301 0.063838496804237366 0.082955755293369293 1.337482094764709 0.0024362159892916545 2.2714965343475342</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_56_visual_6'>
+        <pose>0.041159655898809433 0.041204128414392471 0.067758239805698395 -1.5750199556350708 -1.2906385660171509 -2.352616786956788</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_57_visual_7'>
+        <pose>1.216750774801767e-06 4.2939758714055642e-05 0.077748022973537445 3.1360432749907656 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/link7_7.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_59_visual_8'>
+        <pose>7.4803646833465054e-06 7.4807285586752316e-06 0.12580798675119881 0.78539824474211373 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/hand_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_60_visual_9'>
+        <pose>-0.06753859832606908 -0.067548278347848462 0.1005250049456954 0.36175143718719477 0.00049613858573132111 -0.78781358967535164</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/hand_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_61_visual_10'>
+        <pose>-0.046734572117639997 -0.046735473739163598 0.08682022166252136 1.5699316263198853 0.31545385718345642 -0.7857571981730872</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/hand_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_62_visual_11'>
+        <pose>0.0022293265031529271 0.0022288189598343089 0.13672501143813129 1.559797525405884 -2.0673478502460277e-05 -0.78539952401604296</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/hand_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='link7_fixed_joint_lump__Geom_63_visual_12'>
+        <pose>0.000518665619232419 4.4230626390329107e-05 0.11017979673855011 2.4241880764995236 -1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/hand_4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='finger_joint1' type='prismatic'>
+      <pose relative_to='link7'>1.471961698537707e-17 -4.9065383777367183e-18 0.16540000137686731 0 0 -0.78539812564849854</pose>
+      <parent>link7</parent>
+      <child>left_finger</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.039999999105930328</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_finger'>
+      <pose relative_to='finger_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.01499999966472387</mass>
+        <inertia>
+          <ixx>2.374999894527718e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.374999894527718e-06</iyy>
+          <iyz>0</iyz>
+          <izz>7.5000002652814146e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_finger_fixed_joint_lump__Geom_68_collision'>
+        <pose>0 0.0054999999701976776 0.044500000774860382 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.017000000923871991 0.0080000003799796104 0.017000000923871991</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='left_finger_fixed_joint_lump__Geom_69_collision_1'>
+        <pose>0.0054999999701976776 0.002000000094994903 0.05000000074505806 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000521540642 0.0040000001899898052 0.0060000000521540642</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='left_finger_fixed_joint_lump__Geom_70_collision_2'>
+        <pose>-0.0054999999701976776 0.002000000094994903 0.05000000074505806 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000521540642 0.0040000001899898052 0.0060000000521540642</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='left_finger_fixed_joint_lump__Geom_71_collision_3'>
+        <pose>0.0054999999701976776 0.002000000094994903 0.039500001817941673 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000521540642 0.0040000001899898052 0.0070000002160668373</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='left_finger_fixed_joint_lump__Geom_72_collision_4'>
+        <pose>-0.0054999999701976776 0.002000000094994903 0.039500001817941673 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000521540642 0.0040000001899898052 0.0070000002160668373</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='left_finger_fixed_joint_lump__Geom_67_collision_5'>
+        <pose>4.8740554348114529e-07 0.015695411711931229 0.016874408349394798 0.00027537546702660398 -0.076631426811218289 1.5712788105010991</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/finger_0.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='left_finger_fixed_joint_lump__Geom_65_visual'>
+        <pose>4.8740554348114529e-07 0.015695411711931229 0.016874408349394798 0.00027537546702660398 -0.076631426811218289 1.5712788105010991</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/finger_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='left_finger_fixed_joint_lump__Geom_66_visual_1'>
+        <pose>-1.125447511185484e-06 0.0047386474907398224 0.044769961386919022 1.3088574409484861 0.0028917738236485671 1.5701396465301509</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/finger_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='finger_joint2' type='prismatic'>
+      <pose relative_to='link7'>1.471961698537707e-17 -4.9065383777367183e-18 0.16540000137686731 0 0 2.3561946153640752</pose>
+      <parent>link7</parent>
+      <child>right_finger</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.039999999105930328</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_finger'>
+      <pose relative_to='finger_joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.01499999966472387</mass>
+        <inertia>
+          <ixx>2.374999894527718e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.374999894527718e-06</iyy>
+          <iyz>0</iyz>
+          <izz>7.5000002652814146e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_finger_fixed_joint_lump__Geom_76_collision'>
+        <pose>0 0.0054999999701976776 0.044500000774860382 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.017000000923871991 0.0080000003799796104 0.017000000923871991</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='right_finger_fixed_joint_lump__Geom_77_collision_1'>
+        <pose>0.0054999999701976776 0.002000000094994903 0.05000000074505806 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000521540642 0.0040000001899898052 0.0060000000521540642</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='right_finger_fixed_joint_lump__Geom_78_collision_2'>
+        <pose>-0.0054999999701976776 0.002000000094994903 0.05000000074505806 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000521540642 0.0040000001899898052 0.0060000000521540642</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='right_finger_fixed_joint_lump__Geom_79_collision_3'>
+        <pose>0.0054999999701976776 0.002000000094994903 0.039500001817941673 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000521540642 0.0040000001899898052 0.0070000002160668373</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='right_finger_fixed_joint_lump__Geom_80_collision_4'>
+        <pose>-0.0054999999701976776 0.002000000094994903 0.039500001817941673 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0060000000521540642 0.0040000001899898052 0.0070000002160668373</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='right_finger_fixed_joint_lump__Geom_75_collision_5'>
+        <pose>4.8740554348114529e-07 0.015695411711931229 0.016874408349394798 0.00027537546702660398 -0.076631426811218289 1.5712788105010991</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/finger_0.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='right_finger_fixed_joint_lump__Geom_73_visual'>
+        <pose>4.8740554348114529e-07 0.015695411711931229 0.016874408349394798 0.00027537546702660398 -0.076631426811218289 1.5712788105010991</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/finger_0.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_finger_fixed_joint_lump__Geom_74_visual_1'>
+        <pose>-1.125447511185484e-06 0.0047386474907398224 0.044769961386919022 1.3088574409484861 0.0028917738236485671 1.5701396465301509</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./panda/meshes/stl/finger_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3125 0.3125 0.3125 1</diffuse>
+          <ambient>0.3125 0.3125 0.3125 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <frame name='link0_joint' attached_to='panda'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='link0' attached_to='link0_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='hand_joint' attached_to='link7'>
+      <pose>0 0 0.107 0 0 -0.78539812564849854</pose>
+    </frame>
+    <frame name='hand' attached_to='hand_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

@@ -90,19 +90,6 @@
           <ambient>0.204437509 0.204437509 0.204437509 1</ambient>
         </material>
       </visual>
-      <visual name='rh_palm_fixed_joint_lump__Geom_9_visual_1'>
-        <pose>0.0053744465136149958 -0.0022442906629294161 0.032012942943490802 0.21004589727969511 0.083132756674338948 1.550321105891048</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>./assets/stl/palm.stl</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <diffuse>0 1 0 1</diffuse>
-          <ambient>0 1 0 1</ambient>
-        </material>
-      </visual>
     </link>
     <joint name='rh_FFJ4' type='revolute'>
       <pose relative_to='rh_palm'>0.032999999821186073 0 0.094999998807907104 0 0 0</pose>

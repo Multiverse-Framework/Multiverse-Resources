@@ -1,0 +1,208 @@
+actuator1:
+  cmd_joint_torque:
+    depends_on:
+      actuator1:
+        cmd_joint_angular_position:
+          gain:
+            kp: 450
+      mujoco_joint1:
+        joint_angular_position: 
+          gain:
+            kp: -450
+        joint_angular_velocity:
+          gain:
+            kp: -45
+
+actuator2:
+  cmd_joint_torque:
+    depends_on:
+      actuator2:
+        cmd_joint_angular_position:
+          gain:
+            kp: 450
+      mujoco_joint2:
+        joint_angular_position: 
+          gain:
+            kp: -450
+        joint_angular_velocity:
+          gain:
+            kp: -45
+
+actuator3:
+  cmd_joint_torque:
+    depends_on:
+      actuator3:
+        cmd_joint_angular_position:
+          gain:
+            kp: 350
+      mujoco_joint3:
+        joint_angular_position: 
+          gain:
+            kp: -350
+        joint_angular_velocity:
+          gain:
+            kp: -35
+
+actuator4:
+  cmd_joint_torque:
+    depends_on:
+      actuator4:
+        cmd_joint_angular_position:
+          gain:
+            kp: 350
+      mujoco_joint4:
+        joint_angular_position: 
+          gain:
+            kp: -350
+        joint_angular_velocity:
+          gain:
+            kp: -35
+
+actuator5:
+  cmd_joint_torque:
+    range: [-12, 12]
+    depends_on:
+      actuator5:
+        cmd_joint_angular_position:
+          gain:
+            kp: 200
+      mujoco_joint5:
+        joint_angular_position: 
+          gain:
+            kp: -200
+        joint_angular_velocity:
+          gain:
+            kp: -20
+
+actuator6:
+  cmd_joint_torque:
+    range: [-12, 12]
+    depends_on:
+      actuator6:
+        cmd_joint_angular_position:
+          gain:
+            kp: 200
+      mujoco_joint6:
+        joint_angular_position: 
+          gain:
+            kp: -200
+        joint_angular_velocity:
+          gain:
+            kp: -20
+
+actuator7:
+  cmd_joint_torque:
+    range: [-12, 12]
+    depends_on:
+      actuator7:
+        cmd_joint_angular_position:
+          gain:
+            kp: 200
+      mujoco_joint7:
+        joint_angular_position: 
+          gain:
+            kp: -200
+        joint_angular_velocity:
+          gain:
+            kp: -20
+
+gazebo_joint1:
+  cmd_joint_torque:
+    depends_on:
+      gazebo_joint1:
+        cmd_joint_angular_position:
+          gain:
+            kp: 450
+        joint_angular_position: 
+          gain:
+            kp: -450
+        joint_angular_velocity:
+          gain:
+            kp: -45
+
+gazebo_joint2:
+  cmd_joint_torque:
+    depends_on:
+      gazebo_joint2:
+        cmd_joint_angular_position:
+          gain:
+            kp: 450
+        joint_angular_position: 
+          gain:
+            kp: -450
+        joint_angular_velocity:
+          gain:
+            kp: -45
+
+gazebo_joint3:
+  cmd_joint_torque:
+    depends_on:
+      gazebo_joint3:
+        cmd_joint_angular_position:
+          gain:
+            kp: 350
+        joint_angular_position: 
+          gain:
+            kp: -350
+        joint_angular_velocity:
+          gain:
+            kp: -35
+
+gazebo_joint4:
+  cmd_joint_torque:
+    depends_on:
+      gazebo_joint4:
+        cmd_joint_angular_position:
+          gain:
+            kp: 350
+        joint_angular_position: 
+          gain:
+            kp: -350
+        joint_angular_velocity:
+          gain:
+            kp: -35
+
+gazebo_joint5:
+  cmd_joint_torque:
+    range: [-12, 12]
+    depends_on:
+      gazebo_joint5:
+        cmd_joint_angular_position:
+          gain:
+            kp: 200
+        joint_angular_position: 
+          gain:
+            kp: -200
+        joint_angular_velocity:
+          gain:
+            kp: -20
+
+gazebo_joint6:
+  cmd_joint_torque:
+    range: [-12, 12]
+    depends_on:
+      gazebo_joint6:
+        cmd_joint_angular_position:
+          gain:
+            kp: 200
+        joint_angular_position: 
+          gain:
+            kp: -200
+        joint_angular_velocity:
+          gain:
+            kp: -20
+
+gazebo_joint7:
+  cmd_joint_torque:
+    range: [-12, 12]
+    depends_on:
+      gazebo_joint7:
+        cmd_joint_angular_position:
+          gain:
+            kp: 200
+        joint_angular_position: 
+          gain:
+            kp: -200
+        joint_angular_velocity:
+          gain:
+            kp: -20

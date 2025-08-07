@@ -258,31 +258,27 @@
   </contact>
 
   <actuator>
-    <position name="lh_THJ5_actuator" joint="lh_THJ5" class="thbase"/>
-    <position name="lh_THJ4_actuator" joint="lh_THJ4" class="thproximal"/>
-    <position name="lh_THJ3_actuator" joint="lh_THJ3" class="thhub"/>
-    <position name="lh_THJ2_actuator" joint="lh_THJ2" class="thmiddle"/>
-    <position name="lh_THJ1_actuator" joint="lh_THJ1" class="thdistal"/>
-    <position name="lh_FFJ4_actuator" joint="lh_FFJ4" class="knuckle"/>
-    <position name="lh_FFJ3_actuator" joint="lh_FFJ3" class="proximal"/>
-    <!-- <position name="lh_FFJ0_actuator" tendon="lh_FFJ0" class="middle_distal"/> -->
-    <position name="lh_FFJ2_actuator" joint="lh_FFJ2" class="middle_distal"/>
-    <position name="lh_FFJ1_actuator" joint="lh_FFJ1" class="middle_distal"/>
-    <position name="lh_MFJ4_actuator" joint="lh_MFJ4" class="knuckle"/>
-    <position name="lh_MFJ3_actuator" joint="lh_MFJ3" class="proximal"/>
-    <!-- <position name="lh_MFJ0_actuator" tendon="lh_MFJ0" class="middle_distal"/> -->
-    <position name="lh_MFJ2_actuator" joint="lh_MFJ2" class="middle_distal"/>
-    <position name="lh_MFJ1_actuator" joint="lh_MFJ1" class="middle_distal"/>
-    <position name="lh_RFJ4_actuator" joint="lh_RFJ4" class="knuckle"/>
-    <position name="lh_RFJ3_actuator" joint="lh_RFJ3" class="proximal"/>
-    <!-- <position name="lh_RFJ0_actuator" tendon="lh_RFJ0" class="middle_distal"/> -->
-    <position name="lh_RFJ2_actuator" joint="lh_RFJ2" class="middle_distal"/>
-    <position name="lh_RFJ1_actuator" joint="lh_RFJ1" class="middle_distal"/>
-    <position name="lh_LFJ5_actuator" joint="lh_LFJ5" class="metacarpal"/>
-    <position name="lh_LFJ4_actuator" joint="lh_LFJ4" class="knuckle"/>
-    <position name="lh_LFJ3_actuator" joint="lh_LFJ3" class="proximal"/>
-    <!-- <position name="lh_LFJ0_actuator" tendon="lh_LFJ0" class="middle_distal"/> -->
-    <position name="lh_LFJ2_actuator" joint="lh_LFJ2" class="middle_distal"/>
-    <position name="lh_LFJ1_actuator" joint="lh_LFJ1" class="middle_distal"/>
+    <motor name="mujoco_lh_THJ5" joint="lh_THJ5" />
+    <motor name="mujoco_lh_THJ4" joint="lh_THJ4" />
+    <motor name="mujoco_lh_THJ3" joint="lh_THJ3" />
+    <motor name="mujoco_lh_THJ2" joint="lh_THJ2" />
+    <motor name="mujoco_lh_THJ1" joint="lh_THJ1" />
+    <motor name="mujoco_lh_FFJ4" joint="lh_FFJ4" />
+    <motor name="mujoco_lh_FFJ3" joint="lh_FFJ3" />
+    <motor name="mujoco_lh_FFJ2" joint="lh_FFJ2" />
+    <motor name="mujoco_lh_FFJ1" joint="lh_FFJ1" />
+    <motor name="mujoco_lh_MFJ4" joint="lh_MFJ4" />
+    <motor name="mujoco_lh_MFJ3" joint="lh_MFJ3" />
+    <motor name="mujoco_lh_MFJ2" joint="lh_MFJ2" />
+    <motor name="mujoco_lh_MFJ1" joint="lh_MFJ1" />
+    <motor name="mujoco_lh_RFJ4" joint="lh_RFJ4" />
+    <motor name="mujoco_lh_RFJ3" joint="lh_RFJ3" />
+    <motor name="mujoco_lh_RFJ2" joint="lh_RFJ2" />
+    <motor name="mujoco_lh_RFJ1" joint="lh_RFJ1" />
+    <motor name="mujoco_lh_LFJ5" joint="lh_LFJ5" />
+    <motor name="mujoco_lh_LFJ4" joint="lh_LFJ4" />
+    <motor name="mujoco_lh_LFJ3" joint="lh_LFJ3" />
+    <motor name="mujoco_lh_LFJ2" joint="lh_LFJ2" />
+    <motor name="mujoco_lh_LFJ1" joint="lh_LFJ1" />
   </actuator>
 </mujoco>

@@ -37,6 +37,95 @@ RightHand_ThumbTip:
   position: [0.319761,-0.143056,0.971342]
   quaternion: [0.2705978243474325,-0.2705978243474325,0.6532815759367748,0.6532815759367748]
 
+mujoco_lh_THJ5:
+  cmd_joint_torque: [0.0]
+mujoco_lh_THJ4:
+  cmd_joint_torque: [0.0]
+mujoco_lh_THJ3:
+  cmd_joint_torque: [0.0]
+mujoco_lh_THJ2:
+  cmd_joint_torque: [0.0]
+mujoco_lh_THJ1:
+  cmd_joint_torque: [0.0]
+mujoco_lh_FFJ4:
+  cmd_joint_torque: [0.0]
+mujoco_lh_FFJ3:
+  cmd_joint_torque: [0.0]
+mujoco_lh_FFJ2:
+  cmd_joint_torque: [0.0]
+mujoco_lh_FFJ1:
+  cmd_joint_torque: [0.0]
+mujoco_lh_MFJ4:
+  cmd_joint_torque: [0.0]
+mujoco_lh_MFJ3:
+  cmd_joint_torque: [0.0]
+mujoco_lh_MFJ2:
+  cmd_joint_torque: [0.0]
+mujoco_lh_MFJ1:
+  cmd_joint_torque: [0.0]
+mujoco_lh_RFJ4:
+  cmd_joint_torque: [0.0]
+mujoco_lh_RFJ3:
+  cmd_joint_torque: [0.0]
+mujoco_lh_RFJ2:
+  cmd_joint_torque: [0.0]
+mujoco_lh_RFJ1:
+  cmd_joint_torque: [0.0]
+mujoco_lh_LFJ5:
+  cmd_joint_torque: [0.0]
+mujoco_lh_LFJ4:
+  cmd_joint_torque: [0.0]
+mujoco_lh_LFJ3:
+  cmd_joint_torque: [0.0]
+mujoco_lh_LFJ2:
+  cmd_joint_torque: [0.0]
+mujoco_lh_LFJ1:
+  cmd_joint_torque: [0.0]
+mujoco_rh_THJ5:
+  cmd_joint_torque: [0.0]
+mujoco_rh_THJ4:
+  cmd_joint_torque: [0.0]
+mujoco_rh_THJ3:
+  cmd_joint_torque: [0.0]
+mujoco_rh_THJ2:
+  cmd_joint_torque: [0.0]
+mujoco_rh_THJ1:
+  cmd_joint_torque: [0.0]
+mujoco_rh_FFJ4:
+  cmd_joint_torque: [0.0]
+mujoco_rh_FFJ3:
+  cmd_joint_torque: [0.0]
+mujoco_rh_FFJ2:
+  cmd_joint_torque: [0.0]
+mujoco_rh_FFJ1:
+  cmd_joint_torque: [0.0]
+mujoco_rh_MFJ4:
+  cmd_joint_torque: [0.0]
+mujoco_rh_MFJ3:
+  cmd_joint_torque: [0.0]
+mujoco_rh_MFJ2:
+  cmd_joint_torque: [0.0]
+mujoco_rh_MFJ1:
+  cmd_joint_torque: [0.0]
+mujoco_rh_RFJ4:
+  cmd_joint_torque: [0.0]
+mujoco_rh_RFJ3:
+  cmd_joint_torque: [0.0]
+mujoco_rh_RFJ2:
+  cmd_joint_torque: [0.0]
+mujoco_rh_RFJ1:
+  cmd_joint_torque: [0.0]
+mujoco_rh_LFJ5:
+  cmd_joint_torque: [0.0]
+mujoco_rh_LFJ4:
+  cmd_joint_torque: [0.0]
+mujoco_rh_LFJ3:
+  cmd_joint_torque: [0.0]
+mujoco_rh_LFJ2:
+  cmd_joint_torque: [0.0]
+mujoco_rh_LFJ1:
+  cmd_joint_torque: [0.0]
+
 gazebo_lh_THJ5:
   cmd_joint_torque: [0.0]
 gazebo_lh_THJ4:
