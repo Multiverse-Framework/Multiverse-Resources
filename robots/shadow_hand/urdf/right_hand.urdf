@@ -57,7 +57,7 @@
     <visual name="Geom_0">
       <origin xyz="0.005374445114284754 -0.0022442906629294157 0.0320129431784153" rpy="0.21004581451416016 0.0831327736377716 1.550321102142334"/>
       <geometry>
-        <mesh filename="file://assets/obj/palm.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://assets/obj/r_palm.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="Geom_0_material">
         <color rgba="0.16355 0.16355 0.16355 1.0"/>

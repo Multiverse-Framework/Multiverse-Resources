@@ -84,7 +84,7 @@
     <visual name="Geom_9">
       <origin xyz="0.0320129431784153 0.0022442906629294157 -0.005374445114284754" rpy="-1.7825425863265991 0.020404502749443054 -1.6539463996887207"/>
       <geometry>
-        <mesh filename="file://assets/stl/palm.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="file://assets/stl/l_palm.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="Geom_9_material">
         <color rgba="0.0 1.0 0.0 1.0"/>
