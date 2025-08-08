@@ -118,6 +118,8 @@ simulations:
             cube:
               pos: [0.7, 0.9, 1.5]
               quat: [0.0, 0.0, 0.0, 1.0]
+        prefix:
+          body: mujoco_
         suffix:
           body: _1
           geom: _1
@@ -128,6 +130,8 @@ simulations:
             cube:
               pos: [0.7, 0.84, 1.5]
               quat: [1.0, 0.0, 0.0, 1.0]
+        prefix:
+          body: mujoco_
         suffix:
           body: _2
           geom: _2
@@ -138,6 +142,8 @@ simulations:
             cube:
               pos: [0.7, 0.78, 1.5]
               quat: [1.0, 0.0, 0.0, 0.0]
+        prefix:
+          body: mujoco_
         suffix:
           body: _3
           geom: _3
@@ -148,6 +154,8 @@ simulations:
             cube:
               pos: [0.7, 0.72, 1.5]
               quat: [1.0, 0.0, 0.0, -1.0]
+        prefix:
+          body: mujoco_
         suffix:
           body: _4
           geom: _4
@@ -158,6 +166,8 @@ simulations:
             cube:
               pos: [0.7, 0.66, 1.5]
               quat: [0.0, -1.0, 0.0, 1.0]
+        prefix:
+          body: mujoco_
         suffix:
           body: _5
           geom: _5
@@ -168,6 +178,8 @@ simulations:
             cube:
               pos: [0.7, 0.6, 1.5]
               quat: [0.0, 1.0, 0.0, 1.0]
+        prefix:
+          body: mujoco_
         suffix:
           body: _6
           geom: _6
@@ -179,7 +191,7 @@ simulations:
         body1: rh_palm_teleop
         body2: rh_palm_ref
     config:
-      step_size: 0.002
+      step_size: 0.005
       integrator: IMPLICITFAST
       cone: ELLIPTIC
       multiccd: true
@@ -192,7 +204,7 @@ simulations:
       name: world
       path: floor.sdf
     robots:
-      left_shadow_hand:
+      lh_palm:
         path: left_hand.sdf
         apply:
           body:
@@ -205,7 +217,7 @@ simulations:
             friction: 0.01
         prefix:
           joint: gazebo_
-      right_shadow_hand:
+      rh_palm:
         path: right_hand.sdf
         apply:
           body:
@@ -226,6 +238,81 @@ simulations:
             table:
               pos: [1.0, 0.0, 1.0]
               quat: [1.0, 0.0, 0.0, 1.0]
+      cube_1:
+        path: cubes/gazebo/cube.sdf
+        apply:
+          body:
+            cube_1:
+              pos: [0.7, 0.4, 1.5]
+              quat: [0.0, 0.0, 0.0, 1.0]
+        prefix:
+          body: gazebo_
+        suffix:
+          body: _1
+          geom: _1
+      cube_2:
+        path: cubes/gazebo/cube.sdf
+        apply:
+          body:
+            cube_2:
+              pos: [0.7, 0.34, 1.5]
+              quat: [1.0, 0.0, 0.0, 1.0]
+        prefix:
+          body: gazebo_
+        suffix:
+          body: _2
+          geom: _2
+      cube_3:
+        path: cubes/gazebo/cube.sdf
+        apply:
+          body:
+            cube_3:
+              pos: [0.7, 0.28, 1.5]
+              quat: [1.0, 0.0, 0.0, 0.0]
+        prefix:
+          body: gazebo_
+        suffix:
+          body: _3
+          geom: _3
+      cube_4:
+        path: cubes/gazebo/cube.sdf
+        apply:
+          body:
+            cube_4:
+              pos: [0.7, 0.22, 1.5]
+              quat: [1.0, 0.0, 0.0, -1.0]
+        prefix:
+          body: gazebo_
+        suffix:
+          body: _4
+          geom: _4
+      cube_5:
+        path: cubes/gazebo/cube.sdf
+        apply:
+          body:
+            cube_5:
+              pos: [0.7, 0.16, 1.5]
+              quat: [0.0, -1.0, 0.0, 1.0]
+        prefix:
+          body: gazebo_
+        suffix:
+          body: _5
+          geom: _5
+      cube_6:
+        path: cubes/gazebo/cube.sdf
+        apply:
+          body:
+            cube_6:
+              pos: [0.7, 0.1, 1.5]
+              quat: [0.0, 1.0, 0.0, 1.0]
+        prefix:
+          body: gazebo_
+        suffix:
+          body: _6
+          geom: _6
+    config:
+      step_size: 0.005
+      physics_type: "dart"
 
 multiverse_server:
   host: "tcp://127.0.0.1"
@@ -241,8 +328,8 @@ multiverse_clients:
       rh_palm_teleop: ["position", "quaternion"]
       joint: ["joint_angular_position", "joint_angular_velocity"]
     receive:
-      # LeftHand_WristRoot: ["position", "quaternion"]
-      # RightHand_WristRoot: ["position", "quaternion"]
+      LeftHand_WristRoot: ["position", "quaternion"]
+      RightHand_WristRoot: ["position", "quaternion"]
       LeftHand_ThumbTip: ["position", "quaternion"]
       LeftHand_IndexTip: ["position", "quaternion"]
       LeftHand_MiddleTip: ["position", "quaternion"]
@@ -257,10 +344,22 @@ multiverse_clients:
   mujoco_sim:
     port: 7501
     send:
+      mujoco_cube_1: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_cube_2: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_cube_3: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_cube_4: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_cube_5: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_cube_6: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       joint: ["joint_angular_position"]
     receive:
       lh_palm_teleop: ["position", "quaternion"]
       rh_palm_teleop: ["position", "quaternion"]
+      mujoco_cube_1: ["force", "torque"]
+      mujoco_cube_2: ["force", "torque"]
+      mujoco_cube_3: ["force", "torque"]
+      mujoco_cube_4: ["force", "torque"]
+      mujoco_cube_5: ["force", "torque"]
+      mujoco_cube_6: ["force", "torque"]
       mujoco_lh_THJ5: ["cmd_joint_torque"]
       mujoco_lh_THJ4: ["cmd_joint_torque"]
       mujoco_lh_THJ3: ["cmd_joint_torque"]
@@ -309,10 +408,22 @@ multiverse_clients:
   gazebo_sim:
     port: 7502
     send:
+      gazebo_cube_1: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      gazebo_cube_2: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      gazebo_cube_3: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      gazebo_cube_4: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      gazebo_cube_5: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      gazebo_cube_6: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       joint: ["joint_angular_position"]
     receive:
       lh_palm: ["position", "quaternion"]
       rh_palm: ["position", "quaternion"]
+      gazebo_cube_1: ["force", "torque"]
+      gazebo_cube_2: ["force", "torque"]
+      gazebo_cube_3: ["force", "torque"]
+      gazebo_cube_4: ["force", "torque"]
+      gazebo_cube_5: ["force", "torque"]
+      gazebo_cube_6: ["force", "torque"]
       gazebo_lh_THJ5: ["cmd_joint_torque"]
       gazebo_lh_THJ4: ["cmd_joint_torque"]
       gazebo_lh_THJ3: ["cmd_joint_torque"]

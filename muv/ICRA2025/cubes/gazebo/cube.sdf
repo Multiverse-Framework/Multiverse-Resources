@@ -1,0 +1,36 @@
+<sdf version='1.12'>
+  <model name='cube'>
+    <link name='cube'>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.125</mass>
+        <inertia>
+          <ixx>5.2079998567933217e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.2079998567933217e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.2079998567933217e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='cube_geom_collision_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./cube.obj</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='cube_geom_visual_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>./cube.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

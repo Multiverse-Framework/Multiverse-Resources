@@ -1,7 +1,7 @@
 # Blender 4.5.0
 # www.blender.org
-mtllib palm.mtl
-o palm
+mtllib r_palm.mtl
+o r_palm
 v 0.000503 0.019442 0.053777
 v 0.002848 0.019946 0.055896
 v 0.000688 0.019976 0.053628
