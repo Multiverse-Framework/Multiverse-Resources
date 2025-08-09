@@ -1,3 +1,8 @@
+LeftHand_Offset:
+  quaternion: [0.0, -0.7071, 0.0, 0.7071]
+RightHand_Offset:
+  quaternion: [0.7071, 0.0, 0.7071, 0.0]
+
 LeftHand_WristRoot:
   position: [0.241263,0.151646,0.887845]
   quaternion: [0.0,1.0,0.0,0.0]

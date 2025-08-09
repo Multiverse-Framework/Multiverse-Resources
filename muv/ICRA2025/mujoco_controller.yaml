@@ -1,11 +1,11 @@
-mujoco_lh_palm_ref:
+mujoco_lh_palm:
   force:
     depends_on:
-      lh_palm_teleop:
+      lh_palm:
         position:
           gain:
             kp: 200.0
-      mujoco_lh_palm_ref:
+      mujoco_lh_palm:
         position:
           gain:
             kp: -200.0
@@ -14,11 +14,11 @@ mujoco_lh_palm_ref:
             kp: -20.0
   torque:
     depends_on:
-      lh_palm_teleop:
+      lh_palm:
         quaternion:
           gain:
             kp: 0.5
-      mujoco_lh_palm_ref:
+      mujoco_lh_palm:
         quaternion:
           gain:
             kp: -0.5
@@ -26,14 +26,14 @@ mujoco_lh_palm_ref:
           gain:
             kp: -0.1
 
-mujoco_rh_palm_ref:
+mujoco_rh_palm:
   force:
     depends_on:
-      rh_palm_teleop:
+      rh_palm:
         position:
           gain:
             kp: 200.0
-      mujoco_rh_palm_ref:
+      mujoco_rh_palm:
         position:
           gain:
             kp: -200.0
@@ -42,11 +42,11 @@ mujoco_rh_palm_ref:
             kp: -20.0
   torque:
     depends_on:
-      rh_palm_teleop:
+      rh_palm:
         quaternion:
           gain:
             kp: 0.5
-      mujoco_rh_palm_ref:
+      mujoco_rh_palm:
         quaternion:
           gain:
             kp: -0.5

@@ -185,16 +185,9 @@ simulations:
         suffix:
           body: _6
           geom: _6
-    # references:
-    #   lh_palm:
-    #     body1: lh_palm_teleop
-    #     body2: mujoco_lh_palm_ref
-    #   rh_palm:
-    #     body1: rh_palm_teleop
-    #     body2: mujoco_rh_palm_ref
     config:
       step_size: 0.005
-      integrator: IMPLICITFAST
+      integrator: RK4
       cone: ELLIPTIC
       multiccd: true
       nativeccd: true
@@ -348,8 +341,8 @@ multiverse_clients:
   mujoco_sim:
     port: 7501
     send:
-      mujoco_lh_palm_ref: ["position", "quaternion", "linear_velocity", "angular_velocity"]
-      mujoco_rh_palm_ref: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_lh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_rh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       mujoco_cube_1: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       mujoco_cube_2: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       mujoco_cube_3: ["position", "quaternion", "linear_velocity", "angular_velocity"]
@@ -358,8 +351,8 @@ multiverse_clients:
       mujoco_cube_6: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       joint: ["joint_angular_position"]
     receive:
-      mujoco_lh_palm_ref: ["force", "torque"]
-      mujoco_rh_palm_ref: ["force", "torque"]
+      mujoco_lh_palm: ["force", "torque"]
+      mujoco_rh_palm: ["force", "torque"]
       mujoco_cube_1: ["force", "torque"]
       mujoco_cube_2: ["force", "torque"]
       mujoco_cube_3: ["force", "torque"]

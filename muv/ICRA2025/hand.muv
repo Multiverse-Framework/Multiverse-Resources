@@ -54,11 +54,11 @@ multiverse_clients:
   mujoco_sim:
     port: 7501
     send:
-      mujoco_lh_palm_ref: ["position", "quaternion", "linear_velocity", "angular_velocity"]
-      mujoco_rh_palm_ref: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_lh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_rh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
     receive:
-      mujoco_lh_palm_ref: ["force", "torque"]
-      mujoco_rh_palm_ref: ["force", "torque"]
+      mujoco_lh_palm: ["force", "torque"]
+      mujoco_rh_palm: ["force", "torque"]
 
 processes:
   - multiverse_initializing.py:
@@ -72,4 +72,4 @@ processes:
       simulation_name: mujoco_controller
       port: 5008
       rate: 500
-      data_path: mujoco_controller.yaml
+      data_path: hand_controller.yaml

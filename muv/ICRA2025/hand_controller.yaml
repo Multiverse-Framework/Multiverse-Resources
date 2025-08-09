@@ -1,0 +1,63 @@
+mujoco_lh_palm:
+  force:
+    depends_on:
+      LeftHand_WristRoot:
+        position:
+          gain:
+            kp: 200.0
+      mujoco_lh_palm:
+        position:
+          gain:
+            kp: -200.0
+        linear_velocity:
+          gain:
+            kp: -20.0
+  torque:
+    depends_on:
+      LeftHand_Offset:
+        quaternion:
+          gain:
+            kp: 0.5
+      LeftHand_WristRoot:
+        quaternion:
+          gain:
+            kp: 0.5
+      mujoco_lh_palm:
+        quaternion:
+          gain:
+            kp: -0.5
+        angular_velocity:
+          gain:
+            kp: -0.1
+
+mujoco_rh_palm:
+  force:
+    depends_on:
+      RightHand_WristRoot:
+        position:
+          gain:
+            kp: 200.0
+      mujoco_rh_palm:
+        position:
+          gain:
+            kp: -200.0
+        linear_velocity:
+          gain:
+            kp: -20.0
+  torque:
+    depends_on:
+      RightHand_Offset:
+        quaternion:
+          gain:
+            kp: 0.5
+      RightHand_WristRoot:
+        quaternion:
+          gain:
+            kp: 0.5
+      mujoco_rh_palm:
+        quaternion:
+          gain:
+            kp: -0.5
+        angular_velocity:
+          gain:
+            kp: -0.1
