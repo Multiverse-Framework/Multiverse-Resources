@@ -92,6 +92,7 @@ simulations:
               quat: [1.0, 0.0, 1.0, 0.0]
             gravcomp: 1
         prefix:
+          body: mujoco_
           joint: mujoco_
       rh_palm:
         path: right_hand_with_torque_control.xml
@@ -102,6 +103,7 @@ simulations:
               quat: [0.0, 1.0, 0.0, 1.0]
             gravcomp: 1
         prefix:
+          body: mujoco_
           joint: mujoco_
     objects:
       table:
@@ -183,13 +185,13 @@ simulations:
         suffix:
           body: _6
           geom: _6
-    references:
-      lh_palm:
-        body1: lh_palm_teleop
-        body2: lh_palm_ref
-      rh_palm:
-        body1: rh_palm_teleop
-        body2: rh_palm_ref
+    # references:
+    #   lh_palm:
+    #     body1: lh_palm_teleop
+    #     body2: mujoco_lh_palm_ref
+    #   rh_palm:
+    #     body1: rh_palm_teleop
+    #     body2: mujoco_rh_palm_ref
     config:
       step_size: 0.005
       integrator: IMPLICITFAST
@@ -216,6 +218,7 @@ simulations:
             damping: 0.05
             friction: 0.01
         prefix:
+          body: gazebo_
           joint: gazebo_
       rh_palm:
         path: right_hand.sdf
@@ -229,6 +232,7 @@ simulations:
             damping: 0.05
             friction: 0.01
         prefix:
+          body: gazebo_
           joint: gazebo_
     objects:
       table:
@@ -312,7 +316,7 @@ simulations:
           geom: _6
     config:
       step_size: 0.005
-      physics_type: "dart"
+      physics_type: "ode"
 
 multiverse_server:
   host: "tcp://127.0.0.1"
@@ -344,6 +348,8 @@ multiverse_clients:
   mujoco_sim:
     port: 7501
     send:
+      mujoco_lh_palm_ref: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_rh_palm_ref: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       mujoco_cube_1: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       mujoco_cube_2: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       mujoco_cube_3: ["position", "quaternion", "linear_velocity", "angular_velocity"]
@@ -352,8 +358,8 @@ multiverse_clients:
       mujoco_cube_6: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       joint: ["joint_angular_position"]
     receive:
-      lh_palm_teleop: ["position", "quaternion"]
-      rh_palm_teleop: ["position", "quaternion"]
+      mujoco_lh_palm_ref: ["force", "torque"]
+      mujoco_rh_palm_ref: ["force", "torque"]
       mujoco_cube_1: ["force", "torque"]
       mujoco_cube_2: ["force", "torque"]
       mujoco_cube_3: ["force", "torque"]
@@ -408,6 +414,8 @@ multiverse_clients:
   gazebo_sim:
     port: 7502
     send:
+      gazebo_lh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      gazebo_rh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       gazebo_cube_1: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       gazebo_cube_2: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       gazebo_cube_3: ["position", "quaternion", "linear_velocity", "angular_velocity"]
@@ -416,8 +424,8 @@ multiverse_clients:
       gazebo_cube_6: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       joint: ["joint_angular_position"]
     receive:
-      lh_palm: ["position", "quaternion"]
-      rh_palm: ["position", "quaternion"]
+      gazebo_lh_palm: ["force", "torque"]
+      gazebo_rh_palm: ["force", "torque"]
       gazebo_cube_1: ["force", "torque"]
       gazebo_cube_2: ["force", "torque"]
       gazebo_cube_3: ["force", "torque"]
@@ -488,11 +496,11 @@ processes:
       world: world
       simulation_name: gazebo_controller
       port: 5007
-      rate: 100
+      rate: 500
       data_path: gazebo_controller.yaml
   - multiverse_control.py:
       world: world
       simulation_name: mujoco_controller
       port: 5008
-      rate: 100
+      rate: 500
       data_path: mujoco_controller.yaml

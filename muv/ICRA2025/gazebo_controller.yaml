@@ -1,3 +1,59 @@
+gazebo_lh_palm:
+  force:
+    depends_on:
+      lh_palm:
+        position:
+          gain:
+            kp: 200.0
+      gazebo_lh_palm:
+        position:
+          gain:
+            kp: -200.0
+        linear_velocity:
+          gain:
+            kp: -20.0
+  torque:
+    depends_on:
+      lh_palm:
+        quaternion:
+          gain:
+            kp: 0.5
+      gazebo_lh_palm:
+        quaternion:
+          gain:
+            kp: -0.5
+        angular_velocity:
+          gain:
+            kp: -0.1
+
+gazebo_rh_palm:
+  force:
+    depends_on:
+      rh_palm:
+        position:
+          gain:
+            kp: 200.0
+      gazebo_rh_palm:
+        position:
+          gain:
+            kp: -200.0
+        linear_velocity:
+          gain:
+            kp: -20.0
+  torque:
+    depends_on:
+      rh_palm:
+        quaternion:
+          gain:
+            kp: 0.5
+      gazebo_rh_palm:
+        quaternion:
+          gain:
+            kp: -0.5
+        angular_velocity:
+          gain:
+            kp: -0.1
+
 gazebo_lh_THJ5:
   cmd_joint_torque:
     range: [-3.0, 3.0]

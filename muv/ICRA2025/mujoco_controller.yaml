@@ -1,3 +1,59 @@
+mujoco_lh_palm_ref:
+  force:
+    depends_on:
+      lh_palm_teleop:
+        position:
+          gain:
+            kp: 200.0
+      mujoco_lh_palm_ref:
+        position:
+          gain:
+            kp: -200.0
+        linear_velocity:
+          gain:
+            kp: -20.0
+  torque:
+    depends_on:
+      lh_palm_teleop:
+        quaternion:
+          gain:
+            kp: 0.5
+      mujoco_lh_palm_ref:
+        quaternion:
+          gain:
+            kp: -0.5
+        angular_velocity:
+          gain:
+            kp: -0.1
+
+mujoco_rh_palm_ref:
+  force:
+    depends_on:
+      rh_palm_teleop:
+        position:
+          gain:
+            kp: 200.0
+      mujoco_rh_palm_ref:
+        position:
+          gain:
+            kp: -200.0
+        linear_velocity:
+          gain:
+            kp: -20.0
+  torque:
+    depends_on:
+      rh_palm_teleop:
+        quaternion:
+          gain:
+            kp: 0.5
+      mujoco_rh_palm_ref:
+        quaternion:
+          gain:
+            kp: -0.5
+        angular_velocity:
+          gain:
+            kp: -0.1
+
 mujoco_lh_THJ5:
   cmd_joint_torque:
     range: [-3.0, 3.0]

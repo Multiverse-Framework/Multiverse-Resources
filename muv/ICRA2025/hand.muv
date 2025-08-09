@@ -1,0 +1,75 @@
+resources: 
+  - ../../robots/shadow_hand
+  - ../../worlds/
+  - ../../objects/
+  - ../../../Multiverse-Utilities/scripts/
+  - ./
+
+worlds:
+  world:
+    real_time_factor: 1
+
+simulations:
+  mujoco_sim:
+    simulator: mujoco
+    headless: False
+    world:
+      name: world
+      path: floor/floor.xml
+    robots:
+      lh_palm:
+        path: left_hand_with_torque_control.xml
+        apply:
+          body:
+            lh_palm:
+              pos: [0.24126255555095805, 0.1516456014816617, 0.8878448256201764]
+              quat: [1.0, 0.0, 1.0, 0.0]
+            gravcomp: 1
+        prefix:
+          body: mujoco_
+          joint: mujoco_
+      rh_palm:
+        path: right_hand_with_torque_control.xml
+        apply:
+          body:
+            rh_palm:
+              pos: [0.24126253852583657, -0.15163563070091934, 0.8878446222484409]
+              quat: [0.0, 1.0, 0.0, 1.0]
+            gravcomp: 1
+        prefix:
+          body: mujoco_
+          joint: mujoco_
+    config:
+      step_size: 0.005
+      integrator: IMPLICITFAST
+      cone: ELLIPTIC
+      multiccd: true
+      nativeccd: true
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  mujoco_sim:
+    port: 7501
+    send:
+      mujoco_lh_palm_ref: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      mujoco_rh_palm_ref: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+    receive:
+      mujoco_lh_palm_ref: ["force", "torque"]
+      mujoco_rh_palm_ref: ["force", "torque"]
+
+processes:
+  - multiverse_initializing.py:
+      world: world
+      simulation_name: multiverse_initializer
+      port: 5000
+      data_path: multi_sim_init.yaml
+  - sleep: 1
+  - multiverse_control.py:
+      world: world
+      simulation_name: mujoco_controller
+      port: 5008
+      rate: 500
+      data_path: mujoco_controller.yaml
