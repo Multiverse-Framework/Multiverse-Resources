@@ -69,9 +69,6 @@
         <default class="plastic_collision">
           <geom group="3"/>
         </default>
-        <default class="plastic_reference">
-          <geom type="mesh" rgba="0 1 0 1" contype="0" conaffinity="0" group="3"/>
-        </default>
       </default>
     </default>
   </default>
