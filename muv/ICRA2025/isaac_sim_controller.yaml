@@ -1,0 +1,55 @@
+isaac_sim_lh_palm:
+  force:
+    depends_on:
+      lh_palm:
+        position:
+          gain:
+            kp: 200.0
+      isaac_sim_lh_palm:
+        position:
+          gain:
+            kp: -200.0
+        linear_velocity:
+          gain:
+            kp: -20.0
+  torque:
+    depends_on:
+      lh_palm:
+        quaternion:
+          gain:
+            kp: 0.5
+      isaac_sim_lh_palm:
+        quaternion:
+          gain:
+            kp: -0.5
+        angular_velocity:
+          gain:
+            kp: -0.1
+
+isaac_sim_rh_palm:
+  force:
+    depends_on:
+      rh_palm:
+        position:
+          gain:
+            kp: 200.0
+      isaac_sim_rh_palm:
+        position:
+          gain:
+            kp: -200.0
+        linear_velocity:
+          gain:
+            kp: -20.0
+  torque:
+    depends_on:
+      rh_palm:
+        quaternion:
+          gain:
+            kp: 0.5
+      isaac_sim_rh_palm:
+        quaternion:
+          gain:
+            kp: -0.5
+        angular_velocity:
+          gain:
+            kp: -0.1
