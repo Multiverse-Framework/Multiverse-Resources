@@ -3,6 +3,11 @@ LeftHand_Offset:
 RightHand_Offset:
   quaternion: [0.7071, 0.0, 0.7071, 0.0]
 
+LeftHand_GravityCompensation:
+  force: [0.0, 0.0, 6.80814]
+RightHand_GravityCompensation:
+  force: [0.0, 0.0, 6.80814]
+
 LeftHand_WristRoot:
   position: [0.241263,0.151646,0.887845]
   quaternion: [0.0,1.0,0.0,0.0]
@@ -77,6 +82,25 @@ gazebo_cube_5:
   force: [0.0, 0.0, 0.0]
   torque: [0.0, 0.0, 0.0]
 gazebo_cube_6:
+  force: [0.0, 0.0, 0.0]
+  torque: [0.0, 0.0, 0.0]
+
+isaac_sim_cube_1:
+  force: [0.0, 0.0, 0.0]
+  torque: [0.0, 0.0, 0.0]
+isaac_sim_cube_2:
+  force: [0.0, 0.0, 0.0]
+  torque: [0.0, 0.0, 0.0]
+isaac_sim_cube_3:
+  force: [0.0, 0.0, 0.0]
+  torque: [0.0, 0.0, 0.0]
+isaac_sim_cube_4:
+  force: [0.0, 0.0, 0.0]
+  torque: [0.0, 0.0, 0.0]
+isaac_sim_cube_5:
+  force: [0.0, 0.0, 0.0]
+  torque: [0.0, 0.0, 0.0]
+isaac_sim_cube_6:
   force: [0.0, 0.0, 0.0]
   torque: [0.0, 0.0, 0.0]
 

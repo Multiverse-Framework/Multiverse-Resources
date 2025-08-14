@@ -1,0 +1,87 @@
+#usda 1.0
+(
+    defaultPrim = "world"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "world"
+{
+    def Xform "table" (
+        prepend apiSchemas = ["PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, -0.2)
+        float3 physics:diagonalInertia = (6.9266667, 6.5516667, 2.2516668)
+        float physics:mass = 10
+        quatf physics:principalAxes = (0, 0.70710677, 0, 0.70710677)
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 1, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Cube "Geom_0" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)]
+            float[] primvars:displayOpacity = [1]
+            token visibility = "inherited"
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0.5, 0, 0), (0, 0, 0.05, 0), (0, 0, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_1" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)]
+            float[] primvars:displayOpacity = [1]
+            token visibility = "inherited"
+            matrix4d xformOp:transform = ( (0.05, 0, 0, 0), (0, 0.05, 0, 0), (0, 0, 0.5, 0), (0.95, 0.45, -0.5, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_2" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)]
+            float[] primvars:displayOpacity = [1]
+            token visibility = "inherited"
+            matrix4d xformOp:transform = ( (0.05, 0, 0, 0), (0, 0.05, 0, 0), (0, 0, 0.5, 0), (-0.95, 0.45, -0.5, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_3" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)]
+            float[] primvars:displayOpacity = [1]
+            token visibility = "inherited"
+            matrix4d xformOp:transform = ( (0.05, 0, 0, 0), (0, 0.05, 0, 0), (0, 0, 0.5, 0), (0.95, -0.45, -0.5, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Cube "Geom_4" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+            bool physics:collisionEnabled = 1
+            color3f[] primvars:displayColor = [(0.9, 0.9, 0.9)]
+            float[] primvars:displayOpacity = [1]
+            token visibility = "inherited"
+            matrix4d xformOp:transform = ( (0.05, 0, 0, 0), (0, 0.05, 0, 0), (0, 0, 0.5, 0), (-0.95, -0.45, -0.5, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+}
+

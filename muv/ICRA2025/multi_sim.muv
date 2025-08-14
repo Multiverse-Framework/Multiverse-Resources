@@ -336,6 +336,56 @@ simulations:
               quat: [0.0, 1.0, 0.0, 1.0]
         prefix:
           joint: isaac_sim_
+    objects:
+      table:
+        path: table/table.usda
+        apply:
+          body:
+            table:
+              pos: [1.0, 0.0, 1.0]
+              quat: [1.0, 0.0, 0.0, 1.0]
+      isaac_sim_cube_1:
+        path: cubes/isaac_sim/cube.usda
+        apply:
+          body:
+            cube:
+              pos: [0.7, -0.1, 1.5]
+              quat: [0.0, 0.0, 0.0, 1.0]
+      isaac_sim_cube_2:
+        path: cubes/isaac_sim/cube.usda
+        apply:
+          body:
+            cube:
+              pos: [0.7, -0.16, 1.5]
+              quat: [1.0, 0.0, 0.0, 1.0]
+      isaac_sim_cube_3:
+        path: cubes/isaac_sim/cube.usda
+        apply:
+          body:
+            cube:
+              pos: [0.7, -0.22, 1.5]
+              quat: [1.0, 0.0, 0.0, 0.0]
+      isaac_sim_cube_4:
+        path: cubes/isaac_sim/cube.usda
+        apply:
+          body:
+            cube:
+              pos: [0.7, -0.28, 1.5]
+              quat: [1.0, 0.0, 0.0, -1.0]
+      isaac_sim_cube_5:
+        path: cubes/isaac_sim/cube.usda
+        apply:
+          body:
+            cube:
+              pos: [0.7, -0.34, 1.5]
+              quat: [0.0, -1.0, 0.0, 1.0]
+      isaac_sim_cube_6:
+        path: cubes/isaac_sim/cube.usda
+        apply:
+          body:
+            cube:
+              pos: [0.7, -0.40, 1.5]
+              quat: [1.0, 0.0, -1.0, 0.0]
     references:
       left_hand:
         body1: isaac_sim_lh_palm
@@ -508,16 +558,22 @@ multiverse_clients:
     send:
       isaac_sim_lh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       isaac_sim_rh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      isaac_sim_cube_1: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      isaac_sim_cube_2: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      isaac_sim_cube_3: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      isaac_sim_cube_4: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      isaac_sim_cube_5: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      isaac_sim_cube_6: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       joint: ["joint_angular_position"]
     receive:
       isaac_sim_lh_palm: ["force", "torque"]
       isaac_sim_rh_palm: ["force", "torque"]
-#       mujoco_cube_1: ["force", "torque"]
-#       mujoco_cube_2: ["force", "torque"]
-#       mujoco_cube_3: ["force", "torque"]
-#       mujoco_cube_4: ["force", "torque"]
-#       mujoco_cube_5: ["force", "torque"]
-#       mujoco_cube_6: ["force", "torque"]
+      isaac_sim_cube_1: ["force", "torque"]
+      isaac_sim_cube_2: ["force", "torque"]
+      isaac_sim_cube_3: ["force", "torque"]
+      isaac_sim_cube_4: ["force", "torque"]
+      isaac_sim_cube_5: ["force", "torque"]
+      isaac_sim_cube_6: ["force", "torque"]
       isaac_sim_lh_THJ5: ["cmd_joint_angular_position"]
       isaac_sim_lh_THJ4: ["cmd_joint_angular_position"]
       isaac_sim_lh_THJ3: ["cmd_joint_angular_position"]

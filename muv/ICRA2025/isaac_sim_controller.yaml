@@ -17,11 +17,11 @@ isaac_sim_lh_palm:
       lh_palm:
         quaternion:
           gain:
-            kp: 0.5
+            kp: 10.0
       isaac_sim_lh_palm:
         quaternion:
           gain:
-            kp: -0.5
+            kp: -10.0
         angular_velocity:
           gain:
             kp: -0.1
@@ -45,11 +45,11 @@ isaac_sim_rh_palm:
       rh_palm:
         quaternion:
           gain:
-            kp: 0.5
+            kp: 10.0
       isaac_sim_rh_palm:
         quaternion:
           gain:
-            kp: -0.5
+            kp: -10.0
         angular_velocity:
           gain:
             kp: -0.1
