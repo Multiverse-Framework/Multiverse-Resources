@@ -53,3 +53,355 @@ isaac_sim_rh_palm:
         angular_velocity:
           gain:
             kp: -0.1
+
+isaac_sim_lh_THJ5:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_THJ5_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_THJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_THJ4_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_THJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_THJ3_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_THJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_THJ2_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_THJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_THJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_FFJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_FFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_FFJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_FFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_FFJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_FFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_FFJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_FFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_MFJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_MFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_MFJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_MFJ3_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_MFJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_MFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_MFJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_MFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_RFJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_RFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_RFJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_RFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_RFJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_RFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_RFJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_RFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_LFJ5:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_LFJ5_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_LFJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_LFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_LFJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_LFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_LFJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_LFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_lh_LFJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      lh_LFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_THJ5:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_THJ5_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_THJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_THJ4_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_THJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_THJ3_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_THJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_THJ2_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_THJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_THJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_FFJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_FFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_FFJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_FFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_FFJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_FFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_FFJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_FFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_MFJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_MFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_MFJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_MFJ3_actuator:
+        cmd_joint_angular_position:
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_MFJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_MFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_MFJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_MFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_RFJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_RFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_RFJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_RFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_RFJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_RFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_RFJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_RFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_LFJ5:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_LFJ5_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_LFJ4:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_LFJ4_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_LFJ3:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_LFJ3_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_LFJ2:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_LFJ2_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
+
+isaac_sim_rh_LFJ1:
+  cmd_joint_angular_position:
+    depends_on:
+      rh_LFJ1_actuator:
+        cmd_joint_angular_position: 
+          gain:
+            kp: 1.0
