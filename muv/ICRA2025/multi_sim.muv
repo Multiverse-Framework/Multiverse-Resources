@@ -402,8 +402,8 @@ multiverse_clients:
   hands_simulation:
     port: 7500
     send:
-      lh_palm: ["position", "quaternion"]
-      rh_palm: ["position", "quaternion"]
+      lh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
+      rh_palm: ["position", "quaternion", "linear_velocity", "angular_velocity"]
       lh_palm_teleop: ["position", "quaternion"]
       rh_palm_teleop: ["position", "quaternion"]
       joint: ["joint_angular_position", "joint_angular_velocity"]
