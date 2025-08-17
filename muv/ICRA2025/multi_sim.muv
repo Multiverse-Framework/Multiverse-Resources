@@ -12,7 +12,7 @@ worlds:
 simulations:
   hands_simulation:
     simulator: mujoco
-    headless: False
+    headless: True
     world:
       name: world
       path: floor/floor.xml
@@ -378,7 +378,7 @@ simulations:
           body:
             cube:
               pos: [0.7, -0.34, 1.5]
-              quat: [0.0, -1.0, 0.0, 1.0]
+              quat: [0.0, 1.0, 0.0, 1.0]
       isaac_sim_cube_6:
         path: cubes/isaac_sim/cube.usda
         apply:
@@ -618,6 +618,27 @@ multiverse_clients:
       isaac_sim_rh_LFJ3: ["cmd_joint_angular_position"]
       isaac_sim_rh_LFJ2: ["cmd_joint_angular_position"]
       isaac_sim_rh_LFJ1: ["cmd_joint_angular_position"]
+
+  ros2:
+    ros_nodes:    
+      publishers:
+        tf:
+          - meta_data:
+              world_name: world
+              length_unit: m
+              angle_unit: rad
+              mass_unit: kg
+              time_unit: s
+              handedness: rhs
+            port: 7900
+            topic: /tf
+            rate: 60
+            root_frame_id: map
+    ros2_run:
+      rviz2:
+        config: config/rviz2.rviz
+        robot_descriptions:
+          scene_description: config/urdf/scene.urdf
 
 processes:
   - multiverse_initializing.py:

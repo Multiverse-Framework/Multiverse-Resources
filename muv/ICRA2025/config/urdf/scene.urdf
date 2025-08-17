@@ -1,0 +1,493 @@
+<?xml version="1.0" ?>
+<robot name="rviz_sim" version="1.0">
+  <link name="map"/>
+  <joint name="table_joint" type="fixed">
+    <origin xyz="1.0 0.0 1.0" rpy="0.0 0.0 1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="table"/>
+  </joint>
+  <link name="table">
+    <inertial>
+      <origin xyz="0.0 0.0 -0.20000000298023224" rpy="0.0 0.0 0.0"/>
+      <mass value="10.0"/>
+      <inertia ixx="2.251666784286499" ixy="0.0" ixz="0.0" iyy="6.551666736602783" iyz="0.0" izz="6.926666736602783"/>
+    </inertial>
+    <visual name="Geom_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="2.0 1.0 0.10000000149011612"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <visual name="Geom_2">
+      <origin xyz="0.949999988079071 0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.10000000149011612 1.0"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <visual name="Geom_3">
+      <origin xyz="-0.949999988079071 0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.10000000149011612 1.0"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <visual name="Geom_4">
+      <origin xyz="0.949999988079071 -0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.10000000149011612 1.0"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <visual name="Geom_5">
+      <origin xyz="-0.949999988079071 -0.44999998807907104 -0.5" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.10000000149011612 0.10000000149011612 1.0"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="mujoco_cube_1_joint" type="floating">
+    <origin xyz="0.7 0.9 1.5" rpy="0.0 0.0 3.1415927410125732"/>
+    <parent link="map"/>
+    <child link="mujoco_cube_1"/>
+  </joint>
+  <link name="mujoco_cube_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="mujoco_cube_geom_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/mujoco_cube_1_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="mujoco_cube_2_joint" type="floating">
+    <origin xyz="0.7 0.84 1.5" rpy="0.0 0.0 1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="mujoco_cube_2"/>
+  </joint>
+  <link name="mujoco_cube_2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="mujoco_cube_geom_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/mujoco_cube_2_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="mujoco_cube_3_joint" type="floating">
+    <origin xyz="0.7 0.78 1.5" rpy="0.0 0.0 0.0"/>
+    <parent link="map"/>
+    <child link="mujoco_cube_3"/>
+  </joint>
+  <link name="mujoco_cube_3">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="mujoco_cube_geom_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/mujoco_cube_3_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="mujoco_cube_4_joint" type="floating">
+    <origin xyz="0.7 0.72 1.5" rpy="0.0 0.0 -1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="mujoco_cube_4"/>
+  </joint>
+  <link name="mujoco_cube_4">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="mujoco_cube_geom_4">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/mujoco_cube_4_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="mujoco_cube_5_joint" type="floating">
+    <origin xyz="0.7 0.66 1.5" rpy="-3.1415927410125732 1.5707963705062866 0.0"/>
+    <parent link="map"/>
+    <child link="mujoco_cube_5"/>
+  </joint>
+  <link name="mujoco_cube_5">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="mujoco_cube_geom_5">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/mujoco_cube_5_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="mujoco_cube_6_joint" type="floating">
+    <origin xyz="0.7 0.6 1.5" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+    <parent link="map"/>
+    <child link="mujoco_cube_6"/>
+  </joint>
+  <link name="mujoco_cube_6">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="mujoco_cube_geom_6">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/mujoco_cube_6_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="gazebo_cube_1_joint" type="floating">
+    <origin xyz="0.7 0.4 1.5" rpy="0.0 0.0 3.1415927410125732"/>
+    <parent link="map"/>
+    <child link="gazebo_cube_1"/>
+  </joint>
+  <link name="gazebo_cube_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="gazebo_cube_geom_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/gazebo_cube_1_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="gazebo_cube_2_joint" type="floating">
+    <origin xyz="0.7 0.34 1.5" rpy="0.0 0.0 1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="gazebo_cube_2"/>
+  </joint>
+  <link name="gazebo_cube_2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="gazebo_cube_geom_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/gazebo_cube_2_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="gazebo_cube_3_joint" type="floating">
+    <origin xyz="0.7 0.28 1.5" rpy="0.0 0.0 0.0"/>
+    <parent link="map"/>
+    <child link="gazebo_cube_3"/>
+  </joint>
+  <link name="gazebo_cube_3">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="gazebo_cube_geom_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/gazebo_cube_3_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="gazebo_cube_4_joint" type="floating">
+    <origin xyz="0.7 0.22 1.5" rpy="0.0 0.0 -1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="gazebo_cube_4"/>
+  </joint>
+  <link name="gazebo_cube_4">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="gazebo_cube_geom_4">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/gazebo_cube_4_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="gazebo_cube_5_joint" type="floating">
+    <origin xyz="0.7 0.16 1.5" rpy="-3.1415927410125732 1.5707963705062866 0.0"/>
+    <parent link="map"/>
+    <child link="gazebo_cube_5"/>
+  </joint>
+  <link name="gazebo_cube_5">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="gazebo_cube_geom_5">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/gazebo_cube_5_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="gazebo_cube_6_joint" type="floating">
+    <origin xyz="0.7 0.1 1.5" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+    <parent link="map"/>
+    <child link="gazebo_cube_6"/>
+  </joint>
+  <link name="gazebo_cube_6">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="gazebo_cube_geom_6">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/gazebo_cube_6_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="isaac_sim_cube_1_joint" type="floating">
+    <origin xyz="0.7 -0.1 1.5" rpy="0.0 0.0 3.1415927410125732"/>
+    <parent link="map"/>
+    <child link="isaac_sim_cube_1"/>
+  </joint>
+  <link name="isaac_sim_cube_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="isaac_sim_cube_geom_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/isaac_sim_cube_1_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="isaac_sim_cube_2_joint" type="floating">
+    <origin xyz="0.7 -0.16 1.5" rpy="0.0 0.0 1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="isaac_sim_cube_2"/>
+  </joint>
+  <link name="isaac_sim_cube_2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="isaac_sim_cube_geom_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/isaac_sim_cube_2_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="isaac_sim_cube_3_joint" type="floating">
+    <origin xyz="0.7 -0.22 1.5" rpy="0.0 0.0 0.0"/>
+    <parent link="map"/>
+    <child link="isaac_sim_cube_3"/>
+  </joint>
+  <link name="isaac_sim_cube_3">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="isaac_sim_cube_geom_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/isaac_sim_cube_3_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="isaac_sim_cube_4_joint" type="floating">
+    <origin xyz="0.7 -0.28 1.5" rpy="0.0 0.0 -1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="isaac_sim_cube_4"/>
+  </joint>
+  <link name="isaac_sim_cube_4">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="isaac_sim_cube_geom_4">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/isaac_sim_cube_4_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="isaac_sim_cube_5_joint" type="floating">
+    <origin xyz="0.7 -0.34 1.5" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+    <parent link="map"/>
+    <child link="isaac_sim_cube_5"/>
+  </joint>
+  <link name="isaac_sim_cube_5">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="isaac_sim_cube_geom_5">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/isaac_sim_cube_5_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="isaac_sim_cube_6_joint" type="floating">
+    <origin xyz="0.7 -0.4 1.5" rpy="0.0 -1.5707963705062866 0.0"/>
+    <parent link="map"/>
+    <child link="isaac_sim_cube_6"/>
+  </joint>
+  <link name="isaac_sim_cube_6">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="isaac_sim_cube_geom_6">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/isaac_sim_cube_6_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="unreal_cube_1_joint" type="floating">
+    <origin xyz="0.7 -0.6 1.5" rpy="0.0 0.0 3.1415927410125732"/>
+    <parent link="map"/>
+    <child link="unreal_cube_1"/>
+  </joint>
+  <link name="unreal_cube_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="unreal_cube_geom_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/unreal_cube_1_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="unreal_cube_2_joint" type="floating">
+    <origin xyz="0.7 -0.66 1.5" rpy="0.0 0.0 1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="unreal_cube_2"/>
+  </joint>
+  <link name="unreal_cube_2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="unreal_cube_geom_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/unreal_cube_2_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="unreal_cube_3_joint" type="floating">
+    <origin xyz="0.7 -0.72 1.5" rpy="0.0 0.0 0.0"/>
+    <parent link="map"/>
+    <child link="unreal_cube_3"/>
+  </joint>
+  <link name="unreal_cube_3">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="unreal_cube_geom_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/unreal_cube_3_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="unreal_cube_4_joint" type="floating">
+    <origin xyz="0.7 -0.78 1.5" rpy="0.0 0.0 -1.5707963705062866"/>
+    <parent link="map"/>
+    <child link="unreal_cube_4"/>
+  </joint>
+  <link name="unreal_cube_4">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="unreal_cube_geom_4">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/unreal_cube_4_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="unreal_cube_5_joint" type="floating">
+    <origin xyz="0.7 -0.84 1.5" rpy="-3.1415927410125732 1.5707963705062866 0.0"/>
+    <parent link="map"/>
+    <child link="unreal_cube_5"/>
+  </joint>
+  <link name="unreal_cube_5">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="unreal_cube_geom_5">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/unreal_cube_5_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="unreal_cube_6_joint" type="floating">
+    <origin xyz="0.7 -0.9 1.5" rpy="3.1415927410125732 -1.5707963705062866 0.0"/>
+    <parent link="map"/>
+    <child link="unreal_cube_6"/>
+  </joint>
+  <link name="unreal_cube_6">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.125"/>
+      <inertia ixx="5.207999856793322e-05" ixy="0.0" ixz="0.0" iyy="5.207999856793322e-05" iyz="0.0" izz="5.207999856793322e-05"/>
+    </inertial>
+    <visual name="unreal_cube_geom_6">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="file://scene/meshes/obj/unreal_cube_6_cube_mesh.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
