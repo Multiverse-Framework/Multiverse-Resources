@@ -1,0 +1,17 @@
+resources: 
+  - ./
+  - ../../../Multiverse-Utilities/scripts
+
+worlds:
+  world:
+    rtf_desired: 1
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+processes:
+  - multiverse_replay.py:
+      world_name: world
+      port: 5000
+      data_path: data.csv

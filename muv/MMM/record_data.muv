@@ -1,0 +1,79 @@
+resources: 
+  - ../../robots
+  - ../../worlds
+  - ../../objects
+  - ../../demos
+
+worlds:
+  world:
+    rtf_desired: 1
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  ros:
+    ros_nodes:
+      subscribers:
+        joint_state:
+          - meta_data:
+              world_name: world
+              length_unit: m
+              angle_unit: rad
+              mass_unit: kg
+              time_unit: s
+              handedness: rhs
+            port: 8000
+            topic: /joint_states
+            joint_types:
+              fl_caster_rotation_joint: revolute
+              fl_caster_l_wheel_joint: revolute
+              fl_caster_r_wheel_joint: revolute
+              fr_caster_rotation_joint: revolute
+              fr_caster_l_wheel_joint: revolute
+              fr_caster_r_wheel_joint: revolute
+              bl_caster_rotation_joint: revolute
+              bl_caster_l_wheel_joint: revolute
+              bl_caster_r_wheel_joint: revolute
+              br_caster_rotation_joint: revolute
+              br_caster_l_wheel_joint: revolute
+              br_caster_r_wheel_joint: revolute
+              torso_lift_joint: prismatic
+              torso_lift_motor_screw_joint: revolute
+              head_pan_joint: revolute
+              head_tilt_joint: revolute
+              r_shoulder_pan_joint: revolute
+              r_shoulder_lift_joint: revolute
+              r_upper_arm_roll_joint: revolute
+              r_elbow_flex_joint: revolute
+              r_forearm_roll_joint: revolute
+              r_wrist_flex_joint: revolute
+              r_wrist_roll_joint: revolute
+              r_gripper_motor_slider_joint: prismatic
+              r_gripper_motor_screw_joint: revolute
+              r_gripper_l_finger_joint: revolute
+              r_gripper_r_finger_joint: revolute
+              r_gripper_l_finger_tip_joint: revolute
+              r_gripper_r_finger_tip_joint: revolute
+              l_shoulder_pan_joint: revolute
+              l_shoulder_lift_joint: revolute
+              l_upper_arm_roll_joint: revolute
+              l_forearm_roll_joint: revolute
+              l_elbow_flex_joint: revolute
+              l_wrist_flex_joint: revolute
+              l_wrist_roll_joint: revolute
+              l_gripper_motor_slider_joint: prismatic
+              l_gripper_motor_screw_joint: revolute
+              l_gripper_l_finger_joint: revolute
+              l_gripper_r_finger_joint: revolute
+              l_gripper_l_finger_tip_joint: revolute
+              l_gripper_r_finger_tip_joint: revolute
+
+    ros_run:
+      robot_state_publisher:
+        robot_description: robot_description
+      rviz:
+        config: mmm/config/rviz.rviz
+        robot_descriptions:
+          robot_description: iai_pr2/iai_pr2.urdf
