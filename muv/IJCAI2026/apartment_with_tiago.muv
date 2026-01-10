@@ -1,0 +1,62 @@
+resources:
+  - ./../../../Multiverse-Utilities/scripts/
+  - ./../../robots
+  - ./../../worlds
+  - ./../../objects
+  - ./../../demos
+  - ./
+
+
+worlds:
+  world:
+    rtf_desired: 1
+
+multiverse_server:
+  host: "tcp://127.0.0.1"
+  port: 7000
+
+multiverse_clients:
+  ros2:
+    ros2_control:
+      - meta_data:
+          world_name: world
+          length_unit: m
+          angle_unit: rad
+          mass_unit: kg
+          time_unit: s
+          handedness: rhs
+        port: 7600
+        controller_manager:
+          robot: tiago
+          robot_description: /robot_description
+          urdf: tiago/urdf/tiago.urdf
+          config: tiago/config/ros2_control.yaml
+          actuators:
+            torso_lift_joint_position: torso_lift_joint
+            arm_position_1_position: arm_1_joint
+            arm_position_2_position: arm_2_joint
+            arm_position_3_position: arm_3_joint
+            arm_position_4_position: arm_4_joint
+            arm_position_5_position: arm_5_joint
+            arm_position_6_position: arm_6_joint
+            arm_position_7_position: arm_7_joint
+            head_1_joint_position: head_1_joint
+            head_2_joint_position: head_2_joint
+          controllers:
+            spawner:
+              - joint_state_broadcaster
+                arm_joint_trajectory_controller
+                head_position_controller
+
+    ros2_run:
+      rviz2:
+        config: apartment_with_tiago/config/rviz2.rviz
+        robot_descriptions:
+          tiago_description: tiago/urdf/tiago.urdf
+
+processes:
+  - multiverse_initializing.py:
+      world: world
+      simulation_name: multiverse_initializer
+      port: 5000
+      data_path: tiago_init.yaml
